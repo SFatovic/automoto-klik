@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI alat | AutoMoto KLIK!</title>
+  <meta name="description" content="Generator AI upita za odabrani automobilski alat." />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="toolPage">
+
+  <div id="site-header"></div>
+
+  <section class="hero-wrap hero-wrap-compact">
+    <div class="container">
+      <div class="hero-card">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <p class="hero-kicker">AI generator</p>
+            <h1 id="pageHeroToolTitle" class="hero-title hero-title-small">AI alat</h1>
+            <p id="pageHeroToolDescription" class="hero-subtitle mb-0">
+              Učitaj alat i ispuni nekoliko polja za generiranje gotovog AI upita.
+            </p>
+          </div>
+
+          <div class="col-lg-4 text-lg-end">
+            <a href="ai-upiti.html" class="btn btn-hero-secondary">← Natrag na AI upite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="generator-section py-5">
+      <div class="container">
+        <div class="row g-4">
+
+          <!-- LIJEVA STRANA -->
+          <div class="col-lg-6">
+            <div class="custom-card h-100">
+              <div class="card-body-custom">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <p class="small-label mb-2">Aktivni alat</p>
+                    <h3 id="activeToolTitle" class="mb-0">Učitavanje alata...</h3>
+                  </div>
+                </div>
+
+                <p id="activeToolDescription" class="text-muted mb-4">
+                  Ovdje će se prikazati opis odabranog alata i forma za unos podataka.
+                </p>
+
+                <form id="promptForm">
+                  <div id="dynamicFields" class="row g-3">
+                    <!-- JS ubacuje polja -->
+                  </div>
+
+                  <div class="mt-4 d-grid gap-2">
+                    <button type="button" id="generatePromptBtn" class="btn btn-primary btn-lg">
+                      Generiraj AI upit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- DESNA STRANA -->
+          <div class="col-lg-6">
+            <div class="custom-card h-100">
+              <div class="card-body-custom">
+                <div class="mb-3">
+                  <p class="small-label mb-2">Generirani upit</p>
+                  <h3 class="mb-0">AI prompt spreman za kopiranje</h3>
+                </div>
+
+                <p class="text-muted mb-4">
+                  Nakon ispunjavanja forme ovdje će se prikazati gotov prompt.
+                </p>
+
+                <div class="output-wrapper mb-3">
+                  <textarea
+                    id="promptOutput"
+                    class="form-control output-box"
+                    rows="16"
+                    placeholder="Generirani AI upit pojavit će se ovdje..."
+                    readonly
+                  ></textarea>
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button type="button" id="copyPromptBtn" class="btn btn-primary btn-lg" disabled>
+                    Kopiraj upit
+                  </button>
+                </div>
+
+                <p class="output-note mt-3 mb-0">
+                  Savjet: kopiraj upit, zalijepi ga u ChatGPT i dodatno ga prilagodi po potrebi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="tools.js"></script>
+  <script src="app.js"></script>
+  <script src="components.js"></script>
+</body>
+</html>

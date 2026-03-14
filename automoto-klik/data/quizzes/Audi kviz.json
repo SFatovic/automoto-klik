@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "Audi",
+        "Pic": "P0",
+        
+       
+        "1Q": "What are the 4 rings on the Audi logo stands for?",
+        "1P": "P1",
+       
+        "1-1": "Wheels",
+        "1-2": "Vehicles",
+        "1-3": "Cylinders",
+        "1-4": "Cities",
+        "!1-5": "Companies",
+
+        "tip1":"The four affiliates companies are Audi, DKW, Horch, and Wanderer.",
+        
+
+        "2Q": "What is the name of Audi's celebrated all-wheel drive system?",
+        "2P": "P2",
+       
+        "2-1": "RS",
+        "2-2": "Allroad",
+        "2-3": "S-Tronic",
+        "!2-4": "quattro",
+        "2-5": "Avant",
+
+        "tip2":"The word quattro is now always spelled with a lower case q due to nomenclature rights derived from the trademark.",
+
+
+        "3Q": "Audi engineers developed Audi Space Frame in 1993, a lightweight body of which material?",
+        "3P": "P3",
+
+       
+        "!3-1": "Aluminum",
+        "3-2": "Carbon",
+        "3-3": "Steel",
+        "3-4": "Plastic",
+        "3-5": "Cannabis",
+
+        "tip3":"Audi has developed the ASF technology to reduce the weight of the quattro drive.",
+
+
+        "4Q": "Who is the successor to the Audi 80?",
+        "4P": "P4",
+       
+        "4-1": "A3",
+        "!4-2": "A4",
+        "4-3": "A6",
+        "4-4": "R8",
+        "4-5": "TT",
+
+        "tip4":"With the model A4, a new model nomenclature era of Audi begins.",
+
+
+        "5Q": "In which model is the most powerful 5-cylinder series engine built-in?",
+        "5P": "P5",
+       
+        "5-1": "S1",
+        "5-2": "SQ7",
+        "!5-3": "TT RS",
+        "5-4": "RS6",
+        "5-5": "R8",
+
+        "tip5":"2.5-litre TFSI engine powers MQB-based Audi TT RS with quattro system and 7-speed S Tronic automatic transmission.",
+
+
+        "6Q": "In which body version was the first Audi RS4 (B5) offered?",
+        "6P": "P7",
+       
+        "6-1": "Targa",
+        "6-2": "Coupe",
+        "!6-3": "Caravan",
+        "6-4": "Cabrio",
+        "6-5": "Limousine",
+
+        "tip6":"Audi calls its estate/wagon models Avant.",
+
+
+        "7Q": "What is the first Audi production model with a built-in diesel V12 TDI engine?",
+        "8P": "P8",
+       
+        "7-1": "R8",
+        "!7-2": "Q7",
+        "7-3": "Q8",
+        "7-4": "A6",
+        "7-5": "A8",
+
+        "tip7":"Audi Q7 V12 TDI produces 1,000 N⋅m of torque.",
+
+
+        "8Q": "Which of the SUVs appeared on the market the latest?",
+        "9P": "P9",
+       
+        "8-1": "Q2",
+        "8-2": "Q3",
+        "8-3": "Q5",
+        "8-4": "Q7",
+        "!8-5": "Q8",
+
+        "tip8":"Driven by BMW X6 and Mercedes GLE-Class Coupe sales success Audi launches model Q8.",
+
+
+        "9Q": "On which basis was created the Audi R8?",
+        "10P": "P10",
+       
+        "9-1": "Nissan GT-R",
+        "!9-2": "Lamborghini Gallardo",
+        "9-3": "Bentley Continental GT",
+        "9-4": "Mercedes-Benz SLS AMG",
+        "9-5": "Porsche 911",
+
+        "tip9":"Audi R8 is the first production car with full-LED headlamps.",
+
+
+        "10Q": "Which model is the first on the market available with a third level of autonomous driving?",
+        "10P": "P6",
+       
+        "10-1": "!A8",
+        "10-2": "Q8",
+        "10-3": "e-Trone",
+        "10-4": "RS7",
+        "10-5": "A6 Allorad",
+
+        "tip10":"Level 3 of autonomous driving enable Audi A8 to park independently and drive up to 60km/h / 37mph on its own.",
+    },
+]

@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "History of car industry",
+        "Pic": "P0",
+        
+       
+        "1Q": "What is used to power the first type of vehicles?",
+        "1P": "P1",
+       
+        "1-1": "Electricity",
+        "!1-2": "Steam",
+        "1-3": "Diesel",
+        "1-4": "Gasoline",
+        "1-5": "Hydrogen",
+
+        "tip1":"A French inventor, Nicolas-Joseph Cugnot, built the first working self-propelled land-based mechanical vehicle.",
+        
+
+        "2Q": "What kind of engines are Diesel and Otto?",
+        "2P": "P2",
+       
+        "2-1": "Hydrogen engines",
+        "2-2": "Hybrid technologies",
+        "!2-3": "Internal combustion engines",
+        "2-4": "Electric motors",
+        "2-5": "Steam engines",
+
+        "tip2":"An engine which generates motive power by the burning of petrol, oil, or other fuel with air inside the combustion chamber.",
+
+
+        "3Q": "Who produced the first internal combustion engine in 1867?",
+        "3P": "P3",
+
+       
+        "3-1": "Ford",
+        "3-2": "Ferrari",
+        "3-3": "BMW",
+        "3-4": "Toyota",
+        "!3-5": "Mercedes-Bnez",
+
+        "tip3":"Karl Friedrich Benz also patented the speed regulation system, the spark plug, the carburetor, the clutch, the gear shift, and the water radiator.",
+
+
+        "4Q": "Which car was the first to come off the assembly line",
+        "4P": "P4",
+       
+        "4-1": "Rolls-Royce Silver Cloud",
+        "4-2": "VW Golf",
+        "4-3": "Toyota A1",
+        "!4-4": "Ford T",
+        "4-5": "Chevrolet Impala",
+
+        "tip4":"Thanks to the production system Ford T was the first automobile that many middle-class peoples could afford.",
+
+
+        "5Q": "Where was the first traffic light in the world set in 1914?",
+        "5P": "P5",
+       
+        "!5-1": "Cleveland, SAD",
+        "5-2": "Detroit, SAD",
+        "5-3": "Milano, Italy",
+        "5-4": "Berlin, Germany",
+        "5-5": "Tokyo, Japan",
+
+        "tip5":"The first traffic light was installed on the corner of East 105th Street and Euclid Avenue in Cleveland, Ohio.",
+
+
+        "6Q": "Which nameplate is the best-selling model in history by 1997?",
+        "6P": "P6",
+       
+        "!6-1": "Toyota Corolla",
+        "6-2": "VW Beetle",
+        "6-3": "Ford Escort",
+        "6-4": "Honda Civic",
+        "6-5": "Opel Corsa",
+
+        "tip6":"Toyota has launched more than ten generations of the world wide popular Corolla.",
+
+
+        "7Q": "What is the first hybrid car to be mass-produced for the world market?",
+        "7P": "P7",
+       
+        "7-1": "Fikser Karma",
+        "7-2": "Tesla S",
+        "7-3": "Chevrolet Volt",
+        "!7-4": "Toyota Prius",
+        "7-5": "Nissan Leaf",
+
+        "tip7":"The Prius is sold in over 90 markets.",
+
+
+        "8Q": "Who is on the Forbes list the first billionaire in the world of automotive sports?",
+        "8P": "P8",
+       
+        "8-1": "Ken Block",
+        "!8-2": "Michael Schumacher",
+        "8-3": "Lewis Hamilton",
+        "8-4": "Sébastien Loeb",
+        "8-5": "Valentino Rossi",
+
+        "tip8":"Michael Schumacher is one of the greatest Formula One drivers best known for racing on the Scuderia Ferrari team.",
+
+
+        "9Q": "What is the first production car with more than 1000hp?",
+        "9P": "P9",
+       
+        "9-1": "Mercedes-Benz 300 SL",
+        "9-2": "Hennessey Venom",
+        "9-3": "Koenigsegg Agera",
+        "9-4": "McLaren F1",
+        "!9-5": "Bugatti Veyron",
+
+        "tip9":"The SuperSport version of the Veyron is recognized by Guinness World Records as the fastest street-legal production car in the world.",
+
+
+        "10Q": "Where Rimac Automobili began to develop the most advanced electric-powered hypercars and components for other manufacturers?",
+        "10P": "P10",
+       
+        "10-1": "Slovenia",
+        "!10-2": "Croatia",
+        "10-3": "Ireland",
+        "10-4": "Australia",
+        "10-5": "South African Republic",
+
+        "tip10":"Rimac Automobili from Sveta Nedelja, Croatia cooperate with Porsche, Koenigsegg, Aston Martin, Jaguar, Pininfarina, Cupra, etc.",
+    },
+]

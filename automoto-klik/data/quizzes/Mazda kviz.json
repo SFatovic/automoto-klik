@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "Mazda",
+        "Pic": "P0",
+        
+       
+        "1Q": "By what Mazda was named?",
+        "1P": "P1",
+       
+        "1-1": "Moutin",
+        "!1-2": "God",
+        "1-3": "City",
+        "1-4": "Animal",
+        "1-5": "Founder",
+
+        "tip1":"The name Mazda is associated with Ahura Mazda, God of Light.",
+        
+
+        "2Q": "How Mazda calling its line of advanced technology?",
+        "2P": "P2",
+       
+        "2-1": "Kodo",
+        "2-2": "i-Activ",
+        "!2-3": "SkyActive",
+        "2-4": "Wankel",
+        "2-5": "Zoom Zoom",
+
+        "tip2":"SkyActive brand includes engine, transmission, body, and chassis advanced technologies.",
+
+
+        "3Q": "What in the Mazda describe KODO?",
+        "3P": "P3",
+
+       
+        "3-1": "Serial model car",
+        "3-2": "Drive mode",
+        "3-3": "Technology",
+        "3-4": "Concept",
+        "!3-5": "Design philosophy",
+
+        "tip3":"Mazda's new design theme named KODO mean Soul of Motion.",
+
+
+        "4Q": "What legendary race track was sponsored by Mazda?",
+        "4P": "P4",
+       
+        "4-1": "Daytona",
+        "4-2": "Spa-Francorschamps",
+        "4-3": "Austin",
+        "!4-4": "Laguna Seca",
+        "4-5": "Suzuka",
+
+        "tip4":"For the 17 years, the track was known as Mazda Raceway Laguna Seca.",
+
+
+        "5Q": "Which Mazda model has its cup and championship?",
+        "5P": "P5",
+       
+        "5-1": "2",
+        "5-2": "3",
+        "!5-3": "MX-5 Miata",
+        "5-4": "RX-7",
+        "5-5": "RX-8",
+
+        "tip5":"Some of them are MaX5 Racing Championship, BT Global MX-5 Cup and Spec Miata class.",
+
+
+        "6Q": "What does the abbreviation MPS mean in Mazda's dictionary?",
+        "6P": "P6",
+       
+        "!6-1": "Mazda Performance Series",
+        "6-2": "Mazda Profile Sport",
+        "6-3": "Mazda Pure Sport",
+        "6-4": "Mazda Parking Sistem",
+        "6-5": "Mazda Power Start",
+
+        "tip6":"There are only Mazda 3 and 6 in the MPS version.",
+
+
+        "7Q": "What engine configuration are used by Mazda's RX-7 and RX-8 models?",
+        "7P": "P7",
+       
+        "7-1": "V6",
+        "!7-2": "Wankel",
+        "7-3": "W8",
+        "7-4": "Boxer",
+        "7-5": "VR6",
+
+        "tip7":"Mazda rotary engines have a reputation for high power-to-weight ratio at the expense of poor fuel efficiency.",
+
+
+        "8Q": "How much volume has Mazda's RX-8 engine?",
+        "8P": "P8",
+       
+        "8-1": "0.6L",
+        "8-2": "0.9L",
+        "!8-3": "1.3L",
+        "8-4": "2.0L",
+        "8-5": "2.2L",
+
+        "tip8":"Engine mounted in Mazda RX-8 is called RENESIS.",
+
+
+        "9Q": "What is the name of Mazda's smallest SUV introduced in 2014?",
+        "9P": "P9",
+       
+        "9-1": "CX",
+        "9-2": "CX-0",
+        "9-3": "CX-1",
+        "9-4": "CX-2",
+        "!9-5": "CX-3",
+
+        "tip9":"Model CX-3 is based on the same platform as the Mazda Demio/Mazda2.",
+
+
+        "10Q": "How is named unique Mazda Concept that was burned on photography session by Tope Gear magazine?",
+        "10P": "P10",
+       
+        "10-1": "Hakaze",
+        "!10-2": "Furai",
+        "10-3": "Ryuga",
+        "10-4": "Taiki",
+        "10-5": "Nagare",
+
+        "tip10":"The Mazda Furai had been in existence for less than a year, and its status was unknown for 5 years.",
+    },
+]

@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ========================================
+   COLOR VARIABLES
+======================================== */
+
+:root {
+  --bg-main: #f1f5f9;
+  --bg-soft: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --border-soft: #cbd5e1;
+  --shadow-soft: 0 8px 25px rgba(0,0,0,0.08);
+  --gradient-blue: linear-gradient(135deg, #172554 0%, #1e3a8a 45%, #0f172a 100%);
+}
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  transition: all 0.25s ease;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero-wrap {
+  padding: 48px 0 32px;
+  background: #eef2f6;
+}
+
+.hero-wrap-compact {
+  padding-bottom: 20px;
+}
+
+.hero-card {
+  background:
+    radial-gradient(circle at top right, rgba(59,130,246,0.18), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(99,102,241,0.18), transparent 30%),
+    linear-gradient(135deg, #172554 0%, #1e3a8a 45%, #0f172a 100%);
+  border-radius: 24px;
+  padding: 56px 48px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.hero-kicker {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: "Genos", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.hero-title-small {
+  font-size: 3.2rem;
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 28px;
+}
+
+.hero-preview-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.preview-label {
+  color: #93c5fd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.hero-preview-card h3 {
+  font-family: "Genos", sans-serif;
+  color: #ffffff;
+  font-size: 1.9rem;
+  margin-bottom: 14px;
+}
+
+.preview-list {
+  padding-left: 18px;
+  margin-bottom: 18px;
+  color: #e2e8f0;
+}
+
+.hero-highlight {
+  color: #f59e0b;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.btn-hero-secondary {
+  border: 1px solid rgba(255,255,255,0.24);
+  color: #f8fafc;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255,255,255,0.10);
+  color: #ffffff;
+}
+
+/* ========================================
+   SECTION TITLES
+======================================== */
+
+.tools-section {
+  background: var(--bg-main);
+}
+
+.section-title {
+  font-family: "Genos", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* ========================================
+   CATEGORY CARDS (INDEX)
+======================================== */
+
+.category-card {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+  height: 100%;
+}
+
+.category-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+}
+
+.category-card-title {
+  font-family: "Genos", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.category-card-text {
+  color: rgba(255,255,255,0.92);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.category-card-cta {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.small-label {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.small-label-light {
+  color: #bfdbfe;
+}
+
+/* ========================================
+   TOOL CARDS
+======================================== */
+
+.tool-card-link {
+  color: inherit;
+}
+
+.tool-card {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  border-radius: 14px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+.tool-card:active {
+  transform: scale(0.98);
+}
+
+.tool-card-body {
+  min-height: 100%;
+}
+
+.tool-card h4,
+.tool-card-title {
+  font-family: "Genos", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.55rem;
+}
+
+.tool-card-text,
+.tool-card p {
+  color: #ffffff !important;
+  opacity: 0.92;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   GENERATOR SECTION
+======================================== */
+
+.generator-section {
+  background: var(--bg-main);
+}
+
+.custom-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.card-body-custom {
+  padding: 30px;
+}
+
+.custom-card h3 {
+  font-family: "Genos", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+/* ========================================
+   FORM STYLING
+======================================== */
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-control,
+.form-select {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(56,189,248,0.15);
+  outline: none;
+}
+
+.form-check-label {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-check-input {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.form-check-input:checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.form-check-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(56,189,248,0.15);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.25s ease;
+}
+
+.btn-primary.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(56,189,248,0.3);
+}
+
+.btn-primary:disabled {
+  background: var(--border-soft);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================
+   OUTPUT STYLING
+======================================== */
+
+.output-wrapper {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.output-box {
+  background: var(--bg-soft);
+  border: none;
+  color: var(--text-primary);
+  font-family: "Monaco", "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 20px;
+  resize: vertical;
+  min-height: 300px;
+}
+
+.output-box:focus {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.output-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ========================================
+   INFO / PLACEHOLDER
+======================================== */
+
+.info-section {
+  background: var(--bg-main);
+  border-top: 1px solid var(--border-soft);
+}
+
+.info-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.info-box h4 {
+  font-family: "Genos", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.info-box p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.quiz-placeholder-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.quiz-placeholder-card h3 {
+  font-family: "Genos", sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.quiz-placeholder-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  margin-top: 80px;
+  background:
+    radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(99,102,241,0.15), transparent 35%),
+    linear-gradient(135deg, #172554 0%, #1e3a8a 50%, #0f172a 100%);
+  color: #e2e8f0;
+  padding: 50px 20px;
+}
+
+.footer-title {
+  font-family: "Genos", sans-serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  max-width: 600px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.footer-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 36px 24px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-title-small {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .custom-card {
+    margin-bottom: 20px;
+  }
+
+  .card-body-custom {
+    padding: 20px;
+  }
+
+  .output-box {
+    min-height: 250px;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .category-card-title {
+    font-size: 1.7rem;
+  }
+}
+
+.site-header {
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.header-logo a {
+  font-family: "Genos", sans-serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-nav a {
+  color: #cbd5e1;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.header-nav a:hover {
+  color: #ffffff;
+}
+
+.header-nav a.active {
+
+  color: #f59e0b;
+
+  border-bottom: 2px solid #f59e0b;
+
+  padding-bottom: 4px;
+
+}
+
+.quiz-progress {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.quiz-question-image {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.quiz-answers {
+  display: grid;
+  gap: 14px;
+}
+
+.quiz-answer-btn {
+  width: 100%;
+  text-align: left;
+  background: var(--bg-soft);
+  color: var(--text-primary);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.quiz-answer-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.quiz-answer-btn.selected {
+  background: #fff7ed;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15);
+}
+
+.quiz-report-list {
+  display: grid;
+  gap: 18px;
+}
+
+.quiz-report-item {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.quiz-report-item h4 {
+  font-family: "Genos", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.quiz-report-correct {
+  color: #166534;
+  font-weight: 600;
+}
+
+.quiz-report-wrong {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.quiz-report-tip {
+  margin-top: 10px;
+  color: var(--text-secondary);
+}

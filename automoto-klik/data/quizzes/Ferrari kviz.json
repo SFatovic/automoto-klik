@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "Ferrari",
+        "Pic": "P0",
+        
+       
+        "1Q": "In which city did Enzo Ferrari formed Scuderia Ferrari racing team, in 1929?",
+        "1P": "P1",
+       
+        "1-1": "Roma",
+        "!1-2": "Modena",
+        "1-3": "Mialno",
+        "1-4": "Maranello",
+        "1-5": "Turin",
+
+        "tip1":"In 1943, the Ferrari factory moved to Maranello, where it has remained ever since.",
+        
+
+        "2Q": "What was the name of the first Ferrari for road use?",
+        "2P": "P2",
+       
+        "!2-1": "125 S",
+        "2-2": "212 Inter",
+        "2-3": "375 MM",
+        "2-4": "Dino",
+        "2-5": "Testarossa",
+
+        "tip2":"Enzo Ferrari started built and sold road automobiles to fund Scuderia Ferrari racing team.",
+
+
+        "3Q": "Who is the Ferrari most successful driver in Formula 1 World Championship?",
+        "3P": "P5",
+       
+        "!3-1": "Michael Schumacher",
+        "3-2": "Alberto Ascari",
+        "3-3": "Niki Lauda",
+        "3-4": "Juan Manuel Fangio",
+        "3-5": "Clay Regazzoni",
+
+        "tip3":"Michael Schumacher won 72 Formula 1 Grands Prix and 7 Drivers' Championships.",
+
+
+        "4Q": "What is the name of Ferrari's private test track?",
+        "4P": "P3",
+
+        "4-1": "Scuderia Ferrari",
+        "4-2": "Modena Autodrome",
+        "!4-3": "Fiorano Circuit",
+        "4-4": "Autodrom Enzo e Dino Ferrari",
+        "4-5": "Autodrom Nazionale Monza",
+
+        "tip4":"The Fiorano Circuit has 12 turns and length of 3km/1.9mi.",
+
+
+        "5Q": "In which city is the Ferrari World theme park located?",
+        "5P": "P4",
+       
+        "5-1": "Rome",
+        "!5-2": "Abu Dhabi",
+        "5-3": "Moscow",
+        "5-4": "Los Angeles",
+        "5-5": "Hong Kong",
+
+        "tip5":"There you can drive in world fastest rollercoaster, take 4D virtual journey of Ferrari history, and many more things to do.",
+
+
+
+        "6Q": "What is the latest model whose development was overseen by Enzo Ferrari?",
+        "6P": "P6",
+       
+        "!6-1": "F40",
+        "6-2": "F50",
+        "6-3": "250 Gto",
+        "6-4": "Enzo",
+        "6-5": "458 Italia",
+
+        "tip6":"At the time, it was Ferrari's fastest, most powerful and most expensive car for sale, designed to celebrate Ferrari's 40th anniversary.",
+
+
+        "7Q": "In how many units was the model Enzo produced?",
+        "7P": "P7",
+       
+        "7-1": "11",
+        "7-2": "99",
+        "!7-3": "400",
+        "7-4": "501",
+        "7-5": "1110",
+
+        "tip7":"It was developed in 2002 using plenty of Formula One technologies.",
+
+
+        "8Q": "Which of the following models does not have a V12 engine configuration?",
+        "8P": "P8",
+       
+        "8-1": "812 Superfast",
+        "8-2": "599 Gto",
+        "8-3": "612 Scaglietti",
+        "8-4": "LaFerrari",
+        "!8-5": "SF90 Stradale",
+
+        "tip8":"The Ferrari SF90 Stradale is the brand's first-ever plug-in hybrid, combining twin-turbocharged V8 with three electric motors.",
+
+
+        "9Q": "What is Ferrari's first production four-wheel-drive model?",
+        "9P": "P9",
+       
+        "9-1": "GTC4Lusso",
+        "9-2": "Mondial Quattrovalvole",
+        "9-3": "Purosangue",
+        "9-4": "308 GT4",
+        "!9-5": "FF",
+
+        "tip9":"4RM can be activated only in comfort or snow driving modes.",
+
+
+        "10Q": "What was the price of the new LaFerrari, first hybrid Ferrari?",
+        "10P": "P10",
+       
+        "10-1": "150.000 €",
+        "10-2": "580.000 €",
+        "!10-3": "1,2 millions €",
+        "10-4": "3,9 millions €",
+        "10-5": "9,6 millions €",
+
+        "tip10":"Since LaFerrari is a limited-production car, its value will grow over the years.",
+    },
+]

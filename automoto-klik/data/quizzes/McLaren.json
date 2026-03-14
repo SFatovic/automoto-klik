@@ -1,0 +1,128 @@
+[ 
+    {
+        "Name": "McLaren",
+        "Pic": "P0",
+        
+       
+        "1Q": "Where is McLaren Technology Center located?",
+        "1P": "P1",
+       
+        "!1-1": "Woking",
+        "1-2": "Gaydon",
+        "1-3": "Crewe",
+        "1-4": "Goodwood",
+        "1-5": "Whitley",
+
+        "tip1":"McLaren Group is consists of McLaren Racing, McLaren Automotive, and McLaren Applied Technologies.",
+        
+
+        "2Q": "Which animal was an integral part of McLaren's first logo?",
+        "2P": "P2",
+       
+        "2-1": "Penguin",
+        "2-2": "Ostrich",
+        "2-3": "Eagle",
+        "!2-4": "Kiwi",
+        "2-5": "Sparrow",
+
+        "tip2":"McLaren founder Bruce Mclaren was from New Zeland, where Kiwi is a national animal.",
+
+
+        "3Q": "What abbreviation in the name does all the McLarens Formula 1 cars contain from 1981.?",
+        "3P": "P3",
+
+       
+        "3-1": "GT4",
+        "!3-2": "MP4",
+        "3-3": "MF4",
+        "3-4": "MM4",
+        "3-5": "FS4",
+
+        "tip3":"MP4 first stands for Marlboro Project 4, but now stands for McLaren Project 4.",
+
+
+
+        "4Q": "Whose V12 engine uses model F1, world's fastest naturally aspirated production car ever?",
+        "4P": "P4",
+       
+        "4-1": "Mercedes",
+        "4-2": "Jaguar",
+        "!4-3": "BMW",
+        "4-4": "Porsche",
+        "4-5": "Bentley",
+
+        "tip4":"F1 concept is conceived by legendary engineer and designer Gordon Murray.",
+
+        
+        "5Q": "With whom McLaren developed the SLR model?",
+        "5P": "P5",
+       
+        "5-1": "BMW",
+        "!5-2": "Mercedes",
+        "5-3": "Honda",
+        "5-4": "Williams",
+        "45-5": "Aston Martin",
+
+        "tip5":"There is a dedicated version of SLR made in honor of racing legend Sir Stirling Moss.",
+
+
+        "6Q": "Which is the first-ever production car wholly designed and built by McLaren Group?",
+        "6P": "P6",
+       
+        "6-1": "F1",
+        "6-2": "P1",
+        "6-3": "540C",
+        "!6-4": "12C",
+        "6-5": "675LT",
+
+        "tip6":"Launching of model 12C was in 2011, and it represents a new era for McLaren Automotive.",
+
+ 
+        "7Q": "What engine configuration use hybrid Mclaren P1?",
+        "7P": "P9",
+       
+        "7-1": "W16",
+        "7-2": "V12",
+        "7-3": "V10",
+        "!7-4": "V8",
+        "7-5": "V6",
+
+        "tip7":"V8 engine used from 12C to P1 was originally developed for Nissan racing cars back in the 80s for Le Mans endurance races.",
+
+
+        "8Q": "What is the name of Mclaren's bespoke division, officially launched in 2011?",
+        "8P": "P8",
+       
+        "!8-1": "McLaren Special Operations",
+        "8-2": "McLaren Special Series",
+        "8-3": "McLaren Technology Group",
+        "8-4": "McLaren Production Centre",
+        "8-5": "Advanced Mclaren's Park",
+
+        "tip8":"MSO provides everything from bespoke customization options through to building ultra-exclusive limited-edition or one-off models.",
+
+
+        "9Q": "In honor of which Formula One driver McLaren introduced limited-production race car in 2017?",
+        "9P": "P9",
+       
+        "9-1": "Niki Lauda",
+        "9-2": "Lewis Hamilton",
+        "9-3": "Alain Prost",
+        "9-4": "Mika Häkkinen",
+        "!9-5": "Ayrton Senna",
+
+        "tip9":"McLaren Senna is the third addition in the McLaren Ultimate Series of vehicles.",
+
+
+        "10Q": "What is the primary purpose of Mclaren Speedtail?",
+        "10P": "P10",
+       
+        "10-1": "Passing curves at high speed",
+        "10-2": "Racing on the track",
+        "!10-3": "Achieving high speed",
+        "10-4": "Mastering the off-road terrain",
+        "10-5": "Long ride comfort",
+
+        "tip10":"Design of McLaren Speedtail is subordinate to achieving maximum speed.",
+    },
+]

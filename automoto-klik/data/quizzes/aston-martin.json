@@ -1,0 +1,137 @@
+{
+  "id": "aston-martin",
+  "title": "Aston Martin kviz",
+  "description": "Provjeri koliko poznaješ povijest i modele brenda Aston Martin.",
+  "questions": [
+    {
+      "question": "U kojoj se državi nalazi sjedište Aston Martina?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P1.jpg",
+      "answers": [
+        "Njemačka",
+        "Engleska",
+        "Wales",
+        "Italija",
+        "SAD"
+      ],
+      "correctIndex": 1,
+      "tip": "Aston Martin Lagonda Global Holdings PLC je britanski proizvođač automobila sa sjedištem u Gaydonu u Ujedinjenom Kraljevstvu."
+    },
+    {
+      "question": "Koji prototip automobila je preteča svih DB modela?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P2.jpg",
+      "answers": [
+        "Coal Scuttle",
+        "2-Litre",
+        "Series-1",
+        "Lagonda",
+        "Atom"
+      ],
+      "correctIndex": 4,
+      "tip": "Aston Martin Atom je prototipni automobil izrađen 1939. godine."
+    },
+    {
+      "question": "Koji se Aston Martin model prvi put pojavio u filmovima o James Bondu?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P3.jpg",
+      "answers": [
+        "DB2",
+        "DB4 GT Zagato",
+        "DB5",
+        "DB7",
+        "DBS"
+      ],
+      "correctIndex": 2,
+      "tip": "Model DB5 pojavio se u filmu Goldfinger iz 1964. godine."
+    },
+    {
+      "question": "Koji je prvi Aston Martin model s V12 motorom?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P4.jpg",
+      "answers": [
+        "Vanquish",
+        "Vantage",
+        "Volante",
+        "Virage",
+        "Rapide"
+      ],
+      "correctIndex": 0,
+      "tip": "Aston Martin Vanquish predstavljen je na salonu automobila u Ženevi 2001. godine."
+    },
+    {
+      "question": "Koje je natjecanje Aston Martin Racing tim osvojio više puta?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P5.jpg",
+      "answers": [
+        "NASCAR",
+        "Le Mans",
+        "WRC",
+        "Formula 1",
+        "Formula E"
+      ],
+      "correctIndex": 1,
+      "tip": "Aston Martin Racing debitirao je 2005. i pobijedio na utrci 24 sata Le Mansa već nakon dvije sezone."
+    },
+    {
+      "question": "Kako se zove Aston Martin odjel za personalizaciju vozila?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P6.jpg",
+      "answers": [
+        "AMR",
+        "Zagato",
+        "Superleggera",
+        "Q",
+        "S"
+      ],
+      "correctIndex": 3,
+      "tip": "Q by Aston Martin omogućuje personalizaciju vozila izvan standardne ponude opcija."
+    },
+    {
+      "question": "Na kojem je modelu baziran gradski automobil Aston Martin Cygnet?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P7.jpg",
+      "answers": [
+        "Smart ForTwo",
+        "Mini Cooper",
+        "Toyota iQ",
+        "VW Up",
+        "Mercedes A Class"
+      ],
+      "correctIndex": 2,
+      "tip": "Aston Martin Cygnet je luksuzna reinterpretacija modela Toyota iQ."
+    },
+    {
+      "question": "Koliko je primjeraka proizvedeno modela Aston Martin One-77?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P8.jpg",
+      "answers": [
+        "1",
+        "7",
+        "17",
+        "77",
+        "177"
+      ],
+      "correctIndex": 3,
+      "tip": "U trenutku predstavljanja One-77 imao je najjači atmosferski motor u serijskom automobilu."
+    },
+    {
+      "question": "Koji model nije jedna od četiri Vanquish verzije koje je dizajnirao Zagato?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P9.jpg",
+      "answers": [
+        "Coupe",
+        "Volante",
+        "Speedster",
+        "Shooting Brake",
+        "GT"
+      ],
+      "correctIndex": 4,
+      "tip": "Speedster je proizveden u 28 primjeraka, dok su Coupe, Volante i Shooting Brake proizvedeni u 99 primjeraka."
+    },
+    {
+      "question": "Kako se zove isključivo trkaća verzija modela Aston Martin Valkyrie?",
+      "image": "assets/amk-kvizovi/aston-martin-pictures/P10.jpg",
+      "answers": [
+        "Q",
+        "Racing",
+        "AMR Pro",
+        "LMP1",
+        "Nebula"
+      ],
+      "correctIndex": 2,
+      "tip": "Valkyrie AMR Pro je ekstremna track verzija razvijena u suradnji s Red Bull Racingom."
+    }
+  ]
+}

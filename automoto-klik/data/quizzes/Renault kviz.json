@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "Renault",
+        "Pic": "P0",
+        
+       
+        "1Q": "With whom did Louis Renault start his company and achieve its first racing success?",
+        "1P": "P1",
+       
+        "1-1": "Cousins",
+        "1-2": "Sons",
+        "1-3": "Parents",
+        "1-4": "Wife",
+        "!1-5": "Brothers",
+
+        "tip1":"Renault is widespread in the ownership structures of the auto industry companies and successful in automotive sports.",
+        
+
+        "2Q": "Which constructor marked Renault's racing history, and later some models were named after him?",
+        "2P": "P2",
+       
+        "!2-1": "Amédée Gordini",
+        "2-2": "Thomas Evert",
+        "2-3": "Jean Rédélé",
+        "2-4": "Henri Pigozzi",
+        "2-5": "Fernando Alonso",
+
+        "tip2":"Since its early Renault models, the most characteristic color scheme of Gordini cars has been bleu de France with two white stripes.",
+
+
+        "3Q": "What type of people was Renault 4 intended for?",
+        "3P": "P3",
+
+       
+        "3-1": "Womens",
+        "3-2": "Taxi drivers",
+        "3-3": "Sport athletes",
+        "!3-4": "Farmers",
+        "3-5": "Politicians",
+
+        "tip3":"Renault made model 4 conducive especially to farmers and other people in rural areas.",
+
+
+        "4Q": "How much volume does Renault 5 Turbo engine have?",
+        "4P": "P4",
+       
+        "4-1": "1.0L",
+        "4-2": "1.2L",
+        "!4-3": "1.4L",
+        "4-4": "1.8L",
+        "4-5": "2.0L",
+
+        "tip4":"Renault 5 Turbo was originally designed for a rally racing.",
+
+
+        "5Q": "What is the name of the first European minivan?",
+        "5P": "P5",
+       
+        "!5-1": "Espace",
+        "5-2": "Koleos",
+        "5-3": "Captur",
+        "5-4": "Kangoo",
+        "5-5": "Scenic",
+
+        "tip5":"Today are minivans or monovolumenens knowns as MPVs.",
+
+
+        "6Q": "Which car Renault launched with rear-mounted V6 engine and rear-wheel-drive system?",
+        "6P": "P6",
+       
+        "6-1": "Laguna",
+        "6-2": "Megane",
+        "!6-3": "Clio",
+        "6-4": "Safrane",
+        "6-5": "Talisman",
+
+        "tip6":"These versions were low volume production making them very rare and valued car.",
+
+
+        "7Q": "Which was Renault's fastest front-wheel drive compact on Nurburgring Nordschleife",
+        "7P": "P7",
+       
+        "7-1": "Twingo Gordini",
+        "7-2": "Clio R.S.EDC Trophy",
+        "7-3": "Clio RS Akrapovič Limited Edition",
+        "!7-4": "Mégane R.S. Trophy",
+        "7-5": "Mégane GT",
+
+        "tip7":"Many versions of Mégane R.S. Trophy and Honda Civic Type-R change titles as the fastest vehicles in their category.",
+
+
+        "8Q": "Which Renault has been Europe's best-selling electric model for years?",
+        "8P": "P8",
+       
+        "8-1": "Clio",
+        "!8-2": "Zoe",
+        "8-3": "Twin'Z",
+        "8-4": "Twizy",
+        "8-5": "Twingo",
+
+        "tip8":"Apart from great sales results, Zoe received a five-star Euro NCAP 2013-rating.",
+
+
+        "9Q": "What stands out for Renault's INITIALE PARIS models?",
+        "9P": "P9",
+       
+        "!9-1": "The most luxurious equipment package",
+        "9-2": "Adjustable sport equipment package",
+        "9-3": "Place of production",
+        "9-4": "Advanced information and multimedia system",
+        "9-5": "Hybrid drive",
+
+        "tip9":"Renault Initiale Paris models features Nappa leather, sound insulation, Multi-Sense system, 4Control suspension, etc.",
+
+
+        "10Q": "Which model of the Alpine was reincarnated and released in 2017 by Renault?",
+        "10P": "P10",
+       
+        "10-1": "A106",
+        "10-2": "A108",
+        "!10-3": "A110",
+        "10-4": "A310",
+        "10-5": "A610",
+
+        "tip10":"The original Alpine A110 produced from 1961 to 1977.",
+    },
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "alfa-romeo",
+    "title": "Alfa Romeo kviz",
+    "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju Alfa Romea.",
+    "file": "data/quizzes/alfa-romeo.json",
+    "questionCount": 10
+  },
+  {
+    "id": "aston-martin",
+    "title": "Aston Martin kviz",
+    "description": "Provjeri koliko poznaješ povijest i modele brenda Aston Martin.",
+    "file": "data/quizzes/aston-martin.json",
+    "questionCount": 10
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "id": "alfa-romeo",
+  "title": "Alfa Romeo kviz",
+  "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju Alfa Romea.",
+  "questions": [
+    {
+      "question": "Koji talijanski grad predstavlja logo Alfa Romea?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P1.jpg",
+      "answers": [
+        "Modena",
+        "Torino",
+        "Milano",
+        "Rim",
+        "Napulj"
+      ],
+      "correctIndex": 2,
+      "tip": "Dana 24. lipnja 1910. u Milanu je osnovana tvrtka Anonima Lombarda Fabbrica Automobili."
+    },
+    {
+      "question": "Koji je prvi model Alfa Romea?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P2.jpg",
+      "answers": [
+        "GP1914",
+        "8C 2900B",
+        "Merosi",
+        "24HP",
+        "Torpedo 20–30"
+      ],
+      "correctIndex": 3,
+      "tip": "Model 24HP predstavljen je 1910. godine i imao je 4,1-litreni četverocilindrični motor."
+    },
+    {
+      "question": "Koju je oznaku Alfa Romeo od 1923. stavljao na svoje visokoperformansne modele?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P3.jpg",
+      "answers": [
+        "Targa Florio",
+        "Spider",
+        "Darracq",
+        "Mille Miglia",
+        "Quadrifoglio Verde"
+      ],
+      "correctIndex": 4,
+      "tip": "Zeleni četverolisni djetelina odaje počast preminulom vozaču Ugu Sivocciju."
+    },
+    {
+      "question": "Na kojem se konceptnom automobilu Alfa Romea prvi put pojavljuju vertikalna vrata?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P4.jpg",
+      "answers": [
+        "Alfetta",
+        "750 Competizione",
+        "Carabo",
+        "RL Targa Florio",
+        "33 Stradale"
+      ],
+      "correctIndex": 2,
+      "tip": "Dizajnerski studio Bertone zaslužan je za revolucionarna vrata i dizajn koncepta Carabo."
+    },
+    {
+      "question": "Koju je tehnologiju Alfa Romeo 156 JTD prvi put uveo kao osobni automobil?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P5.jpg",
+      "answers": [
+        "Common rail ubrizgavanje",
+        "Hidraulični servo upravljač",
+        "Recirkulacija ispušnih plinova",
+        "ABS sustav",
+        "Upravljanje na sva 4 kotača"
+      ],
+      "correctIndex": 0,
+      "tip": "Riječ je o elektronički kontroliranom visokotlačnom sustavu izravnog ubrizgavanja goriva za dizelske motore."
+    },
+    {
+      "question": "Koliko je primjeraka modela 8C Competizione proizvedeno zajedno sa Spider verzijom?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P6.jpg",
+      "answers": [
+        "50",
+        "500",
+        "1.000",
+        "5.000",
+        "10.000"
+      ],
+      "correctIndex": 2,
+      "tip": "Proizvedeno je samo 500 coupe izvedbi i 500 Spider izvedbi."
+    },
+    {
+      "question": "Na kojem je modelu baziran Disco Volante by Carrozzeria Touring?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P7.jpg",
+      "answers": [
+        "8C Competizione",
+        "Stelvio Quadrifoglio",
+        "Brera",
+        "Giulia Quadrifoglio",
+        "4C Competizione"
+      ],
+      "correctIndex": 0,
+      "tip": "Alfa Romeo 8C Competizione poslužio je kao osnova za šasiju, pogon i elektroničke sustave modernog Disco Volantea."
+    },
+    {
+      "question": "Kolika je masa Alfa Romea 4C bez tekućina za talijansko tržište?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P8.jpg",
+      "answers": [
+        "780 kg / 1720 lbs",
+        "895 kg / 1973 lbs",
+        "980 kg / 2160 lbs",
+        "1.115 kg / 2458 lbs",
+        "1.250 kg / 2755 lbs"
+      ],
+      "correctIndex": 1,
+      "tip": "Alfa Romeo 4C je iznimno lagan sportski automobil sa središnje smještenim motorom i pogonom na stražnje kotače."
+    },
+    {
+      "question": "Tko je autor V6 motora ugrađenog u Giuliu Quadrifoglio iz 2015.?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P9.jpg",
+      "answers": [
+        "Alfa Romeo",
+        "Abarth",
+        "Fiat",
+        "Maserati",
+        "Ferrari"
+      ],
+      "correctIndex": 4,
+      "tip": "Ferrari je posebno za Alfu dizajnirao 2.9L twin-turbo V6 motor od aluminija."
+    },
+    {
+      "question": "Kako se zove prvi Alfa Romeo SUV?",
+      "image": "assets/amk-kvizovi/alfa-romeo-pictures/P10.jpg",
+      "answers": [
+        "G1",
+        "952",
+        "MiTo",
+        "Stelvio",
+        "Quattroruote"
+      ],
+      "correctIndex": 3,
+      "tip": "Ime Stelvio dolazi od planinskog prijevoja Stelvio, poznatog po svojih 48 zavoja."
+    }
+  ]
+}

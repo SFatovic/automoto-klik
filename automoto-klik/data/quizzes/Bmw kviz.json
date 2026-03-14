@@ -1,0 +1,127 @@
+[ 
+    {
+        "Name": "BMW",
+        "Pic": "P0",
+        
+       
+        "1Q": "For what was BMW specialized before it began to make cars?",
+        "1P": "P1",
+       
+        "!1-1": "Aircraft engines",
+        "1-2": "Motorcycles",
+        "1-3": "Agricultural machinery",
+        "1-4": "Helicopters",
+        "1-5": "Submarines",
+
+        "tip1":"BMW first started producing aircraft engines, then motorcycles, and after that cars.",
+        
+
+        "2Q": "What is the name of the subsidiary of BMW AG that manufactures high-performance cars?",
+        "2P": "P2",
+       
+        "2-1": "Alpina",
+        "2-2": "Motorrad GmbH",
+        "!2-3": "M GmbH",
+        "2-4": "M Division",
+        "2-5": "BMW Driving Experience",
+
+        "tip2":"BMW M GmbH formerly was known as BMW Motorsport GmbH.",
+
+
+        "3Q": "What was the first generation of the BMW M3 model?",
+        "3P": "P3",
+
+       
+        "3-1": "E26",
+        "3-2": "E28",
+        "!3-3": "E30",
+        "3-4": "E36",
+        "3-5": "E46",
+
+        "tip3":"The BMW E30 is the second generation of BMW 3 Series.",
+
+
+        "4Q": "Which car in 1999 set a record for the fastest car of that time using BMW's V12 engine?",
+        "4P": "P4",
+       
+        "4-1": "Jaguar XJ220",
+        "4-2": "McLaren P1",
+        "4-3": "SSC Ultimate Aero",
+        "!4-4": "McLaren F1",
+        "4-5": "Hennessey Venom GT",
+
+        "tip4":"McLaren F1 achieved a top speed of 386.4km/h / 240.09mph.",
+
+
+        "5Q": "BMW Sauber F1 Team has competed in Formula 1 for four seasons, with the only one win coming from who?",
+        "5P": "P5",
+       
+        "5-1": "Mark Webber",
+        "!5-2": "Robert Kubica",
+        "5-3": "Ralf Schumacher",
+        "5-4": "Juan Pablo Montoya",
+        "5-5": "Jacques Villeneuve",
+
+        "tip5":"In June 2008, a Polish racing driver Robert Józef Kubica won the Canadian Grand Prix Formula 1 race.",
+
+
+        "6Q": "What is the volume of the naturally aspirated V10 engine built into the M5 E60?",
+        "6P": "P6",
+       
+        "6-1": "4.2L",
+        "6-2": "4.8L",
+        "!6-3": "5.0L",
+        "6-4": "5.2L",
+        "6-5": "5.5L",
+
+        "tip6":"This engine has won several International Engine of the Year awards.",
+
+
+        "7Q": "Which car was in 2017 set a Guinness world record for the Greatest distance vehicle drift?",
+        "7P": "P7",
+       
+        "7-1": "Z4 M",
+        "7-2": "M4 F82",
+        "7-3": "M6 F13",
+        "7-4": "M3 F80",
+        "!7-5": "M5 F90",
+
+        "tip7":"BMW test driver Johan Schwartz drift for 8 hours for this title.",
+
+
+        "8Q": "Which is the Bavarian manufacturer's first SUV?",
+        "8P": "P8",
+       
+        "8-1": "X1",
+        "8-2": "X3",
+        "8-3": "X4",
+        "!8-4": "X5",
+        "8-5": "X6",
+
+        "tip8":"BMW branded the X5 as a Sport Activity Vehicle (SAV) to emphasize its on-road ability.",
+
+
+        "9Q": "What is the first BMW front-wheel-drive model?",
+        "9P": "P9",
+       
+        "!9-1": "2 Active Tourer F45",
+        "9-2": "i3 IO1",
+        "9-3": "1 F20",
+        "9-4": "1 E87",
+        "9-5": "X1 F48",
+
+        "tip9":"The BMW 2 Series Active Tourer is compact Multi-Purpose Vehicle (MPV).",
+
+
+        "10Q": "What turbo engine drives the first plug-in hybrid sports model i8 next to an electric motor?",
+        "10P": "P10",
+       
+        "!10-1": "Petrol three-cylinder",
+        "10-2": "Petrol four-cylinder",
+        "10-3": "Petrol six-cylinder",
+        "10-4": "Diesel three-cylinder",
+        "10-5": "Diesel four-cylinder",
+
+        "tip10":"BMW i8 has won many independent Car of the Year awards.",
+    },
+]
