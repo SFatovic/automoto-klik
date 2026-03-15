@@ -8,12 +8,32 @@ const quizState = {
 document.addEventListener("DOMContentLoaded", initQuizPages);
 
 async function initQuizPages() {
-  if (document.getElementById("quizzesGrid")) {
-    await loadQuizListPage();
-  }
+  try {
+    if (document.getElementById("quizzesGrid")) {
+      await loadQuizListPage();
+    }
 
-  if (document.body.id === "quizPage") {
-    await loadSingleQuizPage();
+    if (document.body.id === "quizPage") {
+      await loadSingleQuizPage();
+    }
+  } catch (error) {
+    console.error("Greška pri inicijalizaciji kviz stranice:", error);
+
+    const grid = document.getElementById("quizzesGrid");
+    if (grid) {
+      grid.innerHTML = `
+        <div class="col-12">
+          <div class="info-box text-center">
+            <p class="mb-2"><strong>Kvizove trenutno nije moguće učitati.</strong></p>
+            <p class="mb-0">Provjeri koristiš li Live Server i postoji li datoteka <code>data/quizzes-manifest.json</code>.</p>
+          </div>
+        </div>
+      `;
+    }
+
+    if (document.body.id === "quizPage") {
+      renderQuizError("Kviz nije moguće učitati. Provjeri path do JSON datoteka i koristi lokalni server.");
+    }
   }
 }
 
@@ -21,7 +41,7 @@ async function fetchJson(path) {
   const response = await fetch(path);
 
   if (!response.ok) {
-    throw new Error(`Greška pri učitavanju: ${path}`);
+    throw new Error(`Greška pri učitavanju: ${path} (status ${response.status})`);
   }
 
   return response.json();
@@ -33,6 +53,17 @@ async function loadQuizListPage() {
 
   const grid = document.getElementById("quizzesGrid");
   if (!grid) return;
+
+  if (!Array.isArray(manifest) || manifest.length === 0) {
+    grid.innerHTML = `
+      <div class="col-12">
+        <div class="info-box text-center">
+          <p class="mb-0">Trenutno nema dostupnih kvizova u manifestu.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
 
   grid.innerHTML = manifest.map(quiz => `
     <div class="col-md-6 col-lg-4">
