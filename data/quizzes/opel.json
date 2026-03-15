@@ -1,0 +1,137 @@
+{
+  "id": "opel",
+  "title": "Opel kviz",
+  "description": "Provjeri koliko poznaješ Opel povijest, modele i motorsport.",
+  "questions": [
+    {
+      "question": "Kako se zvao osnivač marke Opel?",
+      "image": "assets/amk-kvizovi/opel-pictures/P1.jpg",
+      "answers": [
+        "Adam",
+        "Carl",
+        "Wilhelm",
+        "Sophie",
+        "Lutzmann"
+      ],
+      "correctIndex": 0,
+      "tip": "Adam Opel nije razvio nijedan automobil jer je tvrtka počela proizvoditi automobile nakon njegove smrti."
+    },
+    {
+      "question": "U kojem se njemačkom gradu nalazi Opelovo sjedište i razvojni centar?",
+      "image": "assets/amk-kvizovi/opel-pictures/P2.jpg",
+      "answers": [
+        "Rüdesheim",
+        "Hannover",
+        "Leipzig",
+        "Rüsselsheim",
+        "Bochum"
+      ],
+      "correctIndex": 3,
+      "tip": "Opel ima sestrinske brendove poput Vauxhalla u Velikoj Britaniji."
+    },
+    {
+      "question": "Koji je bio prvi Opel s turbopunjačem?",
+      "image": "assets/amk-kvizovi/opel-pictures/P3.jpg",
+      "answers": [
+        "Olympia",
+        "Rekord",
+        "Kapitän",
+        "Admiral",
+        "Kadett"
+      ],
+      "correctIndex": 1,
+      "tip": "Opelov prvi turbo motor bio je unaprijeđena verzija 2.3-litarskog dizela."
+    },
+    {
+      "question": "S kojim je brendom Opel razvio Omega model koji je bio najbrža limuzina 80-ih?",
+      "image": "assets/amk-kvizovi/opel-pictures/P4.jpg",
+      "answers": [
+        "General Motors",
+        "Chevrolet",
+        "Vauxhall",
+        "Isuzu",
+        "Lotus"
+      ],
+      "correctIndex": 4,
+      "tip": "Lotus Omega bio je poznat po izuzetno visokoj maksimalnoj brzini za limuzinu."
+    },
+    {
+      "question": "Kako se zvao Opelov prvi terenac?",
+      "image": "assets/amk-kvizovi/opel-pictures/P5.jpg",
+      "answers": [
+        "Monterey",
+        "Antara",
+        "Frontera",
+        "Mokka",
+        "Captiva"
+      ],
+      "correctIndex": 2,
+      "tip": "Opel Frontera razvijen je na platformi japanskog proizvođača Isuzu."
+    },
+    {
+      "question": "Koji model je nasljednik Opel Kadetta?",
+      "image": "assets/amk-kvizovi/opel-pictures/P6.jpg",
+      "answers": [
+        "Astra",
+        "Vectra",
+        "Corsa",
+        "Tigra",
+        "Insignia"
+      ],
+      "correctIndex": 0,
+      "tip": "Posljednji Kadett bio je model E, dok je Astra počela s generacijom F."
+    },
+    {
+      "question": "Kako se zove Opelov tvornički motorsport tim?",
+      "image": "assets/amk-kvizovi/opel-pictures/P7.jpg",
+      "answers": [
+        "Ecotec Team",
+        "Opel Adam AG",
+        "OPC",
+        "Opel Motorsport",
+        "GSi"
+      ],
+      "correctIndex": 3,
+      "tip": "Opel Motorsport radio je s partnerima poput Irmschera i Coswortha."
+    },
+    {
+      "question": "Koji motor koristi Insignia OPC?",
+      "image": "assets/amk-kvizovi/opel-pictures/P8.jpg",
+      "answers": [
+        "2.8 V6 Bi-turbo",
+        "2.8 V6 Turbo",
+        "2.0 16v",
+        "2.0 Turbo",
+        "2.0 Bi-turbo"
+      ],
+      "correctIndex": 1,
+      "tip": "Insignia postoji i u verziji Country Tourer s poboljšanim off-road sposobnostima."
+    },
+    {
+      "question": "Koja je grupacija kupila Opel od General Motorsa 2017. godine?",
+      "image": "assets/amk-kvizovi/opel-pictures/P9.jpg",
+      "answers": [
+        "Geely",
+        "Daimler-Benz",
+        "Volkswagen Group",
+        "Renault–Nissan–Mitsubishi",
+        "PSA"
+      ],
+      "correctIndex": 4,
+      "tip": "PSA se kasnije spojio s FCA i formirao Stellantis."
+    },
+    {
+      "question": "Koji koncept je predstavljen kao najava potpune elektrifikacije Opel modela?",
+      "image": "assets/amk-kvizovi/opel-pictures/P10.jpg",
+      "answers": [
+        "Speedster",
+        "Crossland X",
+        "GT X Experimental",
+        "PACE!",
+        "RAK-e"
+      ],
+      "correctIndex": 2,
+      "tip": "GT X Experimental pokazao je budući dizajnerski smjer Opela."
+    }
+  ]
+}

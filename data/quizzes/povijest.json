@@ -1,0 +1,125 @@
+{
+  "id": "povijest",
+  "title": "Povijest automobilske industrije",
+  "description": "Provjeri koliko poznaješ razvoj automobila kroz povijest.",
+  "questions": [
+    {
+      "question": "Koji je pogon koristio prvi tip vozila?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P1.jpg",
+      "answers": ["Električnu energiju", "Paru", "Dizel", "Benzin", "Vodik"],
+      "correctIndex": 1,
+      "tip": "Francuski izumitelj Nicolas-Joseph Cugnot izradio je prvo vozilo na paru."
+    },
+    {
+      "question": "Kakvi su motori Diesel i Otto?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P2.jpg",
+      "answers": [
+        "Vodikovi motori",
+        "Hibridni sustavi",
+        "Motori s unutarnjim izgaranjem",
+        "Električni motori",
+        "Parni motori"
+      ],
+      "correctIndex": 2,
+      "tip": "Motori s unutarnjim izgaranjem sagorijevaju gorivo unutar cilindra."
+    },
+    {
+      "question": "Tko je proizveo prvi motor s unutarnjim izgaranjem 1867.?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P3.jpg",
+      "answers": ["Ford", "Ferrari", "BMW", "Toyota", "Mercedes-Benz"],
+      "correctIndex": 4,
+      "tip": "Karl Benz razvio je i svjećicu, karburator i druge komponente."
+    },
+    {
+      "question": "Koji je automobil prvi proizveden na pokretnoj traci?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P4.jpg",
+      "answers": [
+        "Rolls-Royce Silver Cloud",
+        "VW Golf",
+        "Toyota A1",
+        "Ford T",
+        "Chevrolet Impala"
+      ],
+      "correctIndex": 3,
+      "tip": "Ford Model T učinio je automobile dostupnima širokim masama."
+    },
+    {
+      "question": "Gdje je postavljen prvi semafor 1914.?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P5.jpg",
+      "answers": [
+        "Cleveland, SAD",
+        "Detroit, SAD",
+        "Milano, Italija",
+        "Berlin, Njemačka",
+        "Tokyo, Japan"
+      ],
+      "correctIndex": 0,
+      "tip": "Nalazio se na križanju East 105th Street i Euclid Avenue."
+    },
+    {
+      "question": "Koji je model bio najprodavaniji automobil do 1997.?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P6.jpg",
+      "answers": [
+        "Toyota Corolla",
+        "VW Beetle",
+        "Ford Escort",
+        "Honda Civic",
+        "Opel Corsa"
+      ],
+      "correctIndex": 0,
+      "tip": "Corolla je proizvedena u više od deset generacija."
+    },
+    {
+      "question": "Koji je prvi masovno proizvedeni hibridni automobil?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P7.jpg",
+      "answers": [
+        "Fisker Karma",
+        "Tesla Model S",
+        "Chevrolet Volt",
+        "Toyota Prius",
+        "Nissan Leaf"
+      ],
+      "correctIndex": 3,
+      "tip": "Toyota Prius prodaje se u više od 90 država."
+    },
+    {
+      "question": "Koji je vozač bio prvi milijarder u svijetu motorsporta?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P8.jpg",
+      "answers": [
+        "Ken Block",
+        "Michael Schumacher",
+        "Lewis Hamilton",
+        "Sébastien Loeb",
+        "Valentino Rossi"
+      ],
+      "correctIndex": 1,
+      "tip": "Schumacher je legenda Formule 1 i Ferrarija."
+    },
+    {
+      "question": "Koji je prvi serijski automobil s više od 1000 KS?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P9.jpg",
+      "answers": [
+        "Mercedes 300SL",
+        "Hennessey Venom",
+        "Koenigsegg Agera",
+        "McLaren F1",
+        "Bugatti Veyron"
+      ],
+      "correctIndex": 4,
+      "tip": "Bugatti Veyron Super Sport držao je rekord brzine."
+    },
+    {
+      "question": "U kojoj državi je nastala tvrtka Rimac Automobili?",
+      "image": "assets/amk-kvizovi/povijest-pictures/P10.jpg",
+      "answers": [
+        "Slovenija",
+        "Hrvatska",
+        "Irska",
+        "Australija",
+        "Južnoafrička Republika"
+      ],
+      "correctIndex": 1,
+      "tip": "Rimac dolazi iz Svete Nedelje kraj Zagreba."
+    }
+  ]
+}

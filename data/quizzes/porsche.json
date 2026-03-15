@@ -1,0 +1,137 @@
+{
+  "id": "porsche",
+  "title": "Porsche kviz",
+  "description": "Provjeri koliko poznaješ Porsche povijest i legendarne modele.",
+  "questions": [
+    {
+      "question": "Tko je osnovao Porsche 1931.?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P1.jpg",
+      "answers": [
+        "Hans Dieter Pötsch",
+        "Wolfgang Porsche",
+        "Ferdinand Piëch",
+        "Ferry Porsche",
+        "Ferdinand Porsche"
+      ],
+      "correctIndex": 4,
+      "tip": "Ferdinand Porsche dobio je nagradu Car Engineer of the Century 1999."
+    },
+    {
+      "question": "Koji je Porsche Steve McQueen vozio u filmu Le Mans?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P2.jpg",
+      "answers": [
+        "804",
+        "904",
+        "908",
+        "917",
+        "936"
+      ],
+      "correctIndex": 3,
+      "tip": "Originalni automobil iz filma prodan je 2017. za 14 milijuna dolara."
+    },
+    {
+      "question": "Koji je prvi Porsche proizveden u više od 75.000 primjeraka?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P3.jpg",
+      "answers": [
+        "356",
+        "911",
+        "944",
+        "959",
+        "986"
+      ],
+      "correctIndex": 0,
+      "tip": "356 je bio dostupan kao coupé, roadster i cabriolet."
+    },
+    {
+      "question": "Kako se prvotno zvao model 911?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P4.jpg",
+      "answers": [
+        "901",
+        "991",
+        "GT",
+        "Boxer",
+        "Carrera"
+      ],
+      "correctIndex": 0,
+      "tip": "Peugeot je zaštitio sve troznamenkaste oznake s nulom u sredini."
+    },
+    {
+      "question": "Kako glasi nadimak Porschea 930 Turbo?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P5.jpg",
+      "answers": [
+        "Godzilla",
+        "Widowmaker",
+        "King of the Hill",
+        "Terminator",
+        "Screaming Chicken"
+      ],
+      "correctIndex": 1,
+      "tip": "Nadimak je dobio zbog zahtjevnog ponašanja pri vožnji."
+    },
+    {
+      "question": "Koji je posljednji zračno hlađeni 911?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P6.jpg",
+      "answers": [
+        "930",
+        "964",
+        "993",
+        "996",
+        "997"
+      ],
+      "correctIndex": 2,
+      "tip": "993 je bio prvi 911 sa šestostupanjskim mjenjačem."
+    },
+    {
+      "question": "Koji motor koristi Porsche Carrera GT?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P7.jpg",
+      "answers": [
+        "Turbo flat-6",
+        "Flat-8",
+        "Turbo V8",
+        "V10",
+        "V12"
+      ],
+      "correctIndex": 3,
+      "tip": "Motor je prvotno razvijen za F1 projekt početkom 90-ih."
+    },
+    {
+      "question": "Kako se zove Porscheov prvi SUV?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P8.jpg",
+      "answers": [
+        "Macan",
+        "Cayman",
+        "Carryman",
+        "Countryman",
+        "Cayenne"
+      ],
+      "correctIndex": 4,
+      "tip": "Cayenne je godinama bio najprodavaniji Porsche model."
+    },
+    {
+      "question": "Koja je najekstremnija cestovna verzija Porschea 911?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P9.jpg",
+      "answers": [
+        "911 R",
+        "Turbo S",
+        "Speedster",
+        "GT2 RS",
+        "GT3"
+      ],
+      "correctIndex": 3,
+      "tip": "GT2 RS je najbrži i najskuplji model u 911 liniji."
+    },
+    {
+      "question": "Kolika je početna cijena Porsche Taycan Turbo?",
+      "image": "assets/amk-kvizovi/porsche-pictures/P10.jpg",
+      "answers": [
+        "$40,700",
+        "$90,100",
+        "$150,900",
+        "$515,000",
+        "$1,100,000"
+      ],
+      "correctIndex": 2,
+      "tip": "Taycan je prvi serijski električni Porsche."
+    }
+  ]
+}

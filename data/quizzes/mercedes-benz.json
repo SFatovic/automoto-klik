@@ -1,0 +1,137 @@
+{
+  "id": "mercedes-benz",
+  "title": "Mercedes-Benz kviz",
+  "description": "Provjeri koliko poznaješ Mercedes povijest i tehnologiju.",
+  "questions": [
+    {
+      "question": "U kojem se gradu nalazi sjedište Mercedes-Benza?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P1.jpg",
+      "answers": [
+        "Stuttgart",
+        "München",
+        "Ingolstadt",
+        "Berlin",
+        "Rüsselsheim"
+      ],
+      "correctIndex": 0,
+      "tip": "Mercedes-Benz potječe iz izuma prvog benzinskog automobila Karla Benza."
+    },
+    {
+      "question": "Kako se nazivaju Mercedesovi trkaći automobili od 1930-ih?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P2.jpg",
+      "answers": [
+        "Sprinters",
+        "Longtails",
+        "Stars",
+        "Silver Arrows",
+        "Genschers"
+      ],
+      "correctIndex": 3,
+      "tip": "Prvi Silver Arrow bio je Mercedes W25."
+    },
+    {
+      "question": "Koji Mercedes ima Gullwing vrata?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P3.jpg",
+      "answers": [
+        "MB100",
+        "300SL",
+        "GT",
+        "W125",
+        "SLK"
+      ],
+      "correctIndex": 1,
+      "tip": "300SL bio je najbrži automobil na svijetu u vrijeme predstavljanja."
+    },
+    {
+      "question": "Kako se zove Mercedesov službeni tuning odjel?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P4.jpg",
+      "answers": [
+        "Maybach",
+        "Brabus",
+        "AMG",
+        "McLaren",
+        "Manhart"
+      ],
+      "correctIndex": 2,
+      "tip": "Najekstremnije AMG verzije nose oznaku Black Series."
+    },
+    {
+      "question": "Koja je najluksuznija Mercedes limuzina?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P5.jpg",
+      "answers": [
+        "A Class",
+        "E Class",
+        "R Class",
+        "S Class",
+        "Z Class"
+      ],
+      "correctIndex": 3,
+      "tip": "S Class ima i blindiranu verziju S Guard."
+    },
+    {
+      "question": "Koji Mercedes je bio najskuplji serijski automobil svog vremena?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P6.jpg",
+      "answers": [
+        "G650 Landaulet",
+        "SLS AMG",
+        "CLK GTR",
+        "Project One",
+        "SLR McLaren"
+      ],
+      "correctIndex": 2,
+      "tip": "CLK GTR nastao je kao homologacijski model za utrke."
+    },
+    {
+      "question": "Koja konfiguracija motora nikada nije korištena u G-Class modelu?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P7.jpg",
+      "answers": [
+        "Inline 6",
+        "V6",
+        "V8",
+        "V10",
+        "V12"
+      ],
+      "correctIndex": 3,
+      "tip": "G-Class proizvodi Magna Steyr u Grazu."
+    },
+    {
+      "question": "Koji model je 2004. predstavio koncept četverovratnog coupea?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P8.jpg",
+      "answers": [
+        "GLC Class",
+        "SLK Class",
+        "CL Class",
+        "GLA Class",
+        "CLS Class"
+      ],
+      "correctIndex": 4,
+      "tip": "CLS Shooting Brake bio je karavanska verzija tog modela."
+    },
+    {
+      "question": "Kako se zove Mercedesova linija električnih vozila?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P9.jpg",
+      "answers": [
+        "e-tron",
+        "EQ",
+        "MBUX",
+        "Vision",
+        "Bionic"
+      ],
+      "correctIndex": 1,
+      "tip": "Prvi koncept Generation EQ predstavljen je 2016."
+    },
+    {
+      "question": "Koliki motor ima AMG Project ONE?",
+      "image": "assets/amk-kvizovi/mercedes-benz-pictures/P10.jpg",
+      "answers": [
+        "0.9L",
+        "1.2L",
+        "1.6L",
+        "2.0L",
+        "2.4L"
+      ],
+      "correctIndex": 2,
+      "tip": "Motor je izravno inspiriran tehnologijom iz Formule 1."
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "mazda",
+  "title": "Mazda kviz",
+  "description": "Provjeri koliko poznaješ Mazda povijest, tehnologiju i modele.",
+  "questions": [
+    {
+      "question": "Po čemu je Mazda dobila ime?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P1.jpg",
+      "answers": [
+        "Po planini",
+        "Po bogu",
+        "Po gradu",
+        "Po životinji",
+        "Po osnivaču"
+      ],
+      "correctIndex": 1,
+      "tip": "Ime Mazda povezuje se s Ahura Mazdom, bogom svjetlosti."
+    },
+    {
+      "question": "Kako Mazda naziva svoju liniju naprednih tehnologija?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P2.jpg",
+      "answers": [
+        "Kodo",
+        "i-Activ",
+        "SkyActiv",
+        "Wankel",
+        "Zoom-Zoom"
+      ],
+      "correctIndex": 2,
+      "tip": "SkyActiv obuhvaća motore, mjenjače, karoseriju i šasiju."
+    },
+    {
+      "question": "Što u Mazdi označava KODO?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P3.jpg",
+      "answers": [
+        "Serijski model automobila",
+        "Način vožnje",
+        "Tehnologiju",
+        "Koncept",
+        "Dizajnersku filozofiju"
+      ],
+      "correctIndex": 4,
+      "tip": "Mazdina dizajnerska filozofija KODO znači Duša pokreta."
+    },
+    {
+      "question": "Koju je legendarnu trkaću stazu sponzorirala Mazda?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P4.jpg",
+      "answers": [
+        "Daytona",
+        "Spa-Francorchamps",
+        "Austin",
+        "Laguna Seca",
+        "Suzuka"
+      ],
+      "correctIndex": 3,
+      "tip": "Punih 17 godina staza je nosila naziv Mazda Raceway Laguna Seca."
+    },
+    {
+      "question": "Koji Mazda model ima vlastiti kup i prvenstvo?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P5.jpg",
+      "answers": [
+        "2",
+        "3",
+        "MX-5 Miata",
+        "RX-7",
+        "RX-8"
+      ],
+      "correctIndex": 2,
+      "tip": "Postoje natjecanja poput MX-5 Cupa i Spec Miata klase."
+    },
+    {
+      "question": "Što znači oznaka MPS u Mazdinoj nomenklaturi?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P6.jpg",
+      "answers": [
+        "Mazda Performance Series",
+        "Mazda Profile Sport",
+        "Mazda Pure Sport",
+        "Mazda Parking System",
+        "Mazda Power Start"
+      ],
+      "correctIndex": 0,
+      "tip": "MPS izvedbe postojale su kod Mazde 3 i Mazde 6."
+    },
+    {
+      "question": "Koju konfiguraciju motora koriste Mazda RX-7 i RX-8?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P7.jpg",
+      "answers": [
+        "V6",
+        "Wankel",
+        "W8",
+        "Boxer",
+        "VR6"
+      ],
+      "correctIndex": 1,
+      "tip": "Mazdini rotacijski motori poznati su po visokom omjeru snage i mase."
+    },
+    {
+      "question": "Koliki obujam ima motor Mazde RX-8?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P8.jpg",
+      "answers": [
+        "0.6 L",
+        "0.9 L",
+        "1.3 L",
+        "2.0 L",
+        "2.2 L"
+      ],
+      "correctIndex": 2,
+      "tip": "Motor u Mazdi RX-8 nosi naziv RENESIS."
+    },
+    {
+      "question": "Kako se zove najmanji Mazdin SUV predstavljen 2014. godine?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P9.jpg",
+      "answers": [
+        "CX",
+        "CX-0",
+        "CX-1",
+        "CX-2",
+        "CX-3"
+      ],
+      "correctIndex": 4,
+      "tip": "CX-3 dijeli platformu s modelom Mazda2 odnosno Demio."
+    },
+    {
+      "question": "Kako se zove jedinstveni Mazda koncept koji je izgorio tijekom fotografiranja za Top Gear?",
+      "image": "assets/amk-kvizovi/mazda-pictures/P10.jpg",
+      "answers": [
+        "Hakaze",
+        "Furai",
+        "Ryuga",
+        "Taiki",
+        "Nagare"
+      ],
+      "correctIndex": 1,
+      "tip": "Mazda Furai bila je izgubljena godinama prije nego što je potvrđeno što joj se dogodilo."
+    }
+  ]
+}

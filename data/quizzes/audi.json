@@ -1,0 +1,77 @@
+{
+  "id": "audi",
+  "title": "Audi kviz",
+  "description": "Testiraj svoje znanje o Audi automobilima i tehnologiji.",
+  "questions": [
+    {
+      "question": "Što predstavljaju četiri kruga u Audi logotipu?",
+      "image": "assets/amk-kvizovi/audi-pictures/P1.jpg",
+      "answers": ["Kotače", "Vozila", "Cilindre", "Gradove", "Kompanije"],
+      "correctIndex": 4,
+      "tip": "Četiri kompanije bile su Audi, DKW, Horch i Wanderer."
+    },
+    {
+      "question": "Kako se zove Audijev poznati sustav pogona na sve kotače?",
+      "image": "assets/amk-kvizovi/audi-pictures/P2.jpg",
+      "answers": ["RS", "Allroad", "S-Tronic", "quattro", "Avant"],
+      "correctIndex": 3,
+      "tip": "Naziv quattro se uvijek piše malim slovom zbog zaštitnog znaka."
+    },
+    {
+      "question": "Audi je 1993. razvio Audi Space Frame – laganu karoseriju od kojeg materijala?",
+      "image": "assets/amk-kvizovi/audi-pictures/P3.jpg",
+      "answers": ["Aluminij", "Karbon", "Čelik", "Plastika", "Konoplja"],
+      "correctIndex": 0,
+      "tip": "ASF tehnologija razvijena je kako bi se smanjila masa vozila s quattro pogonom."
+    },
+    {
+      "question": "Koji model je nasljednik Audi modela 80?",
+      "image": "assets/amk-kvizovi/audi-pictures/P4.jpg",
+      "answers": ["A3", "A4", "A6", "R8", "TT"],
+      "correctIndex": 1,
+      "tip": "S modelom A4 započinje nova nomenklatura Audijevih modela."
+    },
+    {
+      "question": "U kojem modelu se nalazi najjači serijski 5-cilindrični motor?",
+      "image": "assets/amk-kvizovi/audi-pictures/P5.jpg",
+      "answers": ["S1", "SQ7", "TT RS", "RS6", "R8"],
+      "correctIndex": 2,
+      "tip": "2.5 TFSI motor pokreće Audi TT RS s quattro pogonom i S-Tronic mjenjačem."
+    },
+    {
+      "question": "U kojoj karoserijskoj verziji je ponuđen prvi Audi RS4 (B5)?",
+      "image": "assets/amk-kvizovi/audi-pictures/P7.jpg",
+      "answers": ["Targa", "Coupe", "Karavan", "Kabriolet", "Limuzina"],
+      "correctIndex": 2,
+      "tip": "Audi svoje karavane naziva Avant."
+    },
+    {
+      "question": "Koji je prvi Audi serijski model s V12 TDI dizelskim motorom?",
+      "image": "assets/amk-kvizovi/audi-pictures/P8.jpg",
+      "answers": ["R8", "Q7", "Q8", "A6", "A8"],
+      "correctIndex": 1,
+      "tip": "Audi Q7 V12 TDI razvija čak 1000 Nm okretnog momenta."
+    },
+    {
+      "question": "Koji Audi SUV je najkasnije predstavljen na tržištu?",
+      "image": "assets/amk-kvizovi/audi-pictures/P9.jpg",
+      "answers": ["Q2", "Q3", "Q5", "Q7", "Q8"],
+      "correctIndex": 4,
+      "tip": "Audi Q8 razvijen je kao odgovor na BMW X6 i Mercedes GLE Coupe."
+    },
+    {
+      "question": "Na kojoj platformi je razvijen Audi R8?",
+      "image": "assets/amk-kvizovi/audi-pictures/P10.jpg",
+      "answers": ["Nissan GT-R", "Lamborghini Gallardo", "Bentley Continental GT", "Mercedes SLS AMG", "Porsche 911"],
+      "correctIndex": 1,
+      "tip": "Audi R8 je prvi serijski automobil s potpuno LED prednjim svjetlima."
+    },
+    {
+      "question": "Koji model je prvi dostupan s trećom razinom autonomne vožnje?",
+      "image": "assets/amk-kvizovi/audi-pictures/P6.jpg",
+      "answers": ["A8", "Q8", "e-tron", "RS7", "A6 Allroad"],
+      "correctIndex": 0,
+      "tip": "Audi A8 može samostalno voziti u prometnoj gužvi do oko 60 km/h."
+    }
+  ]
+}

@@ -1,127 +1,137 @@
-[ 
+{
+  "id": "ford",
+  "title": "Ford kviz",
+  "description": "Provjeri koliko poznaješ Ford povijest, modele i motorsport.",
+  "questions": [
     {
-        "Name": "Ford",
-        "Pic": "P0",
-        
-       
-        "1Q": "What technology was introduced by Henry Ford in car manufacturing?",
-        "1P": "P1",
-       
-        "1-1": "Laser welding",
-        "1-2": "Car lifts",
-        "1-3": "Pneumatic screwdriver",
-        "1-4": "Computerized electronic diagnostics",
-        "!1-5": "Assembly line",
-
-        "tip1":"Henry Ford revolutionized car manufacturing with assembly line.",
-        
-
-        "2Q": "How much Ford manufactured the T models?",
-        "2P": "P2",
-       
-        "2-1": "Less than 100",
-        "2-2": "1,000",
-        "2-3": "100,000",
-        "2-4": "1 milion",
-        "!2-5": "More than 10 milion",
-
-        "tip2":"The Model T was Ford's first mass-produced automobile, manufactured for 19 years.",
-
-
-        "3Q": "Which is the first car that won 24 Hours of Le Mans 4 times in a row?",
-        "3P": "P3",
-
-        "3-1": "Mustang",
-        "!3-2": "GT40",
-        "3-3": "GT70",
-        "3-4": "GT90",
-        "3-5": "RS200",
-
-        "tip3":"The GT40 model was made specially to break the dominance of the Ferrari in 24 Hours of Le Mans.",
-
-
-        "4Q": "Which generation of Ford Mustang did not have the GT version?",
-        "4P": "P4",
-       
-        "4-1": "1st",
-        "!4-2": "2nd",
-        "4-3": "3rd",
-        "4-4": "4th",
-        "4-5": "6th",
-
-        "tip4":"The most powerful models of Ford Mustang has the Shelby GT500 badge.",
-
-
-        "5Q": "By what engine configuration is Shelby Mustang known?",
-        "5P": "P5",
-       
-        "5-1": "Inline 4",
-        "5-2": "Inline 6",
-        "5-3": "V6",
-        "!5-4": "V8",
-        "5-5": "V10",
-
-        "tip5":"For generations, the Ford Mustang has used multiple types of powerful V8 engines.",
-
-
-        "6Q": "Which automotive engineering company, then owned by Ford, redesigned the Sierra and Escort models for rally racing?",
-        "6P": "P6",
-       
-        "6-1": "Shelby",
-        "6-2": "Lincoln",
-        "!6-3": "Cosworth",
-        "6-4": "SVT",
-        "6-5": "Hennessey",
-
-        "tip6":"Cosworth is well known as an engine donor to racing cars and Formula One teams.",
-
-
-        "7Q": "Which Ford model was the base for the first Monster truck?",
-        "7P": "P7",
-       
-        "!7-1": "F Series",
-        "7-2": "L Series",
-        "7-3": "Bronco",
-        "7-4": "Ranger",
-        "7-5": "Transit",
-
-        "tip7":"Bigfoot is the first Monster truck originally began as a 1974 Ford F-250 pickup that was modified by its owner Bob Chandler.",
-
-
-        "8Q": "How is named the highest-performance versions of the Ford Ranger and F-Series?",
-        "8P": "P8",
-       
-        "8-1": "Super Duty",
-        "8-2": "Super Snake",
-        "!8-3": "Raptor",
-        "8-4": "Cobra",
-        "8-5": "RS",
-
-        "tip8":"F-Series and Ranger Raptor spell FORD in the grille (last used by Ford in 1983).",
-
-
-        "9Q": "Which turbocharged gasoline engine series Ford started producing in 2009?",
-        "9P": "P9",
-       
-        "9-1": "Crossflow",
-        "9-2": "Duratec",
-        "9-3": "Ecotorq",
-        "!9-4": "EcoBoost",
-        "9-5": "EcoBlue",
-
-        "tip9":"EcoBoost engines are available as inline 3 and 4 cylinders and V6.",
-
-
-
-        "10Q": "Which model in 2019 Ford reincarnated as an SUV?",
-        "10P": "P10",
-       
-        "!10-1": "Puma",
-        "10-2": "Ka",
-        "10-3": "C-Max",
-        "10-4": "S-Max",
-        "10-5": "Falcon",
-
-        "tip10":"The new Puma SUV use mild-hybrid technology.",
+      "question": "Koju je tehnologiju Henry Ford uveo u proizvodnju automobila?",
+      "image": "assets/amk-kvizovi/ford-pictures/P1.jpg",
+      "answers": [
+        "Lasersko varenje",
+        "Auto dizalice",
+        "Pneumatski odvijač",
+        "Računalnu elektroničku dijagnostiku",
+        "Pokretnu proizvodnu traku"
+      ],
+      "correctIndex": 4,
+      "tip": "Henry Ford je revolucionirao proizvodnju automobila pokretnom proizvodnom trakom."
     },
-]
+    {
+      "question": "Koliko je Ford proizveo Model T primjeraka?",
+      "image": "assets/amk-kvizovi/ford-pictures/P2.jpg",
+      "answers": [
+        "Manje od 100",
+        "1.000",
+        "100.000",
+        "1 milijun",
+        "Više od 10 milijuna"
+      ],
+      "correctIndex": 4,
+      "tip": "Model T bio je Fordov prvi masovno proizvedeni automobil i proizvodio se 19 godina."
+    },
+    {
+      "question": "Koji je automobil prvi osvojio utrku 24 sata Le Mansa četiri puta zaredom?",
+      "image": "assets/amk-kvizovi/ford-pictures/P3.jpg",
+      "answers": [
+        "Mustang",
+        "GT40",
+        "GT70",
+        "GT90",
+        "RS200"
+      ],
+      "correctIndex": 1,
+      "tip": "Ford GT40 razvijen je kako bi prekinuo Ferrarijevu dominaciju na Le Mansu."
+    },
+    {
+      "question": "Koja generacija Ford Mustanga nije imala GT verziju?",
+      "image": "assets/amk-kvizovi/ford-pictures/P4.jpg",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "6."
+      ],
+      "correctIndex": 1,
+      "tip": "Najsnažniji Mustang modeli često nose oznaku Shelby GT500."
+    },
+    {
+      "question": "Po kojoj je konfiguraciji motora Shelby Mustang najpoznatiji?",
+      "image": "assets/amk-kvizovi/ford-pictures/P5.jpg",
+      "answers": [
+        "Redni 4-cilindraš",
+        "Redni 6-cilindraš",
+        "V6",
+        "V8",
+        "V10"
+      ],
+      "correctIndex": 3,
+      "tip": "Kroz generacije je Ford Mustang koristio više snažnih V8 motora."
+    },
+    {
+      "question": "Koja je inženjerska tvrtka, tada u vlasništvu Forda, preradila Sierru i Escort za reli utrke?",
+      "image": "assets/amk-kvizovi/ford-pictures/P6.jpg",
+      "answers": [
+        "Shelby",
+        "Lincoln",
+        "Cosworth",
+        "SVT",
+        "Hennessey"
+      ],
+      "correctIndex": 2,
+      "tip": "Cosworth je poznat po motorima za trkaće automobile i Formulu 1."
+    },
+    {
+      "question": "Koji je Ford model bio osnova za prvi Monster Truck?",
+      "image": "assets/amk-kvizovi/ford-pictures/P7.jpg",
+      "answers": [
+        "F Series",
+        "L Series",
+        "Bronco",
+        "Ranger",
+        "Transit"
+      ],
+      "correctIndex": 0,
+      "tip": "Bigfoot, prvi Monster Truck, nastao je na osnovi Ford F-250 pickupa iz 1974."
+    },
+    {
+      "question": "Kako se zovu najsnažnije izvedbe modela Ford Ranger i F-Series?",
+      "image": "assets/amk-kvizovi/ford-pictures/P8.jpg",
+      "answers": [
+        "Super Duty",
+        "Super Snake",
+        "Raptor",
+        "Cobra",
+        "RS"
+      ],
+      "correctIndex": 2,
+      "tip": "Raptor modeli imaju prepoznatljiv FORD natpis u maski hladnjaka."
+    },
+    {
+      "question": "Koju seriju turbo benzinskih motora je Ford počeo proizvoditi 2009.?",
+      "image": "assets/amk-kvizovi/ford-pictures/P9.jpg",
+      "answers": [
+        "Crossflow",
+        "Duratec",
+        "Ecotorq",
+        "EcoBoost",
+        "EcoBlue"
+      ],
+      "correctIndex": 3,
+      "tip": "EcoBoost motori dolaze kao trocilindraši, četverocilindraši i V6 motori."
+    },
+    {
+      "question": "Koji je model Ford 2019. vratio na tržište kao SUV?",
+      "image": "assets/amk-kvizovi/ford-pictures/P10.jpg",
+      "answers": [
+        "Puma",
+        "Ka",
+        "C-Max",
+        "S-Max",
+        "Falcon"
+      ],
+      "correctIndex": 0,
+      "tip": "Novi Ford Puma koristi mild-hybrid tehnologiju."
+    }
+  ]
+}

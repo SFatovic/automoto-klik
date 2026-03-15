@@ -1,0 +1,83 @@
+{
+  "id": "renault",
+  "title": "Renault kviz",
+  "description": "Provjeri koliko poznaješ Renault povijest i modele.",
+  "questions": [
+    {
+      "question": "S kim je Louis Renault osnovao svoju tvrtku i ostvario prve trkaće uspjehe?",
+      "image": "assets/amk-kvizovi/renault-pictures/P1.jpg",
+      "answers": ["Rođaci", "Sinovi", "Roditelji", "Supruga", "Braća"],
+      "correctIndex": 4,
+      "tip": "Renault je rano postao uspješan i u automobilskom sportu."
+    },
+    {
+      "question": "Koji konstruktor je obilježio Renaultovu trkaću povijest?",
+      "image": "assets/amk-kvizovi/renault-pictures/P2.jpg",
+      "answers": ["Amédée Gordini", "Thomas Evert", "Jean Rédélé", "Henri Pigozzi", "Fernando Alonso"],
+      "correctIndex": 0,
+      "tip": "Gordini automobili bili su poznati po plavoj boji s bijelim prugama."
+    },
+    {
+      "question": "Za koju skupinu ljudi je prvenstveno bio namijenjen Renault 4?",
+      "image": "assets/amk-kvizovi/renault-pictures/P3.jpg",
+      "answers": ["Žene", "Taksi vozači", "Sportaši", "Poljoprivrednici", "Političari"],
+      "correctIndex": 3,
+      "tip": "Renault 4 bio je posebno popularan u ruralnim područjima."
+    },
+    {
+      "question": "Koliki je obujam motora Renault 5 Turbo?",
+      "image": "assets/amk-kvizovi/renault-pictures/P4.jpg",
+      "answers": ["1.0L", "1.2L", "1.4L", "1.8L", "2.0L"],
+      "correctIndex": 2,
+      "tip": "Renault 5 Turbo razvijen je za rally natjecanja."
+    },
+    {
+      "question": "Kako se zvao prvi europski monovolumen?",
+      "image": "assets/amk-kvizovi/renault-pictures/P5.jpg",
+      "answers": ["Espace", "Koleos", "Captur", "Kangoo", "Scenic"],
+      "correctIndex": 0,
+      "tip": "Espace je jedan od prvih velikih MPV modela."
+    },
+    {
+      "question": "Koji Renault model imao je stražnje postavljen V6 motor i pogon na stražnje kotače?",
+      "image": "assets/amk-kvizovi/renault-pictures/P6.jpg",
+      "answers": ["Laguna", "Megane", "Clio", "Safrane", "Talisman"],
+      "correctIndex": 2,
+      "tip": "Clio V6 bio je vrlo rijedak i kolekcionarski model."
+    },
+    {
+      "question": "Koji Renault je držao rekord Nürburgringa za prednji pogon?",
+      "image": "assets/amk-kvizovi/renault-pictures/P7.jpg",
+      "answers": ["Twingo Gordini", "Clio RS EDC Trophy", "Clio RS Akrapovič", "Megane RS Trophy", "Megane GT"],
+      "correctIndex": 3,
+      "tip": "Megane RS često se borio za rekord s Hondom Civic Type R."
+    },
+    {
+      "question": "Koji Renault je godinama bio najprodavaniji električni automobil u Europi?",
+      "image": "assets/amk-kvizovi/renault-pictures/P8.jpg",
+      "answers": ["Clio", "Zoe", "Twin'Z", "Twizy", "Twingo"],
+      "correctIndex": 1,
+      "tip": "Zoe je dobio i Euro NCAP pet zvjezdica."
+    },
+    {
+      "question": "Što označava Renault oznaka Initiale Paris?",
+      "image": "assets/amk-kvizovi/renault-pictures/P9.jpg",
+      "answers": [
+        "Najluksuzniji paket opreme",
+        "Sportski paket opreme",
+        "Mjesto proizvodnje",
+        "Multimedijski sustav",
+        "Hibridni pogon"
+      ],
+      "correctIndex": 0,
+      "tip": "Initiale Paris nudi najviše razine luksuza u Renault modelima."
+    },
+    {
+      "question": "Koji Alpine model je Renault ponovno predstavio 2017.?",
+      "image": "assets/amk-kvizovi/renault-pictures/P10.jpg",
+      "answers": ["A106", "A108", "A110", "A310", "A610"],
+      "correctIndex": 2,
+      "tip": "Originalni A110 proizvodio se od 1961. do 1977."
+    }
+  ]
+}

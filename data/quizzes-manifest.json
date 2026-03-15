@@ -13,4 +13,109 @@
     "file": "data/quizzes/aston-martin.json",
     "questionCount": 10
   }
+  {
+    "id": "audi",
+    "title": "Audi kviz",
+    "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju marke Audi.",
+    "file": "data/quizzes/audi.json",
+    "questionCount": 10
+  },
+  {
+    "id": "bmw",
+    "title": "BMW kviz",
+    "description": "Testiraj svoje znanje o bavarskom gigantu i njihovim legendarnim modelima.",
+    "file": "data/quizzes/bmw.json",
+    "questionCount": 10
+  },
+  {
+    "id": "ferrari",
+    "title": "Ferrari kviz",
+    "description": "Koliko zapravo znaš o propetom konjiću i povijesti Formule 1?",
+    "file": "data/quizzes/ferrari.json",
+    "questionCount": 10
+  },
+  {
+    "id": "fiat",
+    "title": "Fiat kviz",
+    "description": "Provjeri svoje znanje o talijanskom simbolu i gradskim legendama.",
+    "file": "data/quizzes/fiat.json",
+    "questionCount": 10
+  },
+  {
+    "id": "ford",
+    "title": "Ford kviz",
+    "description": "Od Modela T do Mustanga, testiraj svoje znanje o Fordu.",
+    "file": "data/quizzes/ford.json",
+    "questionCount": 10
+  },
+  {
+    "id": "honda",
+    "title": "Honda kviz",
+    "description": "Saznaj koliko dobro poznaješ japansku preciznost i VTEC tehnologiju.",
+    "file": "data/quizzes/honda.json",
+    "questionCount": 10
+  },
+  {
+    "id": "lamborghini",
+    "title": "Lamborghini kviz",
+    "description": "Od traktora do superautomobila - provjeri znanje o biku iz Sant'Agate.",
+    "file": "data/quizzes/lamborghini.json",
+    "questionCount": 10
+  },
+  {
+    "id": "mazda",
+    "title": "Mazda kviz",
+    "description": "Koliko poznaješ Wankel motore i kultne Miate?",
+    "file": "data/quizzes/mazda.json",
+    "questionCount": 10
+  },
+  {
+    "id": "mclaren",
+    "title": "McLaren kviz",
+    "description": "Testiraj znanje o tehnološkom savršenstvu iz Wokinga.",
+    "file": "data/quizzes/mclaren.json",
+    "questionCount": 10
+  },
+  {
+    "id": "mercedes-benz",
+    "title": "Mercedes-Benz kviz",
+    "description": "Provjeri poznavanje 'srebrnih strijela' i luksuzne povijesti Mercedesa.",
+    "file": "data/quizzes/mercedes-benz.json",
+    "questionCount": 10
+  },
+  {
+    "id": "opel",
+    "title": "Opel kviz",
+    "description": "Koliko poznaješ bogatu povijest i modele njemačkog Opela?",
+    "file": "data/quizzes/opel.json",
+    "questionCount": 10
+  },
+  {
+    "id": "porsche",
+    "title": "Porsche kviz",
+    "description": "Provjeri svoje znanje o legendarnom modelu 911 i sportskim uspjesima.",
+    "file": "data/quizzes/porsche.json",
+    "questionCount": 10
+  },
+  {
+    "id": "povijest",
+    "title": "Povijest automobila",
+    "description": "Opći kviz o nastanku automobila i ključnim trenucima industrije.",
+    "file": "data/quizzes/povijest.json",
+    "questionCount": 10
+  },
+  {
+    "id": "renault",
+    "title": "Renault kviz",
+    "description": "Testiraj znanje o francuskom dizajnu i inovacijama Renaulta.",
+    "file": "data/quizzes/renault.json",
+    "questionCount": 10
+  },
+  {
+    "id": "volkswagen",
+    "title": "Volkswagen kviz",
+    "description": "Od Bube do Golfa - provjeri koliko poznaješ 'narodni auto'.",
+    "file": "data/quizzes/volkswagen.json",
+    "questionCount": 10
+  }
 ]

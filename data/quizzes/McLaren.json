@@ -1,128 +1,137 @@
-[ 
+{
+  "id": "mclaren",
+  "title": "McLaren kviz",
+  "description": "Provjeri koliko poznaješ McLaren povijest, Formulu 1 i superautomobile.",
+  "questions": [
     {
-        "Name": "McLaren",
-        "Pic": "P0",
-        
-       
-        "1Q": "Where is McLaren Technology Center located?",
-        "1P": "P1",
-       
-        "!1-1": "Woking",
-        "1-2": "Gaydon",
-        "1-3": "Crewe",
-        "1-4": "Goodwood",
-        "1-5": "Whitley",
-
-        "tip1":"McLaren Group is consists of McLaren Racing, McLaren Automotive, and McLaren Applied Technologies.",
-        
-
-        "2Q": "Which animal was an integral part of McLaren's first logo?",
-        "2P": "P2",
-       
-        "2-1": "Penguin",
-        "2-2": "Ostrich",
-        "2-3": "Eagle",
-        "!2-4": "Kiwi",
-        "2-5": "Sparrow",
-
-        "tip2":"McLaren founder Bruce Mclaren was from New Zeland, where Kiwi is a national animal.",
-
-
-        "3Q": "What abbreviation in the name does all the McLarens Formula 1 cars contain from 1981.?",
-        "3P": "P3",
-
-       
-        "3-1": "GT4",
-        "!3-2": "MP4",
-        "3-3": "MF4",
-        "3-4": "MM4",
-        "3-5": "FS4",
-
-        "tip3":"MP4 first stands for Marlboro Project 4, but now stands for McLaren Project 4.",
-
-
-
-        "4Q": "Whose V12 engine uses model F1, world's fastest naturally aspirated production car ever?",
-        "4P": "P4",
-       
-        "4-1": "Mercedes",
-        "4-2": "Jaguar",
-        "!4-3": "BMW",
-        "4-4": "Porsche",
-        "4-5": "Bentley",
-
-        "tip4":"F1 concept is conceived by legendary engineer and designer Gordon Murray.",
-
-        
-        "5Q": "With whom McLaren developed the SLR model?",
-        "5P": "P5",
-       
-        "5-1": "BMW",
-        "!5-2": "Mercedes",
-        "5-3": "Honda",
-        "5-4": "Williams",
-        "45-5": "Aston Martin",
-
-        "tip5":"There is a dedicated version of SLR made in honor of racing legend Sir Stirling Moss.",
-
-
-        "6Q": "Which is the first-ever production car wholly designed and built by McLaren Group?",
-        "6P": "P6",
-       
-        "6-1": "F1",
-        "6-2": "P1",
-        "6-3": "540C",
-        "!6-4": "12C",
-        "6-5": "675LT",
-
-        "tip6":"Launching of model 12C was in 2011, and it represents a new era for McLaren Automotive.",
-
- 
-        "7Q": "What engine configuration use hybrid Mclaren P1?",
-        "7P": "P9",
-       
-        "7-1": "W16",
-        "7-2": "V12",
-        "7-3": "V10",
-        "!7-4": "V8",
-        "7-5": "V6",
-
-        "tip7":"V8 engine used from 12C to P1 was originally developed for Nissan racing cars back in the 80s for Le Mans endurance races.",
-
-
-        "8Q": "What is the name of Mclaren's bespoke division, officially launched in 2011?",
-        "8P": "P8",
-       
-        "!8-1": "McLaren Special Operations",
-        "8-2": "McLaren Special Series",
-        "8-3": "McLaren Technology Group",
-        "8-4": "McLaren Production Centre",
-        "8-5": "Advanced Mclaren's Park",
-
-        "tip8":"MSO provides everything from bespoke customization options through to building ultra-exclusive limited-edition or one-off models.",
-
-
-        "9Q": "In honor of which Formula One driver McLaren introduced limited-production race car in 2017?",
-        "9P": "P9",
-       
-        "9-1": "Niki Lauda",
-        "9-2": "Lewis Hamilton",
-        "9-3": "Alain Prost",
-        "9-4": "Mika Häkkinen",
-        "!9-5": "Ayrton Senna",
-
-        "tip9":"McLaren Senna is the third addition in the McLaren Ultimate Series of vehicles.",
-
-
-        "10Q": "What is the primary purpose of Mclaren Speedtail?",
-        "10P": "P10",
-       
-        "10-1": "Passing curves at high speed",
-        "10-2": "Racing on the track",
-        "!10-3": "Achieving high speed",
-        "10-4": "Mastering the off-road terrain",
-        "10-5": "Long ride comfort",
-
-        "tip10":"Design of McLaren Speedtail is subordinate to achieving maximum speed.",
+      "question": "Gdje se nalazi McLaren Technology Centre?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P1.jpg",
+      "answers": [
+        "Woking",
+        "Gaydon",
+        "Crewe",
+        "Goodwood",
+        "Whitley"
+      ],
+      "correctIndex": 0,
+      "tip": "McLaren Group čine McLaren Racing, McLaren Automotive i McLaren Applied Technologies."
     },
-]
+    {
+      "question": "Koja je životinja bila važan dio prvog McLaren logotipa?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P2.jpg",
+      "answers": [
+        "Pingvin",
+        "Noj",
+        "Orao",
+        "Kivi",
+        "Vrabac"
+      ],
+      "correctIndex": 3,
+      "tip": "Bruce McLaren bio je s Novog Zelanda, gdje je kivi nacionalna životinja."
+    },
+    {
+      "question": "Koju kraticu nose svi McLaren Formula 1 bolidi od 1981. godine?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P3.jpg",
+      "answers": [
+        "GT4",
+        "MP4",
+        "MF4",
+        "MM4",
+        "FS4"
+      ],
+      "correctIndex": 1,
+      "tip": "MP4 je isprva značio Marlboro Project 4, a kasnije McLaren Project 4."
+    },
+    {
+      "question": "Čiji V12 motor koristi model F1, nekoć najbrži atmosferski serijski automobil na svijetu?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P4.jpg",
+      "answers": [
+        "Mercedes",
+        "Jaguar",
+        "BMW",
+        "Porsche",
+        "Bentley"
+      ],
+      "correctIndex": 2,
+      "tip": "Koncept McLarena F1 osmislio je legendarni Gordon Murray."
+    },
+    {
+      "question": "S kojim je proizvođačem McLaren razvio model SLR?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P5.jpg",
+      "answers": [
+        "BMW",
+        "Mercedes",
+        "Honda",
+        "Williams",
+        "Aston Martin"
+      ],
+      "correctIndex": 1,
+      "tip": "Postoji i posebna verzija SLR-a posvećena Stirlingu Mossu."
+    },
+    {
+      "question": "Koji je prvi serijski automobil koji je u cijelosti dizajnirao i proizveo McLaren Group?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P6.jpg",
+      "answers": [
+        "F1",
+        "P1",
+        "540C",
+        "12C",
+        "675LT"
+      ],
+      "correctIndex": 3,
+      "tip": "Model 12C iz 2011. označio je novo poglavlje za McLaren Automotive."
+    },
+    {
+      "question": "Koju konfiguraciju motora koristi hibridni McLaren P1?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P7.jpg",
+      "answers": [
+        "W16",
+        "V12",
+        "V10",
+        "V8",
+        "V6"
+      ],
+      "correctIndex": 3,
+      "tip": "V8 motor korišten od 12C do P1 vuče korijene iz razvoja za trkaće Nissan prototipove 80-ih."
+    },
+    {
+      "question": "Kako se zove McLarenov odjel za personalizaciju, službeno pokrenut 2011.?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P8.jpg",
+      "answers": [
+        "McLaren Special Operations",
+        "McLaren Special Series",
+        "McLaren Technology Group",
+        "McLaren Production Centre",
+        "Advanced McLaren Park"
+      ],
+      "correctIndex": 0,
+      "tip": "MSO nudi sve od personalizacije do izrade ultra-limitiranih i jednokratnih modela."
+    },
+    {
+      "question": "U čast kojem je Formula 1 vozaču McLaren 2017. predstavio limitirani model?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P9.jpg",
+      "answers": [
+        "Niki Lauda",
+        "Lewis Hamilton",
+        "Alain Prost",
+        "Mika Häkkinen",
+        "Ayrton Senna"
+      ],
+      "correctIndex": 4,
+      "tip": "McLaren Senna je treći model u McLaren Ultimate Series liniji."
+    },
+    {
+      "question": "Koja je glavna svrha modela McLaren Speedtail?",
+      "image": "assets/amk-kvizovi/mclaren-pictures/P10.jpg",
+      "answers": [
+        "Brz prolazak zavoja",
+        "Vožnja na stazi",
+        "Postizanje vrlo velike brzine",
+        "Vožnja izvan ceste",
+        "Udobnost na dugim putovanjima"
+      ],
+      "correctIndex": 2,
+      "tip": "Dizajn McLarena Speedtail u potpunosti je podređen maksimalnoj brzini."
+    }
+  ]
+}

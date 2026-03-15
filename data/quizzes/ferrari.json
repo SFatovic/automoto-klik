@@ -1,0 +1,137 @@
+{
+  "id": "ferrari",
+  "title": "Ferrari kviz",
+  "description": "Provjeri koliko poznaješ Ferrari povijest, modele i motorsport.",
+  "questions": [
+    {
+      "question": "U kojem je gradu Enzo Ferrari 1929. osnovao Scuderia Ferrari?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P1.jpg",
+      "answers": [
+        "Rim",
+        "Modena",
+        "Milano",
+        "Maranello",
+        "Torino"
+      ],
+      "correctIndex": 1,
+      "tip": "Ferrari tvornica se 1943. preselila u Maranello, gdje se i danas nalazi."
+    },
+    {
+      "question": "Kako se zvao prvi Ferrari namijenjen cestovnoj uporabi?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P2.jpg",
+      "answers": [
+        "125 S",
+        "212 Inter",
+        "375 MM",
+        "Dino",
+        "Testarossa"
+      ],
+      "correctIndex": 0,
+      "tip": "Enzo Ferrari je počeo graditi i prodavati cestovne automobile kako bi financirao Scuderia Ferrari."
+    },
+    {
+      "question": "Tko je najuspješniji Ferrarijev vozač u povijesti Svjetskog prvenstva Formule 1?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P5.jpg",
+      "answers": [
+        "Michael Schumacher",
+        "Alberto Ascari",
+        "Niki Lauda",
+        "Juan Manuel Fangio",
+        "Clay Regazzoni"
+      ],
+      "correctIndex": 0,
+      "tip": "Michael Schumacher je s Ferrarijem osvojio brojne Grand Prix utrke i naslove prvaka."
+    },
+    {
+      "question": "Kako se zove Ferrarijeva privatna testna staza?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P3.jpg",
+      "answers": [
+        "Scuderia Ferrari",
+        "Modena Autodrome",
+        "Fiorano Circuit",
+        "Autodromo Enzo e Dino Ferrari",
+        "Autodromo Nazionale Monza"
+      ],
+      "correctIndex": 2,
+      "tip": "Staza Fiorano ima 12 zavoja i duljinu od približno 3 km."
+    },
+    {
+      "question": "U kojem se gradu nalazi Ferrari World tematski park?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P4.jpg",
+      "answers": [
+        "Rim",
+        "Abu Dhabi",
+        "Moskva",
+        "Los Angeles",
+        "Hong Kong"
+      ],
+      "correctIndex": 1,
+      "tip": "Tamo se nalazi i jedan od najpoznatijih i najbržih rollercoastera na svijetu."
+    },
+    {
+      "question": "Koji je posljednji model čiji je razvoj nadgledao Enzo Ferrari?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P6.jpg",
+      "answers": [
+        "F40",
+        "F50",
+        "250 GTO",
+        "Enzo",
+        "458 Italia"
+      ],
+      "correctIndex": 0,
+      "tip": "F40 je obilježio 40. godišnjicu Ferrarija i bio je jedan od najposebnijih modela marke."
+    },
+    {
+      "question": "U koliko je primjeraka proizveden Ferrari Enzo?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P7.jpg",
+      "answers": [
+        "11",
+        "99",
+        "400",
+        "501",
+        "1110"
+      ],
+      "correctIndex": 2,
+      "tip": "Ferrari Enzo predstavljen je 2002. i koristio je mnogo tehnologije iz Formule 1."
+    },
+    {
+      "question": "Koji od navedenih modela nema V12 motor?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P8.jpg",
+      "answers": [
+        "812 Superfast",
+        "599 GTO",
+        "612 Scaglietti",
+        "LaFerrari",
+        "SF90 Stradale"
+      ],
+      "correctIndex": 4,
+      "tip": "Ferrari SF90 Stradale je plug-in hibrid s twin-turbo V8 motorom i tri elektromotora."
+    },
+    {
+      "question": "Koji je Ferrarijev prvi serijski model s pogonom na sva četiri kotača?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P9.jpg",
+      "answers": [
+        "GTC4Lusso",
+        "Mondial Quattrovalvole",
+        "Purosangue",
+        "308 GT4",
+        "FF"
+      ],
+      "correctIndex": 4,
+      "tip": "Ferrarijev sustav 4RM aktivira se samo u određenim voznim programima."
+    },
+    {
+      "question": "Kolika je bila cijena novog LaFerrarija, prvog Ferrarijevog hibrida?",
+      "image": "assets/amk-kvizovi/ferrari-pictures/P10.jpg",
+      "answers": [
+        "150.000 €",
+        "580.000 €",
+        "1,2 milijuna €",
+        "3,9 milijuna €",
+        "9,6 milijuna €"
+      ],
+      "correctIndex": 2,
+      "tip": "LaFerrari je limitirani model i njegova vrijednost je s vremenom dodatno rasla."
+    }
+  ]
+}

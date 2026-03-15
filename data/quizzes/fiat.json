@@ -1,0 +1,137 @@
+{
+  "id": "fiat",
+  "title": "Fiat kviz",
+  "description": "Provjeri koliko poznaješ Fiat povijest, modele i povezane brendove.",
+  "questions": [
+    {
+      "question": "Tko je 1899. osnovao tvrtku Fiat?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P1.jpg",
+      "answers": [
+        "Sergio Marchionne",
+        "Alessandro Nasi",
+        "Giovanni Agnelli",
+        "John Elkann",
+        "Edoardo Agnelli"
+      ],
+      "correctIndex": 2,
+      "tip": "Giovanni Agnelli vodio je kompaniju od osnutka pa sve do svoje smrti."
+    },
+    {
+      "question": "U kojem je talijanskom gradu osnovan Fiat?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P2.jpg",
+      "answers": [
+        "Rim",
+        "Milano",
+        "Napulj",
+        "Bologna",
+        "Torino"
+      ],
+      "correctIndex": 4,
+      "tip": "Ime FIAT dolazi od Fabbrica Italiana Automobili Torino."
+    },
+    {
+      "question": "U koliko je primjeraka proizveden prvi Fiat 4 HP model?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P3.jpg",
+      "answers": [
+        "4",
+        "24",
+        "2.400",
+        "24.000",
+        "40.200"
+      ],
+      "correctIndex": 1,
+      "tip": "Fiat 4 HP poznat je i pod nazivom 3½HP odnosno 3½CV."
+    },
+    {
+      "question": "Koji je Fiat prvi osvojio nagradu Europski automobil godine?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P4.jpg",
+      "answers": [
+        "Fiat 1500",
+        "Fiat Uno",
+        "Fiat Tipo",
+        "Fiat 124",
+        "Fiat 127"
+      ],
+      "correctIndex": 3,
+      "tip": "Fiat 124 osvojio je nagradu Europski automobil godine 1966."
+    },
+    {
+      "question": "S kojom je tvrtkom Fiat formirao grupaciju FCA?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P5.png",
+      "answers": [
+        "Chrysler",
+        "Citroën",
+        "Cadillac",
+        "Chevrolet",
+        "Caterham"
+      ],
+      "correctIndex": 0,
+      "tip": "FCA znači Fiat Chrysler Automobiles."
+    },
+    {
+      "question": "Koji od navedenih brendova nikada nije bio u vlasništvu Fiat Grupe?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P6.jpg",
+      "answers": [
+        "Lancia",
+        "Alfa Romeo",
+        "Maserati",
+        "Lamborghini",
+        "Ferrari"
+      ],
+      "correctIndex": 3,
+      "tip": "Fiat grupa posjedovala je više automobilskih brendova, ali ne i Lamborghini."
+    },
+    {
+      "question": "Koja je ovlaštena tuning tvrtka specijalizirana za doradu Fiat modela?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P7.jpg",
+      "answers": [
+        "Alpina",
+        "Abarth",
+        "Malossi",
+        "Polini",
+        "Zagato"
+      ],
+      "correctIndex": 1,
+      "tip": "Abarth je u počecima bio neovisni proizvođač trkaćih i cestovnih automobila."
+    },
+    {
+      "question": "Koji je od ovih Fiat modela bio kabriolet?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P8.jpg",
+      "answers": [
+        "Cinquecento",
+        "Seicento",
+        "Barchetta",
+        "Fiorino",
+        "Palio"
+      ],
+      "correctIndex": 2,
+      "tip": "Barchetta na talijanskom znači mali brod, ali i označava tip otvorenog sportskog automobila."
+    },
+    {
+      "question": "U suradnji s kojim luksuznim proizvođačem brodova je Fiat dizajnirao posebnu seriju modela Fiat 500?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P9.jpg",
+      "answers": [
+        "Azimut",
+        "Ferretti",
+        "Absolute",
+        "Pershing",
+        "Riva"
+      ],
+      "correctIndex": 4,
+      "tip": "Fiat 500 Riva imao je posebnu Sera Blue boju i interijer s detaljima od mahagonija."
+    },
+    {
+      "question": "Koja je uloga odjela unutar kompanije pod nazivom FCA Heritage?",
+      "image": "assets/amk-kvizovi/fiat-pictures/P10.jpg",
+      "answers": [
+        "Restauracija kultnih vozila",
+        "Recikliranje starih vozila",
+        "Obuka stručnog osoblja",
+        "Razvoj novih tehnologija",
+        "Novi trkaći odjel"
+      ],
+      "correctIndex": 0,
+      "tip": "Heritage odjel stvoren je kako bi čuvao i valorizirao povijest marki Alfa Romeo, Fiat, Lancia i Abarth."
+    }
+  ]
+}

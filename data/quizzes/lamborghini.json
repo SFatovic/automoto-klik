@@ -1,0 +1,137 @@
+{
+  "id": "lamborghini",
+  "title": "Lamborghini kviz",
+  "description": "Provjeri koliko poznaješ Lamborghini povijest, modele i tehnologiju.",
+  "questions": [
+    {
+      "question": "U kojem je gradiću Ferruccio Lamborghini 1963. osnovao Automobili Lamborghini S.p.A.?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P1.jpg",
+      "answers": [
+        "Modena",
+        "San Marino",
+        "Sant'Agata",
+        "Sanremo",
+        "Portofino"
+      ],
+      "correctIndex": 2,
+      "tip": "Ferruccio Lamborghini bio je cijenjeni talijanski industrijalac i poduzetnik."
+    },
+    {
+      "question": "Za što je Lamborghini bio specijaliziran prije nego što je počeo proizvoditi automobile?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P2.jpg",
+      "answers": [
+        "Podmornice",
+        "Traktore",
+        "Motocikle",
+        "Avione",
+        "Tenkove"
+      ],
+      "correctIndex": 1,
+      "tip": "Kasnije se Ferruccio Lamborghini, nakon prodaje većine poslova, posvetio vinarstvu."
+    },
+    {
+      "question": "Koji je Lamborghini svojedobno postao najbrži serijski cestovni automobil na svijetu?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P3.jpg",
+      "answers": [
+        "350GT",
+        "Miura",
+        "Espada",
+        "Jalpa",
+        "Murciélago"
+      ],
+      "correctIndex": 1,
+      "tip": "Miura se smatra prvim pravim superautomobilom sa središnje smještenim motorom."
+    },
+    {
+      "question": "Na kojem su se Lamborghiniju prvi put pojavila poznata 'Lambo' vrata?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P4.jpg",
+      "answers": [
+        "400GT",
+        "Islero",
+        "Countach",
+        "Silhouette",
+        "Diablo"
+      ],
+      "correctIndex": 2,
+      "tip": "Bertone je s Countachom popularizirao oštro uglati dizajn i ta prepoznatljiva vrata."
+    },
+    {
+      "question": "Koji proizvođač ima ekskluzivni ugovor za isporuku guma novim Lamborghinijima?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P5.jpg",
+      "answers": [
+        "Pirelli",
+        "Goodyear",
+        "Continental",
+        "Toyo",
+        "Yokohama"
+      ],
+      "correctIndex": 0,
+      "tip": "Partnerstvo Lamborghinija i Pirellija obilježeno je i posebnom Aventador Pirelli Edition izvedbom."
+    },
+    {
+      "question": "Koji od ovih modela nema V12 motor?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P6.jpg",
+      "answers": [
+        "Centenario",
+        "Diablo",
+        "Reventón",
+        "Gallardo",
+        "Murciélago"
+      ],
+      "correctIndex": 3,
+      "tip": "Gallardo s V10 motorom bio je Lamborghinijev dugogodišnji bestseller."
+    },
+    {
+      "question": "Koji Lamborghini koncept ima samo jedno sjedalo?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P7.jpg",
+      "answers": [
+        "Egoista",
+        "Sesto Elemento",
+        "Veneno",
+        "Estoque",
+        "Centenario Roadster"
+      ],
+      "correctIndex": 0,
+      "tip": "Naziv Egoista doslovno znači sebičan."
+    },
+    {
+      "question": "Koji je prvi Lamborghini koncept s hibridnom tehnologijom?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P8.jpg",
+      "answers": [
+        "Huracán Performante",
+        "Terzo Millennio",
+        "Centenario",
+        "Sián",
+        "Asterion"
+      ],
+      "correctIndex": 4,
+      "tip": "Asterion je nazvan po mitološkom biću, čuvajući tradiciju imena povezanih s bikovima."
+    },
+    {
+      "question": "Koja izvedba Lamborghini Aventadora ne postoji?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P9.jpg",
+      "answers": [
+        "Aventador J",
+        "SuperVeloce Jota Roadster",
+        "Miura Homage",
+        "Pirelli Edition",
+        "Superleggera"
+      ],
+      "correctIndex": 4,
+      "tip": "Oznaka Superleggera rezervirana je za Lamborghini Gallardo."
+    },
+    {
+      "question": "Kako se zove Lamborghinijev prvi Super SUV model?",
+      "image": "assets/amk-kvizovi/lamborghini-pictures/P10.jpg",
+      "answers": [
+        "LM002",
+        "Stelvio",
+        "Bentayga",
+        "Urus",
+        "Aventador"
+      ],
+      "correctIndex": 3,
+      "tip": "Urus koristi 4.0-litreni twin-turbo V8 motor."
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "honda",
+  "title": "Honda kviz",
+  "description": "Provjeri koliko poznaješ Honda povijest, tehnologiju i modele.",
+  "questions": [
+    {
+      "question": "Koji je bio Hondin prvi proizvod?",
+      "image": "assets/amk-kvizovi/honda-pictures/P1.jpg",
+      "answers": [
+        "Uređaj za klimatizaciju",
+        "Bicikl s motorom",
+        "Motocikl",
+        "Automobil",
+        "Robot"
+      ],
+      "correctIndex": 1,
+      "tip": "Prije proizvodnje motocikala osnivač Honde proizvodio je klipne prstenove za automobile."
+    },
+    {
+      "question": "Što je VTEC?",
+      "image": "assets/amk-kvizovi/honda-pictures/P2.jpg",
+      "answers": [
+        "Vrsta automatskog mjenjača",
+        "Sustav deaktivacije cilindara",
+        "Elektronički sustav kontrole gasa",
+        "Sustav varijabilnog otvaranja ventila",
+        "Sustav ubrzanja vozila"
+      ],
+      "correctIndex": 3,
+      "tip": "Rezultat VTEC-a su bolje performanse pri visokim okretajima i manja potrošnja pri nižim."
+    },
+    {
+      "question": "Kako se zove tuning kuća zadužena za unapređenje Honda vozila i originalnih dijelova?",
+      "image": "assets/amk-kvizovi/honda-pictures/P3.jpg",
+      "answers": [
+        "HondaJet",
+        "Type",
+        "ASIMO",
+        "Mugen",
+        "Acura"
+      ],
+      "correctIndex": 3,
+      "tip": "Mugen je osnovao Hirotoši Honda, sin osnivača Honda Motor Companyja Soichira Honde."
+    },
+    {
+      "question": "Koju oznaku nose Hondini najbrži cestovni modeli?",
+      "image": "assets/amk-kvizovi/honda-pictures/P4.jpg",
+      "answers": [
+        "CBR",
+        "CBX",
+        "Type R",
+        "Type S",
+        "DOHC"
+      ],
+      "correctIndex": 2,
+      "tip": "Type R modeli prvotno su zamišljeni isključivo za stazu."
+    },
+    {
+      "question": "Koju je inovativnu tehnologiju za osobna vozila uveo Honda Prelude?",
+      "image": "assets/amk-kvizovi/honda-pictures/P5.jpg",
+      "answers": [
+        "ABS kočenje",
+        "Zakretna prednja svjetla",
+        "Sustav pomoći pri kretanju uzbrdo",
+        "Tempomat",
+        "Upravljanje na sva četiri kotača"
+      ],
+      "correctIndex": 4,
+      "tip": "Testovi iz 1987. pokazali su da je Honda Prelude 2.0Si 4WS bila iznimno uspješna u slalomu."
+    },
+    {
+      "question": "U kojoj je kategoriji Honda S2000 osvojila 5 nagrada International Engine of the Year zaredom?",
+      "image": "assets/amk-kvizovi/honda-pictures/P6.jpg",
+      "answers": [
+        "2.0 do 2.5 L",
+        "1.8 do 2.0 L",
+        "1.4 do 1.8 L",
+        "Performansni motor",
+        "Motor za ekonomičnu potrošnju"
+      ],
+      "correctIndex": 1,
+      "tip": "Honda S2000 poznata je po iznimno visokoj specifičnoj snazi svog motora."
+    },
+    {
+      "question": "Koji je od navedenih Honda modela najprodavaniji u svijetu?",
+      "image": "assets/amk-kvizovi/honda-pictures/P7.jpg",
+      "answers": [
+        "CR-V",
+        "HR-V",
+        "FR-V",
+        "WR-V",
+        "BR-V"
+      ],
+      "correctIndex": 0,
+      "tip": "CR-V je jedan od najuspješnijih SUV modela u povijesti Honde."
+    },
+    {
+      "question": "Koja je generacija Honde Accord predstavljena 2018. godine?",
+      "image": "assets/amk-kvizovi/honda-pictures/P8.jpg",
+      "answers": [
+        "3.",
+        "4.",
+        "7.",
+        "8.",
+        "10."
+      ],
+      "correctIndex": 4,
+      "tip": "Honda Accord je kroz razna tržišta nudila izvedbe poput coupea, karavana, hatchbacka i crossovera."
+    },
+    {
+      "question": "Kako se zove Hondin najnagrađivaniji ekološki hibridni model?",
+      "image": "assets/amk-kvizovi/honda-pictures/P9.jpg",
+      "answers": [
+        "FCX Clarity",
+        "Accord LX",
+        "Insight",
+        "Jazz",
+        "NSX"
+      ],
+      "correctIndex": 2,
+      "tip": "Honda Insight bila je prvi Hondin model sa sustavom Integrated Motor Assist."
+    },
+    {
+      "question": "Koliko elektromotora ima druga generacija NSX uz 3.5-litreni twin-turbo V6 motor?",
+      "image": "assets/amk-kvizovi/honda-pictures/P10.jpg",
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctIndex": 3,
+      "tip": "Druga generacija NSX koristi kompleksan hibridni pogonski sustav s tri elektromotora."
+    }
+  ]
+}

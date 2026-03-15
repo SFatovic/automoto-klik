@@ -1,0 +1,95 @@
+{
+  "id": "volkswagen",
+  "title": "Volkswagen kviz",
+  "description": "Provjeri koliko poznaješ Volkswagen povijest i modele.",
+  "questions": [
+    {
+      "question": "Kako se prevodi naziv Volkswagen?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P1.jpg",
+      "answers": [
+        "Komercijalni automobil",
+        "Automobil za svakoga",
+        "To je automobil",
+        "Narodni automobil",
+        "Tvoj automobil"
+      ],
+      "correctIndex": 3,
+      "tip": "Volkswagen doslovno znači narodni automobil."
+    },
+    {
+      "question": "Do koje godine se proizvodio originalni VW Beetle (Type 1)?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P2.jpg",
+      "answers": ["1978", "1980", "1999", "2003", "2015"],
+      "correctIndex": 3,
+      "tip": "Posljednji Beetle proizveden je u Meksiku."
+    },
+    {
+      "question": "Koja skupina ljudi je popularizirala VW Type 2 kombi?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P3.jpg",
+      "answers": ["Hipiji", "Političari", "Nogometaši", "Trkači", "Gangsteri"],
+      "correctIndex": 0,
+      "tip": "Type 2 kombiji često su bili oslikani šarenim motivima."
+    },
+    {
+      "question": "Koliki je motor imao Golf 1 GTI?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P4.jpg",
+      "answers": ["1.0", "1.2", "1.6", "1.9", "2.0"],
+      "correctIndex": 2,
+      "tip": "Golf GTI je pokrenuo popularnost hot-hatch klase."
+    },
+    {
+      "question": "Koji je najprodavaniji Volkswagen model?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P5.jpg",
+      "answers": ["Beetle", "Golf", "Passat", "Caddy", "Transporter"],
+      "correctIndex": 1,
+      "tip": "Golf je često referentni model u kompaktnoj klasi."
+    },
+    {
+      "question": "Koji je prvi model razvijen u Volkswagen R diviziji?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P6.jpg",
+      "answers": [
+        "Golf IV R32",
+        "Golf V R32",
+        "Polo R WRC",
+        "Scirocco R",
+        "Passat R36"
+      ],
+      "correctIndex": 0,
+      "tip": "Golf R32 imao je DSG mjenjač među prvima."
+    },
+    {
+      "question": "Koju oznaku je dobio Touareg nakon R divizije?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P7.jpg",
+      "answers": ["R36", "R40", "R42", "R50", "R60"],
+      "correctIndex": 3,
+      "tip": "R50 označava 5.0 V10 TDI motor."
+    },
+    {
+      "question": "Koji Volkswagen motor je više godina zaredom osvajao nagradu Engine of the Year?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P8.jpg",
+      "answers": [
+        "3.2 VR6",
+        "2.0 TFSI",
+        "1.9 TDI",
+        "1.4 TSI Twincharger",
+        "1.0 12v"
+      ],
+      "correctIndex": 3,
+      "tip": "Motor se koristio i u Audi, Seat i Škoda modelima."
+    },
+    {
+      "question": "Kako se zove Volkswagen pickup predstavljen 2010.?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P9.jpg",
+      "answers": ["Touareg", "T-Cross", "Amarok", "Caddy", "Sharan"],
+      "correctIndex": 2,
+      "tip": "Amarok je dio Volkswagen Commercial Vehicles linije."
+    },
+    {
+      "question": "Kako Volkswagen naziva svoju obitelj električnih vozila?",
+      "image": "assets/amk-kvizovi/volkswagen-pictures/P10.png",
+      "answers": ["E-Vision", "BlueMotion", "Multi Collision", "Innovision", "ID."],
+      "correctIndex": 4,
+      "tip": "Prvi ID koncept prikazan je na Paris Motor Showu 2016."
+    }
+  ]
+}
