@@ -672,10 +672,37 @@ a {
   padding: 6px;
 }
 
+/* ========================================
+  o projektu
+======================================== */
+
+.about-card {
+  padding: 32px;
+}
+
 .about-card p {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.75;
+}
+
+.contact-box-title {
+  font-family: "Genos", sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.contact-box-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.contact-divider {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 28px 0;
 }
 
 @media (max-width: 768px) {
@@ -690,4 +717,17 @@ a {
     margin-right: 16px;
     display: inline-block;
   }
+}
+.btn-linkedin {
+  background: #0a66c2;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-linkedin:hover {
+  background: #084e96;
+  color: #fff;
+  transform: translateY(-1px);
 }

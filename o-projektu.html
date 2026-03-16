@@ -6,7 +6,7 @@
   <title>O projektu | AutoMoto KLIK</title>
   <meta
     name="description"
-    content="Saznaj više o projektu AutoMoto KLIK i pošalji upit putem kontakt forme."
+    content="Saznaj više o projektu AutoMoto KLIK i kontaktiraj nas putem emaila ili LinkedIna."
   />
 
   <link
@@ -44,7 +44,7 @@
   <main>
     <section class="tools-section py-5">
       <div class="container">
-        <div class="row g-4 align-items-stretch">
+        <div class="row g-4">
 
           <div class="col-lg-6">
             <div class="info-box h-100 about-card">
@@ -68,59 +68,44 @@
           <div class="col-lg-6">
             <div class="custom-card h-100">
               <div class="card-body-custom">
-                <div class="mb-4">
-                  <p class="small-label mb-2">Kontakt</p>
-                  <h2 class="section-title mb-2">Pošalji poruku</h2>
-                  <p class="section-subtitle mb-0">
-                    Imaš prijedlog, pitanje ili ideju za suradnju? Pošalji poruku putem obrasca.
+                <p class="small-label mb-2">Kontakt</p>
+                <h2 class="section-title mb-3">Javi se</h2>
+                <p class="section-subtitle mb-4">
+                  Imaš prijedlog, pitanje ili ideju za suradnju? Možeš se javiti putem emaila
+                  ili preko LinkedIna.
+                </p>
+
+                <div class="contact-box">
+                  <h3 class="contact-box-title">Email kontakt</h3>
+                  <p class="contact-box-text">
+                    Klikni na gumb ispod, kopiraj email adresu i pošalji poruku iz svog maila.
                   </p>
+
+                  <button type="button" id="copyEmailBtn" class="btn btn-primary btn-lg w-100">
+                    Kopiraj email
+                  </button>
+
+                  <p id="copyEmailMessage" class="output-note mt-3 mb-0"></p>
                 </div>
 
-                <form action="mailto:zdfatovic@gmail.com" method="post" enctype="text/plain">
-                  <div class="mb-3">
-                    <label for="ime" class="form-label">Ime</label>
-                    <input
-                      type="text"
-                      id="ime"
-                      name="Ime"
-                      class="form-control"
-                      placeholder="Upiši svoje ime"
-                      required
-                    />
-                  </div>
+                <div class="contact-divider"></div>
 
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="Email"
-                      class="form-control"
-                      placeholder="Upiši svoj email"
-                      required
-                    />
-                  </div>
+                <div class="contact-box">
+                  <h3 class="contact-box-title">LinkedIn</h3>
+                  <p class="contact-box-text">
+                    Za profesionalni kontakt, umrežavanje i praćenje razvoja projekta
+                    možeš se javiti i putem LinkedIna.
+                  </p>
 
-                  <div class="mb-3">
-                    <label for="poruka" class="form-label">Poruka</label>
-                    <textarea
-                      id="poruka"
-                      name="Poruka"
-                      class="form-control"
-                      rows="6"
-                      placeholder="Napiši poruku"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button type="submit" class="btn btn-primary btn-lg w-100">
-                    Pošalji poruku
-                  </button>
-                </form>
-
-                <p class="output-note mt-3 mb-0">
-                  Nakon klika otvorit će se tvoj zadani email klijent s pripremljenom porukom.
-                </p>
+                  <a
+                    href="https://www.linkedin.com/in/stipe-fatovi%C4%87/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-linkedin btn-lg w-100"
+                  >
+                    Otvori LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -133,5 +118,33 @@
   <div id="site-footer"></div>
 
   <script src="components.js"></script>
+  <script>
+    const copyEmailBtn = document.getElementById("copyEmailBtn");
+    const copyEmailMessage = document.getElementById("copyEmailMessage");
+    const emailToCopy = "zdfatovic@gmail.com";
+
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(emailToCopy);
+          copyEmailBtn.textContent = "Mail kopiran";
+          if (copyEmailMessage) {
+            copyEmailMessage.textContent = "Email adresa je kopirana u međuspremnik.";
+          }
+
+          setTimeout(() => {
+            copyEmailBtn.textContent = "Kopiraj email";
+            if (copyEmailMessage) {
+              copyEmailMessage.textContent = "";
+            }
+          }, 1800);
+        } catch (error) {
+          if (copyEmailMessage) {
+            copyEmailMessage.textContent = "Kopiranje nije uspjelo. Pokušaj ponovno.";
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>
