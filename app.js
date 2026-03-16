@@ -1,4 +1,5 @@
 const state = {
+  manifest: [],
   activeTool: null
 };
 
@@ -6,15 +7,20 @@ const dom = {};
 
 document.addEventListener("DOMContentLoaded", initApp);
 
-function initApp() {
+async function initApp() {
   cacheDom();
 
-  if (dom.toolsGrid && typeof TOOLS !== "undefined") {
-    renderToolsListPage();
-  }
+  try {
+    if (dom.toolsGrid) {
+      await renderToolsListPage();
+    }
 
-  if (document.body.id === "toolPage" && typeof TOOLS !== "undefined") {
-    loadSingleToolPage();
+    if (document.body.id === "toolPage") {
+      await loadSingleToolPage();
+    }
+  } catch (error) {
+    console.error("Greška pri inicijalizaciji AI alata:", error);
+    renderAppError(error);
   }
 }
 
@@ -30,6 +36,16 @@ function cacheDom() {
   dom.pageHeroToolDescription = document.getElementById("pageHeroToolDescription");
 }
 
+async function fetchJson(path) {
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Greška pri učitavanju: ${path} (status ${response.status})`);
+  }
+
+  return response.json();
+}
+
 function trackClarityEvent(eventName, tool = null) {
   if (!window.clarity) return;
 
@@ -41,10 +57,32 @@ function trackClarityEvent(eventName, tool = null) {
   }
 }
 
-function renderToolsListPage() {
+async function loadToolsManifest() {
+  if (state.manifest.length) return state.manifest;
+
+  const manifest = await fetchJson("data/tools-manifest.json");
+  state.manifest = manifest;
+
+  return manifest;
+}
+
+async function renderToolsListPage() {
   if (!dom.toolsGrid) return;
 
-  dom.toolsGrid.innerHTML = TOOLS.map(tool => `
+  const manifest = await loadToolsManifest();
+
+  if (!Array.isArray(manifest) || manifest.length === 0) {
+    dom.toolsGrid.innerHTML = `
+      <div class="col-12">
+        <div class="info-box text-center">
+          <p class="mb-0">Trenutno nema dostupnih AI alata.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  dom.toolsGrid.innerHTML = manifest.map(tool => `
     <div class="col-md-6 col-lg-4">
       <a href="tool.html?tool=${tool.id}" class="tool-card-link text-decoration-none d-block h-100" data-tool-link="${tool.id}">
         <div class="tool-card h-100">
@@ -60,7 +98,7 @@ function renderToolsListPage() {
   document.querySelectorAll("[data-tool-link]").forEach(link => {
     link.addEventListener("click", () => {
       const toolId = link.dataset.toolLink;
-      const tool = TOOLS.find(t => t.id === toolId);
+      const tool = manifest.find(t => t.id === toolId);
 
       if (tool) {
         trackClarityEvent("tool_opened", tool);
@@ -69,17 +107,24 @@ function renderToolsListPage() {
   });
 }
 
-function loadSingleToolPage() {
+async function loadSingleToolPage() {
   const params = new URLSearchParams(window.location.search);
   const toolId = params.get("tool");
 
-  const tool = TOOLS.find(t => t.id === toolId);
-
-  if (!tool) {
+  if (!toolId) {
     renderToolNotFound();
     return;
   }
 
+  const manifest = await loadToolsManifest();
+  const manifestItem = manifest.find(t => t.id === toolId);
+
+  if (!manifestItem) {
+    renderToolNotFound();
+    return;
+  }
+
+  const tool = await fetchJson(manifestItem.file);
   state.activeTool = tool;
 
   if (dom.activeToolTitle) {
@@ -100,7 +145,7 @@ function loadSingleToolPage() {
 
   document.title = `${tool.title} | AutoMoto KLIK!`;
 
-  renderFields(tool.fields);
+  renderFields(tool.fields || []);
 
   trackClarityEvent("tool_loaded", tool);
 
@@ -161,7 +206,7 @@ function renderFields(fields) {
           <label class="form-label" for="${field.id}">${field.label}</label>
           <select class="form-select" id="${field.id}">
             <option value="">Odaberi</option>
-            ${field.options.map(o => `<option>${o}</option>`).join("")}
+            ${(field.options || []).map(option => `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`).join("")}
           </select>
         </div>
       `;
@@ -180,15 +225,15 @@ function renderFields(fields) {
       return `
         <div class="col-12">
           <label class="form-label d-block">${field.label}</label>
-          ${field.options.map((o, i) => `
+          ${(field.options || []).map((option, index) => `
             <div class="form-check">
               <input
                 class="form-check-input"
                 type="checkbox"
                 name="${field.id}"
-                value="${o}"
-                id="${field.id}-${i}">
-              <label class="form-check-label" for="${field.id}-${i}">${o}</label>
+                value="${escapeHtml(option)}"
+                id="${field.id}-${index}">
+              <label class="form-check-label" for="${field.id}-${index}">${escapeHtml(option)}</label>
             </div>
           `).join("")}
         </div>
@@ -202,17 +247,17 @@ function renderFields(fields) {
 function getFormData() {
   const data = {};
 
-  if (!state.activeTool) return data;
+  if (!state.activeTool || !Array.isArray(state.activeTool.fields)) return data;
 
   state.activeTool.fields.forEach(field => {
     if (field.type === "checkbox") {
       const values = Array.from(
         document.querySelectorAll(`input[name="${field.id}"]:checked`)
-      ).map(i => i.value);
+      ).map(input => input.value);
 
       data[field.id] = values.join(", ");
     } else {
-      data[field.id] = document.getElementById(field.id)?.value || "";
+      data[field.id] = document.getElementById(field.id)?.value?.trim() || "";
     }
   });
 
@@ -223,14 +268,14 @@ function generatePrompt() {
   if (!state.activeTool) return;
 
   const data = getFormData();
-  const prompt = state.activeTool.generatePrompt(data);
+  const prompt = applyPromptTemplate(state.activeTool.promptTemplate || "", data);
 
   if (dom.promptOutput) {
     dom.promptOutput.value = prompt;
   }
 
   if (dom.copyPromptBtn) {
-    dom.copyPromptBtn.disabled = false;
+    dom.copyPromptBtn.disabled = !prompt.trim();
   }
 
   trackClarityEvent("prompt_generated", state.activeTool);
@@ -243,6 +288,27 @@ function generatePrompt() {
       dom.generatePromptBtn.textContent = originalText;
     }, 1500);
   }
+}
+
+function applyPromptTemplate(template, data) {
+  const normalizedTemplate = normalizeTemplateString(template);
+
+  return normalizedTemplate.replace(/\{\{(.*?)\}\}/g, (_, key) => {
+    const cleanKey = key.trim();
+    const value = data[cleanKey];
+
+    if (!value) {
+      return "Nije navedeno";
+    }
+
+    return value;
+  });
+}
+
+function normalizeTemplateString(template) {
+  return String(template)
+    .replace(/\\n/g, "\n")
+    .replace(/\\t/g, "\t");
 }
 
 async function copyPrompt() {
@@ -260,4 +326,32 @@ async function copyPrompt() {
       dom.copyPromptBtn.textContent = originalText;
     }, 1500);
   }
+}
+
+function renderAppError(error) {
+  console.error(error);
+
+  if (dom.toolsGrid) {
+    dom.toolsGrid.innerHTML = `
+      <div class="col-12">
+        <div class="info-box text-center">
+          <p class="mb-2"><strong>AI alati trenutno nisu dostupni.</strong></p>
+          <p class="mb-0">Provjeri postoji li <code>data/tools-manifest.json</code> i koristiš li Live Server.</p>
+        </div>
+      </div>
+    `;
+  }
+
+  if (document.body.id === "toolPage") {
+    renderToolNotFound();
+  }
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }

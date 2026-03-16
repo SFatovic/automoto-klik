@@ -1,0 +1,14 @@
+[
+  {
+    "id": "car-type",
+    "title": "Preporuka vrste automobila",
+    "description": "Na temelju načina korištenja, prioriteta i životne situacije generira AI upit za odabir najprikladnije vrste karoserije.",
+    "file": "data/tools/car-type.json"
+  },
+  {
+    "id": "tire-choice",
+    "title": "Preporuka guma",
+    "description": "Na temelju načina vožnje, uvjeta korištenja i prioriteta generira AI upit za odabir najprikladnije vrste guma.",
+    "file": "data/tools/tire-choice.json"
+  }
+]
