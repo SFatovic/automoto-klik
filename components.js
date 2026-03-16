@@ -37,6 +37,7 @@ function renderHeader() {
         <a href="index.html" data-page="index">Početna</a>
         <a href="ai-upiti.html" data-page="ai-upiti">AI alati</a>
         <a href="kvizovi.html" data-page="kvizovi">Kvizovi</a>
+        <a href="o-projektu.html" data-page="o-projektu">O projektu</a>
       </nav>
 
     </div>
@@ -68,6 +69,7 @@ function renderFooter() {
         <a href="index.html">Početna</a>
         <a href="ai-upiti.html">AI alati</a>
         <a href="kvizovi.html">Kvizovi</a>
+        <a href="o-projektu.html">O projektu</a>
       </div>
 
       <div class="footer-bottom">
@@ -92,6 +94,7 @@ function highlightActiveNav() {
   if (path.includes("tool")) current = "ai-upiti";
   if (path.includes("kvizovi")) current = "kvizovi";
   if (path.includes("kviz")) current = "kvizovi";
+  if (path.includes("o-projektu")) current = "o-projektu";
 
   document.querySelectorAll(".header-nav a").forEach(link => {
     if (link.dataset.page === current) {
