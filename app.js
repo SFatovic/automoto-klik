@@ -221,6 +221,19 @@ function renderFields(fields) {
       `;
     }
 
+    if (field.type === "text") {
+  return `
+    <div class="col-12">
+      <label class="form-label" for="${field.id}">${field.label}</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="${field.id}" 
+        placeholder="${field.placeholder || ""}">
+    </div>
+  `;
+}
+
     if (field.type === "checkbox") {
       return `
         <div class="col-12">

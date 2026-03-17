@@ -1,0 +1,139 @@
+{
+  "id": "ideal-model-by-brand",
+  "title": "Idealan model unutar brenda",
+  "description": "Na temelju tvojih preferencija generira preporuku idealnog modela, motora i konfiguracije unutar odabranog automobilskog brenda.",
+  "fields": [
+    {
+      "id": "brand",
+      "label": "Koji brend te zanima",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. BMW, Audi, Mercedes"
+    },
+    {
+      "id": "vehicleAge",
+      "label": "Tražiš li novo ili rabljeno vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Novo vozilo",
+        "Do 3 godine staro",
+        "3 - 5 godina staro",
+        "5 - 10 godina staro",
+        "Youngtimer (cca 15-25 godina)",
+        "Oldtimer (25+ godina)",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Budžet (ako imaš okvir)",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Do 10.000 €",
+        "10.000 € – 20.000 €",
+        "20.000 € – 40.000 €",
+        "40.000 € – 70.000 €",
+        "70.000 €+",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "usage",
+      "label": "Primarna namjena vozila",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Gradska vožnja",
+        "Dnevna vožnja na posao",
+        "Duža putovanja / autoput",
+        "Obiteljska vožnja",
+        "Mješovita vožnja",
+        "Hobi / vikend vožnja"
+      ]
+    },
+    {
+      "id": "passengers",
+      "label": "Koliko ljudi se najčešće vozi",
+      "type": "select",
+      "required": true,
+      "options": [
+        "1-2 osobe",
+        "2-4 osobe",
+        "4-5 osoba"
+      ]
+    },
+    {
+      "id": "priorities",
+      "label": "Što ti je najvažnije kod auta",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Performanse",
+        "Udobnost",
+        "Niska potrošnja",
+        "Pouzdanost",
+        "Luksuz i oprema",
+        "Tehnologija",
+        "Prostor i praktičnost",
+        "Imidž / dizajn",
+        "Niski troškovi održavanja",
+        "Vrijednost pri preprodaji"
+      ]
+    },
+    {
+      "id": "drivingStyle",
+      "label": "Tvoj stil vožnje",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Mirna i opuštena vožnja",
+        "Umjerena vožnja",
+        "Dinamična / sportska vožnja"
+      ]
+    },
+    {
+      "id": "fuelPreference",
+      "label": "Preferencija pogona",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Benzin",
+        "Dizel",
+        "Hibrid",
+        "Električni",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "technicalPreferences",
+      "label": "Tehničke i vozne preferencije (ako ih imaš)",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Preferiram povišenu poziciju sjedenja (SUV / crossover)",
+        "Preferiram niži i sportskiji auto (limuzina / coupe)",
+        "Automatski mjenjač",
+        "Manualni mjenjač",
+        "Pogon na prednje kotače (FWD)",
+        "Pogon na stražnje kotače (RWD)",
+        "Pogon na sva četiri kotača (AWD / 4x4)",
+        "Manji gradski auto",
+        "Veći i prostran auto",
+        "Bitan mi je velik prtljažnik",
+        "Bitna mi je upravljivost i osjećaj u vožnji",
+        "Bitna mi je udobnost na dugim relacijama"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. želim SUV, bitan mi je automatski mjenjač, vozim puno autoceste"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za odabir idealnog modela unutar određenog brenda.\n\nŽelim da mi preporučiš najbolji model, motorizaciju i konfiguraciju unutar odabranog brenda na temelju mojih potreba.\n\nPodaci:\n- Brend: {{brand}}\n- Starost vozila: {{vehicleAge}}\n- Budžet: {{budget}}\n- Namjena: {{usage}}\n- Broj putnika: {{passengers}}\n- Prioriteti: {{priorities}}\n- Stil vožnje: {{drivingStyle}}\n- Preferencija pogona: {{fuelPreference}}\n- Tehničke i vozne preferencije: {{technicalPreferences}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n\n1. Predloži IDEALAN model unutar tog brenda (točan model, npr. BMW 3 Series, Audi A6, Mercedes GLC).\n2. Predloži konkretnu motorizaciju (npr. 2.0 TDI, 320d, 1.5 TSI itd.) i objasni zašto je najbolja za mene.\n3. Daj okvirnu cijenu tog vozila (novo ili rabljeno, ovisno o odabiru).\n4. Ukratko objasni zašto je taj model najbolji izbor s obzirom na moje potrebe.\n\n5. Predloži 2-3 ALTERNATIVNE opcije unutar istog brenda:\n- za svaku navedi model + motor\n- kratko objasni kome bi više odgovarala\n\n6. Posebno uzmi u obzir tehničke i vozne preferencije (visina vozila, pogon, mjenjač itd.) i prilagodi izbor modela tim željama gdje god je moguće.\n\n7. Ako postoje potencijalni nedostaci ili kompromisi, jasno ih navedi.\n\n8. Na kraju daj jasan zaključak u 2-3 rečenice (što uzeti i zašto).\n\nBudi konkretan, praktičan i fokusiran na realne preporuke."
+}

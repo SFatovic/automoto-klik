@@ -1,0 +1,103 @@
+{
+  "id": "car-insurance-choice",
+  "title": "Koje auto osiguranje odabrati",
+  "description": "Na temelju vozila, načina korištenja i preferencija generira AI upit za odabir najprikladnijeg osiguranja (obavezno, kasko, polukasko).",
+  "fields": [
+    {
+      "id": "carValue",
+      "label": "Procijenjena vrijednost vozila",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Do 5.000 €",
+        "5.000 € – 15.000 €",
+        "15.000 € – 30.000 €",
+        "30.000 € – 60.000 €",
+        "60.000 €+",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "carAge",
+      "label": "Starost vozila",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Novo vozilo (0-2 godine)",
+        "Relativno novo (3-5 godina)",
+        "Srednje staro (6-10 godina)",
+        "Starije vozilo (10+ godina)"
+      ]
+    },
+    {
+      "id": "usageType",
+      "label": "Kako najčešće koristiš vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Gradska vožnja",
+        "Dnevna vožnja na posao",
+        "Duža putovanja / autoput",
+        "Mješovita vožnja",
+        "Rijetko koristim vozilo"
+      ]
+    },
+    {
+      "id": "parking",
+      "label": "Gdje najčešće parkiraš vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Garaža / privatni parking",
+        "Ulica / javni parking",
+        "Kombinacija"
+      ]
+    },
+    {
+      "id": "riskFactors",
+      "label": "Koji su tvoji najveći strahovi ili rizici",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Krađa vozila",
+        "Oštećenja na parkingu",
+        "Sudari i prometne nesreće",
+        "Vremenske nepogode (tuča, poplava)",
+        "Vandalizam",
+        "Skupi popravci",
+        "Visoki troškovi premije"
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Koliko si spreman izdvajati za osiguranje",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Minimalno - samo najosnovnije",
+        "Umjereno - balans cijene i zaštite",
+        "Više - želim maksimalnu sigurnost"
+      ]
+    },
+    {
+      "id": "ownershipPlan",
+      "label": "Koliko dugo planiraš zadržati vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratkoročno (do 1-2 godine)",
+        "Srednjoročno (3-5 godina)",
+        "Dugoročno (5+ godina)"
+      ]
+    },
+    {
+      "id": "additionalNotes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. vozilo je financirano leasingom, često putujem u inozemstvo, vozilo mi je poslovno sredstvo"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan stručnjak za auto osiguranje i financijsko planiranje vezano uz vozila.\n\nŽelim pomoć u odabiru najprikladnijeg tipa auto osiguranja (obavezno, kasko, polukasko ili kombinacije) s obzirom na moje vozilo i potrebe.\n\nPodaci:\n- Vrijednost vozila: {{carValue}}\n- Starost vozila: {{carAge}}\n- Način korištenja: {{usageType}}\n- Način parkiranja: {{parking}}\n- Najveći rizici i brige: {{riskFactors}}\n- Budžet: {{budget}}\n- Plan zadržavanja vozila: {{ownershipPlan}}\n- Dodatne napomene: {{additionalNotes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniji tip osiguranja (samo obavezno, polukasko, puni kasko ili kombinaciju) i jasno objasni zašto.\n2. Ukratko objasni razliku između obaveznog osiguranja, kaska i polukaska.\n3. Navedi koje konkretne rizike pokriva preporučena opcija, a koje ne.\n4. Daj procjenu isplativosti (kada se isplati uzeti kasko, a kada ne).\n5. Predloži dodatne opcije ili pakete koje bi imale smisla (npr. zaštita bonusa, asistencija na cesti i sl.).\n6. Ako postoji više dobrih opcija, usporedi ih i objasni prednosti i nedostatke.\n7. Na kraju daj jasan zaključak i preporuku u jednoj ili dvije rečenice."
+}

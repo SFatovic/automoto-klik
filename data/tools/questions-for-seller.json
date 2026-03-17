@@ -1,0 +1,100 @@
+{
+  "id": "questions-for-seller",
+  "title": "Pitanja za prodavatelja vozila",
+  "description": "Na temelju tipa kupnje i konkretnog vozila generira AI upit za izradu korisne liste pitanja koje kupac treba postaviti prodavatelju vozila.",
+  "fields": [
+    {
+      "id": "purchaseType",
+      "label": "Od koga kupuješ vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Privatna osoba - polovno vozilo",
+        "Trgovac / salon - polovno vozilo",
+        "Ovlašteni salon - novo vozilo",
+        "Ovlašteni salon - testno / demonstracijsko vozilo",
+        "Još nisam siguran"
+      ]
+    },
+    {
+      "id": "questionMode",
+      "label": "Kakvu listu pitanja želiš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Opća pitanja za bilo koje vozilo",
+        "Pitanja za konkretan model vozila"
+      ]
+    },
+    {
+      "id": "carBrand",
+      "label": "Marka vozila",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. BMW"
+    },
+    {
+      "id": "carModel",
+      "label": "Model vozila",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 320d"
+    },
+    {
+      "id": "carYear",
+      "label": "Godina vozila",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2019"
+    },
+    {
+      "id": "carVersion",
+      "label": "Motorizacija / linija / oprema",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2.0 TDI DSG R-Line"
+    },
+    {
+      "id": "mainConcern",
+      "label": "Što te najviše zanima ili brine",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Standardna pitanja pri kupnji vozila",
+        "Servisna povijest",
+        "Stvarno stanje vozila",
+        "Kilometraža",
+        "Moguće nezgode ili lakiranja",
+        "Garancija",
+        "Skriveni troškovi",
+        "Stanje guma i potrošnih dijelova",
+        "Pouzdanost modela",
+        "Razlog prodaje",
+        "Dokumentacija i papiri",
+        "Mogućnost pregleda u servisu",
+        "Uvjeti financiranja ili plaćanja"
+      ]
+    },
+    {
+      "id": "buyerPriority",
+      "label": "Kakav pristup želiš u pitanjima",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratka i osnovna lista pitanja",
+        "Detaljna lista za ozbiljnu provjeru",
+        "Pitanja za pregovaranje i spuštanje cijene",
+        "Balansirano - provjera stanja i korektan razgovor"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. vozilo je iz uvoza, oglas djeluje sumnjivo ili želim posebno pitati za DSG mjenjač"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za kupnju vozila.\n\nŽelim kvalitetnu listu pitanja koju kao kupac trebam postaviti prodavatelju vozila prije kupnje.\n\nPodaci:\n- Tip kupnje / prodavatelja: {{purchaseType}}\n- Vrsta liste pitanja: {{questionMode}}\n- Marka vozila: {{carBrand}}\n- Model vozila: {{carModel}}\n- Godina vozila: {{carYear}}\n- Motorizacija / linija / oprema: {{carVersion}}\n- Najvažnije teme koje me zanimaju: {{mainConcern}}\n- Željeni stil pitanja: {{buyerPriority}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Sastavi jasnu i praktičnu listu pitanja koju kupac treba postaviti prodavatelju vozila.\n2. Ako sam odabrao opća pitanja, uključi univerzalna pitanja važna za gotovo svaku kupnju vozila.\n3. Ako sam odabrao pitanja za konkretan model vozila, uključi i specifična pitanja vezana uz taj model, motorizaciju ili opremu, gdje je to relevantno.\n4. U obzir uzmi tip prodavatelja: privatna osoba, trgovac rabljenim vozilima, ovlašteni salon za novo vozilo ili testno / demonstracijsko vozilo.\n5. Pitanja strukturiraj kao čistu listu koju kupac može odmah koristiti u razgovoru, poruci ili e-mailu.\n6. Nemoj pisati duga objašnjenja uz svako pitanje, nego daj konkretna i korisna pitanja.\n7. Na kraju izdvoji 5 najvažnijih pitanja koja nikako ne bi trebalo preskočiti."
+}

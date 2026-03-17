@@ -30,7 +30,7 @@ function renderHeader() {
     <div class="container header-inner">
 
       <div class="header-logo">
-        <a href="index.html">AutoMoto KLIK</a>
+        <a href="index.html">AutoMoto KLIK!</a>
       </div>
 
       <nav class="header-nav">
@@ -57,7 +57,7 @@ function renderFooter() {
   <footer class="footer">
     <div class="container">
 
-      <h3 class="footer-title">AutoMoto KLIK</h3>
+      <h3 class="footer-title">AutoMoto KLIK!</h3>
 
       <p class="footer-text">
         AI alati za vozače i ljubitelje automobila.  
@@ -73,7 +73,7 @@ function renderFooter() {
       </div>
 
       <div class="footer-bottom">
-        © 2026 AutoMoto KLIK
+        © 2026 AutoMoto KLIK!
       </div>
 
     </div>

@@ -1,0 +1,117 @@
+{
+  "id": "engine-choice",
+  "title": "Preporuka motorizacije",
+  "description": "Na temelju načina vožnje, kilometraže, prioriteta i planova korištenja generira AI upit za odabir najprikladnije vrste motora.",
+  "fields": [
+    {
+      "id": "vehicleType",
+      "label": "Kakvo vozilo okvirno tražiš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Gradski automobil",
+        "Kompaktni automobil",
+        "Limuzina",
+        "Karavan",
+        "SUV / crossover",
+        "Terenac / 4x4",
+        "Sportski automobil",
+        "Službeno / poslovno vozilo",
+        "Još nisam siguran"
+      ]
+    },
+    {
+      "id": "usage",
+      "label": "Najčešći način korištenja",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Pretežno gradska vožnja",
+        "Kratke relacije i svakodnevne obaveze",
+        "Kombinacija grada i otvorene ceste",
+        "Duža putovanja / autoput",
+        "Posao / profesionalna upotreba",
+        "Dinamična i energična vožnja",
+        "Različiti uvjeti tijekom godine"
+      ]
+    },
+    {
+      "id": "annualMileage",
+      "label": "Koliko otprilike kilometara radiš godišnje",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Manje od 10.000 km",
+        "10.000 - 15.000 km",
+        "15.000 - 20.000 km",
+        "20.000 - 30.000 km",
+        "Više od 30.000 km"
+      ]
+    },
+    {
+      "id": "drivingStyle",
+      "label": "Kakav stil vožnje preferiraš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Miran i ekonomičan",
+        "Balans ekonomičnosti i performansi",
+        "Volim elastičnost i lako pretjecanje",
+        "Performanse su mi jako važne",
+        "Ovisi o situaciji"
+      ]
+    },
+    {
+      "id": "priority",
+      "label": "Što ti je najvažnije kod motorizacije",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Niska potrošnja",
+        "Pouzdanost",
+        "Niski troškovi održavanja",
+        "Performanse",
+        "Udobna i tiha vožnja",
+        "Dobar izbor za grad",
+        "Dobar izbor za autoput",
+        "Ekološki prihvatljivija opcija",
+        "Dugoročna isplativost"
+      ]
+    },
+    {
+      "id": "ownership",
+      "label": "Koliko dugo planiraš zadržati vozilo",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Do 2 godine",
+        "3 - 5 godina",
+        "5 - 8 godina",
+        "Dugoročno",
+        "Još ne znam"
+      ]
+    },
+    {
+      "id": "fuelPreference",
+      "label": "Imaš li već neku preferenciju",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Benzin",
+        "Dizel",
+        "Hibrid",
+        "Plug-in hibrid",
+        "Električni pogon",
+        "Nemam jasnu preferenciju"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za odabir najprikladnije motorizacije vozila.\n\nŽelim pomoć pri odabiru vrste motora koja najbolje odgovara mojim stvarnim potrebama, načinu vožnje i planiranom korištenju vozila.\n\nPodaci:\n- Vrsta vozila koje tražim: {{vehicleType}}\n- Najčešći način korištenja: {{usage}}\n- Godišnja kilometraža: {{annualMileage}}\n- Stil vožnje: {{drivingStyle}}\n- Najvažniji prioriteti: {{priority}}\n- Planirano zadržavanje vozila: {{ownership}}\n- Trenutna preferencija pogona: {{fuelPreference}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja vrsta motorizacije je za mene najlogičniji izbor (benzin, dizel, hibrid, plug-in hibrid ili električni pogon) i objasni zašto.\n2. Usporedi relevantne opcije koje dolaze u obzir za moj slučaj.\n3. Navedi glavne prednosti i moguće nedostatke svake bitne opcije.\n4. Upozori na moguće pogreške koje ljudi često rade pri odabiru motorizacije u sličnoj situaciji.\n5. Daj završnu preporuku jasno, praktično i bez nepotrebnog tehničkog žargona."
+}
