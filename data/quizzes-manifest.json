@@ -4,6 +4,7 @@
     "title": "Alfa Romeo kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju Alfa Romea.",
     "file": "data/quizzes/alfa-romeo.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -11,6 +12,7 @@
     "title": "Aston Martin kviz",
     "description": "Provjeri koliko poznaješ povijest i modele brenda Aston Martin.",
     "file": "data/quizzes/aston-martin.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -18,6 +20,7 @@
     "title": "Audi kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju brenda Audi.",
     "file": "data/quizzes/audi.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -25,6 +28,7 @@
     "title": "BMW kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i sportski DNK brenda BMW.",
     "file": "data/quizzes/bmw.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -32,6 +36,7 @@
     "title": "Ferrari kviz",
     "description": "Provjeri koliko poznaješ legendarne modele, povijest i nasljeđe Ferrarija.",
     "file": "data/quizzes/ferrari.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -39,6 +44,7 @@
     "title": "Fiat kviz",
     "description": "Provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Fiat.",
     "file": "data/quizzes/fiat.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -46,6 +52,7 @@
     "title": "Ford kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i utjecaj brenda Ford na autoindustriju.",
     "file": "data/quizzes/ford.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -53,6 +60,7 @@
     "title": "Honda kviz",
     "description": "Provjeri koliko poznaješ modele, motore i inovacije brenda Honda.",
     "file": "data/quizzes/honda.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -60,6 +68,7 @@
     "title": "Lamborghini kviz",
     "description": "Provjeri koliko poznaješ superautomobile, povijest i karakter brenda Lamborghini.",
     "file": "data/quizzes/lamborghini.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -67,6 +76,7 @@
     "title": "Mazda kviz",
     "description": "Provjeri koliko poznaješ dizajn, modele i posebnosti brenda Mazda.",
     "file": "data/quizzes/mazda.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -74,6 +84,7 @@
     "title": "McLaren kviz",
     "description": "Provjeri koliko poznaješ povijest, utrkivanje i cestovne modele brenda McLaren.",
     "file": "data/quizzes/mclaren.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -81,6 +92,7 @@
     "title": "Mercedes-Benz kviz",
     "description": "Provjeri koliko poznaješ luksuz, tehnologiju i povijest brenda Mercedes-Benz.",
     "file": "data/quizzes/mercedes-benz.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -88,6 +100,7 @@
     "title": "Opel kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i razvoj brenda Opel.",
     "file": "data/quizzes/opel.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -95,6 +108,7 @@
     "title": "Porsche kviz",
     "description": "Provjeri koliko poznaješ sportske modele, povijest i identitet brenda Porsche.",
     "file": "data/quizzes/porsche.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -102,6 +116,7 @@
     "title": "Povijest automobila kviz",
     "description": "Provjeri koliko poznaješ ključne trenutke, izume i razvoj automobilske povijesti.",
     "file": "data/quizzes/povijest.json",
+    "category": "general",
     "questionCount": 10
   },
   {
@@ -109,6 +124,7 @@
     "title": "Renault kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i inovacije brenda Renault.",
     "file": "data/quizzes/renault.json",
+    "category": "brand",
     "questionCount": 10
   },
   {
@@ -116,6 +132,23 @@
     "title": "Volkswagen kviz",
     "description": "Provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Volkswagen.",
     "file": "data/quizzes/volkswagen.json",
+    "category": "brand",
     "questionCount": 10
+  },
+  {
+  "id": "f1-osnovni",
+  "title": "Formula 1 – Osnovni kviz",
+  "description": "Provjeri svoje osnovno znanje o Formuli 1.",
+  "file": "data/quizzes/f1-osnovni.json",
+  "category": "f1",
+  "questionCount": 10
+  },
+  {
+  "id": "ferrari-f1",
+  "title": "Ferrari F1 Team",
+  "description": "Testiraj svoje znanje o Ferrariju u Formuli 1.",
+  "file": "data/quizzes/ferrari-f1.json",
+  "category": "f1",
+  "questionCount": 10
   }
 ]

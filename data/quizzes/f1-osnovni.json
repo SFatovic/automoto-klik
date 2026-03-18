@@ -1,0 +1,117 @@
+{
+  "id": "f1-osnovni",
+  "title": "Formula 1 – Osnovni kviz",
+  "description": "Provjeri svoje osnovno znanje o Formuli 1 – pravila, vozači, timovi i povijest.",
+  "questions": [
+    {
+      "question": "Što znači kratica F1?",
+      "answers": [
+        "Fuel 1",
+        "Fast 1",
+        "Formula 1",
+        "Federation 1",
+        "Formula One Racing League"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "Koliko bodova dobiva pobjednik utrke u modernoj Formuli 1?",
+      "answers": [
+        "5",
+        "10",
+        "20",
+        "25",
+        "30"
+      ],
+      "correctIndex": 3
+    },
+    {
+      "question": "Koja zastava označava kraj utrke?",
+      "answers": [
+        "Zelena",
+        "Crvena zastava",
+        "Žuta zastava",
+        "Plava zastava",
+        "Crno-bijela karirana zastava"
+      ],
+      "correctIndex": 4
+    },
+    {
+      "question": "Koliko vozača starta u jednoj F1 utrci (standardno)?",
+      "answers": [
+        "20",
+        "18",
+        "22",
+        "16",
+        "24"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "Što znači 'pole position'?",
+      "answers": [
+        "Prvo startno mjesto",
+        "Najbrži krug u utrci",
+        "Zadnje startno mjesto",
+        "Kazna u utrci",
+        "Vozač s najviše bodova"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Što znači žuta zastava na stazi?",
+      "answers": [
+        "Slobodan prolaz",
+        "Utrka je završena",
+        "Diskvalifikacija",
+        "Vozač mora u boks",
+        "Opasnost na stazi"
+      ],
+      "correctIndex": 4
+    },
+    {
+      "question": "Kako se zove pauza za zamjenu guma tijekom utrke?",
+      "answers": [
+        "Grid stop",
+        "Pit stop",
+        "Race break",
+        "Fuel stop",
+        "Service lap"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koji dio vikenda određuje startni poredak za utrku?",
+      "answers": [
+        "Trening",
+        "Kvalifikacije",
+        "Sprint utrka",
+        "Warm-up",
+        "Testiranja"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koliko timova sudjeluje u F1 sezoni?",
+      "answers": [
+        "11",
+        "10",
+        "8",
+        "15",
+        "20"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Koja guma se koristi za suhe uvjete?",
+      "answers": [
+        "Intermediate",
+        "All-season",
+        "Wet",
+        "Slick",
+        "Hybrid"
+      ],
+      "correctIndex": 3
+    }
+  ]
+}

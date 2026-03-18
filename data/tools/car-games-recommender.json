@@ -1,0 +1,152 @@
+{
+  "id": "car-games-recommender",
+  "title": "Preporuka videoigara o automobilima",
+  "description": "Na temelju tvojih preferencija generira AI upit za preporuku najboljih automobilskih videoigara.",
+  "fields": [
+    {
+      "id": "platform",
+      "label": "Na kojoj platformi želiš igrati",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "PC",
+        "PlayStation",
+        "Xbox",
+        "Nintendo",
+        "Mobilni uređaji (Android / iOS)",
+        "Sve od navedenog"
+      ]
+    },
+    {
+      "id": "gameType",
+      "label": "Koji tip igara te zanima",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Realistične simulacije vožnje",
+        "Arkadne trkaće igre",
+        "Open world vožnja",
+        "Street racing",
+        "Motorsport (F1, GT, rally)",
+        "Drift i tuning fokus",
+        "Menadžerske igre (upravljanje timom)",
+        "Casual / zabavne igre",
+        "Sve od navedenog"
+      ]
+    },
+    {
+      "id": "gameplayFocus",
+      "label": "Što ti je najbitnije u igri",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Osjećaj vožnje (realizam)",
+        "Brzina i akcija",
+        "Tuning i prilagodba auta",
+        "Priča i karijera",
+        "Online multiplayer",
+        "Natjecanje i rankovi",
+        "Općenita zabava",
+        "Vizualni doživljaj"
+      ]
+    },
+    {
+      "id": "experienceLevel",
+      "label": "Koliko si iskusan igrač",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Početnik",
+        "Povremeni igrač",
+        "Iskusni igrač",
+        "Hardcore sim racing entuzijast"
+      ]
+    },
+    {
+      "id": "sessionLength",
+      "label": "Koliko vremena obično igraš",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Kratke sesije (do 30 min)",
+        "Srednje (1–2 sata)",
+        "Duge sesije (više sati)",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "playStyle",
+      "label": "Kako najčešće igraš",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Solo",
+        "Online s drugima",
+        "Lokalno s prijateljima",
+        "Mješavina svega"
+      ]
+    },
+    {
+      "id": "progressionType",
+      "label": "Kakav napredak u igri želiš",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Brz i jednostavan",
+        "Postepen i izazovan",
+        "Dubok sustav karijere",
+        "Nije mi važno"
+      ]
+    },
+    {
+      "id": "carInterest",
+      "label": "Koji tip vozila te najviše zanima",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Superautomobili",
+        "Klasični automobili",
+        "Street tuning scena",
+        "Trkaći bolidi (F1, GT)",
+        "Rally i off-road vozila",
+        "Mješavina svega"
+      ]
+    },
+    {
+      "id": "realismVsFun",
+      "label": "Što više preferiraš",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Maksimalni realizam",
+        "Zabavu i arkadni stil",
+        "Balans realizma i zabave",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "goal",
+      "label": "Što želiš dobiti iz preporuke",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Najbolje igre za početak",
+        "Najrealističnije simulacije",
+        "Najzabavnije igre",
+        "Najbolje online igre",
+        "Hidden gems",
+        "Najbolje igre za moj stil igranja",
+        "Najpopularnije igre trenutno"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. volim Forzu, ne volim preteške simulacije, igram na laptopu, zanimaju me igre s dobrim tuningom itd."
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao stručnjak za videoigre i automotive gaming.\n\nŽelim personaliziranu preporuku videoigara o automobilima na temelju mojih preferencija.\n\nPodaci:\n- Platforma: {{platform}}\n- Tip igara: {{gameType}}\n- Fokus gameplaya: {{gameplayFocus}}\n- Razina iskustva: {{experienceLevel}}\n- Duljina igranja: {{sessionLength}}\n- Stil igranja: {{playStyle}}\n- Tip napretka: {{progressionType}}\n- Tip vozila: {{carInterest}}\n- Realizam vs zabava: {{realismVsFun}}\n- Cilj preporuke: {{goal}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Preporuči najrelevantnije videoigre o automobilima.\n2. Za svaku igru navedi:\n   - naziv\n   - platforme\n   - tip igre\n   - kratak opis (bez spoilera ako postoji priča)\n   - glavne prednosti igre\n   - kome je igra najviše namijenjena\n3. Ako je moguće, grupiraj igre po kategorijama (simulacije, arkade, open world itd.).\n4. Jasno istakni razliku između casual i hardcore opcija.\n5. Predloži:\n   - 3 najbolje igre za mene\n   - 2 alternativne ili manje poznate igre\n   - 1 \"must-play\" naslov za svakog auto fana\n6. Ako je relevantno, spomeni ima li igra dobar online, tuning sustav ili karijeru.\n7. Budi konkretan, jasan i koristan, bez generičkih opisa."
+}

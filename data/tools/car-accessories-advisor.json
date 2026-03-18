@@ -1,0 +1,191 @@
+{
+  "id": "car-accessories-advisor",
+  "title": "Dodatna oprema za moje vozilo",
+  "description": "Na temelju vozila, načina korištenja i prioriteta generira AI upit za odabir tvorničke i naknadne dodatne opreme koja stvarno ima smisla.",
+  "fields": [
+    {
+      "id": "brand",
+      "label": "Marka vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. BMW"
+    },
+    {
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. X3"
+    },
+    {
+      "id": "year",
+      "label": "Godište ili generacija",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2023 ili G01"
+    },
+    {
+      "id": "version",
+      "label": "Motorizacija / linija / oprema",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. xDrive20d M Sport"
+    },
+    {
+      "id": "ownershipStage",
+      "label": "U kojoj si fazi s vozilom",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Tek planiram kupnju novog vozila",
+        "Kupujem rabljeno vozilo",
+        "Već imam vozilo i želim ga unaprijediti",
+        "Razmatram i kupnju i naknadnu dodatnu opremu"
+      ]
+    },
+    {
+      "id": "equipmentDirection",
+      "label": "Koji tip dodatne opreme te zanima",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Tvornička dodatna oprema pri kupnji vozila",
+        "Naknadna dodatna oprema i dodaci",
+        "Oboje - želim cjelovitu preporuku"
+      ]
+    },
+    {
+      "id": "usage",
+      "label": "Kako najčešće koristiš vozilo",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Pretežno gradska vožnja",
+        "Dnevna vožnja na posao",
+        "Duža putovanja / autoput",
+        "Obiteljska vožnja",
+        "Aktivan lifestyle / sport i izleti",
+        "Posao / profesionalna upotreba",
+        "Mješovita vožnja"
+      ]
+    },
+    {
+      "id": "lifestyleNeeds",
+      "label": "Koje situacije i potrebe su ti bitne",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Komfor i premium dojam",
+        "Sigurnost i pomoćni sustavi",
+        "Bolja svjetla i vidljivost",
+        "Zimski uvjeti i loše vrijeme",
+        "Prijevoz djece",
+        "Prijevoz kućnih ljubimaca",
+        "Prijevoz bicikla",
+        "Više prtljažnog prostora",
+        "Putovanja i godišnji odmori",
+        "Zaštita interijera i prtljažnika",
+        "Tehnologija i povezivost",
+        "Estetika i vizualni dojam",
+        "Lakše parkiranje i manevriranje",
+        "Organizacija i praktičnost u kabini"
+      ]
+    },
+    {
+      "id": "factoryEquipmentFocus",
+      "label": "Koja tvornička oprema te najviše zanima",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Panoramski krov",
+        "Vrsta svjetala (LED / Matrix / Laser i sl.)",
+        "Automatski mjenjač",
+        "Pogon na sva četiri kotača",
+        "Veći infotainment ekran",
+        "Napredni sigurnosni sustavi",
+        "Kamere i parking senzori",
+        "Asistencija u vožnji",
+        "Grijana sjedala i volan",
+        "Premium audio sustav",
+        "Premium sjedala / napredniji interijer",
+        "Veći kotači / atraktivniji paket opreme",
+        "Head-up display",
+        "Protuprovala i sigurnosni sistemi"
+      ]
+    },
+    {
+      "id": "aftermarketFocus",
+      "label": "Koja naknadna dodatna oprema i dodaci te zanimaju",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Nosači bicikla",
+        "Krovni nosači i krovna kutija",
+        "Gumene ili premium podne obloge",
+        "Kadica prtljažnika",
+        "Zaštita sjedala i interijera",
+        "Dodaci za kućne ljubimce",
+        "Punjači i držači za mobitel",
+        "Dash cam / kamera",
+        "Parking kamera ili senzori naknadno",
+        "Organizatori prtljažnika",
+        "Zimska oprema",
+        "Zaštita laka i detailing",
+        "Folije / zaštita stakala",
+        "Napredna rasvjeta ili ambijentalna oprema",
+        "Kuka za vuču",
+        "Kemije za održavanje i aditivi za motor",
+        "Ulja i tekućine"
+      ]
+    },
+    {
+      "id": "decisionPriority",
+      "label": "Što ti je najvažnije kod odabira opreme",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Da stvarno vrijedi novca",
+        "Da poboljša svakodnevno korištenje",
+        "Da poveća sigurnost",
+        "Da podigne udobnost",
+        "Da poboljša izgled vozila",
+        "Da olakša putovanja i prijevoz stvari",
+        "Da bude dugoročno isplativo",
+        "Da izbjegnem nepotrebne doplate"
+      ]
+    },
+    {
+      "id": "budgetLevel",
+      "label": "Kakav budžet imaš za dodatnu opremu",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Minimalan - samo najpametnije osnove",
+        "Umjeren - biram ono što stvarno ima smisla",
+        "Veći - spreman sam više uložiti za bolji dojam i funkcionalnost",
+        "Nisam siguran"
+      ]
+    },
+    {
+      "id": "responseStyle",
+      "label": "Kakav odgovor želiš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratak i praktičan pregled",
+        "Detaljna preporuka po kategorijama",
+        "Naglasak na vrijednosti za novac",
+        "Naglasak na premium dojmu i opremi"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. vozim dijete i psa, često idem na putovanja, želim da auto izgleda luksuznije ili me zanima što se ne isplati doplatiti"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za odabir tvorničke i naknadne dodatne opreme za vozila.\n\nŽelim preporuku dodatne opreme za svoje vozilo ili buduće vozilo, s fokusom na ono što se stvarno isplati i što ima smisla za moje potrebe.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište / generacija: {{year}}\n- Motorizacija / linija / oprema: {{version}}\n- Faza vlasništva / kupnje: {{ownershipStage}}\n- Smjer interesa: {{equipmentDirection}}\n- Način korištenja vozila: {{usage}}\n- Životne situacije i potrebe: {{lifestyleNeeds}}\n- Fokus tvorničke opreme: {{factoryEquipmentFocus}}\n- Fokus naknadne dodatne opreme: {{aftermarketFocus}}\n- Prioriteti pri odabiru opreme: {{decisionPriority}}\n- Budžet: {{budgetLevel}}\n- Željeni stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja dodatna oprema ima najviše smisla za mene i objasni zašto.\n2. Jasno razdvoji preporuke na:\n   - tvorničku dodatnu opremu pri kupnji vozila\n   - naknadnu dodatnu opremu i dodatke nakon kupnje\n3. Ako je relevantno, objasni što je bolje uzeti odmah tvornički, a što se više isplati dodati naknadno.\n4. Obradi detaljno teme koje sam označio, uključujući stvari poput panoramskog krova, vrste svjetala, sigurnosnih sustava, nosača bicikla, opreme za kućne ljubimce, zaštite interijera, putne opreme i drugih praktičnih dodataka.\n5. Upozori na opremu koja dobro zvuči marketinški, ali se često ne isplati ili nije nužna.\n6. Ako postoji više dobrih opcija, grupiraj ih po prioritetima kao što su sigurnost, praktičnost, udobnost, izgled i value for money.\n7. Na kraju izdvoji:\n   - 5 dodataka ili opcija koje bih najprije trebao uzeti\n   - 3 stvari koje mogu preskočiti ako želim biti racionalan s budžetom\n8. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona.\n\nBudi konkretan, koristan i fokusiran na stvarne potrebe korisnika, a ne na generičke liste opreme."
+}

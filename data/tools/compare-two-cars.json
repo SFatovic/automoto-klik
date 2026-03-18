@@ -1,0 +1,118 @@
+{
+  "id": "compare-two-cars",
+  "title": "Usporedba dva modela automobila",
+  "description": "Na temelju dva odabrana vozila i tvojih prioriteta generira AI upit za jasnu i strukturiranu usporedbu modela.",
+  "fields": [
+    {
+      "id": "carA_brandModel",
+      "label": "Prvo vozilo – marka i model",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. BMW 320d"
+    },
+    {
+      "id": "carA_year",
+      "label": "Prvo vozilo – godište",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2020"
+    },
+    {
+      "id": "carA_version",
+      "label": "Prvo vozilo – motorizacija / linija / oprema",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2.0 diesel, automatik, M Sport"
+    },
+    {
+      "id": "carB_brandModel",
+      "label": "Drugo vozilo – marka i model",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. Audi A4 2.0 TDI"
+    },
+    {
+      "id": "carB_year",
+      "label": "Drugo vozilo – godište",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2020"
+    },
+    {
+      "id": "carB_version",
+      "label": "Drugo vozilo – motorizacija / linija / oprema",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. S tronic, Business oprema"
+    },
+    {
+      "id": "usage",
+      "label": "Za što ti auto najviše treba",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Gradska vožnja",
+        "Dnevna vožnja na posao",
+        "Duža putovanja / autoput",
+        "Obiteljska vožnja",
+        "Mješovita vožnja",
+        "Hobi / užitak u vožnji"
+      ]
+    },
+    {
+      "id": "comparisonFocus",
+      "label": "Što ti je najvažnije u usporedbi",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Performanse",
+        "Potrošnja i ekonomičnost",
+        "Udobnost",
+        "Prostranost i praktičnost",
+        "Kvaliteta interijera",
+        "Tehnologija i oprema",
+        "Pouzdanost",
+        "Troškovi održavanja",
+        "Vozna dinamika",
+        "Pogodnost za grad",
+        "Pogodnost za autoput",
+        "Obiteljska upotreba",
+        "Vrijednost pri preprodaji",
+        "Imidž i dizajn"
+      ]
+    },
+    {
+      "id": "decisionStyle",
+      "label": "Kakav tip usporedbe želiš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratka i jasna usporedba",
+        "Detaljna usporedba po kategorijama",
+        "Naglasak na praktičnoj kupnji",
+        "Naglasak na vozačkom dojmu i emociji"
+      ]
+    },
+    {
+      "id": "budgetSensitivity",
+      "label": "Koliko su ti važni budući troškovi",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Vrlo važni",
+        "Umjereno važni",
+        "Nisu presudni",
+        "Ovisi o ukupnoj vrijednosti auta"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. važan mi je automatik, puno vozim autoceste, želim što manje kompromisa"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za usporedbu vozila.\n\nŽelim jasnu, praktičnu i korisnu usporedbu dva modela automobila kako bih lakše odlučio koji mi više odgovara.\n\nPodaci:\n- Prvo vozilo: {{carA_brandModel}}\n- Godište prvog vozila: {{carA_year}}\n- Motorizacija / oprema prvog vozila: {{carA_version}}\n- Drugo vozilo: {{carB_brandModel}}\n- Godište drugog vozila: {{carB_year}}\n- Motorizacija / oprema drugog vozila: {{carB_version}}\n- Primarna namjena vozila: {{usage}}\n- Fokus usporedbe: {{comparisonFocus}}\n- Željeni stil usporedbe: {{decisionStyle}}\n- Važnost budućih troškova: {{budgetSensitivity}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Usporedi ova dva vozila direktno i strukturirano.\n2. Fokusiraj se posebno na kategorije koje sam označio kao najvažnije.\n3. Za svaku važnu kategoriju objasni koji auto ima prednost i zašto.\n4. Navedi glavne prednosti i moguće nedostatke oba vozila.\n5. Objasni kome više odgovara prvo vozilo, a kome drugo.\n6. Ako su budući troškovi relevantni, uključi i kratak komentar o održavanju, potrošnji i dugoročnoj isplativosti.\n7. Na kraju daj jasan zaključak: koji model je bolji izbor za mene i pod kojim uvjetima bi drugi model ipak imao više smisla.\n\nBudi konkretan, uravnotežen i praktičan. Izbjegavaj generičke fraze."
+}

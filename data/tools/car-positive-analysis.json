@@ -1,0 +1,94 @@
+{
+  "id": "car-positive-analysis",
+  "title": "Zašto je ovaj auto poseban?",
+  "description": "Saznaj prednosti, reputaciju, tehnologiju i priču iza određenog modela vozila.",
+  "fields": [
+    {
+      "id": "brand",
+      "label": "Marka vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. Porsche"
+    },
+    {
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. 911 Carrera"
+    },
+    {
+      "id": "generation",
+      "label": "Generacija ili godište (ako znaš)",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 992 ili 2019+"
+    },
+    {
+      "id": "interest",
+      "label": "Što te najviše zanima",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Sve od navedenog",
+        "Glavne prednosti modela",
+        "Reputacija i imidž",
+        "Tehnologija i inovacije",
+        "Performanse i vozački doživljaj",
+        "Udobnost i svakodnevna upotreba",
+        "Pouzdanost i kvaliteta izrade",
+        "Sportski uspjesi i povijest",
+        "Dizajn i posebnosti",
+        "Zašto ga ljudi vole",
+        "Usporedba s konkurencijom",
+        "Vrijednost i status na tržištu",
+        "Zanimljivosti i manje poznate činjenice"
+      ]
+    },
+    {
+      "id": "usageContext",
+      "label": "Kako razmišljaš o ovom vozilu",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Razmišljam o kupnji",
+        "Zanima me iz znatiželje",
+        "Fan sam brenda/modela",
+        "Radim istraživanje",
+        "Vlasnik sam"
+      ]
+    },
+    {
+      "id": "tone",
+      "label": "Stil odgovora",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratko i informativno",
+        "Detaljno i stručno",
+        "Inspirativno i storytelling",
+        "Kombinacija tehničkog i emocionalnog"
+      ]
+    },
+    {
+      "id": "depth",
+      "label": "Razina detalja",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Osnovni pregled",
+        "Srednje detaljno",
+        "Dubinska analiza"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. zanima me zašto je ovaj model toliko popularan i što ga izdvaja"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski stručnjak koji kombinira znanje o industriji, povijesti brendova, tehnologiji i iskustvu vozača.\n\nŽelim razumjeti zašto je određeni model automobila poseban, cijenjen ili popularan.\n\nPodaci:\n- Marka: {{brand}}\n- Model: {{model}}\n- Generacija / godište: {{generation}}\n- Fokus: {{interest}}\n- Kontekst korisnika: {{usageContext}}\n- Stil odgovora: {{tone}}\n- Razina detalja: {{depth}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Ukratko objasni što ovaj model čini posebnim u odnosu na druge.\n2. Izdvoji njegove glavne prednosti i zašto su važne u praksi.\n3. Objasni reputaciju modela i kako ga tržište i vozači percipiraju.\n4. Ako je relevantno, uključi tehnologiju, inovacije ili inženjerska rješenja koja ga izdvajaju.\n5. Ako postoji sportska povijest ili uspjesi, ukratko ih opiši.\n6. Objasni zašto ljudi vole ovaj model (emocionalni i praktični razlozi).\n7. Ako je primjenjivo, usporedi ga s glavnim konkurentima i objasni gdje se ističe.\n8. Dodaj zanimljivosti, manje poznate činjenice ili kontekst iz industrije.\n9. Ako je korisnik vlasnik, uključi dodatni pogled iz perspektive vlasništva (što posebno dolazi do izražaja kroz vrijeme).\n10. Na kraju daj kratak zaključak: kome je ovaj auto idealan i zašto.\n\nBudi konkretan, zanimljiv i izbjegavaj generičke opise."
+}

@@ -3,48 +3,112 @@
     "id": "car-type",
     "title": "Preporuka vrste automobila",
     "description": "Na temelju načina korištenja, prioriteta i životne situacije generira AI upit za odabir najprikladnije vrste karoserije.",
-    "file": "data/tools/car-type.json"
+    "file": "data/tools/car-type.json",
+    "category": "car-selection"
   },
   {
     "id": "tire-choice",
     "title": "Preporuka guma",
     "description": "Na temelju načina vožnje, uvjeta korištenja i prioriteta generira AI upit za odabir najprikladnije vrste guma.",
-    "file": "data/tools/tire-choice.json"
+    "file": "data/tools/tire-choice.json",
+    "category": "costs-and-purchase"
   },
   {
-  "id": "engine-choice",
-  "title": "Preporuka motorizacije",
-  "description": "Na temelju načina vožnje, kilometraže, prioriteta i planova korištenja generira AI upit za odabir najprikladnije vrste motora.",
-  "file": "data/tools/engine-choice.json"
+    "id": "engine-choice",
+    "title": "Preporuka motorizacije",
+    "description": "Na temelju načina vožnje, kilometraže, prioriteta i planova korištenja generira AI upit za odabir najprikladnije vrste motora.",
+    "file": "data/tools/engine-choice.json",
+    "category": "car-selection"
   },
   {
-  "id": "car-condition-choice",
-  "title": "Novo, polovno ili testno vozilo?",
-  "description": "Na temelju budžeta, prioriteta i tolerancije na rizik generira AI upit za odabir između novog, polovnog ili testnog vozila.",
-  "file": "data/tools/car-condition-choice.json"
+    "id": "car-condition-choice",
+    "title": "Novo, polovno ili testno vozilo?",
+    "description": "Na temelju budžeta, prioriteta i tolerancije na rizik generira AI upit za odabir između novog, polovnog ili testnog vozila.",
+    "file": "data/tools/car-condition-choice.json",
+    "category": "car-selection"
   },
   {
-  "id": "car-maintenance-costs",
-  "title": "Procjena troškova održavanja automobila",
-  "description": "Na temelju vrste vozila, godišnje kilometraže i planova korištenja generira AI upit za procjenu troškova održavanja, servisa, guma, osiguranja i ostalih redovnih izdataka.",
-  "file": "data/tools/car-maintenance-costs.json"
+    "id": "car-maintenance-costs",
+    "title": "Procjena troškova održavanja automobila",
+    "description": "Na temelju vrste vozila, godišnje kilometraže i planova korištenja generira AI upit za procjenu troškova održavanja, servisa, guma, osiguranja i ostalih redovnih izdataka.",
+    "file": "data/tools/car-maintenance-costs.json",
+    "category": "costs-and-purchase"
   },
   {
-  "id": "questions-for-seller",
-  "title": "Pitanja za prodavatelja vozila",
-  "description": "Na temelju tipa kupnje i konkretnog vozila generira AI upit za izradu liste pitanja koje kupac treba postaviti prodavatelju vozila.",
-  "file": "data/tools/questions-for-seller.json"
+    "id": "questions-for-seller",
+    "title": "Pitanja za prodavatelja vozila",
+    "description": "Na temelju tipa kupnje i konkretnog vozila generira AI upit za izradu liste pitanja koje kupac treba postaviti prodavatelju vozila.",
+    "file": "data/tools/questions-for-seller.json",
+    "category": "costs-and-purchase"
   },
   {
-  "id": "car-insurance-choice",
-  "title": "Koje auto osiguranje odabrati",
-  "description": "Saznaj treba li ti samo obavezno osiguranje, polukasko ili puni kasko na temelju vozila i načina korištenja.",
-  "file": "data/tools/car-insurance-choice.json"
+    "id": "car-insurance-choice",
+    "title": "Koje auto osiguranje odabrati",
+    "description": "Saznaj treba li ti samo obavezno osiguranje, polukasko ili puni kasko na temelju vozila i načina korištenja.",
+    "file": "data/tools/car-insurance-choice.json",
+    "category": "costs-and-purchase"
   },
   {
-  "id": "ideal-model-by-brand",
-  "title": "Idealan model unutar brenda",
-  "description": "Saznaj koji je najbolji model, motor i konfiguracija unutar odabranog brenda za tvoje potrebe.",
-  "file": "data/tools/ideal-model-by-brand.json"
+    "id": "ideal-model-by-brand",
+    "title": "Idealan model unutar brenda",
+    "description": "Saznaj koji je najbolji model, motor i konfiguracija unutar odabranog brenda za tvoje potrebe.",
+    "file": "data/tools/ideal-model-by-brand.json",
+    "category": "car-selection"
+  },
+  {
+    "id": "brand-overview",
+    "title": "Pregled automobilskog brenda",
+    "description": "Saznaj sve o odabranom brendu – modeli, tehnologija, filozofija i aktualnosti.",
+    "file": "data/tools/brand-overview.json",
+    "category": "car-analysis"
+  },
+  {
+    "id": "compare-two-cars",
+    "title": "Usporedba dva modela automobila",
+    "description": "Usporedi dva automobila prema performansama, troškovima, udobnosti, praktičnosti i ostalim važnim kriterijima.",
+    "file": "data/tools/compare-two-cars.json",
+    "category": "car-analysis"
+  },
+  {
+    "id": "car-weaknesses-analysis",
+    "title": "Najveće mane i na što paziti kod vozila",
+    "description": "Saznaj stvarne probleme, kvarove i rizike kod određenog modela vozila.",
+    "file": "data/tools/car-weaknesses-analysis.json",
+    "category": "car-analysis"
+  },
+  {
+    "id": "car-positive-analysis",
+    "title": "Zašto je ovaj auto poseban?",
+    "description": "Istraži prednosti, reputaciju, tehnologiju i priču iza određenog modela vozila.",
+    "file": "data/tools/car-positive-analysis.json",
+    "category": "car-analysis"
+  },
+  {
+    "id": "car-accessories-advisor",
+    "title": "Dodatna oprema za moje vozilo",
+    "description": "Saznaj koja tvornička i naknadna dodatna oprema stvarno ima smisla za tvoje vozilo i način korištenja.",
+    "file": "data/tools/car-accessories-advisor.json",
+    "category": "ownership-and-lifestyle"
+  },
+  {
+    "id": "driving-tips-by-car",
+    "title": "Savjeti za vožnju mog vozila",
+    "description": "Saznaj kako bolje, sigurnije i pametnije voziti svoje vozilo prema njegovim karakteristikama i uvjetima korištenja.",
+    "file": "data/tools/driving-tips-by-car.json",
+    "category": "ownership-and-lifestyle"
+  },
+  {
+    "id": "car-movies-series-recommender",
+    "title": "Preporuka filmova i serija o automobilima",
+    "description": "Pronađi filmove, serije, dokumentarce i motorsport sadržaj o automobilima prema svojim interesima.",
+    "file": "data/tools/car-movies-series-recommender.json",
+    "category": "ownership-and-lifestyle"
+  },
+  {
+    "id": "car-games-recommender",
+    "title": "Preporuka videoigara o automobilima",
+    "description": "Pronađi najbolje racing, open world i auto igre prema svojim preferencama.",
+    "file": "data/tools/car-games-recommender.json",
+    "category": "ownership-and-lifestyle"
   }
 ]

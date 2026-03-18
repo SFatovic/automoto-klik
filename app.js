@@ -3,6 +3,25 @@ const state = {
   activeTool: null
 };
 
+const categoryMap = {
+  "car-selection": {
+    title: "Odabir vozila",
+    icon: "🚗"
+  },
+  "car-analysis": {
+    title: "Analiza vozila",
+    icon: "🔍"
+  },
+  "costs-and-purchase": {
+    title: "Troškovi i kupnja",
+    icon: "💰"
+  },
+  "ownership-and-lifestyle": {
+    title: "Vlasništvo i lifestyle",
+    icon: "✨"
+  }
+};
+
 const dom = {};
 
 document.addEventListener("DOMContentLoaded", initApp);
@@ -82,19 +101,54 @@ async function renderToolsListPage() {
     return;
   }
 
-  dom.toolsGrid.innerHTML = manifest.map(tool => `
-    <div class="col-md-6 col-lg-4">
-      <a href="tool.html?tool=${tool.id}" class="tool-card-link text-decoration-none d-block h-100" data-tool-link="${tool.id}">
-        <div class="tool-card h-100">
-          <div class="tool-card-body">
-            <h4>${tool.title}</h4>
-            <p class="tool-card-text">${tool.description}</p>
-          </div>
-        </div>
-      </a>
-    </div>
-  `).join("");
+  // 🔹 grupiranje po kategorijama
+  const grouped = {};
 
+  manifest.forEach(tool => {
+    const cat = tool.category || "other";
+
+    if (!grouped[cat]) {
+      grouped[cat] = [];
+    }
+
+    grouped[cat].push(tool);
+  });
+
+  // 🔹 render po sekcijama
+  let html = "";
+
+  Object.keys(categoryMap).forEach(categoryKey => {
+    const tools = grouped[categoryKey];
+
+    if (!tools || tools.length === 0) return;
+
+    const category = categoryMap[categoryKey];
+
+    html += `
+      <div class="col-12 mt-4">
+        <h3 class="mb-3">${category.icon} ${category.title}</h3>
+      </div>
+    `;
+
+    html += tools.map(tool => `
+      <div class="col-md-6 col-lg-4">
+        <a href="tool.html?tool=${tool.id}" 
+           class="tool-card-link text-decoration-none d-block h-100" 
+           data-tool-link="${tool.id}">
+          <div class="tool-card h-100">
+            <div class="tool-card-body">
+              <h4>${tool.title}</h4>
+              <p class="tool-card-text">${tool.description}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    `).join("");
+  });
+
+  dom.toolsGrid.innerHTML = html;
+
+  // 🔹 tracking (ostaje isto)
   document.querySelectorAll("[data-tool-link]").forEach(link => {
     link.addEventListener("click", () => {
       const toolId = link.dataset.toolLink;

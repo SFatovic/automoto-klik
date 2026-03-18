@@ -5,6 +5,18 @@ const quizState = {
   selectedAnswers: []
 };
 
+const quizCategoryMap = {
+  brand: {
+    title: "🚗 Brand kvizovi"
+  },
+  f1: {
+    title: "🏁 F1 kvizovi"
+  },
+  general: {
+    title: "🧠 Opći kvizovi"
+  }
+};
+
 document.addEventListener("DOMContentLoaded", initQuizPages);
 
 async function initQuizPages() {
@@ -65,19 +77,49 @@ async function loadQuizListPage() {
     return;
   }
 
-  grid.innerHTML = manifest.map(quiz => `
-    <div class="col-md-6 col-lg-4">
-      <a href="kviz.html?quiz=${quiz.id}" class="tool-card-link text-decoration-none d-block h-100">
-        <div class="tool-card h-100">
-          <div class="tool-card-body">
-            <h4>${quiz.title}</h4>
-            <p class="tool-card-text">${quiz.description}</p>
-            <p class="tool-card-text mt-2"><strong>${quiz.questionCount}</strong> pitanja</p>
+  const grouped = {};
+
+  manifest.forEach(quiz => {
+    const category = quiz.category || "general";
+
+    if (!grouped[category]) {
+      grouped[category] = [];
+    }
+
+    grouped[category].push(quiz);
+  });
+
+  let html = "";
+
+  Object.keys(quizCategoryMap).forEach(categoryKey => {
+    const quizzes = grouped[categoryKey];
+
+    if (!quizzes || quizzes.length === 0) return;
+
+    const category = quizCategoryMap[categoryKey];
+
+    html += `
+      <div class="col-12 mt-4">
+        <h3 class="mb-3">${category.title}</h3>
+      </div>
+    `;
+
+    html += quizzes.map(quiz => `
+      <div class="col-md-6 col-lg-4">
+        <a href="kviz.html?quiz=${quiz.id}" class="tool-card-link text-decoration-none d-block h-100">
+          <div class="tool-card h-100">
+            <div class="tool-card-body">
+              <h4>${quiz.title}</h4>
+              <p class="tool-card-text">${quiz.description}</p>
+              <p class="tool-card-text mt-2"><strong>${quiz.questionCount || ""}</strong> pitanja</p>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-  `).join("");
+        </a>
+      </div>
+    `).join("");
+  });
+
+  grid.innerHTML = html;
 }
 
 async function loadSingleQuizPage() {

@@ -1,0 +1,66 @@
+{
+  "id": "brand-overview",
+  "title": "Pregled automobilskog brenda",
+  "description": "Saznaj ključne informacije o odabranom automobilskom brendu – od ponude modela do filozofije, tehnologije i aktualnosti.",
+  "fields": [
+    {
+      "id": "brand",
+      "label": "Koji brend te zanima",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. BMW, Audi, Mercedes, Toyota"
+    },
+    {
+      "id": "depth",
+      "label": "Koliko detaljan pregled želiš",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Kratki pregled (quick overview)",
+        "Srednje detaljan pregled",
+        "Detaljna analiza"
+      ]
+    },
+    {
+      "id": "topics",
+      "label": "Koje teme te najviše zanimaju",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Trenutna ponuda modela",
+        "Najpopularniji modeli",
+        "Filozofija i identitet brenda",
+        "Performanse i sportski modeli",
+        "Elektrifikacija i budućnost",
+        "Tehnologija i inovacije",
+        "Pouzdanost i reputacija",
+        "Cijene i tržišna pozicija",
+        "Motorsport i uspjesi",
+        "Najave novih modela",
+        "Poslovanje i strategija",
+        "Usporedba s konkurencijom"
+      ]
+    },
+    {
+      "id": "interestType",
+      "label": "Zašto te zanima ovaj brend",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Razmišljam o kupnji",
+        "Općenito me zanima",
+        "Uspoređujem s drugim brendovima",
+        "Fan sam brenda"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 3,
+      "required": false,
+      "placeholder": "npr. zanimaju me samo SUV modeli ili električni modeli"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao iskusan automobilski analitičar i stručnjak za autoindustriju.\n\nŽelim strukturirani pregled automobilskog brenda.\n\nPodaci:\n- Brend: {{brand}}\n- Razina detalja: {{depth}}\n- Fokus teme: {{topics}}\n- Kontekst interesa: {{interestType}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n\n1. Daj kratak uvod o brendu (pozicija na tržištu i osnovni identitet).\n\n2. Obradi odabrane teme na jasan i strukturiran način (koristi podnaslove):\n- Fokusiraj se samo na teme koje sam označio\n- Budi konkretan (navedi modele, tehnologije, primjere)\n\n3. Ako je relevantno, uključi:\n- aktualne modele i linije\n- najpoznatije modele\n- smjer razvoja (elektrifikacija, strategija)\n\n4. Izbjegavaj generičke opise i fraze — fokusiraj se na konkretne i korisne informacije.\n\n5. Ako sam označio da razmišljam o kupnji, uključi i kratak komentar je li taj brend dobar izbor i za koga je najprikladniji.\n\n6. Na kraju daj kratak sažetak u 3-4 rečenice.\n\nBudi jasan, konkretan i informativan."
+}

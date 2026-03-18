@@ -1,0 +1,99 @@
+{
+  "id": "ferrari-f1",
+  "title": "Ferrari F1 Team",
+  "description": "Testiraj svoje znanje o najpoznatijem timu u povijesti Formule 1.",
+  "questions": [
+    {
+      "question": "Tko je donio Ferrariju prvu pobjedu u Formuli 1?",
+      "answers": [
+        "Alberto Ascari",
+        "Giuseppe Farina",
+        "José Froilán González",
+        "Juan Manuel Fangio",
+        "Niki Lauda"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "Kako se zove Ferrari F1 tim službeno?",
+      "answers": [
+        "Ferrari Racing Team",
+        "Scuderia Ferrari",
+        "Ferrari Motorsport",
+        "Team Ferrari",
+        "Ferrari Formula 1 Team"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koja je primarna boja Ferrarijevih bolida?",
+      "answers": ["Plava", "Crna", "Žuta", "Srebrna", "Crvena"],
+      "correctIndex": 4
+    },
+    {
+      "question": "Koliko je Schumacher osvojio naslova s Ferrarijem?",
+      "answers": ["3", "4", "5", "6", "2"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Gdje se nalazi Ferrarijeva F1 baza?",
+      "answers": ["Milano", "Torino", "Modena", "Maranello", "Rim"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Kako se zove poznata staza u Monzi koja je domaćin F1 utrke?",
+      "answers": [
+        "Circuit Italia",
+        "Autodromo Nazionale Monza",
+        "Monza Racing Park",
+        "Italian Speed Ring",
+        "Fiorano Circuit"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Tko je bio šef Scuderia Ferrari tijekom dominacije Michaela Schumachera početkom 2000-ih?",
+      "answers": [
+        "Jean Todt",
+        "Ross Brawn",
+        "Luca di Montezemolo",
+        "Stefano Domenicali",
+        "Flavio Briatore"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Kako se nazivaju Ferrarijevi fanovi?",
+      "answers": [
+        "Scuderia Club",
+        "Ferrari Fans",
+        "Tifosi",
+        "Rosso Army",
+        "Pit Crew"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "question": "Kako Ferrari tradicionalno označava svoje F1 bolide?",
+      "answers": [
+        "Nazivima raznih gradova",
+        "Oznakom SF + godina",
+        "Inicijali vozača + godina",
+        "3 znamenke + godina",
+        "Nazivima staza"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koji je poznati brend cigareta bio dugogodišnji sponzor Ferrarija u Formuli 1?",
+      "answers": [
+        "Camel",
+        "Lucky Strike",
+        "Marlboro",
+        "West",
+        "Benson & Hedges"
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

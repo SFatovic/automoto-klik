@@ -182,7 +182,7 @@ a {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: var(--accent);
 }
 
 .category-card-text {
@@ -730,4 +730,46 @@ a {
   background: #084e96;
   color: #fff;
   transform: translateY(-1px);
+}
+
+.ai-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ai-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.ai-btn.gpt {
+  background: #10a37f;
+  color: white;
+}
+
+.ai-btn.gpt:hover {
+  background: #0d8c6d;
+}
+
+.ai-btn.gemini {
+  background: #4285f4;
+  color: white;
+}
+
+.ai-btn.gemini:hover {
+  background: #3367d6;
+}
+
+.tools-section > .container > .row > .col-12 > h3 {
+  font-family: "Genos", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
 }
