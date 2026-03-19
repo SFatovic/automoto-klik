@@ -1,0 +1,75 @@
+{
+  "id": "red-bull-f1",
+  "title": "Red Bull F1 Team – Kviz",
+  "description": "Provjeri svoje znanje o Red Bull Racingu u Formuli 1.",
+  "questions": [
+    {
+      "question": "Koje sezone je Red Bull Racing debitirao u Formuli 1 kao konstruktorska momčad?",
+      "answers": ["2000", "2005", "2010", "2020", "2025"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koju je F1 momčad Red Bull kupio prije ulaska u prvenstvo?",
+      "answers": ["Jaguar", "Jordan", "Sauber", "Minardi", "Benetton"],
+      "correctIndex": 0
+    },
+    {
+      "question": "Koja dva vozača su vozila za Red Bull u njihovoj prvoj F1 sezoni 2005.?",
+      "answers": [
+        "Sebastian Vettel i Mark Webber",
+        "David Coulthard i Christian Klien",
+        "Max Verstappen i Daniel Ricciardo",
+        "Rubens Barrichello i Jenson Button",
+        "Fernando Alonso i Giancarlo Fisichella"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "question": "Gdje se nalazi sjedište Red Bull Racinga?",
+      "answers": ["Silverstone", "Maranello", "Milton Keynes", "Spielberg", "Oxford"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Tko je Red Bullu donio prvu pobjedu u Formuli 1?",
+      "answers": ["Mark Webber", "Sebastian Vettel", "Daniel Ricciardo", "Max Verstappen", "David Coulthard"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koji je vozač osvojio Red Bullu prvi vozački naslov prvaka?",
+      "answers": ["Mark Webber", "Max Verstappen", "Daniel Ricciardo", "Sebastian Vettel", "Sergio Pérez"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Koliko je uzastopnih vozačkih naslova Sebastian Vettel osvojio s Red Bullom?",
+      "answers": ["3", "5", "2", "6", "4"],
+      "correctIndex": 4
+    },
+    {
+      "question": "Koji je dizajner najčešće povezivan s Red Bullovim najuspješnijim bolidima?",
+      "answers": ["Frédéric Vasseur", "Ross Brawn", "Adrian Newey", "James Vowles", "Toto Wolff"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Kako Red Bull označava svoje F1 bolide?",
+      "answers": [
+        "RB + redni broj modela",
+        "RB + Nazivima sponzora",
+        "Inicijali vozača + godina",
+        "RB + godina",
+        "Inicijali vozača + redni broj modela"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Kako se zove Red Bullov program za razvoj mladih vozača?",
+      "answers": [
+        "Red Bull Talent Program",
+        "Red Bull Junior Team",
+        "Red Bull Driver Academy",
+        "Red Bull Racing School",
+        "Red Bull Motorsport Academy"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

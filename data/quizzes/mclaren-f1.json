@@ -1,0 +1,69 @@
+{
+  "id": "mclaren-f1",
+  "title": "McLaren F1 Team – Kviz",
+  "description": "Provjeri svoje znanje o McLaren F1 timu.",
+  "questions": [
+    {
+      "question": "Iz koje zemlje dolazi McLaren F1 tim?",
+      "answers": ["Njemačka", "SAD", "Australija", "Velika Britanija", "Italija"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Gdje se nalazi sjedište McLarena?",
+      "answers": ["Silverstone", "Woking", "Oxford", "Milton Keynes", "London"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Kako se naziva legendarna McLarenova narančasta boja koja potječe još iz Can-Am ere?",
+      "answers": [
+        "Papaya Orange",
+        "Rosso Corsa",
+        "McLaren Gold",
+        "Sunset Orange",
+        "British Orange"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Koji vozač je McLarenu donio prvi vozački naslov prvaka?",
+      "answers": ["James Hunt", "Ayrton Senna", "Emerson Fittipaldi", "Alain Prost", "Niki Lauda"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Koji legendarni vozač je vozio za McLaren i osvojio 3 naslova s timom?",
+      "answers": ["Michael Schumacher", "Ayrton Senna", "Fernando Alonso", "Lewis Hamilton", "Sebastian Vettel"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koji je McLarenov bolid iz 1988. ostao zapamćen kao jedan od najdominantnijih u povijesti?",
+      "answers": ["MP4/6", "MP4/4", "MP4/5", "MP4/8", "MP4/2"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Koji motor je McLaren koristio u dominantnoj sezoni 1988.?",
+      "answers": ["Ferrari", "Renault", "Honda", "Mercedes", "Ford"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Koji je McLarenov bolid donio Lewisu Hamiltonu naslov 2008.?",
+      "answers": ["MP4-22", "MP4-24", "MP4-23", "MP4-21", "MP4-25"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Koji je motor McLaren ponovno počeo koristiti od 2021.?",
+      "answers": ["Honda", "Ferrari", "Renault", "Mercedes", "BMW"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Kako se zove McLarenov moderni kampus i sjedište?",
+      "answers": [
+        "McLaren Arena",
+        "McLaren Factory",
+        "McLaren Technology Centre",
+        "McLaren HQ",
+        "McLaren Campus UK"
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

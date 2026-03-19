@@ -1,0 +1,75 @@
+{
+  "id": "mercedes-f1",
+  "title": "Mercedes F1 Team – Kviz",
+  "description": "Provjeri svoje znanje o Mercedes-AMG Petronas F1 timu.",
+  "questions": [
+    {
+      "question": "Koju je momčad Mercedes kupio za povratak u F1?",
+      "answers": ["Brawn GP", "Honda", "BMW Sauber", "Williams", "Toyota"],
+      "correctIndex": 0
+    },
+    {
+      "question": "Gdje se nalazi sjedište Mercedes F1 tima?",
+      "answers": ["London", "Silverstone", "Stuttgart", "Oxford", "Brackley"],
+      "correctIndex": 4
+    },
+    {
+      "question": "Koji je nadimak Mercedes F1 bolida kroz povijest?",
+      "answers": ["Red Bulls", "Silver Arrows", "Silver Stars", "Blue Rockets", "Iron Cars"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Kako se često naziva Sir Stirling Moss u kontekstu Formule 1?",
+      "answers": [
+        "Najbolji vozač bez naslova prvaka",
+        "Kralj Monaca",
+        "Otac Formule 1",
+        "Silver Champion",
+        "Britanski Schumacher"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Koliko uzastopnih konstruktorskih naslova je Mercedes osvojio počevši od 2014. sezone?",
+      "answers": ["6", "7", "8", "5", "9"],
+      "correctIndex": 2
+    },
+    {
+      "question": "Koji vozač je osvojio naslov 2016. i potom se povukao iz F1?",
+      "answers": ["Lewis Hamilton", "Valtteri Bottas", "Michael Schumacher", "Nico Rosberg", "Jenson Button"],
+      "correctIndex": 3
+    },
+    {
+      "question": "Koji je inženjer bio ključan za dominaciju Mercedes bolida u hibridnoj eri?",
+      "answers": ["Adrian Newey", "James Allison", "Ross Brawn", "Pat Fry", "Gordon Murray"],
+      "correctIndex": 1
+    },
+    {
+      "question": "Kako Mercedes označava svoje F1 bolide?",
+      "answers": [
+        "W + redni broj",
+        "M + godina",
+        "Naziv sponzora",
+        "AMG + godina",
+        "AMG + broj"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "question": "Koja naftna kompanija je dugogodišnji partner i sponzor Mercedes F1 tima?",
+      "answers": ["Petronas", "Shell", "Aramco", "Total", "Eni"],
+      "correctIndex": 0
+    },
+    {
+      "question": "Tko je dugogodišnji šef Mercedes F1 tima tijekom njihove dominacije?",
+      "answers": [
+        "Christian Horner",
+        "Toto Wolff",
+        "Zak Brown",
+        "Fred Vasseur",
+        "Helmut Marko"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

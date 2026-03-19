@@ -150,5 +150,37 @@
   "file": "data/quizzes/ferrari-f1.json",
   "category": "f1",
   "questionCount": 10
+  },
+  {
+  "id": "red-bull-f1",
+  "title": "Red Bull F1 Team kviz",
+  "description": "Provjeri svoje znanje o Red Bull Racingu u Formuli 1.",
+  "file": "data/quizzes/red-bull-f1.json",
+  "questionCount": 10,
+  "category": "f1"
+  },
+  {
+  "id": "mclaren-f1",
+  "title": "McLaren F1 Team kviz",
+  "description": "Koliko znaš o McLarenu i njegovoj povijesti?",
+  "file": "data/quizzes/mclaren-f1.json",
+  "questionCount": 10,
+  "category": "f1"
+  },
+  {
+  "id": "mercedes-f1",
+  "title": "Mercedes F1 Team kviz",
+  "description": "Provjeri svoje znanje o Mercedes-AMG Petronas F1 timu.",
+  "file": "data/quizzes/mercedes-f1.json",
+  "questionCount": 10,
+  "category": "f1"
+  },
+  {
+  "id": "williams-f1",
+  "title": "Williams F1 Team kviz",
+  "description": "Provjeri svoje znanje o legendarnom Williams F1 timu.",
+  "file": "data/quizzes/williams-f1.json",
+  "questionCount": 10,
+  "category": "f1"
   }
 ]

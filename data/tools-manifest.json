@@ -84,13 +84,6 @@
     "category": "car-analysis"
   },
   {
-    "id": "car-accessories-advisor",
-    "title": "Dodatna oprema za moje vozilo",
-    "description": "Saznaj koja tvornička i naknadna dodatna oprema stvarno ima smisla za tvoje vozilo i način korištenja.",
-    "file": "data/tools/car-accessories-advisor.json",
-    "category": "ownership-and-lifestyle"
-  },
-  {
     "id": "driving-tips-by-car",
     "title": "Savjeti za vožnju mog vozila",
     "description": "Saznaj kako bolje, sigurnije i pametnije voziti svoje vozilo prema njegovim karakteristikama i uvjetima korištenja.",
@@ -110,5 +103,19 @@
     "description": "Pronađi najbolje racing, open world i auto igre prema svojim preferencama.",
     "file": "data/tools/car-games-recommender.json",
     "category": "ownership-and-lifestyle"
+  },
+  {
+  "id": "factory-equipment-advisor",
+  "title": "Tvornička oprema pri kupnji vozila",
+  "description": "Saznaj koja tvornička oprema stvarno ima smisla pri konfiguraciji i kupnji vozila.",
+  "file": "data/tools/factory-equipment-advisor.json",
+  "category": "ownership-and-lifestyle"
+  },
+  {
+  "id": "aftermarket-accessories-advisor",
+  "title": "Naknadna dodatna oprema za vozilo",
+  "description": "Saznaj koji dodaci i naknadna oprema stvarno imaju smisla za tvoje vozilo i tvoj lifestyle.",
+  "file": "data/tools/aftermarket-accessories-advisor.json",
+  "category": "ownership-and-lifestyle"
   }
 ]

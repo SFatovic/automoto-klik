@@ -70,6 +70,7 @@ function renderFooter() {
         <a href="ai-upiti.html">AI alati</a>
         <a href="kvizovi.html">Kvizovi</a>
         <a href="o-projektu.html">O projektu</a>
+        <a href="legal.html">Uvjeti korištenja i privatnost</a>
       </div>
 
       <div class="footer-bottom">
