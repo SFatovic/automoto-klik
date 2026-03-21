@@ -1,8 +1,9 @@
 const quizState = {
-  manifest: [],
+  manifest: null,
   quiz: null,
   currentIndex: 0,
-  selectedAnswers: []
+  selectedAnswers: [],
+  jsonCache: new Map()
 };
 
 const quizCategoryMap = {
@@ -14,6 +15,9 @@ const quizCategoryMap = {
   },
   general: {
     title: "🧠 Opći kvizovi"
+  },
+  other: {
+    title: "📦 Ostali kvizovi"
   }
 };
 
@@ -37,36 +41,51 @@ async function initQuizPages() {
         <div class="col-12">
           <div class="info-box text-center">
             <p class="mb-2"><strong>Kvizove trenutno nije moguće učitati.</strong></p>
-            <p class="mb-0">Provjeri koristiš li Live Server i postoji li datoteka <code>data/quizzes-manifest.json</code>.</p>
+            <p class="mb-0">Provjeri koristiš li lokalni server i postoji li datoteka <code>data/quizzes-manifest.json</code>.</p>
           </div>
         </div>
       `;
     }
 
     if (document.body.id === "quizPage") {
-      renderQuizError("Kviz nije moguće učitati. Provjeri path do JSON datoteka i koristi lokalni server.");
+      renderQuizError("Kviz nije moguće učitati. Provjeri putanju do JSON datoteka i koristi lokalni server.");
     }
   }
 }
 
 async function fetchJson(path) {
+  if (quizState.jsonCache.has(path)) {
+    return quizState.jsonCache.get(path);
+  }
+
   const response = await fetch(path);
 
   if (!response.ok) {
     throw new Error(`Greška pri učitavanju: ${path} (status ${response.status})`);
   }
 
-  return response.json();
+  const data = await response.json();
+  quizState.jsonCache.set(path, data);
+
+  return data;
+}
+
+async function loadQuizManifest() {
+  if (quizState.manifest) return quizState.manifest;
+
+  const manifest = await fetchJson("data/quizzes-manifest.json");
+  quizState.manifest = Array.isArray(manifest) ? manifest : [];
+
+  return quizState.manifest;
 }
 
 async function loadQuizListPage() {
-  const manifest = await fetchJson("data/quizzes-manifest.json");
-  quizState.manifest = manifest;
-
+  const manifest = await loadQuizManifest();
   const grid = document.getElementById("quizzesGrid");
+
   if (!grid) return;
 
-  if (!Array.isArray(manifest) || manifest.length === 0) {
+  if (!manifest.length) {
     grid.innerHTML = `
       <div class="col-12">
         <div class="info-box text-center">
@@ -77,49 +96,58 @@ async function loadQuizListPage() {
     return;
   }
 
-  const grouped = {};
-
-  manifest.forEach(quiz => {
-    const category = quiz.category || "general";
-
-    if (!grouped[category]) {
-      grouped[category] = [];
-    }
-
-    grouped[category].push(quiz);
-  });
-
+  const grouped = groupQuizzesByCategory(manifest);
   let html = "";
 
-  Object.keys(quizCategoryMap).forEach(categoryKey => {
+  Object.keys(quizCategoryMap).forEach((categoryKey) => {
     const quizzes = grouped[categoryKey];
-
     if (!quizzes || quizzes.length === 0) return;
-
-    const category = quizCategoryMap[categoryKey];
 
     html += `
       <div class="col-12 mt-4">
-        <h3 class="mb-3">${category.title}</h3>
+        <h3 class="cards-section-title mb-3">${quizCategoryMap[categoryKey].title}</h3>
       </div>
     `;
 
-    html += quizzes.map(quiz => `
-      <div class="col-md-6 col-lg-4">
-        <a href="kviz.html?quiz=${quiz.id}" class="tool-card-link text-decoration-none d-block h-100">
-          <div class="tool-card h-100">
-            <div class="tool-card-body">
-              <h4>${quiz.title}</h4>
-              <p class="tool-card-text">${quiz.description}</p>
-              <p class="tool-card-text mt-2"><strong>${quiz.questionCount || ""}</strong> pitanja</p>
-            </div>
+    html += quizzes
+      .map(
+        (quiz) => `
+          <div class="col-md-6 col-lg-4">
+            <a
+              href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
+              class="tool-card-link text-decoration-none d-block h-100"
+              aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
+            >
+              <article class="tool-card h-100">
+                <div class="tool-card-body">
+                  <h4>${escapeHtml(quiz.title)}</h4>
+                  <p class="tool-card-text">${escapeHtml(quiz.description || "")}</p>
+                  <p class="tool-card-text mt-2">
+                    <strong>${Number(quiz.questionCount) || 0}</strong> pitanja
+                  </p>
+                </div>
+              </article>
+            </a>
           </div>
-        </a>
-      </div>
-    `).join("");
+        `
+      )
+      .join("");
   });
 
   grid.innerHTML = html;
+}
+
+function groupQuizzesByCategory(items) {
+  return items.reduce((accumulator, item) => {
+    const category = quizCategoryMap[item.category] ? item.category : "other";
+
+    if (!accumulator[category]) {
+      accumulator[category] = [];
+    }
+
+    accumulator[category].push(item);
+    return accumulator;
+  }, {});
 }
 
 async function loadSingleQuizPage() {
@@ -131,10 +159,8 @@ async function loadSingleQuizPage() {
     return;
   }
 
-  const manifest = await fetchJson("data/quizzes-manifest.json");
-  quizState.manifest = manifest;
-
-  const manifestItem = manifest.find(q => q.id === quizId);
+  const manifest = await loadQuizManifest();
+  const manifestItem = manifest.find((quiz) => quiz.id === quizId);
 
   if (!manifestItem) {
     renderQuizError("Kviz nije pronađen.");
@@ -142,6 +168,12 @@ async function loadSingleQuizPage() {
   }
 
   const quiz = await fetchJson(manifestItem.file);
+
+  if (!quiz || !Array.isArray(quiz.questions) || quiz.questions.length === 0) {
+    renderQuizError("Kviz nema ispravno definirana pitanja.");
+    return;
+  }
+
   quizState.quiz = quiz;
   quizState.currentIndex = 0;
   quizState.selectedAnswers = [];
@@ -150,21 +182,23 @@ async function loadSingleQuizPage() {
   const descEl = document.getElementById("quizDescription");
 
   if (titleEl) titleEl.textContent = quiz.title;
-  if (descEl) descEl.textContent = quiz.description;
+  if (descEl) descEl.textContent = quiz.description || "";
 
-  document.title = `${quiz.title} | AutoMoto KLIK`;
+  document.title = `${quiz.title} | AutoMoto KLIK!`;
 
   renderQuestion();
 }
 
 function renderQuestion() {
   const quiz = quizState.quiz;
-  const question = quiz.questions[quizState.currentIndex];
+  const question = quiz?.questions?.[quizState.currentIndex];
 
   const progressEl = document.getElementById("quizProgress");
   const contentEl = document.getElementById("quizContent");
 
-  if (!question || !contentEl) return;
+  if (!quiz || !question || !contentEl) return;
+
+  const selectedIndex = quizState.selectedAnswers[quizState.currentIndex];
 
   if (progressEl) {
     progressEl.textContent = `Pitanje ${quizState.currentIndex + 1} od ${quiz.questions.length}`;
@@ -175,24 +209,47 @@ function renderQuestion() {
       <div class="card-body-custom">
         <div class="quiz-progress mb-3">${quizState.currentIndex + 1} / ${quiz.questions.length}</div>
 
-        <h3 class="mb-4">${question.question}</h3>
+        <h3 class="mb-4">${escapeHtml(question.question)}</h3>
 
-        ${question.image ? `
-          <div class="mb-4">
-            <img src="${question.image}" alt="Slika pitanja" class="quiz-question-image">
-          </div>
-        ` : ""}
+        ${
+          question.image
+            ? `
+              <div class="mb-4">
+                <img
+                  src="${escapeHtml(question.image)}"
+                  alt="Vizual uz pitanje"
+                  class="quiz-question-image"
+                  loading="lazy"
+                />
+              </div>
+            `
+            : ""
+        }
 
-        <div class="quiz-answers">
-          ${question.answers.map((answer, index) => `
-            <button type="button" class="quiz-answer-btn" data-answer-index="${index}">
-              ${answer}
-            </button>
-          `).join("")}
+        <div class="quiz-answers" role="group" aria-label="Odgovori na pitanje">
+          ${(question.answers || [])
+            .map(
+              (answer, index) => `
+                <button
+                  type="button"
+                  class="quiz-answer-btn ${selectedIndex === index ? "selected" : ""}"
+                  data-answer-index="${index}"
+                  aria-pressed="${selectedIndex === index ? "true" : "false"}"
+                >
+                  ${escapeHtml(answer)}
+                </button>
+              `
+            )
+            .join("")}
         </div>
 
         <div class="mt-4 d-grid">
-          <button type="button" id="nextQuestionBtn" class="btn btn-primary btn-lg" disabled>
+          <button
+            type="button"
+            id="nextQuestionBtn"
+            class="btn btn-primary btn-lg"
+            ${typeof selectedIndex === "number" ? "" : "disabled"}
+          >
             ${quizState.currentIndex === quiz.questions.length - 1 ? "Završi kviz" : "Dalje"}
           </button>
         </div>
@@ -207,15 +264,19 @@ function bindQuestionEvents() {
   const answerButtons = document.querySelectorAll(".quiz-answer-btn");
   const nextButton = document.getElementById("nextQuestionBtn");
 
-  let selectedIndex = null;
-
-  answerButtons.forEach(button => {
+  answerButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      answerButtons.forEach(btn => btn.classList.remove("selected"));
-      button.classList.add("selected");
+      const selectedIndex = Number(button.dataset.answerIndex);
 
-      selectedIndex = Number(button.dataset.answerIndex);
       quizState.selectedAnswers[quizState.currentIndex] = selectedIndex;
+
+      answerButtons.forEach((btn) => {
+        btn.classList.remove("selected");
+        btn.setAttribute("aria-pressed", "false");
+      });
+
+      button.classList.add("selected");
+      button.setAttribute("aria-pressed", "true");
 
       if (nextButton) {
         nextButton.disabled = false;
@@ -225,7 +286,8 @@ function bindQuestionEvents() {
 
   if (nextButton) {
     nextButton.addEventListener("click", () => {
-      if (selectedIndex === null) return;
+      const selectedIndex = quizState.selectedAnswers[quizState.currentIndex];
+      if (typeof selectedIndex !== "number") return;
 
       if (quizState.currentIndex < quizState.quiz.questions.length - 1) {
         quizState.currentIndex += 1;
@@ -242,6 +304,8 @@ function renderQuizResult() {
   const progressEl = document.getElementById("quizProgress");
   const contentEl = document.getElementById("quizContent");
 
+  if (!quiz || !contentEl) return;
+
   let score = 0;
 
   quiz.questions.forEach((question, index) => {
@@ -251,6 +315,7 @@ function renderQuizResult() {
   });
 
   const percentage = Math.round((score / quiz.questions.length) * 100);
+  const performanceLabel = getPerformanceLabel(percentage);
 
   if (progressEl) {
     progressEl.textContent = "Rezultat";
@@ -260,28 +325,37 @@ function renderQuizResult() {
     <div class="custom-card">
       <div class="card-body-custom">
         <p class="small-label mb-2">Završni report</p>
-        <h3 class="mb-2">${quiz.title}</h3>
-        <p class="mb-4">Točni odgovori: <strong>${score} / ${quiz.questions.length}</strong> (${percentage}%)</p>
+        <h3 class="mb-2">${escapeHtml(quiz.title)}</h3>
+        <p class="mb-2">
+          Točni odgovori: <strong>${score} / ${quiz.questions.length}</strong> (${percentage}%)
+        </p>
+        <p class="quiz-performance-note mb-4">${performanceLabel}</p>
 
         <div class="quiz-report-list">
-          ${quiz.questions.map((question, index) => {
-            const userAnswerIndex = quizState.selectedAnswers[index];
-            const isCorrect = userAnswerIndex === question.correctIndex;
+          ${quiz.questions
+            .map((question, index) => {
+              const userAnswerIndex = quizState.selectedAnswers[index];
+              const isCorrect = userAnswerIndex === question.correctIndex;
 
-            return `
-              <div class="quiz-report-item">
-                <h4>Pitanje ${index + 1}</h4>
-                <p class="mb-2"><strong>${question.question}</strong></p>
-                <p class="${isCorrect ? "quiz-report-correct" : "quiz-report-wrong"}">
-                  Tvoj odgovor: ${question.answers[userAnswerIndex] || "Nije odgovoreno"}
-                </p>
-                <p class="quiz-report-correct">
-                  Točan odgovor: ${question.answers[question.correctIndex]}
-                </p>
-                ${question.tip ? `<p class="quiz-report-tip">Objašnjenje: ${question.tip}</p>` : ""}
-              </div>
-            `;
-          }).join("")}
+              return `
+                <div class="quiz-report-item">
+                  <h4>Pitanje ${index + 1}</h4>
+                  <p class="mb-2"><strong>${escapeHtml(question.question)}</strong></p>
+                  <p class="${isCorrect ? "quiz-report-correct" : "quiz-report-wrong"}">
+                    Tvoj odgovor: ${escapeHtml(question.answers[userAnswerIndex] || "Nije odgovoreno")}
+                  </p>
+                  <p class="quiz-report-correct">
+                    Točan odgovor: ${escapeHtml(question.answers[question.correctIndex] || "")}
+                  </p>
+                  ${
+                    question.tip
+                      ? `<p class="quiz-report-tip">Objašnjenje: ${escapeHtml(question.tip)}</p>`
+                      : ""
+                  }
+                </div>
+              `;
+            })
+            .join("")}
         </div>
 
         <div class="mt-4 d-flex flex-column flex-md-row gap-3">
@@ -306,6 +380,14 @@ function renderQuizResult() {
   }
 }
 
+function getPerformanceLabel(percentage) {
+  if (percentage === 100) return "Savršeno. Ovaj kviz si odradio bez greške.";
+  if (percentage >= 80) return "Vrlo jako. Znaš temu više nego solidno.";
+  if (percentage >= 60) return "Dobar rezultat. Imaš bazu, ali još ima prostora za napredak.";
+  if (percentage >= 40) return "Nije loše, ali ovaj brend ili tema ti još može zadati domaću zadaću.";
+  return "Vrijeme je za revanš. Ovaj put kviz je bio jači.";
+}
+
 function renderQuizError(message) {
   const titleEl = document.getElementById("quizTitle");
   const descEl = document.getElementById("quizDescription");
@@ -317,8 +399,17 @@ function renderQuizError(message) {
   if (contentEl) {
     contentEl.innerHTML = `
       <div class="info-box">
-        <p class="mb-0">${message}</p>
+        <p class="mb-0">${escapeHtml(message)}</p>
       </div>
     `;
   }
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }

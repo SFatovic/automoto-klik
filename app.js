@@ -1,6 +1,7 @@
 const state = {
-  manifest: [],
-  activeTool: null
+  manifest: null,
+  activeTool: null,
+  jsonCache: new Map()
 };
 
 const categoryMap = {
@@ -19,6 +20,10 @@ const categoryMap = {
   "ownership-and-lifestyle": {
     title: "Vlasništvo i lifestyle",
     icon: "✨"
+  },
+  other: {
+    title: "Ostalo",
+    icon: "📦"
   }
 };
 
@@ -28,6 +33,7 @@ document.addEventListener("DOMContentLoaded", initApp);
 
 async function initApp() {
   cacheDom();
+  bindStaticEvents();
 
   try {
     if (dom.toolsGrid) {
@@ -48,6 +54,7 @@ function cacheDom() {
   dom.activeToolTitle = document.getElementById("activeToolTitle");
   dom.activeToolDescription = document.getElementById("activeToolDescription");
   dom.dynamicFields = document.getElementById("dynamicFields");
+  dom.promptForm = document.getElementById("promptForm");
   dom.generatePromptBtn = document.getElementById("generatePromptBtn");
   dom.promptOutput = document.getElementById("promptOutput");
   dom.copyPromptBtn = document.getElementById("copyPromptBtn");
@@ -55,34 +62,72 @@ function cacheDom() {
   dom.pageHeroToolDescription = document.getElementById("pageHeroToolDescription");
 }
 
+function bindStaticEvents() {
+  if (dom.promptForm) {
+    dom.promptForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      generatePrompt();
+    });
+  }
+
+  if (dom.generatePromptBtn) {
+    dom.generatePromptBtn.addEventListener("click", generatePrompt);
+  }
+
+  if (dom.copyPromptBtn) {
+    dom.copyPromptBtn.addEventListener("click", copyPrompt);
+  }
+
+  if (dom.toolsGrid) {
+    dom.toolsGrid.addEventListener("click", (event) => {
+      const link = event.target.closest("[data-tool-link]");
+      if (!link) return;
+
+      const toolId = link.dataset.toolLink;
+      const tool = (state.manifest || []).find((item) => item.id === toolId);
+
+      if (tool) {
+        trackClarityEvent("tool_opened", tool);
+      }
+    });
+  }
+}
+
 async function fetchJson(path) {
+  if (state.jsonCache.has(path)) {
+    return state.jsonCache.get(path);
+  }
+
   const response = await fetch(path);
 
   if (!response.ok) {
     throw new Error(`Greška pri učitavanju: ${path} (status ${response.status})`);
   }
 
-  return response.json();
+  const data = await response.json();
+  state.jsonCache.set(path, data);
+
+  return data;
+}
+
+async function loadToolsManifest() {
+  if (state.manifest) return state.manifest;
+
+  const manifest = await fetchJson("data/tools-manifest.json");
+  state.manifest = Array.isArray(manifest) ? manifest : [];
+
+  return state.manifest;
 }
 
 function trackClarityEvent(eventName, tool = null) {
-  if (!window.clarity) return;
+  if (typeof window.clarity !== "function") return;
 
   window.clarity("event", eventName);
 
   if (tool) {
-    window.clarity("set", "tool_id", tool.id);
-    window.clarity("set", "tool_name", tool.title);
+    window.clarity("set", "tool_id", tool.id || "");
+    window.clarity("set", "tool_name", tool.title || "");
   }
-}
-
-async function loadToolsManifest() {
-  if (state.manifest.length) return state.manifest;
-
-  const manifest = await fetchJson("data/tools-manifest.json");
-  state.manifest = manifest;
-
-  return manifest;
 }
 
 async function renderToolsListPage() {
@@ -101,64 +146,58 @@ async function renderToolsListPage() {
     return;
   }
 
-  // 🔹 grupiranje po kategorijama
-  const grouped = {};
-
-  manifest.forEach(tool => {
-    const cat = tool.category || "other";
-
-    if (!grouped[cat]) {
-      grouped[cat] = [];
-    }
-
-    grouped[cat].push(tool);
-  });
-
-  // 🔹 render po sekcijama
+  const grouped = groupByCategory(manifest);
   let html = "";
 
-  Object.keys(categoryMap).forEach(categoryKey => {
+  Object.keys(categoryMap).forEach((categoryKey) => {
     const tools = grouped[categoryKey];
-
     if (!tools || tools.length === 0) return;
 
     const category = categoryMap[categoryKey];
 
     html += `
       <div class="col-12 mt-4">
-        <h3 class="mb-3">${category.icon} ${category.title}</h3>
+        <h3 class="cards-section-title mb-3">${category.icon} ${escapeHtml(category.title)}</h3>
       </div>
     `;
 
-    html += tools.map(tool => `
-      <div class="col-md-6 col-lg-4">
-        <a href="tool.html?tool=${tool.id}" 
-           class="tool-card-link text-decoration-none d-block h-100" 
-           data-tool-link="${tool.id}">
-          <div class="tool-card h-100">
-            <div class="tool-card-body">
-              <h4>${tool.title}</h4>
-              <p class="tool-card-text">${tool.description}</p>
-            </div>
+    html += tools
+      .map(
+        (tool) => `
+          <div class="col-md-6 col-lg-4">
+            <a
+              href="tool.html?tool=${encodeURIComponent(tool.id)}"
+              class="tool-card-link text-decoration-none d-block h-100"
+              data-tool-link="${escapeHtml(tool.id)}"
+              aria-label="Otvori alat ${escapeHtml(tool.title)}"
+            >
+              <article class="tool-card h-100">
+                <div class="tool-card-body">
+                  <h4>${escapeHtml(tool.title)}</h4>
+                  <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
+                </div>
+              </article>
+            </a>
           </div>
-        </a>
-      </div>
-    `).join("");
+        `
+      )
+      .join("");
   });
 
   dom.toolsGrid.innerHTML = html;
+}
 
-  // 🔹 tracking (ostaje isto)
-  document.querySelectorAll("[data-tool-link]").forEach(link => {
-    link.addEventListener("click", () => {
-      const toolId = link.dataset.toolLink;
-      const tool = manifest.find(t => t.id === toolId);
+function groupByCategory(items) {
+  return items.reduce((accumulator, item) => {
+    const category = categoryMap[item.category] ? item.category : "other";
 
-      if (tool) {
-        trackClarityEvent("tool_opened", tool);
-      }
-    });
-  });
+    if (!accumulator[category]) {
+      accumulator[category] = [];
+    }
+
+    accumulator[category].push(item);
+    return accumulator;
+  }, {});
 }
 
 async function loadSingleToolPage() {
@@ -166,70 +205,44 @@ async function loadSingleToolPage() {
   const toolId = params.get("tool");
 
   if (!toolId) {
-    renderToolNotFound();
+    renderToolNotFound("Nedostaje ID alata u URL-u.");
     return;
   }
 
   const manifest = await loadToolsManifest();
-  const manifestItem = manifest.find(t => t.id === toolId);
+  const manifestItem = manifest.find((tool) => tool.id === toolId);
 
   if (!manifestItem) {
-    renderToolNotFound();
+    renderToolNotFound("Odabrani alat ne postoji ili link nije ispravan.");
     return;
   }
 
   const tool = await fetchJson(manifestItem.file);
   state.activeTool = tool;
 
-  if (dom.activeToolTitle) {
-    dom.activeToolTitle.textContent = tool.title;
-  }
-
-  if (dom.activeToolDescription) {
-    dom.activeToolDescription.textContent = tool.description;
-  }
-
-  if (dom.pageHeroToolTitle) {
-    dom.pageHeroToolTitle.textContent = tool.title;
-  }
-
-  if (dom.pageHeroToolDescription) {
-    dom.pageHeroToolDescription.textContent = tool.description;
-  }
-
-  document.title = `${tool.title} | AutoMoto KLIK!`;
-
+  updateToolPageMeta(tool);
   renderFields(tool.fields || []);
-
   trackClarityEvent("tool_loaded", tool);
-
-  if (dom.generatePromptBtn) {
-    dom.generatePromptBtn.addEventListener("click", generatePrompt);
-  }
-
-  if (dom.copyPromptBtn) {
-    dom.copyPromptBtn.addEventListener("click", copyPrompt);
-  }
 }
 
-function renderToolNotFound() {
-  if (dom.activeToolTitle) {
-    dom.activeToolTitle.textContent = "Alat nije pronađen";
-  }
+function updateToolPageMeta(tool) {
+  const title = tool?.title || "AI alat";
+  const description =
+    tool?.description || "Učitaj alat i ispuni nekoliko polja za generiranje AI upita.";
 
-  if (dom.activeToolDescription) {
-    dom.activeToolDescription.textContent =
-      "Odabrani alat ne postoji ili link nije ispravan.";
-  }
+  if (dom.activeToolTitle) dom.activeToolTitle.textContent = title;
+  if (dom.activeToolDescription) dom.activeToolDescription.textContent = description;
+  if (dom.pageHeroToolTitle) dom.pageHeroToolTitle.textContent = title;
+  if (dom.pageHeroToolDescription) dom.pageHeroToolDescription.textContent = description;
 
-  if (dom.pageHeroToolTitle) {
-    dom.pageHeroToolTitle.textContent = "Alat nije pronađen";
-  }
+  document.title = `${title} | AutoMoto KLIK!`;
+}
 
-  if (dom.pageHeroToolDescription) {
-    dom.pageHeroToolDescription.textContent =
-      "Provjeri link ili se vrati na popis AI alata.";
-  }
+function renderToolNotFound(message = "Odabrani alat nije pronađen.") {
+  if (dom.activeToolTitle) dom.activeToolTitle.textContent = "Alat nije pronađen";
+  if (dom.activeToolDescription) dom.activeToolDescription.textContent = message;
+  if (dom.pageHeroToolTitle) dom.pageHeroToolTitle.textContent = "Alat nije pronađen";
+  if (dom.pageHeroToolDescription) dom.pageHeroToolDescription.textContent = message;
 
   if (dom.dynamicFields) {
     dom.dynamicFields.innerHTML = `
@@ -241,98 +254,198 @@ function renderToolNotFound() {
     `;
   }
 
-  if (dom.generatePromptBtn) {
-    dom.generatePromptBtn.disabled = true;
-  }
-
-  if (dom.copyPromptBtn) {
-    dom.copyPromptBtn.disabled = true;
-  }
+  if (dom.generatePromptBtn) dom.generatePromptBtn.disabled = true;
+  if (dom.copyPromptBtn) dom.copyPromptBtn.disabled = true;
 }
 
 function renderFields(fields) {
   if (!dom.dynamicFields) return;
 
-  dom.dynamicFields.innerHTML = fields.map(field => {
-    if (field.type === "select") {
-      return `
-        <div class="col-12">
-          <label class="form-label" for="${field.id}">${field.label}</label>
-          <select class="form-select" id="${field.id}">
-            <option value="">Odaberi</option>
-            ${(field.options || []).map(option => `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`).join("")}
-          </select>
-        </div>
-      `;
-    }
-
-    if (field.type === "textarea") {
-      return `
-        <div class="col-12">
-          <label class="form-label" for="${field.id}">${field.label}</label>
-          <textarea class="form-control" id="${field.id}" rows="${field.rows || 3}"></textarea>
-        </div>
-      `;
-    }
-
-    if (field.type === "text") {
-  return `
-    <div class="col-12">
-      <label class="form-label" for="${field.id}">${field.label}</label>
-      <input 
-        type="text" 
-        class="form-control" 
-        id="${field.id}" 
-        placeholder="${field.placeholder || ""}">
-    </div>
-  `;
+  dom.dynamicFields.innerHTML = fields.map(renderField).join("");
 }
 
-    if (field.type === "checkbox") {
-      return `
-        <div class="col-12">
-          <label class="form-label d-block">${field.label}</label>
-          ${(field.options || []).map((option, index) => `
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="${field.id}"
-                value="${escapeHtml(option)}"
-                id="${field.id}-${index}">
-              <label class="form-check-label" for="${field.id}-${index}">${escapeHtml(option)}</label>
-            </div>
-          `).join("")}
-        </div>
-      `;
-    }
+function renderField(field) {
+  const fieldId = escapeHtml(field.id);
+  const label = escapeHtml(field.label || "");
+  const placeholder = escapeHtml(field.placeholder || "");
+  const isRequired = Boolean(field.required);
+  const requiredAttr = isRequired ? "required" : "";
+  const requiredLabel = isRequired ? ' <span class="required-mark">*</span>' : "";
 
-    return "";
-  }).join("");
+  if (field.type === "select") {
+    const options = (field.options || [])
+      .map(
+        (option) =>
+          `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`
+      )
+      .join("");
+
+    return `
+      <div class="col-12">
+        <label class="form-label" for="${fieldId}">${label}${requiredLabel}</label>
+        <select class="form-select" id="${fieldId}" ${requiredAttr}>
+          <option value="">Odaberi</option>
+          ${options}
+        </select>
+      </div>
+    `;
+  }
+
+  if (field.type === "textarea") {
+    return `
+      <div class="col-12">
+        <label class="form-label" for="${fieldId}">${label}${requiredLabel}</label>
+        <textarea
+          class="form-control"
+          id="${fieldId}"
+          rows="${Number(field.rows) || 3}"
+          placeholder="${placeholder}"
+          ${requiredAttr}
+        ></textarea>
+      </div>
+    `;
+  }
+
+  if (field.type === "text") {
+    return `
+      <div class="col-12">
+        <label class="form-label" for="${fieldId}">${label}${requiredLabel}</label>
+        <input
+          type="text"
+          class="form-control"
+          id="${fieldId}"
+          placeholder="${placeholder}"
+          ${requiredAttr}
+        />
+      </div>
+    `;
+  }
+
+  if (field.type === "checkbox") {
+    const options = (field.options || [])
+      .map(
+        (option, index) => `
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="${fieldId}"
+              value="${escapeHtml(option)}"
+              id="${fieldId}-${index}"
+            />
+            <label class="form-check-label" for="${fieldId}-${index}">
+              ${escapeHtml(option)}
+            </label>
+          </div>
+        `
+      )
+      .join("");
+
+    return `
+      <div class="col-12">
+        <fieldset class="checkbox-group" data-field-group="${fieldId}" ${isRequired ? 'data-required="true"' : ""}>
+          <legend class="form-label d-block mb-2">${label}${requiredLabel}</legend>
+          ${options}
+        </fieldset>
+      </div>
+    `;
+  }
+
+  return "";
 }
 
 function getFormData() {
   const data = {};
 
-  if (!state.activeTool || !Array.isArray(state.activeTool.fields)) return data;
+  if (!state.activeTool || !Array.isArray(state.activeTool.fields)) {
+    return data;
+  }
 
-  state.activeTool.fields.forEach(field => {
+  state.activeTool.fields.forEach((field) => {
     if (field.type === "checkbox") {
       const values = Array.from(
         document.querySelectorAll(`input[name="${field.id}"]:checked`)
-      ).map(input => input.value);
+      ).map((input) => input.value);
 
       data[field.id] = values.join(", ");
-    } else {
-      data[field.id] = document.getElementById(field.id)?.value?.trim() || "";
+      return;
     }
+
+    const element = document.getElementById(field.id);
+    data[field.id] = element?.value?.trim() || "";
   });
 
   return data;
 }
 
+function validateRequiredFields() {
+  clearValidationState();
+
+  if (!state.activeTool || !Array.isArray(state.activeTool.fields)) {
+    return true;
+  }
+
+  let firstInvalidElement = null;
+
+  state.activeTool.fields.forEach((field) => {
+    if (!field.required) return;
+
+    if (field.type === "checkbox") {
+      const checkedItems = document.querySelectorAll(`input[name="${field.id}"]:checked`);
+      if (checkedItems.length > 0) return;
+
+      const group = document.querySelector(`[data-field-group="${field.id}"]`);
+      if (group) {
+        group.classList.add("is-invalid-group");
+        if (!firstInvalidElement) firstInvalidElement = group;
+      }
+
+      return;
+    }
+
+    const element = document.getElementById(field.id);
+    if (!element || element.value.trim()) return;
+
+    element.classList.add("is-invalid");
+    element.setAttribute("aria-invalid", "true");
+
+    if (!firstInvalidElement) {
+      firstInvalidElement = element;
+    }
+  });
+
+  if (firstInvalidElement) {
+    firstInvalidElement.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    if (typeof firstInvalidElement.focus === "function") {
+      firstInvalidElement.focus();
+    }
+
+    return false;
+  }
+
+  return true;
+}
+
+function clearValidationState() {
+  document.querySelectorAll(".is-invalid").forEach((element) => {
+    element.classList.remove("is-invalid");
+    element.removeAttribute("aria-invalid");
+  });
+
+  document.querySelectorAll(".is-invalid-group").forEach((element) => {
+    element.classList.remove("is-invalid-group");
+  });
+}
+
 function generatePrompt() {
   if (!state.activeTool) return;
+
+  const isValid = validateRequiredFields();
+  if (!isValid) {
+    setButtonTemporaryText(dom.generatePromptBtn, "Provjeri označena polja");
+    return;
+  }
 
   const data = getFormData();
   const prompt = applyPromptTemplate(state.activeTool.promptTemplate || "", data);
@@ -346,15 +459,7 @@ function generatePrompt() {
   }
 
   trackClarityEvent("prompt_generated", state.activeTool);
-
-  if (dom.generatePromptBtn) {
-    const originalText = dom.generatePromptBtn.textContent;
-    dom.generatePromptBtn.textContent = "Upit generiran";
-
-    setTimeout(() => {
-      dom.generatePromptBtn.textContent = originalText;
-    }, 1500);
-  }
+  setButtonTemporaryText(dom.generatePromptBtn, "Upit generiran");
 }
 
 function applyPromptTemplate(template, data) {
@@ -364,35 +469,39 @@ function applyPromptTemplate(template, data) {
     const cleanKey = key.trim();
     const value = data[cleanKey];
 
-    if (!value) {
-      return "Nije navedeno";
-    }
-
-    return value;
+    return value ? value : "Nije navedeno";
   });
 }
 
 function normalizeTemplateString(template) {
-  return String(template)
-    .replace(/\\n/g, "\n")
-    .replace(/\\t/g, "\t");
+  return String(template).replace(/\\n/g, "\n").replace(/\\t/g, "\t");
 }
 
 async function copyPrompt() {
-  if (!dom.promptOutput || !dom.promptOutput.value) return;
+  if (!dom.promptOutput || !dom.promptOutput.value.trim()) return;
 
-  await navigator.clipboard.writeText(dom.promptOutput.value);
-
-  trackClarityEvent("prompt_copied", state.activeTool);
-
-  if (dom.copyPromptBtn) {
-    const originalText = dom.copyPromptBtn.textContent;
-    dom.copyPromptBtn.textContent = "Kopirano!";
-
-    setTimeout(() => {
-      dom.copyPromptBtn.textContent = originalText;
-    }, 1500);
+  try {
+    await navigator.clipboard.writeText(dom.promptOutput.value);
+    trackClarityEvent("prompt_copied", state.activeTool);
+    setButtonTemporaryText(dom.copyPromptBtn, "Kopirano!");
+  } catch (error) {
+    console.error("Kopiranje nije uspjelo:", error);
+    setButtonTemporaryText(dom.copyPromptBtn, "Greška pri kopiranju");
   }
+}
+
+function setButtonTemporaryText(button, text, delay = 1500) {
+  if (!button) return;
+
+  const originalText = button.dataset.originalText || button.textContent;
+  button.dataset.originalText = originalText;
+  button.textContent = text;
+
+  window.clearTimeout(button._textResetTimeout);
+
+  button._textResetTimeout = window.setTimeout(() => {
+    button.textContent = originalText;
+  }, delay);
 }
 
 function renderAppError(error) {
@@ -403,14 +512,14 @@ function renderAppError(error) {
       <div class="col-12">
         <div class="info-box text-center">
           <p class="mb-2"><strong>AI alati trenutno nisu dostupni.</strong></p>
-          <p class="mb-0">Provjeri postoji li <code>data/tools-manifest.json</code> i koristiš li Live Server.</p>
+          <p class="mb-0">Provjeri postoji li <code>data/tools-manifest.json</code> i koristiš li lokalni server.</p>
         </div>
       </div>
     `;
   }
 
   if (document.body.id === "toolPage") {
-    renderToolNotFound();
+    renderToolNotFound("Alat nije moguće učitati. Provjeri putanju do JSON datoteka i koristi lokalni server.");
   }
 }
 

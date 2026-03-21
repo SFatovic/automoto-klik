@@ -41,7 +41,6 @@
       <div class="container">
         <div class="row g-4">
 
-          <!-- LIJEVA STRANA -->
           <div class="col-lg-6">
             <div class="custom-card h-100">
               <div class="card-body-custom">
@@ -56,13 +55,13 @@
                   Ovdje će se prikazati opis odabranog alata i forma za unos podataka.
                 </p>
 
-                <form id="promptForm">
+                <form id="promptForm" novalidate>
                   <div id="dynamicFields" class="row g-3">
                     <!-- JS ubacuje polja -->
                   </div>
 
                   <div class="mt-4 d-grid gap-2">
-                    <button type="button" id="generatePromptBtn" class="btn btn-primary btn-lg">
+                    <button type="submit" id="generatePromptBtn" class="btn btn-primary btn-lg">
                       Generiraj AI upit
                     </button>
                   </div>
@@ -71,7 +70,6 @@
             </div>
           </div>
 
-          <!-- DESNA STRANA -->
           <div class="col-lg-6">
             <div class="custom-card h-100">
               <div class="card-body-custom">
@@ -103,16 +101,15 @@
                 <p class="output-note mt-3 mb-0">
                   Savjet: kopiraj upit, zalijepi ga u ChatGPT i dodatno ga prilagodi po potrebi.
                 </p>
+
                 <div class="ai-links">
-                <a href="https://chat.openai.com" target="_blank" class="ai-btn gpt">
-                  Otvori ChatGPT
-                </a>
-
-                <a href="https://gemini.google.com" target="_blank" class="ai-btn gemini">
-                  Otvori Gemini
-                </a>
-              </div>
-
+                  <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
+                    Otvori ChatGPT
+                  </a>
+                  <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="ai-btn gemini">
+                    Otvori Gemini
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -124,7 +121,7 @@
 
   <div id="site-footer"></div>
 
-  <script src="app.js"></script>
-  <script src="components.js"></script>
+  <script src="components.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
