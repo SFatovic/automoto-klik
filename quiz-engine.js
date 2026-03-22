@@ -1,8 +1,12 @@
 const quizState = {
   manifest: null,
   quiz: null,
+  manifestItem: null,
   currentIndex: 0,
   selectedAnswers: [],
+  screen: "intro",
+  pendingInterstitial: null,
+  lastComputedResult: null,
   jsonCache: new Map()
 };
 
@@ -115,16 +119,23 @@ async function loadQuizListPage() {
           <div class="col-md-6 col-lg-4">
             <a
               href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
-              class="tool-card-link text-decoration-none d-block h-100"
+              class="quiz-card-link text-decoration-none d-block h-100"
               aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
             >
-              <article class="tool-card h-100">
-                <div class="tool-card-body">
-                  <h4>${escapeHtml(quiz.title)}</h4>
-                  <p class="tool-card-text">${escapeHtml(quiz.description || "")}</p>
-                  <p class="tool-card-text mt-2">
-                    <strong>${Number(quiz.questionCount) || 0}</strong> pitanja
-                  </p>
+              <article class="quiz-card h-100">
+                <div class="quiz-card-body">
+                  <div class="quiz-card-badges mb-3">
+                    <span class="quiz-card-badge">Kviz</span>
+                    ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
+                  </div>
+                  <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
+                  <p class="quiz-card-text">${escapeHtml(quiz.description || "")}</p>
+                  <div class="quiz-card-meta-list">
+                    <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
+                    ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
+                  </div>
+                  <div class="card-spacer"></div>
+                  <span class="quiz-card-cta">Pokreni kviz →</span>
                 </div>
               </article>
             </a>
@@ -175,241 +186,544 @@ async function loadSingleQuizPage() {
   }
 
   quizState.quiz = quiz;
-  quizState.currentIndex = 0;
-  quizState.selectedAnswers = [];
+  quizState.manifestItem = manifestItem;
+  resetQuizState();
 
   const titleEl = document.getElementById("quizTitle");
   const descEl = document.getElementById("quizDescription");
 
   if (titleEl) titleEl.textContent = quiz.title;
-  if (descEl) descEl.textContent = quiz.description || "";
+  if (descEl) descEl.textContent = quiz.description || manifestItem.description || "";
 
   document.title = `${quiz.title} | AutoMoto KLIK!`;
 
-  renderQuestion();
+  renderCurrentScreen();
+}
+
+function resetQuizState() {
+  quizState.currentIndex = 0;
+  quizState.selectedAnswers = [];
+  quizState.screen = "intro";
+  quizState.pendingInterstitial = null;
+  quizState.lastComputedResult = null;
+}
+
+function renderCurrentScreen() {
+  switch (quizState.screen) {
+    case "intro":
+      renderQuizIntro();
+      break;
+    case "question":
+      renderQuestion();
+      break;
+    case "interstitial":
+      renderInterstitial();
+      break;
+    case "result":
+      renderQuizResult();
+      break;
+    default:
+      renderQuizIntro();
+  }
+}
+
+function updateProgressLabel(label = "") {
+  const progressEl = document.getElementById("quizProgress");
+  if (progressEl) {
+    progressEl.textContent = label;
+  }
+}
+
+function renderQuizIntro() {
+  const quiz = quizState.quiz;
+  const manifestItem = quizState.manifestItem;
+  const contentEl = document.getElementById("quizContent");
+
+  if (!quiz || !contentEl) return;
+
+  const intro = quiz.intro || {};
+  const questionCount = Array.isArray(quiz.questions) ? quiz.questions.length : Number(manifestItem?.questionCount) || 0;
+  const estimatedTime = intro.estimatedTime || manifestItem?.estimatedTime || estimateQuizTime(questionCount);
+  const difficulty = intro.difficulty || manifestItem?.difficulty || "Lagano";
+  const eyebrow = intro.eyebrow || getCategoryEyebrow(manifestItem?.category);
+  const introText =
+    intro.text ||
+    quiz.description ||
+    manifestItem?.description ||
+    "Riješi kviz, testiraj svoje znanje i saznaj koliko stvarno poznaješ ovu temu.";
+
+  updateProgressLabel("Spreman za start");
+
+  contentEl.innerHTML = `
+    <section class="quiz-screen quiz-intro-screen">
+      <div class="quiz-panel quiz-intro-panel">
+        <div class="quiz-intro-top">
+          <span class="quiz-intro-eyebrow">${escapeHtml(eyebrow)}</span>
+          <h2 class="quiz-intro-title">${escapeHtml(quiz.title)}</h2>
+          <p class="quiz-intro-text">${escapeHtml(introText)}</p>
+        </div>
+
+        <div class="quiz-intro-meta-grid">
+          <div class="quiz-intro-meta-card">
+            <span class="quiz-intro-meta-label">Broj pitanja</span>
+            <strong class="quiz-intro-meta-value">${questionCount}</strong>
+          </div>
+          <div class="quiz-intro-meta-card">
+            <span class="quiz-intro-meta-label">Trajanje</span>
+            <strong class="quiz-intro-meta-value">${escapeHtml(estimatedTime)}</strong>
+          </div>
+          <div class="quiz-intro-meta-card">
+            <span class="quiz-intro-meta-label">Težina</span>
+            <strong class="quiz-intro-meta-value">${escapeHtml(difficulty)}</strong>
+          </div>
+        </div>
+
+        <div class="quiz-intro-actions">
+          <button type="button" class="quiz-primary-btn" id="startQuizBtn">
+            ${escapeHtml(intro.ctaLabel || "Započni kviz")}
+          </button>
+          <a href="kvizovi.html" class="quiz-secondary-btn">
+            Natrag na kvizove
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+
+  const startBtn = document.getElementById("startQuizBtn");
+  if (startBtn) {
+    startBtn.addEventListener("click", () => {
+      quizState.screen = "question";
+      renderCurrentScreen();
+    });
+  }
 }
 
 function renderQuestion() {
   const quiz = quizState.quiz;
-  const question = quiz?.questions?.[quizState.currentIndex];
-
-  const progressEl = document.getElementById("quizProgress");
   const contentEl = document.getElementById("quizContent");
 
-  if (!quiz || !question || !contentEl) return;
+  if (!quiz || !Array.isArray(quiz.questions) || !contentEl) return;
 
-  const selectedIndex = quizState.selectedAnswers[quizState.currentIndex];
-
-  if (progressEl) {
-    progressEl.textContent = `Pitanje ${quizState.currentIndex + 1} od ${quiz.questions.length}`;
+  const question = quiz.questions[quizState.currentIndex];
+  if (!question) {
+    quizState.screen = "result";
+    renderCurrentScreen();
+    return;
   }
 
+  const selectedAnswer = quizState.selectedAnswers[quizState.currentIndex];
+  const progressPercent = ((quizState.currentIndex + 1) / quiz.questions.length) * 100;
+
+  updateProgressLabel(`Pitanje ${quizState.currentIndex + 1} od ${quiz.questions.length}`);
+
   contentEl.innerHTML = `
-    <div class="custom-card">
-      <div class="card-body-custom">
-        <div class="quiz-progress mb-3">${quizState.currentIndex + 1} / ${quiz.questions.length}</div>
+    <section class="quiz-screen quiz-question-screen">
+      <div class="quiz-panel quiz-progress-panel">
+        <div class="quiz-progress-meta">
+          <span class="quiz-progress-step">Pitanje ${quizState.currentIndex + 1}/${quiz.questions.length}</span>
+          <span class="quiz-progress-percent">${Math.round(progressPercent)}%</span>
+        </div>
+        <div class="quiz-progress-track" aria-hidden="true">
+          <span class="quiz-progress-fill" style="width: ${progressPercent}%"></span>
+        </div>
+      </div>
 
-        <h3 class="mb-4">${escapeHtml(question.question)}</h3>
+      <div class="quiz-panel quiz-question-panel">
+        ${question.image ? `<div class="quiz-question-image-wrap"><img src="${escapeAttribute(question.image)}" alt="${escapeAttribute(question.question)}" class="quiz-question-image"></div>` : ""}
+        <h2 class="quiz-question-title">${escapeHtml(question.question)}</h2>
 
-        ${
-          question.image
-            ? `
-              <div class="mb-4">
-                <img
-                  src="${escapeHtml(question.image)}"
-                  alt="Vizual uz pitanje"
-                  class="quiz-question-image"
-                  loading="lazy"
-                />
-              </div>
-            `
-            : ""
-        }
-
-        <div class="quiz-answers" role="group" aria-label="Odgovori na pitanje">
-          ${(question.answers || [])
-            .map(
-              (answer, index) => `
-                <button
-                  type="button"
-                  class="quiz-answer-btn ${selectedIndex === index ? "selected" : ""}"
-                  data-answer-index="${index}"
-                  aria-pressed="${selectedIndex === index ? "true" : "false"}"
-                >
-                  ${escapeHtml(answer)}
-                </button>
-              `
-            )
+        <div class="quiz-answers" role="list">
+          ${question.answers
+            .map((answer, index) => {
+              const checked = selectedAnswer === index ? "checked" : "";
+              return `
+                <label class="quiz-answer-option ${checked ? "is-selected" : ""}">
+                  <input type="radio" name="quizAnswer" value="${index}" ${checked}>
+                  <span class="quiz-answer-text">${escapeHtml(answer)}</span>
+                </label>
+              `;
+            })
             .join("")}
         </div>
 
-        <div class="mt-4 d-grid">
-          <button
-            type="button"
-            id="nextQuestionBtn"
-            class="btn btn-primary btn-lg"
-            ${typeof selectedIndex === "number" ? "" : "disabled"}
-          >
-            ${quizState.currentIndex === quiz.questions.length - 1 ? "Završi kviz" : "Dalje"}
+        <div class="quiz-question-actions">
+          <button type="button" class="quiz-secondary-btn" id="prevQuestionBtn" ${quizState.currentIndex === 0 ? "disabled" : ""}>
+            Prethodno
+          </button>
+          <button type="button" class="quiz-primary-btn" id="nextQuestionBtn">
+            ${quizState.currentIndex === quiz.questions.length - 1 ? "Prikaži rezultat" : "Dalje"}
           </button>
         </div>
       </div>
-    </div>
+    </section>
   `;
 
-  bindQuestionEvents();
-}
-
-function bindQuestionEvents() {
-  const answerButtons = document.querySelectorAll(".quiz-answer-btn");
-  const nextButton = document.getElementById("nextQuestionBtn");
-
-  answerButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selectedIndex = Number(button.dataset.answerIndex);
-
+  const answerInputs = contentEl.querySelectorAll('input[name="quizAnswer"]');
+  answerInputs.forEach((input) => {
+    input.addEventListener("change", (event) => {
+      const selectedIndex = Number(event.target.value);
       quizState.selectedAnswers[quizState.currentIndex] = selectedIndex;
-
-      answerButtons.forEach((btn) => {
-        btn.classList.remove("selected");
-        btn.setAttribute("aria-pressed", "false");
-      });
-
-      button.classList.add("selected");
-      button.setAttribute("aria-pressed", "true");
-
-      if (nextButton) {
-        nextButton.disabled = false;
-      }
+      renderQuestion();
     });
   });
 
-  if (nextButton) {
-    nextButton.addEventListener("click", () => {
-      const selectedIndex = quizState.selectedAnswers[quizState.currentIndex];
-      if (typeof selectedIndex !== "number") return;
+  const prevBtn = document.getElementById("prevQuestionBtn");
+  if (prevBtn) {
+    prevBtn.addEventListener("click", goToPreviousQuestion);
+  }
 
-      if (quizState.currentIndex < quizState.quiz.questions.length - 1) {
-        quizState.currentIndex += 1;
-        renderQuestion();
+  const nextBtn = document.getElementById("nextQuestionBtn");
+  if (nextBtn) {
+    nextBtn.addEventListener("click", goToNextStep);
+  }
+}
+
+function goToPreviousQuestion() {
+  if (quizState.currentIndex > 0) {
+    quizState.currentIndex -= 1;
+    quizState.screen = "question";
+    quizState.pendingInterstitial = null;
+    renderCurrentScreen();
+  }
+}
+
+function goToNextStep() {
+  const selectedAnswer = quizState.selectedAnswers[quizState.currentIndex];
+
+  if (typeof selectedAnswer !== "number") {
+    showInlineQuizNotice("Odaberi jedan odgovor prije nastavka.");
+    return;
+  }
+
+  const nextQuestionIndex = quizState.currentIndex + 1;
+  const interstitial = getInterstitialAfterQuestion(nextQuestionIndex);
+
+  if (interstitial) {
+    quizState.pendingInterstitial = interstitial;
+    quizState.currentIndex = nextQuestionIndex;
+    quizState.screen = "interstitial";
+    renderCurrentScreen();
+    return;
+  }
+
+  if (nextQuestionIndex >= quizState.quiz.questions.length) {
+    quizState.currentIndex = nextQuestionIndex;
+    quizState.screen = "result";
+    renderCurrentScreen();
+    return;
+  }
+
+  quizState.currentIndex = nextQuestionIndex;
+  quizState.screen = "question";
+  renderCurrentScreen();
+}
+
+function getInterstitialAfterQuestion(answeredCount) {
+  const interstitials = Array.isArray(quizState.quiz?.interstitials) ? quizState.quiz.interstitials : [];
+  return interstitials.find((item) => Number(item.afterQuestion) === Number(answeredCount)) || null;
+}
+
+function renderInterstitial() {
+  const contentEl = document.getElementById("quizContent");
+  const interstitial = quizState.pendingInterstitial;
+  const totalQuestions = quizState.quiz?.questions?.length || 0;
+
+  if (!contentEl || !interstitial) {
+    quizState.screen = "question";
+    renderCurrentScreen();
+    return;
+  }
+
+  updateProgressLabel(`Napredak: ${Math.min(quizState.currentIndex, totalQuestions)} / ${totalQuestions}`);
+
+  contentEl.innerHTML = `
+    <section class="quiz-screen quiz-interstitial-screen">
+      <div class="quiz-panel quiz-interstitial-panel">
+        <span class="quiz-interstitial-badge">Kratka pauza</span>
+        <h2 class="quiz-interstitial-title">${escapeHtml(interstitial.title || "Nastavljamo dalje")}</h2>
+        <p class="quiz-interstitial-text">${escapeHtml(interstitial.text || "")}</p>
+
+        <div class="quiz-interstitial-actions">
+          <button type="button" class="quiz-primary-btn" id="continueQuizBtn">Nastavi kviz</button>
+        </div>
+      </div>
+    </section>
+  `;
+
+  const continueBtn = document.getElementById("continueQuizBtn");
+  if (continueBtn) {
+    continueBtn.addEventListener("click", () => {
+      quizState.pendingInterstitial = null;
+
+      if (quizState.currentIndex >= totalQuestions) {
+        quizState.screen = "result";
       } else {
-        renderQuizResult();
+        quizState.screen = "question";
       }
+
+      renderCurrentScreen();
     });
   }
 }
 
 function renderQuizResult() {
   const quiz = quizState.quiz;
-  const progressEl = document.getElementById("quizProgress");
   const contentEl = document.getElementById("quizContent");
 
   if (!quiz || !contentEl) return;
 
-  let score = 0;
+  const result = computeQuizResult();
+  quizState.lastComputedResult = result;
 
-  quiz.questions.forEach((question, index) => {
-    if (quizState.selectedAnswers[index] === question.correctIndex) {
-      score += 1;
-    }
-  });
-
-  const percentage = Math.round((score / quiz.questions.length) * 100);
-  const performanceLabel = getPerformanceLabel(percentage);
-
-  if (progressEl) {
-    progressEl.textContent = "Rezultat";
-  }
+  updateProgressLabel("Kviz završen");
 
   contentEl.innerHTML = `
-    <div class="custom-card">
-      <div class="card-body-custom">
-        <p class="small-label mb-2">Završni report</p>
-        <h3 class="mb-2">${escapeHtml(quiz.title)}</h3>
-        <p class="mb-2">
-          Točni odgovori: <strong>${score} / ${quiz.questions.length}</strong> (${percentage}%)
-        </p>
-        <p class="quiz-performance-note mb-4">${performanceLabel}</p>
+    <section class="quiz-screen quiz-result-screen">
+      <div class="quiz-panel quiz-result-hero">
+        <span class="quiz-result-badge">Rezultat</span>
+        <h2 class="quiz-result-title">${escapeHtml(result.headline)}</h2>
+        <p class="quiz-result-summary">${escapeHtml(result.summary)}</p>
 
-        <div class="quiz-report-list">
+        <div class="quiz-score-ring">
+          <div class="quiz-score-ring-inner">
+            <strong>${result.percentage}%</strong>
+            <span>${result.correctAnswers}/${result.totalQuestions} točno</span>
+          </div>
+        </div>
+
+        <div class="quiz-result-actions">
+          <button type="button" class="quiz-primary-btn" id="restartQuizBtn">Riješi ponovno</button>
+          <a href="kvizovi.html" class="quiz-secondary-btn">Još kvizova</a>
+        </div>
+      </div>
+
+      <div class="quiz-panel quiz-result-cta-panel">
+        <h3 class="quiz-subsection-title">Što dalje?</h3>
+        <div class="quiz-cta-grid">
+          <a href="kvizovi.html" class="quiz-cta-card">
+            <strong>Istraži još kvizova</strong>
+            <span>Pronađi novi brand, F1 ili opći auto kviz.</span>
+          </a>
+          <a href="ai-upiti.html" class="quiz-cta-card">
+            <strong>Isprobaj AI alat</strong>
+            <span>Generiraj auto upit za ChatGPT ili Gemini.</span>
+          </a>
+        </div>
+        ${
+          quiz.result?.shareText
+            ? `<p class="quiz-result-share-text">${escapeHtml(quiz.result.shareText)}</p>`
+            : ""
+        }
+      </div>
+
+      <div class="quiz-panel quiz-related-panel">
+        <h3 class="quiz-subsection-title">Povezani kvizovi</h3>
+        ${renderRelatedQuizzes()}
+      </div>
+
+      <div class="quiz-panel quiz-review-panel">
+        <h3 class="quiz-subsection-title">Pregled odgovora</h3>
+        <div class="quiz-review-list">
           ${quiz.questions
             .map((question, index) => {
-              const userAnswerIndex = quizState.selectedAnswers[index];
-              const isCorrect = userAnswerIndex === question.correctIndex;
+              const selectedIndex = quizState.selectedAnswers[index];
+              const isCorrect = selectedIndex === question.correctIndex;
+              const selectedAnswerText =
+                typeof selectedIndex === "number" ? question.answers[selectedIndex] : "Nije odgovoreno";
+              const correctAnswerText = question.answers[question.correctIndex];
 
               return `
-                <div class="quiz-report-item">
-                  <h4>Pitanje ${index + 1}</h4>
-                  <p class="mb-2"><strong>${escapeHtml(question.question)}</strong></p>
-                  <p class="${isCorrect ? "quiz-report-correct" : "quiz-report-wrong"}">
-                    Tvoj odgovor: ${escapeHtml(question.answers[userAnswerIndex] || "Nije odgovoreno")}
-                  </p>
-                  <p class="quiz-report-correct">
-                    Točan odgovor: ${escapeHtml(question.answers[question.correctIndex] || "")}
-                  </p>
+                <article class="quiz-review-item ${isCorrect ? "is-correct" : "is-incorrect"}">
+                  <div class="quiz-review-head">
+                    <span class="quiz-review-number">Pitanje ${index + 1}</span>
+                    <span class="quiz-review-status">${isCorrect ? "Točno" : "Netočno"}</span>
+                  </div>
+                  <h4 class="quiz-review-question">${escapeHtml(question.question)}</h4>
+                  <p class="quiz-review-answer"><strong>Tvoj odgovor:</strong> ${escapeHtml(selectedAnswerText)}</p>
                   ${
-                    question.tip
-                      ? `<p class="quiz-report-tip">Objašnjenje: ${escapeHtml(question.tip)}</p>`
+                    !isCorrect
+                      ? `<p class="quiz-review-answer"><strong>Točan odgovor:</strong> ${escapeHtml(correctAnswerText)}</p>`
                       : ""
                   }
-                </div>
+                  ${
+                    question.tip
+                      ? `<p class="quiz-review-tip">${escapeHtml(question.tip)}</p>`
+                      : ""
+                  }
+                </article>
               `;
             })
             .join("")}
         </div>
-
-        <div class="mt-4 d-flex flex-column flex-md-row gap-3">
-          <button type="button" id="restartQuizBtn" class="btn btn-primary btn-lg">
-            Pokušaj ponovno
-          </button>
-          <a href="kvizovi.html" class="btn btn-primary btn-lg">
-            Natrag na kvizove
-          </a>
-        </div>
       </div>
-    </div>
+    </section>
   `;
 
   const restartBtn = document.getElementById("restartQuizBtn");
   if (restartBtn) {
     restartBtn.addEventListener("click", () => {
-      quizState.currentIndex = 0;
-      quizState.selectedAnswers = [];
-      renderQuestion();
+      resetQuizState();
+      renderCurrentScreen();
     });
   }
 }
 
-function getPerformanceLabel(percentage) {
-  if (percentage === 100) return "Savršeno. Ovaj kviz si odradio bez greške.";
-  if (percentage >= 80) return "Vrlo jako. Znaš temu više nego solidno.";
-  if (percentage >= 60) return "Dobar rezultat. Imaš bazu, ali još ima prostora za napredak.";
-  if (percentage >= 40) return "Nije loše, ali ovaj brend ili tema ti još može zadati domaću zadaću.";
-  return "Vrijeme je za revanš. Ovaj put kviz je bio jači.";
+function renderRelatedQuizzes() {
+  const currentQuizId = quizState.manifestItem?.id;
+  const currentCategory = quizState.manifestItem?.category;
+
+  if (!Array.isArray(quizState.manifest) || quizState.manifest.length === 0) {
+    return `<p class="quiz-empty-note">Trenutno nema povezanih kvizova.</p>`;
+  }
+
+  const related = quizState.manifest
+    .filter((item) => item.id !== currentQuizId && item.category === currentCategory)
+    .slice(0, 3);
+
+  if (!related.length) {
+    return `<p class="quiz-empty-note">Trenutno nema povezanih kvizova.</p>`;
+  }
+
+  return `
+    <div class="quiz-related-grid">
+      ${related
+        .map(
+          (item) => `
+            <a href="kviz.html?quiz=${encodeURIComponent(item.id)}" class="quiz-related-card">
+              <span class="quiz-related-label">${escapeHtml(getCategoryEyebrow(item.category))}</span>
+              <strong>${escapeHtml(item.title)}</strong>
+              <span>${escapeHtml(item.description || "")}</span>
+            </a>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function computeQuizResult() {
+  const quiz = quizState.quiz;
+  const totalQuestions = quiz.questions.length;
+  let correctAnswers = 0;
+
+  quiz.questions.forEach((question, index) => {
+    if (quizState.selectedAnswers[index] === question.correctIndex) {
+      correctAnswers += 1;
+    }
+  });
+
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  const profile = getResultProfile(percentage);
+
+  return {
+    totalQuestions,
+    correctAnswers,
+    percentage,
+    ...profile
+  };
+}
+
+function getResultProfile(percentage) {
+  if (percentage >= 90) {
+    return {
+      headline: "Ozbiljan auto znalac",
+      summary: "Odlično poznaješ temu i vidi se da ne pogađaš naslijepo. Ovo je rezultat za respekt."
+    };
+  }
+
+  if (percentage >= 70) {
+    return {
+      headline: "Vrlo dobro znanje",
+      summary: "Imaš jako dobru bazu i solidan osjećaj za detalje. Još malo i ulaziš u top razinu."
+    };
+  }
+
+  if (percentage >= 40) {
+    return {
+      headline: "Dobra baza, ali ima mjesta za rast",
+      summary: "Nisi loš, ali vidi se prostor za napredak. Još nekoliko kvizova i bit ćeš puno sigurniji."
+    };
+  }
+
+  return {
+    headline: "Vrijeme za revanš",
+    summary: "Ovaj put nije sjelo, ali sad barem znaš gdje su rupe u znanju. Probaj ponovno i popravi rezultat."
+  };
+}
+
+function showInlineQuizNotice(message) {
+  const existingNotice = document.querySelector(".quiz-inline-notice");
+  if (existingNotice) {
+    existingNotice.remove();
+  }
+
+  const actionsWrap = document.querySelector(".quiz-question-actions");
+  if (!actionsWrap) return;
+
+  const notice = document.createElement("p");
+  notice.className = "quiz-inline-notice";
+  notice.textContent = message;
+
+  actionsWrap.parentNode.insertBefore(notice, actionsWrap);
+
+  window.setTimeout(() => {
+    notice.remove();
+  }, 2500);
 }
 
 function renderQuizError(message) {
+  const contentEl = document.getElementById("quizContent");
   const titleEl = document.getElementById("quizTitle");
   const descEl = document.getElementById("quizDescription");
-  const contentEl = document.getElementById("quizContent");
 
-  if (titleEl) titleEl.textContent = "Kviz nije dostupan";
-  if (descEl) descEl.textContent = message;
+  if (titleEl) titleEl.textContent = "Greška";
+  if (descEl) descEl.textContent = "Kviz trenutno nije dostupan.";
+  if (!contentEl) return;
 
-  if (contentEl) {
-    contentEl.innerHTML = `
-      <div class="info-box">
-        <p class="mb-0">${escapeHtml(message)}</p>
+  updateProgressLabel("");
+
+  contentEl.innerHTML = `
+    <section class="quiz-screen">
+      <div class="quiz-panel quiz-error-panel">
+        <h2 class="quiz-error-title">Ups, nešto je pošlo krivo.</h2>
+        <p class="quiz-error-text">${escapeHtml(message)}</p>
+        <a href="kvizovi.html" class="quiz-primary-btn">Povratak na kvizove</a>
       </div>
-    `;
+    </section>
+  `;
+}
+
+function estimateQuizTime(questionCount) {
+  if (!questionCount || Number.isNaN(Number(questionCount))) return "2-3 min";
+  if (questionCount <= 5) return "1-2 min";
+  if (questionCount <= 10) return "2-3 min";
+  if (questionCount <= 15) return "3-4 min";
+  return "4-5 min";
+}
+
+function getCategoryEyebrow(category) {
+  switch (category) {
+    case "brand":
+      return "Brand kviz";
+    case "f1":
+      return "F1 kviz";
+    case "general":
+      return "Opći kviz";
+    default:
+      return "Auto kviz";
   }
 }
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replaceAll("'", "&#39;");
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
 }

@@ -38,14 +38,18 @@
   }
 
   function renderHeader() {
-    const target = document.getElementById("site-header");
-    if (!target) return;
+  const target = document.getElementById("site-header");
+  if (!target) return;
 
-    target.innerHTML = `
-      <header class="site-header">
-        <div class="container header-inner">
+  target.innerHTML = `
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
           <div class="header-logo">
-            <a href="index.html" aria-label="AutoMoto KLIK početna">AutoMoto KLIK!</a>
+            <a href="index.html" aria-label="AutoMoto KLIK početna">
+              <span class="header-logo-mark">AMK</span>
+              <span class="header-logo-text">AutoMoto KLIK!</span>
+            </a>
           </div>
 
           <nav class="header-nav" aria-label="Glavna navigacija">
@@ -55,9 +59,10 @@
             <a href="o-projektu.html" data-page="o-projektu">O projektu</a>
           </nav>
         </div>
-      </header>
-    `;
-  }
+      </div>
+    </header>
+  `;
+}
 
   function renderFooter() {
     const target = document.getElementById("site-footer");

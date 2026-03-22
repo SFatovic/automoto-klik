@@ -162,26 +162,29 @@ async function renderToolsListPage() {
     `;
 
     html += tools
-      .map(
-        (tool) => `
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="tool.html?tool=${encodeURIComponent(tool.id)}"
-              class="tool-card-link text-decoration-none d-block h-100"
-              data-tool-link="${escapeHtml(tool.id)}"
-              aria-label="Otvori alat ${escapeHtml(tool.title)}"
-            >
-              <article class="tool-card h-100">
-                <div class="tool-card-body">
-                  <h4>${escapeHtml(tool.title)}</h4>
-                  <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
-                </div>
-              </article>
-            </a>
-          </div>
-        `
-      )
-      .join("");
+  .map(
+    (tool) => `
+      <div class="col-md-6 col-lg-4">
+        <a
+          href="tool.html?tool=${encodeURIComponent(tool.id)}"
+          class="tool-card-link text-decoration-none d-block h-100"
+          data-tool-link="${escapeHtml(tool.id)}"
+          aria-label="Otvori alat ${escapeHtml(tool.title)}"
+        >
+          <article class="tool-card h-100">
+            <div class="tool-card-body">
+              <p class="card-eyebrow">AI alat</p>
+              <h4 class="tool-card-title">${escapeHtml(tool.title)}</h4>
+              <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
+              <div class="card-spacer"></div>
+              <span class="tool-card-cta">Otvori alat →</span>
+            </div>
+          </article>
+        </a>
+      </div>
+    `
+  )
+  .join("");
   });
 
   dom.toolsGrid.innerHTML = html;
