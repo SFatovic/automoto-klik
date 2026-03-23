@@ -1,29 +1,26 @@
 const state = {
   manifest: null,
   activeTool: null,
-  jsonCache: new Map()
+  jsonCache: new Map(),
+  activeToolCategory: "all"
 };
 
 const categoryMap = {
   "car-selection": {
     title: "Odabir vozila",
-    icon: "🚗"
+    shortLabel: "Odabir"
   },
   "car-analysis": {
     title: "Analiza vozila",
-    icon: "🔍"
+    shortLabel: "Analiza"
   },
   "costs-and-purchase": {
     title: "Troškovi i kupnja",
-    icon: "💰"
+    shortLabel: "Troškovi"
   },
   "ownership-and-lifestyle": {
     title: "Vlasništvo i lifestyle",
-    icon: "✨"
-  },
-  other: {
-    title: "Ostalo",
-    icon: "📦"
+    shortLabel: "Lifestyle"
   }
 };
 
@@ -146,6 +143,9 @@ async function renderToolsListPage() {
     return;
   }
 
+  renderToolCategoryFilters(manifest);
+  renderToolCards(manifest);
+
   const grouped = groupByCategory(manifest);
   let html = "";
 
@@ -156,10 +156,10 @@ async function renderToolsListPage() {
     const category = categoryMap[categoryKey];
 
     html += `
-      <div class="col-12 mt-4">
-        <h3 class="cards-section-title mb-3">${category.icon} ${escapeHtml(category.title)}</h3>
-      </div>
-    `;
+  <div class="col-12 mt-4">
+    <h3 class="cards-section-title mb-3">${escapeHtml(category.title)}</h3>
+  </div>
+`;
 
     html += tools
   .map(
@@ -187,6 +187,129 @@ async function renderToolsListPage() {
   });
 
   dom.toolsGrid.innerHTML = html;
+}
+
+function renderToolCategoryFilters(items) {
+  const filtersEl = document.getElementById("toolCategoryFilters");
+  if (!filtersEl) return;
+
+  const counts = getToolCategoryCounts(items);
+
+  const filterItems = [
+    {
+      key: "all",
+      label: "Sve",
+      count: items.length
+    },
+    ...Object.keys(categoryMap).map((categoryKey) => ({
+      key: categoryKey,
+      label: categoryMap[categoryKey].shortLabel,
+      count: counts[categoryKey] || 0
+    }))
+  ];
+
+  filtersEl.innerHTML = `
+    <div class="quiz-filters" role="tablist" aria-label="Filter AI alata po kategoriji">
+      ${filterItems
+        .map(
+          (filter) => `
+            <button
+              type="button"
+              class="quiz-filter-chip ${state.activeToolCategory === filter.key ? "is-active" : ""}"
+              data-tool-filter="${filter.key}"
+              role="tab"
+              aria-selected="${state.activeToolCategory === filter.key ? "true" : "false"}"
+            >
+              <span class="quiz-filter-chip-label">${escapeHtml(filter.label)}</span>
+              <span class="quiz-filter-chip-count">${filter.count}</span>
+            </button>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+
+  filtersEl.querySelectorAll("[data-tool-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextCategory = button.getAttribute("data-tool-filter") || "all";
+      state.activeToolCategory = nextCategory;
+      renderToolCategoryFilters(items);
+      renderToolCards(items);
+    });
+  });
+}
+
+function renderToolCards(items) {
+  if (!dom.toolsGrid) return;
+
+  const filteredItems =
+    state.activeToolCategory === "all"
+      ? items
+      : items.filter((item) => {
+          const normalizedCategory = categoryMap[item.category] ? item.category : "other";
+          return normalizedCategory === state.activeToolCategory;
+        });
+
+  if (!filteredItems.length) {
+    dom.toolsGrid.innerHTML = `
+      <div class="col-12">
+        <div class="info-box text-center">
+          <p class="mb-0">Trenutno nema AI alata u ovoj kategoriji.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const grouped = groupByCategory(filteredItems);
+  let html = "";
+
+  Object.keys(categoryMap).forEach((categoryKey) => {
+    const tools = grouped[categoryKey];
+    if (!tools || tools.length === 0) return;
+
+    const category = categoryMap[categoryKey];
+
+    html += `
+      <div class="col-12 mt-4">
+        <h3 class="cards-section-title mb-3">${escapeHtml(category.title)}</h3>
+      </div>
+    `;
+
+    html += tools
+      .map(
+        (tool) => `
+          <div class="col-md-6 col-lg-4">
+            <a
+              href="tool.html?tool=${encodeURIComponent(tool.id)}"
+              class="tool-card-link text-decoration-none d-block h-100"
+              data-tool-link="${escapeHtml(tool.id)}"
+              aria-label="Otvori alat ${escapeHtml(tool.title)}"
+            >
+              <article class="tool-card h-100">
+                <div class="tool-card-body">
+                  <h4>${escapeHtml(tool.title)}</h4>
+                  <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
+                  <div class="card-spacer"></div>
+                  <span class="tool-card-cta">Otvori alat →</span>
+                </div>
+              </article>
+            </a>
+          </div>
+        `
+      )
+      .join("");
+  });
+
+  dom.toolsGrid.innerHTML = html;
+}
+
+function getToolCategoryCounts(items) {
+  return items.reduce((accumulator, item) => {
+    const category = categoryMap[item.category] ? item.category : "other";
+    accumulator[category] = (accumulator[category] || 0) + 1;
+    return accumulator;
+  }, {});
 }
 
 function groupByCategory(items) {

@@ -130,6 +130,132 @@
   --text-secondary: #55555f;
   --text-white: #f5f5f7;
   --blue-600: #0a0a0c;
+
+  /* Form fields */
+--field-height: 58px;
+  --field-radius: 20px;
+  --field-radius-lg: 24px;
+
+  --field-bg:
+    linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,248,250,0.98) 100%);
+  --field-bg-hover:
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(244,244,247,1) 100%);
+  --field-bg-focus:
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,252,1) 100%);
+
+  --field-border: rgba(10, 10, 12, 0.10);
+  --field-border-strong: rgba(10, 10, 12, 0.16);
+  --field-border-focus: rgba(10, 10, 12, 0.22);
+
+  --field-shadow:
+    0 8px 20px rgba(10, 10, 12, 0.05),
+    0 1px 0 rgba(255,255,255,0.95) inset;
+  --field-shadow-hover:
+    0 12px 26px rgba(10, 10, 12, 0.07),
+    0 1px 0 rgba(255,255,255,1) inset;
+  --field-shadow-focus:
+    0 14px 30px rgba(10, 10, 12, 0.08),
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 0 0 4px rgba(10, 10, 12, 0.08);
+
+  --field-placeholder: #8a8a94;
+  --field-text: var(--color-text);
+  --field-label: #16161a;
+  --field-label-soft: #6b6b75;
+
+  --field-invalid-border: rgba(185, 28, 28, 0.24);
+  --field-invalid-bg:
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,244,244,1) 100%);
+  --field-invalid-shadow:
+    0 10px 24px rgba(185, 28, 28, 0.06),
+    0 0 0 4px rgba(185, 28, 28, 0.08);
+
+  --checkbox-size: 22px;
+
+  /* Buttons */
+--btn-height-md: 50px;
+  --btn-height-lg: 58px;
+  --btn-padding-md: 0 22px;
+  --btn-padding-lg: 0 28px;
+
+  --btn-radius: 999px;
+  --btn-font-size-md: 0.96rem;
+  --btn-font-size-lg: 1rem;
+  --btn-font-weight: 600;
+  --btn-letter-spacing: 0.01em;
+
+  --btn-dark-bg:
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
+    linear-gradient(135deg, #070709 0%, #111114 52%, #1a1a1f 100%);
+  --btn-dark-bg-hover:
+    linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%),
+    linear-gradient(135deg, #0b0b0e 0%, #17171b 52%, #232329 100%);
+
+  --btn-light-bg:
+    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(245,245,247,0.98) 100%);
+  --btn-light-bg-hover:
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,239,242,1) 100%);
+
+  --btn-border-dark: rgba(255, 255, 255, 0.14);
+  --btn-border-dark-strong: rgba(255, 255, 255, 0.22);
+  --btn-border-light: rgba(10, 10, 12, 0.10);
+  --btn-border-light-strong: rgba(10, 10, 12, 0.16);
+
+  --btn-shadow-dark:
+    0 10px 24px rgba(10, 10, 12, 0.16),
+    0 0 0 1px rgba(255,255,255,0.02) inset,
+    0 1px 0 rgba(255,255,255,0.08) inset;
+  --btn-shadow-dark-hover:
+    0 16px 34px rgba(10, 10, 12, 0.22),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 0 24px rgba(255,255,255,0.04);
+
+  --btn-shadow-light:
+    0 8px 20px rgba(10, 10, 12, 0.08),
+    0 1px 0 rgba(255,255,255,0.92) inset;
+  --btn-shadow-light-hover:
+    0 14px 28px rgba(10, 10, 12, 0.12),
+    0 1px 0 rgba(255,255,255,1) inset;
+
+  --btn-shadow-focus-dark: 0 0 0 4px rgba(255,255,255,0.12);
+  --btn-shadow-focus-light: 0 0 0 4px rgba(10,10,12,0.10);
+
+  --btn-accent-shadow:
+    0 14px 32px rgba(10, 10, 12, 0.18),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 0 22px rgba(255,255,255,0.05);
+
+  /* Button enhancements */
+--btn-shine:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(255,255,255,0.11) 48%,
+      rgba(255,255,255,0.18) 50%,
+      rgba(255,255,255,0.10) 52%,
+      transparent 65%,
+      transparent 100%
+    );
+
+  --btn-glow-dark:
+    0 18px 38px rgba(10, 10, 12, 0.24),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 1px 0 rgba(255,255,255,0.11) inset,
+    0 0 26px rgba(255,255,255,0.06);
+
+  --btn-glow-accent:
+    0 18px 38px rgba(10, 10, 12, 0.22),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 0 24px rgba(255,255,255,0.05);
+
+  --btn-active-shadow:
+    0 8px 16px rgba(10, 10, 12, 0.18),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 1px 0 rgba(255,255,255,0.08) inset;
 }
 
 [data-theme="dark"] {
@@ -514,33 +640,6 @@ code {
   text-transform: uppercase;
 }
 
-.btn-hero-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 var(--space-5);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-text-inverse);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-}
-
-.btn-hero-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--color-text-inverse);
-  transform: translateY(-1px);
-}
-
-.btn-hero-secondary:focus-visible {
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.14);
-}
-
 /* ========================================
    SECTIONS
 ======================================== */
@@ -903,48 +1002,6 @@ code {
    FORM SYSTEM / INPUTS V2
 ======================================== */
 
-:root {
-  --field-height: 58px;
-  --field-radius: 20px;
-  --field-radius-lg: 24px;
-
-  --field-bg:
-    linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,248,250,0.98) 100%);
-  --field-bg-hover:
-    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(244,244,247,1) 100%);
-  --field-bg-focus:
-    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,252,1) 100%);
-
-  --field-border: rgba(10, 10, 12, 0.10);
-  --field-border-strong: rgba(10, 10, 12, 0.16);
-  --field-border-focus: rgba(10, 10, 12, 0.22);
-
-  --field-shadow:
-    0 8px 20px rgba(10, 10, 12, 0.05),
-    0 1px 0 rgba(255,255,255,0.95) inset;
-  --field-shadow-hover:
-    0 12px 26px rgba(10, 10, 12, 0.07),
-    0 1px 0 rgba(255,255,255,1) inset;
-  --field-shadow-focus:
-    0 14px 30px rgba(10, 10, 12, 0.08),
-    0 1px 0 rgba(255,255,255,1) inset,
-    0 0 0 4px rgba(10, 10, 12, 0.08);
-
-  --field-placeholder: #8a8a94;
-  --field-text: var(--color-text);
-  --field-label: #16161a;
-  --field-label-soft: #6b6b75;
-
-  --field-invalid-border: rgba(185, 28, 28, 0.24);
-  --field-invalid-bg:
-    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,244,244,1) 100%);
-  --field-invalid-shadow:
-    0 10px 24px rgba(185, 28, 28, 0.06),
-    0 0 0 4px rgba(185, 28, 28, 0.08);
-
-  --checkbox-size: 22px;
-}
-
 .form-label {
   display: inline-flex;
   align-items: center;
@@ -1182,62 +1239,6 @@ textarea.form-control {
 /* ========================================
    BUTTONS
 ======================================== */
-
-:root {
-  --btn-height-md: 50px;
-  --btn-height-lg: 58px;
-  --btn-padding-md: 0 22px;
-  --btn-padding-lg: 0 28px;
-
-  --btn-radius: 999px;
-  --btn-font-size-md: 0.96rem;
-  --btn-font-size-lg: 1rem;
-  --btn-font-weight: 600;
-  --btn-letter-spacing: 0.01em;
-
-  --btn-dark-bg:
-    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
-    linear-gradient(135deg, #070709 0%, #111114 52%, #1a1a1f 100%);
-  --btn-dark-bg-hover:
-    linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%),
-    linear-gradient(135deg, #0b0b0e 0%, #17171b 52%, #232329 100%);
-
-  --btn-light-bg:
-    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(245,245,247,0.98) 100%);
-  --btn-light-bg-hover:
-    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,239,242,1) 100%);
-
-  --btn-border-dark: rgba(255, 255, 255, 0.14);
-  --btn-border-dark-strong: rgba(255, 255, 255, 0.22);
-  --btn-border-light: rgba(10, 10, 12, 0.10);
-  --btn-border-light-strong: rgba(10, 10, 12, 0.16);
-
-  --btn-shadow-dark:
-    0 10px 24px rgba(10, 10, 12, 0.16),
-    0 0 0 1px rgba(255,255,255,0.02) inset,
-    0 1px 0 rgba(255,255,255,0.08) inset;
-  --btn-shadow-dark-hover:
-    0 16px 34px rgba(10, 10, 12, 0.22),
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 1px 0 rgba(255,255,255,0.10) inset,
-    0 0 24px rgba(255,255,255,0.04);
-
-  --btn-shadow-light:
-    0 8px 20px rgba(10, 10, 12, 0.08),
-    0 1px 0 rgba(255,255,255,0.92) inset;
-  --btn-shadow-light-hover:
-    0 14px 28px rgba(10, 10, 12, 0.12),
-    0 1px 0 rgba(255,255,255,1) inset;
-
-  --btn-shadow-focus-dark: 0 0 0 4px rgba(255,255,255,0.12);
-  --btn-shadow-focus-light: 0 0 0 4px rgba(10,10,12,0.10);
-
-  --btn-accent-shadow:
-    0 14px 32px rgba(10, 10, 12, 0.18),
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 1px 0 rgba(255,255,255,0.10) inset,
-    0 0 22px rgba(255,255,255,0.05);
-}
 
 .btn,
 .quiz-primary-btn,
@@ -1507,37 +1508,6 @@ textarea.form-control {
    BUTTONS V2 ENHANCEMENTS
 ======================================== */
 
-:root {
-  --btn-shine:
-    linear-gradient(
-      115deg,
-      transparent 0%,
-      transparent 35%,
-      rgba(255,255,255,0.11) 48%,
-      rgba(255,255,255,0.18) 50%,
-      rgba(255,255,255,0.10) 52%,
-      transparent 65%,
-      transparent 100%
-    );
-
-  --btn-glow-dark:
-    0 18px 38px rgba(10, 10, 12, 0.24),
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 1px 0 rgba(255,255,255,0.11) inset,
-    0 0 26px rgba(255,255,255,0.06);
-
-  --btn-glow-accent:
-    0 18px 38px rgba(10, 10, 12, 0.22),
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 1px 0 rgba(255,255,255,0.10) inset,
-    0 0 24px rgba(255,255,255,0.05);
-
-  --btn-active-shadow:
-    0 8px 16px rgba(10, 10, 12, 0.18),
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 1px 0 rgba(255,255,255,0.08) inset;
-}
-
 /* baze */
 .btn,
 .quiz-primary-btn,
@@ -1772,83 +1742,11 @@ textarea.form-control {
   }
 }
 
-/* ========================================
-   OUTPUT
-======================================== */
-
-.output-wrapper {
-  overflow: hidden;
-  background: var(--color-surface-subtle);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-}
-
-.output-box {
-  min-height: 300px;
-  resize: vertical;
-  background: var(--color-surface-subtle);
-  border: none;
-  color: var(--color-text);
-  font-family: var(--font-mono);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  padding: var(--space-5);
-}
-
-.output-box:focus {
-  background: var(--color-surface);
-  box-shadow: inset 0 0 0 2px rgba(10, 10, 12, 0.1);
-}
-
 .output-note {
   color: var(--color-text-muted);
   font-size: var(--text-xs);
   text-align: center;
   line-height: 1.65;
-}
-
-/* ========================================
-   AI LINKS
-======================================== */
-
-.ai-links {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
-.ai-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  min-height: 46px;
-  padding: 0 var(--space-4);
-  border: 1px solid transparent;
-  border-radius: var(--radius-pill);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-align: center;
-}
-
-.ai-btn.gpt {
-  background: var(--color-gpt);
-  color: var(--color-text-inverse);
-}
-
-.ai-btn.gpt:hover {
-  background: var(--color-gpt-hover);
-  color: var(--color-text-inverse);
-}
-
-.ai-btn.gemini {
-  background: var(--color-gemini);
-  color: var(--color-text-inverse);
-}
-
-.ai-btn.gemini:hover {
-  background: var(--color-gemini-hover);
-  color: var(--color-text-inverse);
 }
 
 /* ========================================
@@ -3545,5 +3443,134 @@ textarea.form-control {
     min-height: 28px;
     padding: 0 11px;
     font-size: 0.73rem;
+  }
+}
+
+/* ========================================
+   QUIZ CATEGORY FILTERS
+======================================== */
+
+.quiz-filters-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.quiz-filter-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 10, 12, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(244,244,247,0.98) 100%);
+  color: rgba(10,10,12,0.78);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow:
+    0 8px 20px rgba(10, 10, 12, 0.05),
+    0 1px 0 rgba(255,255,255,0.92) inset;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-base),
+    background var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.quiz-filter-chip::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 52%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.quiz-filter-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(10, 10, 12, 0.16);
+  color: rgba(10,10,12,0.92);
+  box-shadow:
+    0 12px 24px rgba(10, 10, 12, 0.08),
+    0 1px 0 rgba(255,255,255,0.92) inset;
+}
+
+.quiz-filter-chip.is-active {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
+    linear-gradient(135deg, #050507 0%, #0a0a0c 56%, #1a1a1f 100%);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(245,245,247,0.92);
+  box-shadow:
+    0 14px 28px rgba(10, 10, 12, 0.14),
+    0 1px 0 rgba(255,255,255,0.06) inset;
+}
+
+.quiz-filter-chip.is-active::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.02));
+  opacity: 0.72;
+}
+
+.quiz-filter-chip-label,
+.quiz-filter-chip-count {
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-filter-chip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(10,10,12,0.06);
+  color: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.quiz-filter-chip.is-active .quiz-filter-chip-count {
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 767.98px) {
+  .quiz-filters-wrap {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+  }
+
+  .quiz-filters {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    min-width: max-content;
+  }
+
+  .quiz-filter-chip {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 0.9rem;
   }
 }

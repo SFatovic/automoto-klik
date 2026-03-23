@@ -7,21 +7,22 @@ const quizState = {
   screen: "intro",
   pendingInterstitial: null,
   lastComputedResult: null,
-  jsonCache: new Map()
+  jsonCache: new Map(),
+  activeQuizCategory: "all"
 };
 
 const quizCategoryMap = {
   brand: {
-    title: "🚗 Brand kvizovi"
+    title: "Brand kvizovi",
+    shortLabel: "Brand"
   },
   f1: {
-    title: "🏁 F1 kvizovi"
+    title: "F1 kvizovi",
+    shortLabel: "F1"
   },
   general: {
-    title: "🧠 Opći kvizovi"
-  },
-  other: {
-    title: "📦 Ostali kvizovi"
+    title: "Opći kvizovi",
+    shortLabel: "Opći"
   }
 };
 
@@ -100,6 +101,9 @@ async function loadQuizListPage() {
     return;
   }
 
+  renderQuizCategoryFilters(manifest);
+  renderQuizCards(manifest);
+
   const grouped = groupQuizzesByCategory(manifest);
   let html = "";
 
@@ -146,6 +150,135 @@ async function loadQuizListPage() {
   });
 
   grid.innerHTML = html;
+}
+
+function renderQuizCategoryFilters(items) {
+  const filtersEl = document.getElementById("quizCategoryFilters");
+  if (!filtersEl) return;
+
+  const counts = getQuizCategoryCounts(items);
+
+  const filterItems = [
+    {
+      key: "all",
+      label: "Sve",
+      count: items.length
+    },
+    ...Object.keys(quizCategoryMap).map((categoryKey) => ({
+      key: categoryKey,
+      label: quizCategoryMap[categoryKey].shortLabel,
+      count: counts[categoryKey] || 0
+    }))
+  ];
+
+  filtersEl.innerHTML = `
+    <div class="quiz-filters" role="tablist" aria-label="Filter kvizova po kategoriji">
+      ${filterItems
+        .map(
+          (filter) => `
+            <button
+              type="button"
+              class="quiz-filter-chip ${quizState.activeQuizCategory === filter.key ? "is-active" : ""}"
+              data-quiz-filter="${filter.key}"
+              role="tab"
+              aria-selected="${quizState.activeQuizCategory === filter.key ? "true" : "false"}"
+            >
+              <span class="quiz-filter-chip-label">${escapeHtml(filter.label)}</span>
+              <span class="quiz-filter-chip-count">${filter.count}</span>
+            </button>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+
+  filtersEl.querySelectorAll("[data-quiz-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextCategory = button.getAttribute("data-quiz-filter") || "all";
+      quizState.activeQuizCategory = nextCategory;
+      renderQuizCategoryFilters(items);
+      renderQuizCards(items);
+    });
+  });
+}
+
+function renderQuizCards(items) {
+  const grid = document.getElementById("quizzesGrid");
+  if (!grid) return;
+
+  const filteredItems =
+    quizState.activeQuizCategory === "all"
+      ? items
+      : items.filter((item) => {
+          const normalizedCategory = quizCategoryMap[item.category] ? item.category : "other";
+          return normalizedCategory === quizState.activeQuizCategory;
+        });
+
+  if (!filteredItems.length) {
+    grid.innerHTML = `
+      <div class="col-12">
+        <div class="info-box text-center">
+          <p class="mb-0">Trenutno nema kvizova u ovoj kategoriji.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const grouped = groupQuizzesByCategory(filteredItems);
+  let html = "";
+
+  Object.keys(quizCategoryMap).forEach((categoryKey) => {
+    const quizzes = grouped[categoryKey];
+    if (!quizzes || quizzes.length === 0) return;
+
+    html += `
+      <div class="col-12 mt-4">
+        <h3 class="cards-section-title mb-3">${quizCategoryMap[categoryKey].title}</h3>
+      </div>
+    `;
+
+    html += quizzes
+      .map(
+        (quiz) => `
+          <div class="col-md-6 col-lg-4">
+            <a
+              href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
+              class="quiz-card-link text-decoration-none d-block h-100"
+              aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
+            >
+              <article class="quiz-card h-100">
+                <div class="quiz-card-body">
+                  <div class="quiz-card-badges mb-3">
+                    <span class="quiz-card-badge">Kviz</span>
+                    ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
+                  </div>
+                  <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
+                  <p class="quiz-card-text">${escapeHtml(quiz.description || "")}</p>
+                  <div class="quiz-card-meta-list">
+                    <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
+                    ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
+                  </div>
+                  <div class="card-spacer"></div>
+                  <span class="quiz-card-cta">Pokreni kviz →</span>
+                </div>
+              </article>
+            </a>
+          </div>
+        `
+      )
+      .join("");
+  });
+
+  grid.innerHTML = html;
+}
+
+function getQuizCategoryCounts(items) {
+  return items.reduce((accumulator, item) => {
+    const category = quizCategoryMap[item.category] ? item.category : "other";
+    accumulator[category] = (accumulator[category] || 0) + 1;
+    return accumulator;
+  }, {});
 }
 
 function groupQuizzesByCategory(items) {
