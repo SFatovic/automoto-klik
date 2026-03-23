@@ -172,14 +172,13 @@ async function renderToolsListPage() {
           aria-label="Otvori alat ${escapeHtml(tool.title)}"
         >
           <article class="tool-card h-100">
-            <div class="tool-card-body">
-              <p class="card-eyebrow">AI alat</p>
-              <h4 class="tool-card-title">${escapeHtml(tool.title)}</h4>
-              <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
-              <div class="card-spacer"></div>
-              <span class="tool-card-cta">Otvori alat →</span>
-            </div>
-          </article>
+          <div class="tool-card-body">
+            <h4>${escapeHtml(tool.title)}</h4>
+            <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
+            <div class="card-spacer"></div>
+            <span class="tool-card-cta">Otvori alat →</span>
+          </div>
+        </article>
         </a>
       </div>
     `
@@ -496,14 +495,29 @@ async function copyPrompt() {
 function setButtonTemporaryText(button, text, delay = 1500) {
   if (!button) return;
 
-  const originalText = button.dataset.originalText || button.textContent;
+  const label = button.querySelector("span");
+  if (!label) {
+    const originalText = button.dataset.originalText || button.textContent;
+    button.dataset.originalText = originalText;
+    button.textContent = text;
+
+    window.clearTimeout(button._textResetTimeout);
+
+    button._textResetTimeout = window.setTimeout(() => {
+      button.textContent = originalText;
+    }, delay);
+
+    return;
+  }
+
+  const originalText = button.dataset.originalText || label.textContent;
   button.dataset.originalText = originalText;
-  button.textContent = text;
+  label.textContent = text;
 
   window.clearTimeout(button._textResetTimeout);
 
   button._textResetTimeout = window.setTimeout(() => {
-    button.textContent = originalText;
+    label.textContent = originalText;
   }, delay);
 }
 

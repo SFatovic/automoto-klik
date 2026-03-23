@@ -22,17 +22,22 @@
   document.addEventListener("DOMContentLoaded", initShell);
 
   function initShell() {
-    if (SHELL_STATE.initialized) return;
+  if (SHELL_STATE.initialized) return;
 
-    renderHeader();
-    renderFooter();
-    highlightActiveNav();
-    loadClarity();
+  renderHeader();
+  renderFooter();
+  highlightActiveNav();
+  loadClarity();
+  initLucideIcons();
 
-    SHELL_STATE.initialized = true;
+  SHELL_STATE.initialized = true;
+}
+
+function initLucideIcons() {
+  if (window.lucide && typeof window.lucide.createIcons === "function") {
+    window.lucide.createIcons();
   }
-
-
+}
 
   function loadClarity() {
     if (!CLARITY_ID) return;

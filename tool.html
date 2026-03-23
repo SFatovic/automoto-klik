@@ -55,14 +55,15 @@
                   Ovdje će se prikazati opis odabranog alata i forma za unos podataka.
                 </p>
 
-                <form id="promptForm" novalidate>
+                <form id="promptForm" class="amk-form" novalidate>
                   <div id="dynamicFields" class="row g-3">
                     <!-- JS ubacuje polja -->
                   </div>
 
                   <div class="mt-4 d-grid gap-2">
-                    <button type="submit" id="generatePromptBtn" class="btn btn-primary btn-lg">
-                      Generiraj AI upit
+                    <button type="submit" id="generatePromptBtn" class="btn btn-primary btn-lg btn-premium">
+                      <i data-lucide="sparkles"></i>
+                      <span>Generiraj AI upit</span>
                     </button>
                   </div>
                 </form>
@@ -93,8 +94,9 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                  <button type="button" id="copyPromptBtn" class="btn btn-primary btn-lg" disabled>
-                    Kopiraj upit
+                  <button type="button" id="copyPromptBtn" class="btn btn-primary btn-lg btn-premium" disabled>
+                    <i data-lucide="copy"></i>
+                    <span>Kopiraj upit</span>
                   </button>
                 </div>
 
@@ -104,10 +106,12 @@
 
                 <div class="ai-links">
                   <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
-                    Otvori ChatGPT
+                    <i data-lucide="message-square"></i>
+                    <span>Otvori ChatGPT</span>
                   </a>
                   <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="ai-btn gemini">
-                    Otvori Gemini
+                    <i data-lucide="sparkles"></i>
+                    <span>Otvori Gemini</span>
                   </a>
                 </div>
               </div>
@@ -121,6 +125,7 @@
 
   <div id="site-footer"></div>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="components.js" defer></script>
   <script src="app.js" defer></script>
 </body>
