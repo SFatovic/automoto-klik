@@ -228,10 +228,7 @@ function renderQuizCards(items) {
   const filteredItems =
     quizState.activeQuizCategory === "all"
       ? items
-      : items.filter((item) => {
-          const normalizedCategory = quizCategoryMap[item.category] ? item.category : "other";
-          return normalizedCategory === quizState.activeQuizCategory;
-        });
+      : items.filter((item) => item.category === quizState.activeQuizCategory);
 
   if (!filteredItems.length) {
     grid.innerHTML = `
@@ -313,21 +310,22 @@ function renderQuizCards(items) {
 
 function getQuizCategoryCounts(items) {
   return items.reduce((accumulator, item) => {
-    const category = quizCategoryMap[item.category] ? item.category : "other";
-    accumulator[category] = (accumulator[category] || 0) + 1;
+    if (!quizCategoryMap[item.category]) return accumulator;
+
+    accumulator[item.category] = (accumulator[item.category] || 0) + 1;
     return accumulator;
   }, {});
 }
 
 function groupQuizzesByCategory(items) {
   return items.reduce((accumulator, item) => {
-    const category = quizCategoryMap[item.category] ? item.category : "other";
+    if (!quizCategoryMap[item.category]) return accumulator;
 
-    if (!accumulator[category]) {
-      accumulator[category] = [];
+    if (!accumulator[item.category]) {
+      accumulator[item.category] = [];
     }
 
-    accumulator[category].push(item);
+    accumulator[item.category].push(item);
     return accumulator;
   }, {});
 }

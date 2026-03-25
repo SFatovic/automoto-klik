@@ -5,7 +5,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju Alfa Romea.",
     "file": "data/quizzes/alfa-romeo.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/alfa-romeo-cover.jpg"
   },
   {
     "id": "aston-martin",
@@ -13,7 +14,8 @@
     "description": "Provjeri koliko poznaješ povijest i modele brenda Aston Martin.",
     "file": "data/quizzes/aston-martin.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/aston-martin-cover.jpg"
   },
   {
     "id": "audi",
@@ -21,7 +23,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i tehnologiju brenda Audi.",
     "file": "data/quizzes/audi.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/audi-cover.jpg"
   },
   {
     "id": "bmw",
@@ -29,7 +32,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i sportski DNK brenda BMW.",
     "file": "data/quizzes/bmw.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/bmw-cover.jpg"
   },
   {
     "id": "ferrari",
@@ -37,7 +41,8 @@
     "description": "Provjeri koliko poznaješ legendarne modele, povijest i nasljeđe Ferrarija.",
     "file": "data/quizzes/ferrari.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/ferrari-cover.jpg"
   },
   {
     "id": "fiat",
@@ -45,7 +50,8 @@
     "description": "Provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Fiat.",
     "file": "data/quizzes/fiat.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/fiat-cover.jpg"
   },
   {
     "id": "ford",
@@ -53,7 +59,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i utjecaj brenda Ford na autoindustriju.",
     "file": "data/quizzes/ford.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/ford-cover.jpg"
   },
   {
     "id": "honda",
@@ -61,7 +68,8 @@
     "description": "Provjeri koliko poznaješ modele, motore i inovacije brenda Honda.",
     "file": "data/quizzes/honda.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/honda-cover.jpg"
   },
   {
     "id": "lamborghini",
@@ -69,7 +77,8 @@
     "description": "Provjeri koliko poznaješ superautomobile, povijest i karakter brenda Lamborghini.",
     "file": "data/quizzes/lamborghini.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/lamborghini-cover.jpg"
   },
   {
     "id": "mazda",
@@ -77,7 +86,8 @@
     "description": "Provjeri koliko poznaješ dizajn, modele i posebnosti brenda Mazda.",
     "file": "data/quizzes/mazda.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/mazda-cover.jpg"
   },
   {
     "id": "mclaren",
@@ -85,7 +95,8 @@
     "description": "Provjeri koliko poznaješ povijest, utrkivanje i cestovne modele brenda McLaren.",
     "file": "data/quizzes/mclaren.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/mclaren-cover.jpg"
   },
   {
     "id": "mercedes-benz",
@@ -93,7 +104,8 @@
     "description": "Provjeri koliko poznaješ luksuz, tehnologiju i povijest brenda Mercedes-Benz.",
     "file": "data/quizzes/mercedes-benz.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/mercedes-cover.jpg"
   },
   {
     "id": "opel",
@@ -101,7 +113,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i razvoj brenda Opel.",
     "file": "data/quizzes/opel.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/opel-cover.jpg"
   },
   {
     "id": "porsche",
@@ -109,7 +122,8 @@
     "description": "Provjeri koliko poznaješ sportske modele, povijest i identitet brenda Porsche.",
     "file": "data/quizzes/porsche.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/porsche-cover.jpg"
   },
   {
     "id": "povijest",
@@ -117,7 +131,8 @@
     "description": "Provjeri koliko poznaješ ključne trenutke, izume i razvoj automobilske povijesti.",
     "file": "data/quizzes/povijest.json",
     "category": "general",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/povijest-cover.jpg"
   },
   {
     "id": "renault",
@@ -125,7 +140,8 @@
     "description": "Provjeri koliko poznaješ povijest, modele i inovacije brenda Renault.",
     "file": "data/quizzes/renault.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/renault-cover.jpg"
   },
   {
     "id": "volkswagen",
@@ -133,7 +149,8 @@
     "description": "Provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Volkswagen.",
     "file": "data/quizzes/volkswagen.json",
     "category": "brand",
-    "questionCount": 10
+    "questionCount": 10,
+    "coverImage": "assets/amk-kvizovi/quiz-covers/volkswagen-cover.jpg"
   },
   {
   "id": "f1-osnovni",
