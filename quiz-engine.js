@@ -118,35 +118,54 @@ async function loadQuizListPage() {
     `;
 
     html += quizzes
-      .map(
-        (quiz) => `
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
-              class="quiz-card-link text-decoration-none d-block h-100"
-              aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
-            >
-              <article class="quiz-card h-100">
-                <div class="quiz-card-body">
-                  <div class="quiz-card-badges mb-3">
-                    <span class="quiz-card-badge">Kviz</span>
-                    ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
-                  </div>
-                  <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
-                  <p class="quiz-card-text">${escapeHtml(quiz.description || "")}</p>
-                  <div class="quiz-card-meta-list">
-                    <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
-                    ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
-                  </div>
-                  <div class="card-spacer"></div>
-                  <span class="quiz-card-cta">Pokreni kviz →</span>
-                </div>
-              </article>
-            </a>
-          </div>
-        `
-      )
-      .join("");
+  .map(
+    (quiz) => `
+      <div class="col-md-6 col-lg-4">
+        <a
+          href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
+          class="quiz-card-link text-decoration-none d-block h-100"
+          aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
+        >
+          <article class="quiz-card h-100">
+            <div class="quiz-card-body">
+              <div class="quiz-card-badges mb-3">
+                <span class="quiz-card-badge">Kviz</span>
+                ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
+              </div>
+
+              <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
+
+              ${
+                quiz.coverImage
+                  ? `
+                    <div class="quiz-card-cover">
+                      <img
+                        src="${escapeHtml(quiz.coverImage)}"
+                        alt="${escapeHtml(quiz.title)} naslovna fotografija"
+                        class="quiz-card-cover-image"
+                        loading="lazy"
+                      />
+                    </div>
+                  `
+                  : `
+                    <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
+                  `
+              }
+
+              <div class="quiz-card-meta-list">
+                <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
+                ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
+              </div>
+
+              <div class="card-spacer"></div>
+              <span class="quiz-card-cta">Pokreni kviz →</span>
+            </div>
+          </article>
+        </a>
+      </div>
+    `
+  )
+  .join("");
   });
 
   grid.innerHTML = html;
@@ -253,12 +272,31 @@ function renderQuizCards(items) {
                     <span class="quiz-card-badge">Kviz</span>
                     ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
                   </div>
+
                   <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
-                  <p class="quiz-card-text">${escapeHtml(quiz.description || "")}</p>
+
+                  ${
+                    quiz.coverImage
+                      ? `
+                        <div class="quiz-card-cover">
+                          <img
+                            src="${escapeAttribute(quiz.coverImage)}"
+                            alt="${escapeAttribute(quiz.title)} naslovna fotografija"
+                            class="quiz-card-cover-image"
+                            loading="lazy"
+                          />
+                        </div>
+                      `
+                      : `
+                        <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
+                      `
+                  }
+
                   <div class="quiz-card-meta-list">
                     <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
                     ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
                   </div>
+
                   <div class="card-spacer"></div>
                   <span class="quiz-card-cta">Pokreni kviz →</span>
                 </div>

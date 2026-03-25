@@ -141,7 +141,8 @@
   "description": "Provjeri svoje osnovno znanje o Formuli 1.",
   "file": "data/quizzes/f1-osnovni.json",
   "category": "f1",
-  "questionCount": 10
+  "questionCount": 10,
+  "coverImage": "assets/amk-kvizovi/quiz-covers/f1-opci-cover.jpg"
   },
   {
   "id": "ferrari-f1",
@@ -149,7 +150,8 @@
   "description": "Testiraj svoje znanje o Ferrariju u Formuli 1.",
   "file": "data/quizzes/ferrari-f1.json",
   "category": "f1",
-  "questionCount": 10
+  "questionCount": 10,
+  "coverImage": "assets/amk-kvizovi/quiz-covers/ferrari-f1-cover.jpg"
   },
   {
   "id": "red-bull-f1",
@@ -157,7 +159,8 @@
   "description": "Provjeri svoje znanje o Red Bull Racingu u Formuli 1.",
   "file": "data/quizzes/red-bull-f1.json",
   "questionCount": 10,
-  "category": "f1"
+  "category": "f1",
+  "coverImage": "assets/amk-kvizovi/quiz-covers/redbull-f1-cover.jpg"
   },
   {
   "id": "mclaren-f1",
@@ -165,7 +168,8 @@
   "description": "Koliko znaš o McLarenu i njegovoj povijesti?",
   "file": "data/quizzes/mclaren-f1.json",
   "questionCount": 10,
-  "category": "f1"
+  "category": "f1",
+  "coverImage": "assets/amk-kvizovi/quiz-covers/mclaren-f1-cover.jpg"
   },
   {
   "id": "mercedes-f1",
@@ -173,7 +177,8 @@
   "description": "Provjeri svoje znanje o Mercedes-AMG Petronas F1 timu.",
   "file": "data/quizzes/mercedes-f1.json",
   "questionCount": 10,
-  "category": "f1"
+  "category": "f1",
+  "coverImage": "assets/amk-kvizovi/quiz-covers/mercedes-f1-cover.jpg"
   },
   {
   "id": "williams-f1",
@@ -181,6 +186,7 @@
   "description": "Provjeri svoje znanje o legendarnom Williams F1 timu.",
   "file": "data/quizzes/williams-f1.json",
   "questionCount": 10,
-  "category": "f1"
+  "category": "f1",
+  "coverImage": "assets/amk-kvizovi/quiz-covers/williams-f1-cover.jpg"
   }
 ]
