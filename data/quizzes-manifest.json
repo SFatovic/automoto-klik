@@ -57,7 +57,7 @@
     "id": "ford",
     "title": "Ford kviz",
     "description": "Provjeri koliko poznaješ povijest, modele i utjecaj brenda Ford na autoindustriju.",
-    "file": "data/quizzes/ford.json",
+    "file": "data/quizzes/ford-test.json",
     "category": "brand",
     "questionCount": 10,
     "coverImage": "assets/amk-kvizovi/quiz-covers/ford-cover.jpg"
@@ -93,7 +93,7 @@
     "id": "mclaren",
     "title": "McLaren kviz",
     "description": "Provjeri koliko poznaješ povijest, utrkivanje i cestovne modele brenda McLaren.",
-    "file": "data/quizzes/mclaren.json",
+    "file": "data/quizzes/mclaren-test.json",
     "category": "brand",
     "questionCount": 10,
     "coverImage": "assets/amk-kvizovi/quiz-covers/mclaren-cover.jpg"
