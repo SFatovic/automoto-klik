@@ -64,8 +64,8 @@ function initLucideIcons() {
     const target = document.getElementById("site-header");
     if (!target) return;
 
-    const navHtml = NAV_ITEMS.map(
-      (item) => `<a href="${item.href}" data-page="${item.page}">${item.label}</a>`
+  const navHtml = NAV_ITEMS.map(
+      (item) => `<a href="${item.href}" data-page="${item.page}" class="header-nav-link">${item.label}</a>`
     ).join("");
 
     target.innerHTML = `
