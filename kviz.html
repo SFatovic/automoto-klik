@@ -16,43 +16,28 @@
   />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body id="quizPage">
+<body id="quizPage" class="quiz-page-redesign">
 
   <div id="site-header"></div>
 
-  <section class="hero-wrap hero-wrap-compact quiz-hero-wrap">
-    <div class="container">
-      <div class="hero-card quiz-hero-card">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-8">
-            <p class="hero-kicker">AutoMoto KLIK kviz</p>
-            <h1 id="quizTitle" class="hero-title hero-title-small">Učitavanje kviza...</h1>
-            <p id="quizDescription" class="hero-subtitle mb-0">
-              Pripremamo kviz za tebe. Pričekaj trenutak.
-            </p>
-          </div>
-
-          <div class="col-lg-4 text-lg-end">
-            <div class="quiz-hero-actions">
-              <a href="kvizovi.html" class="btn btn-hero-secondary">← Natrag na kvizove</a>
+  <main class="quiz-stage-main">
+    <section class="quiz-stage-section">
+      <div class="container quiz-stage-container">
+        <div class="quiz-stage-layout">
+          <aside class="quiz-side-rail quiz-side-rail-left" aria-hidden="true">
+            <div class="quiz-promo-card quiz-promo-card-vertical">
+              <div class="quiz-promo-visual"></div>
+              <span class="quiz-promo-text">Promo</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </aside>
 
-  <main>
-    <section class="generator-section py-5 quiz-main-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-9 col-lg-10">
-            <div class="quiz-shell">
+          <section class="quiz-center-column" aria-label="Aktivni kviz">
+            <div class="quiz-shell quiz-shell-stage">
               <div class="quiz-topbar">
                 <div id="quizProgress" class="quiz-topbar-progress" aria-live="polite"></div>
               </div>
 
-              <div id="quizContent" class="quiz-content-area">
+              <div id="quizContent" class="quiz-content-area quiz-content-area-stage">
                 <div class="quiz-loading-state">
                   <div class="quiz-loading-card">
                     <h2 class="quiz-loading-title">Učitavanje kviza...</h2>
@@ -63,12 +48,20 @@
                 </div>
               </div>
             </div>
+          </section>
 
-            <div class="quiz-after-content-note">
-              <p class="mb-0">
-                Nakon završetka kviza možeš istražiti i ostale auto kvizove ili AI alate za vozače i ljubitelje automobila.
-              </p>
+          <aside class="quiz-side-rail quiz-side-rail-right" aria-hidden="true">
+            <div class="quiz-promo-card quiz-promo-card-vertical">
+              <div class="quiz-promo-visual"></div>
+              <span class="quiz-promo-text">Promo</span>
             </div>
+          </aside>
+        </div>
+
+        <div class="quiz-bottom-promo" aria-hidden="true">
+          <div class="quiz-promo-card quiz-promo-card-horizontal">
+            <div class="quiz-promo-visual"></div>
+            <span class="quiz-promo-text">Promo</span>
           </div>
         </div>
       </div>

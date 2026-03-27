@@ -118,7 +118,7 @@ async function loadQuizListPage() {
     `;
 
     html += quizzes
-  .map(
+      .map(
     (quiz) => `
       <div class="col-md-6 col-lg-4">
         <a
@@ -238,7 +238,7 @@ function renderQuizCards(items) {
         </div>
       </div>
     `;
-    return;
+        return;
   }
 
   const grouped = groupQuizzesByCategory(filteredItems);
@@ -357,8 +357,7 @@ async function loadSingleQuizPage() {
   quizState.quiz = quiz;
   quizState.manifestItem = manifestItem;
   resetQuizState();
-
-  const titleEl = document.getElementById("quizTitle");
+    const titleEl = document.getElementById("quizTitle");
   const descEl = document.getElementById("quizDescription");
 
   if (titleEl) titleEl.textContent = quiz.title;
@@ -420,40 +419,56 @@ function renderQuizIntro() {
     quiz.description ||
     manifestItem?.description ||
     "Riješi kviz, testiraj svoje znanje i saznaj koliko stvarno poznaješ ovu temu.";
+  const coverImage = intro.coverImage || manifestItem?.coverImage || "";
 
-  updateProgressLabel("Spreman za start");
+  updateProgressLabel("");
 
   contentEl.innerHTML = `
     <section class="quiz-screen quiz-intro-screen">
-      <div class="quiz-panel quiz-intro-panel">
-        <div class="quiz-intro-top">
+      <div class="quiz-panel quiz-intro-panel quiz-intro-panel-showcase">
+        <div class="quiz-intro-top quiz-intro-top-showcase">
           <span class="quiz-intro-eyebrow">${escapeHtml(eyebrow)}</span>
           <h2 class="quiz-intro-title">${escapeHtml(quiz.title)}</h2>
           <p class="quiz-intro-text">${escapeHtml(introText)}</p>
         </div>
 
-        <div class="quiz-intro-meta-grid">
-          <div class="quiz-intro-meta-card">
-            <span class="quiz-intro-meta-label">Broj pitanja</span>
-            <strong class="quiz-intro-meta-value">${questionCount}</strong>
-          </div>
-          <div class="quiz-intro-meta-card">
-            <span class="quiz-intro-meta-label">Trajanje</span>
-            <strong class="quiz-intro-meta-value">${escapeHtml(estimatedTime)}</strong>
-          </div>
-          <div class="quiz-intro-meta-card">
-            <span class="quiz-intro-meta-label">Težina</span>
-            <strong class="quiz-intro-meta-value">${escapeHtml(difficulty)}</strong>
-          </div>
-        </div>
+        ${coverImage
+          ? `
+            <div class="quiz-intro-cover-wrap quiz-intro-cover-wrap-compact">
+              <img
+                src="${escapeAttribute(coverImage)}"
+                alt="${escapeAttribute(quiz.title)} naslovna fotografija"
+                class="quiz-intro-cover-image"
+                loading="eager"
+              />
+            </div>
+          `
+          : ""}
 
-        <div class="quiz-intro-actions">
-          <button type="button" class="quiz-primary-btn" id="startQuizBtn">
-            ${escapeHtml(intro.ctaLabel || "Započni kviz")}
-          </button>
-          <a href="kvizovi.html" class="quiz-secondary-btn">
-            Natrag na kvizove
-          </a>
+        <div class="quiz-intro-footer-compact">
+          <div class="quiz-intro-meta-grid quiz-intro-meta-grid-showcase quiz-intro-meta-grid-compact">
+            <div class="quiz-intro-meta-card">
+              <span class="quiz-intro-meta-label">Broj pitanja</span>
+              <strong class="quiz-intro-meta-value">${questionCount}</strong>
+            </div>
+            <div class="quiz-intro-meta-card">
+              <span class="quiz-intro-meta-label">Trajanje</span>
+              <strong class="quiz-intro-meta-value">${escapeHtml(estimatedTime)}</strong>
+            </div>
+            <div class="quiz-intro-meta-card">
+              <span class="quiz-intro-meta-label">Razina</span>
+              <strong class="quiz-intro-meta-value">${escapeHtml(difficulty)}</strong>
+            </div>
+          </div>
+
+          <div class="quiz-intro-actions quiz-intro-actions-showcase quiz-intro-actions-compact">
+            <button type="button" class="quiz-primary-btn quiz-primary-btn-showcase" id="startQuizBtn">
+              ${escapeHtml(intro.ctaLabel || "Pokreni")}
+            </button>
+            <a href="kvizovi.html" class="quiz-secondary-btn quiz-secondary-btn-showcase">
+              Natrag na kvizove
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -516,11 +531,8 @@ function renderQuestion() {
             .join("")}
         </div>
 
-        <div class="quiz-question-actions">
-          <button type="button" class="quiz-secondary-btn" id="prevQuestionBtn" ${quizState.currentIndex === 0 ? "disabled" : ""}>
-            Prethodno
-          </button>
-          <button type="button" class="quiz-primary-btn" id="nextQuestionBtn">
+        <div class="quiz-question-actions quiz-question-actions-single">
+          <button type="button" class="quiz-primary-btn quiz-primary-btn-strong" id="nextQuestionBtn">
             ${quizState.currentIndex === quiz.questions.length - 1 ? "Prikaži rezultat" : "Dalje"}
           </button>
         </div>
@@ -536,11 +548,6 @@ function renderQuestion() {
       renderQuestion();
     });
   });
-
-  const prevBtn = document.getElementById("prevQuestionBtn");
-  if (prevBtn) {
-    prevBtn.addEventListener("click", goToPreviousQuestion);
-  }
 
   const nextBtn = document.getElementById("nextQuestionBtn");
   if (nextBtn) {
@@ -584,7 +591,7 @@ function goToNextStep() {
   }
 
   quizState.currentIndex = nextQuestionIndex;
-  quizState.screen = "question";
+     quizState.screen = "question";
   renderCurrentScreen();
 }
 
@@ -704,7 +711,7 @@ function renderQuizResult() {
 
               return `
                 <article class="quiz-review-item ${isCorrect ? "is-correct" : "is-incorrect"}">
-                  <div class="quiz-review-head">
+                                  <div class="quiz-review-head">
                     <span class="quiz-review-number">Pitanje ${index + 1}</span>
                     <span class="quiz-review-status">${isCorrect ? "Točno" : "Netočno"}</span>
                   </div>
@@ -824,7 +831,7 @@ function getResultProfile(percentage) {
 function showInlineQuizNotice(message) {
   const existingNotice = document.querySelector(".quiz-inline-notice");
   if (existingNotice) {
-    existingNotice.remove();
+        existingNotice.remove();
   }
 
   const actionsWrap = document.querySelector(".quiz-question-actions");
