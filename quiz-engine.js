@@ -881,13 +881,13 @@ function estimateQuizTime(questionCount) {
 function getCategoryEyebrow(category) {
   switch (category) {
     case "brand":
-      return "Brand kviz";
+      return "BRAND KVIZ";
     case "f1":
-      return "F1 kviz";
+      return "F1 KVIZ";
     case "general":
-      return "Opći kviz";
+      return "OPĆI KVIZ";
     default:
-      return "Auto kviz";
+      return "AUTO KVIZ";
   }
 }
 
