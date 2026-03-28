@@ -129,7 +129,7 @@ async function loadQuizListPage() {
           <article class="quiz-card h-100">
             <div class="quiz-card-body">
               <div class="quiz-card-badges mb-3">
-                <span class="quiz-card-badge">Kviz</span>
+                <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(quiz.category))}</span>
                 ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
               </div>
 
@@ -158,7 +158,7 @@ async function loadQuizListPage() {
               </div>
 
               <div class="card-spacer"></div>
-              <span class="quiz-card-cta">Pokreni kviz →</span>
+              <span class="quiz-card-cta">Pokreni kviz</span>
             </div>
           </article>
         </a>
@@ -266,7 +266,7 @@ function renderQuizCards(items) {
               <article class="quiz-card h-100">
                 <div class="quiz-card-body">
                   <div class="quiz-card-badges mb-3">
-                    <span class="quiz-card-badge">Kviz</span>
+                    <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(quiz.category))}</span>
                     ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
                   </div>
 
@@ -295,7 +295,7 @@ function renderQuizCards(items) {
                   </div>
 
                   <div class="card-spacer"></div>
-                  <span class="quiz-card-cta">Pokreni kviz →</span>
+                  <span class="quiz-card-cta">Pokreni kviz</span>
                 </div>
               </article>
             </a>

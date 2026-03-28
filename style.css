@@ -4617,17 +4617,23 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 14px;
+  min-height: 34px;
+  padding: 0 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
-  color: #2a2a30;
-  border: 1px solid rgba(255, 255, 255, 0.52);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
+    linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+  color: rgba(245, 245, 247, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   font-family: "Inter", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   line-height: 1;
+  box-shadow:
+    0 4px 12px rgba(10, 10, 12, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .quiz-card-title {
@@ -4668,10 +4674,55 @@ textarea.form-control {
 }
 
 .quiz-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  width: fit-content;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(236,236,240,1) 100%);
+  border: 1px solid rgba(10,10,12,0.07);
+  color: #0a0a0c !important;
   font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  color: rgba(245,245,247,0.98);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.92);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease,
+    color 0.24s ease;
+}
+
+.quiz-card:hover .quiz-card-cta,
+.quiz-card-link:hover .quiz-card-cta {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,234,1) 100%);
+  color: #0a0a0c !important;
+  box-shadow:
+    0 12px 22px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.quiz-card-link:focus-visible .quiz-card-cta {
+  box-shadow:
+    0 12px 22px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    0 0 0 4px rgba(255,255,255,0.12);
+}
+
+@media (max-width: 767.98px) {
+  .quiz-card-cta {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 0.88rem;
+  }
 }
 
 /* ----------------------------------------
@@ -4686,17 +4737,23 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 14px;
+  min-height: 34px;
+  padding: 0 12px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.94);
-  color: #2a2a30;
-  border: 1px solid rgba(255,255,255,0.52);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
+    linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+  color: rgba(245, 245, 247, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   font-family: "Inter", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   line-height: 1;
+  box-shadow:
+    0 4px 12px rgba(10, 10, 12, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .quiz-intro-panel-showcase .quiz-intro-title {
