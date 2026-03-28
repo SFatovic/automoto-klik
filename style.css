@@ -3653,14 +3653,14 @@ textarea.form-control {
 }
 
 .quiz-stage-layout {
-  display: grid;
-  grid-template-columns: minmax(120px, 184px) minmax(0, 920px) minmax(120px, 184px);
+  display: flex;
   justify-content: center;
-  align-items: start;
-  gap: clamp(20px, 2vw, 40px);
+  align-items: flex-start;
 }
 
 .quiz-center-column {
+  width: 100%;
+  max-width: 920px;
   min-width: 0;
 }
 
@@ -3712,110 +3712,7 @@ textarea.form-control {
   color: rgba(245, 245, 247, 0.72);
 }
 
-.quiz-side-rail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 160px;
-}
 
-.quiz-promo-card {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  background: linear-gradient(135deg, #040405 0%, #09090b 58%, #16161b 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 44px rgba(10, 10, 12, 0.14);
-}
-
-.quiz-promo-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, rgba(255,255,255,0.07), transparent 42%);
-  pointer-events: none;
-}
-
-.quiz-promo-card-vertical {
-  width: min(100%, 184px);
-  min-height: 560px;
-  border-radius: 0;
-}
-
-.quiz-promo-card-horizontal {
-  min-height: 220px;
-  border-radius: 0;
-  gap: 24px;
-}
-
-.quiz-promo-visual {
-  width: 108px;
-  height: 82px;
-  border: 3px solid rgba(255,255,255,0.86);
-  border-radius: 16px;
-  position: relative;
-  opacity: 0.95;
-}
-
-.quiz-promo-visual::before,
-.quiz-promo-visual::after {
-  content: "";
-  position: absolute;
-}
-
-.quiz-promo-visual::before {
-  top: 16px;
-  left: 16px;
-  width: 18px;
-  height: 18px;
-  border: 3px solid rgba(255,255,255,0.86);
-  border-radius: 50%;
-}
-
-.quiz-promo-visual::after {
-  left: 18px;
-  right: 12px;
-  bottom: 14px;
-  height: 34px;
-  border-left: 3px solid rgba(255,255,255,0.86);
-  border-bottom: 3px solid rgba(255,255,255,0.86);
-  transform: skewX(-34deg) translateX(6px);
-  transform-origin: bottom left;
-}
-
-.quiz-promo-card-vertical,
-.quiz-promo-card-horizontal {
-  flex-direction: column;
-}
-
-.quiz-promo-card-horizontal .quiz-promo-visual {
-  width: 118px;
-  height: 92px;
-}
-
-.quiz-promo-text {
-  position: relative;
-  z-index: 1;
-  margin-top: 28px;
-  color: rgba(245, 245, 247, 0.94);
-  font-family: var(--font-body);
-  font-size: clamp(2rem, 2.4vw, 2.9rem);
-  font-weight: 300;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-}
-
-.quiz-bottom-promo {
-  max-width: 1160px;
-  margin: clamp(28px, 4vw, 44px) auto 0;
-}
-
-.quiz-bottom-promo .quiz-promo-card {
-  flex-direction: row;
-}
 
 .quiz-screen {
   gap: 0;
@@ -4065,19 +3962,6 @@ textarea.form-control {
   color: rgba(245,245,247,0.9);
 }
 
-@media (max-width: 1399.98px) {
-  .quiz-stage-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .quiz-side-rail {
-    display: none;
-  }
-
-  .quiz-bottom-promo {
-    max-width: 920px;
-  }
-}
 
 @media (max-width: 991.98px) {
   .quiz-stage-main {
@@ -4088,9 +3972,6 @@ textarea.form-control {
     border-radius: 28px;
   }
 
-  .quiz-bottom-promo .quiz-promo-card {
-    min-height: 170px;
-  }
 
   .quiz-primary-btn-showcase,
   .quiz-secondary-btn-showcase {
@@ -4133,10 +4014,6 @@ textarea.form-control {
     aspect-ratio: 16 / 9;
   }
 
-  .quiz-bottom-promo .quiz-promo-card {
-    min-height: 132px;
-    gap: 16px;
-  }
 
   .quiz-promo-card-horizontal .quiz-promo-visual {
     width: 84px;
@@ -4148,9 +4025,6 @@ textarea.form-control {
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
 
-  .quiz-bottom-promo .quiz-promo-text {
-    margin-top: 0;
-  }
 }
 
 @media (max-width: 575.98px) {
@@ -4341,10 +4215,7 @@ textarea.form-control {
   min-height: 460px;
 }
 
-.quiz-bottom-promo {
-  max-width: 1120px;
-  margin: 28px auto 0;
-}
+
 
 .quiz-promo-card-horizontal {
   min-height: 180px;
@@ -4360,10 +4231,7 @@ textarea.form-control {
     display: none;
   }
 
-  .quiz-bottom-promo {
-    max-width: 100%;
-    margin-top: 20px;
-  }
+
 }
 
 /* mobile */
@@ -4433,18 +4301,6 @@ textarea.form-control {
     font-size: 0.95rem;
   }
 
-  .quiz-promo-card-horizontal {
-    min-height: 132px;
-  }
-
-  .quiz-promo-text {
-    font-size: 1.7rem;
-  }
-
-  .quiz-promo-visual {
-    width: 82px;
-    height: 62px;
-  }
 }
 
 /* ========================================
