@@ -4980,3 +4980,480 @@ textarea.form-control {
   color: rgba(245, 245, 247, 0.98) !important;
   margin-bottom: 18px !important;
 }
+
+/* ========================================
+   QUIZ RESULT SCREEN — PREMIUM REFINEMENT
+======================================== */
+
+.quiz-result-screen {
+  gap: 20px;
+}
+
+.quiz-result-hero-premium {
+  text-align: center;
+  padding: 28px 24px 24px;
+}
+
+.quiz-result-hero-premium .quiz-result-badge {
+  margin-bottom: 12px;
+}
+
+.quiz-result-hero-premium .quiz-result-title {
+  margin-bottom: 10px;
+  font-family: "Genos", sans-serif;
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.quiz-result-hero-premium .quiz-result-summary {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(245, 245, 247, 0.78);
+  line-height: 1.6;
+}
+
+.quiz-score-ring-premium {
+  width: 190px;
+  height: 190px;
+  margin: 22px auto 20px;
+  padding: 10px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    rgba(255,255,255,0.98) 0%,
+    rgba(229,229,234,0.96) 35%,
+    rgba(180,180,188,0.85) 68%,
+    rgba(255,255,255,0.98) 100%
+  );
+  box-shadow:
+    0 18px 36px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+.quiz-score-ring-inner-premium {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #060608 0%, #0a0a0c 56%, #17171c 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.quiz-score-ring-inner-premium strong {
+  color: rgba(245,245,247,0.98);
+  font-size: 2.2rem;
+  line-height: 1;
+  font-family: "Genos", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.quiz-score-ring-inner-premium span {
+  color: rgba(245,245,247,0.68);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.quiz-result-actions-premium {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.quiz-result-actions-premium .quiz-primary-btn,
+.quiz-result-actions-premium .quiz-secondary-btn {
+  min-height: 42px;
+  padding: 0 16px;
+  font-size: 0.9rem;
+  border-radius: 999px;
+}
+
+.quiz-secondary-btn-result {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(238,238,242,1) 100%);
+  border: 1px solid rgba(10,10,12,0.08);
+  color: #0a0a0c;
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.92);
+}
+
+.quiz-secondary-btn-result:hover,
+.quiz-secondary-btn-result:focus {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(232,232,236,1) 100%);
+  color: #0a0a0c;
+}
+
+.quiz-result-cta-panel,
+.quiz-related-panel,
+.quiz-review-panel {
+  padding: 22px 20px;
+}
+
+.quiz-result-cta-panel .quiz-subsection-title,
+.quiz-related-panel .quiz-subsection-title,
+.quiz-review-panel .quiz-subsection-title {
+  margin-bottom: 14px;
+}
+
+.quiz-cta-grid {
+  gap: 10px;
+}
+
+.quiz-cta-card {
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,245,247,1) 100%);
+  border: 1px solid rgba(10,10,12,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.quiz-cta-card strong {
+  color: #0a0a0c;
+  font-size: 0.98rem;
+}
+
+.quiz-cta-card span {
+  color: rgba(10,10,12,0.66);
+  line-height: 1.55;
+}
+
+.quiz-related-grid {
+  gap: 10px;
+}
+
+.quiz-shell-stage .quiz-related-card {
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.quiz-shell-stage .quiz-related-card strong {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.quiz-shell-stage .quiz-related-label {
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  background: rgba(255,255,255,0.08);
+  color: rgba(245,245,247,0.82);
+}
+
+.quiz-review-list {
+  gap: 12px;
+}
+
+.quiz-review-item {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,248,250,1) 100%);
+  border: 1px solid rgba(10,10,12,0.08);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.quiz-review-item.is-correct {
+  border-left: 4px solid #16a34a;
+}
+
+.quiz-review-item.is-incorrect {
+  border-left: 4px solid #dc2626;
+}
+
+.quiz-review-number {
+  color: rgba(10,10,12,0.62);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.quiz-review-status {
+  color: rgba(10,10,12,0.82);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.quiz-review-question {
+  color: #111114;
+  font-size: 1.02rem;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.quiz-review-answer {
+  color: #1a1a1f !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.quiz-review-answer strong {
+  color: #0a0a0c;
+  font-weight: 700;
+}
+
+.quiz-review-tip {
+  color: rgba(10,10,12,0.68) !important;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-style: normal;
+}
+
+.quiz-result-share-text {
+  margin-top: 12px;
+  color: rgba(245,245,247,0.62);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+  .quiz-result-hero-premium {
+    padding: 22px 16px 18px;
+  }
+
+  .quiz-score-ring-premium {
+    width: 168px;
+    height: 168px;
+    margin: 18px auto 16px;
+  }
+
+  .quiz-score-ring-inner-premium strong {
+    font-size: 1.95rem;
+  }
+
+  .quiz-score-ring-inner-premium span {
+    font-size: 0.88rem;
+  }
+
+  .quiz-result-actions-premium {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .quiz-result-actions-premium .quiz-primary-btn,
+  .quiz-result-actions-premium .quiz-secondary-btn {
+    width: 100%;
+  }
+
+  .quiz-result-cta-panel,
+  .quiz-related-panel,
+  .quiz-review-panel {
+    padding: 18px 14px;
+  }
+
+  .quiz-review-item {
+    padding: 14px 14px 12px;
+  }
+}
+
+/* ========================================
+   QUIZ RESULT — HERO CENTER + RELATED CARDS
+======================================== */
+
+/* gornji result blok stvarno centriraj */
+.quiz-result-hero-premium {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-result-hero-premium .quiz-result-title,
+.quiz-result-hero-premium .quiz-result-summary,
+.quiz-result-hero-premium .quiz-result-actions-premium {
+  text-align: center;
+  justify-content: center;
+}
+
+/* related sekcija kao prave quiz kartice */
+.quiz-related-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.quiz-related-quiz-card {
+  padding: 16px;
+  border-radius: 18px;
+  min-height: 100%;
+}
+
+.quiz-related-quiz-card .quiz-card-body {
+  gap: 0;
+}
+
+.quiz-related-quiz-card .quiz-card-badges {
+  margin-bottom: 12px !important;
+}
+
+.quiz-related-quiz-card .quiz-card-title {
+  font-size: clamp(1.45rem, 1.8vw, 1.9rem) !important;
+  line-height: 0.98 !important;
+  margin-bottom: 14px !important;
+}
+
+.quiz-related-quiz-card .quiz-card-cover {
+  aspect-ratio: 21 / 9;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+.quiz-related-quiz-card .quiz-card-meta-list {
+  margin-bottom: 0;
+}
+
+.quiz-related-quiz-card .quiz-card-meta {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 0.86rem;
+}
+
+.quiz-related-quiz-card .quiz-card-cta {
+  margin-top: 16px;
+}
+
+.quiz-related-panel {
+  overflow: visible;
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+  .quiz-result-hero-premium {
+    max-width: 100%;
+  }
+
+  .quiz-related-grid-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quiz-related-quiz-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .quiz-related-quiz-card .quiz-card-title {
+    font-size: clamp(1.35rem, 7vw, 1.75rem) !important;
+  }
+
+  .quiz-related-quiz-card .quiz-card-cover {
+    margin-bottom: 12px;
+  }
+}
+
+/* ========================================
+   RESULT SCREEN — FINAL ALIGNMENT FIX
+======================================== */
+
+/* 1) Centriraj CIJELI prvi result panel, ne samo sadržaj unutar njega */
+.quiz-shell-stage .quiz-result-hero.quiz-result-hero-premium {
+  width: min(100%, 640px);
+  margin: 0 auto 24px !important;
+}
+
+/* unutarnji sadržaj ostaje centriran */
+.quiz-result-hero-premium {
+  text-align: center;
+}
+
+.quiz-result-hero-premium .quiz-result-badge,
+.quiz-result-hero-premium .quiz-result-title,
+.quiz-result-hero-premium .quiz-result-summary,
+.quiz-result-hero-premium .quiz-result-actions-premium {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+/* 2) Povezani kvizovi — 3 u jedan red na desktopu */
+.quiz-related-grid.quiz-related-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* kartice malo kompaktnije da 3 komada lijepo stanu */
+.quiz-related-quiz-card {
+  padding: 14px;
+  border-radius: 18px;
+  min-height: 100%;
+}
+
+.quiz-related-quiz-card .quiz-card-badges {
+  margin-bottom: 10px !important;
+}
+
+.quiz-related-quiz-card .quiz-card-title {
+  font-size: clamp(1.2rem, 1.4vw, 1.55rem) !important;
+  line-height: 0.98 !important;
+  margin-bottom: 12px !important;
+}
+
+.quiz-related-quiz-card .quiz-card-cover {
+  aspect-ratio: 21 / 10;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.quiz-related-quiz-card .quiz-card-meta {
+  min-height: 34px;
+  padding: 0 11px;
+  font-size: 0.82rem;
+}
+
+.quiz-related-quiz-card .quiz-card-cta {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 0.86rem;
+  margin-top: 14px;
+}
+
+/* 3) Tablet */
+@media (max-width: 991.98px) {
+  .quiz-shell-stage .quiz-result-hero.quiz-result-hero-premium {
+    width: min(100%, 680px);
+  }
+
+  .quiz-related-grid.quiz-related-grid-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 4) Mobile */
+@media (max-width: 767.98px) {
+  .quiz-shell-stage .quiz-result-hero.quiz-result-hero-premium {
+    width: 100%;
+    margin: 0 auto 16px !important;
+  }
+
+  .quiz-related-grid.quiz-related-grid-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .quiz-related-quiz-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .quiz-related-quiz-card .quiz-card-title {
+    font-size: clamp(1.3rem, 7vw, 1.7rem) !important;
+  }
+}

@@ -656,21 +656,22 @@ function renderQuizResult() {
 
   contentEl.innerHTML = `
     <section class="quiz-screen quiz-result-screen">
-      <div class="quiz-panel quiz-result-hero">
+      <div class="quiz-panel quiz-result-hero quiz-result-hero-premium">
         <span class="quiz-result-badge">Rezultat</span>
         <h2 class="quiz-result-title">${escapeHtml(result.headline)}</h2>
         <p class="quiz-result-summary">${escapeHtml(result.summary)}</p>
 
-        <div class="quiz-score-ring">
-          <div class="quiz-score-ring-inner">
+        <div class="quiz-score-ring quiz-score-ring-premium" aria-label="Rezultat kviza ${result.percentage} posto">
+          <div class="quiz-score-ring-inner quiz-score-ring-inner-premium">
             <strong>${result.percentage}%</strong>
             <span>${result.correctAnswers}/${result.totalQuestions} točno</span>
           </div>
         </div>
 
-        <div class="quiz-result-actions">
+        <div class="quiz-result-actions quiz-result-actions-premium">
           <button type="button" class="quiz-primary-btn" id="restartQuizBtn">Riješi ponovno</button>
-          <a href="kvizovi.html" class="quiz-secondary-btn">Još kvizova</a>
+          <a href="#quiz-review-section" class="quiz-secondary-btn quiz-secondary-btn-result">Pregled odgovora</a>
+          <a href="kvizovi.html" class="quiz-secondary-btn quiz-secondary-btn-result">Još kvizova</a>
         </div>
       </div>
 
@@ -698,7 +699,7 @@ function renderQuizResult() {
         ${renderRelatedQuizzes()}
       </div>
 
-      <div class="quiz-panel quiz-review-panel">
+      <div class="quiz-panel quiz-review-panel" id="quiz-review-section">
         <h3 class="quiz-subsection-title">Pregled odgovora</h3>
         <div class="quiz-review-list">
           ${quiz.questions
@@ -711,7 +712,7 @@ function renderQuizResult() {
 
               return `
                 <article class="quiz-review-item ${isCorrect ? "is-correct" : "is-incorrect"}">
-                                  <div class="quiz-review-head">
+                  <div class="quiz-review-head">
                     <span class="quiz-review-number">Pitanje ${index + 1}</span>
                     <span class="quiz-review-status">${isCorrect ? "Točno" : "Netočno"}</span>
                   </div>
@@ -762,14 +763,48 @@ function renderRelatedQuizzes() {
   }
 
   return `
-    <div class="quiz-related-grid">
+    <div class="quiz-related-grid quiz-related-grid-cards">
       ${related
         .map(
           (item) => `
-            <a href="kviz.html?quiz=${encodeURIComponent(item.id)}" class="quiz-related-card">
-              <span class="quiz-related-label">${escapeHtml(getCategoryEyebrow(item.category))}</span>
-              <strong>${escapeHtml(item.title)}</strong>
-              <span>${escapeHtml(item.description || "")}</span>
+            <a
+              href="kviz.html?quiz=${encodeURIComponent(item.id)}"
+              class="quiz-card-link quiz-related-card-link text-decoration-none d-block h-100"
+              aria-label="Pokreni kviz ${escapeHtml(item.title)}"
+            >
+              <article class="quiz-card quiz-related-quiz-card h-100">
+                <div class="quiz-card-body">
+                  <div class="quiz-card-badges mb-3">
+                    <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(item.category))}</span>
+                  </div>
+
+                  <h4 class="quiz-card-title">${escapeHtml(item.title)}</h4>
+
+                  ${
+                    item.coverImage
+                      ? `
+                        <div class="quiz-card-cover">
+                          <img
+                            src="${escapeAttribute(item.coverImage)}"
+                            alt="${escapeAttribute(item.title)} naslovna fotografija"
+                            class="quiz-card-cover-image"
+                            loading="lazy"
+                          />
+                        </div>
+                      `
+                      : `
+                        <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
+                      `
+                  }
+
+                  <div class="quiz-card-meta-list">
+                    <span class="quiz-card-meta">${Number(item.questionCount) || 0} pitanja</span>
+                  </div>
+
+                  <div class="card-spacer"></div>
+                  <span class="quiz-card-cta">Pokreni kviz</span>
+                </div>
+              </article>
             </a>
           `
         )
