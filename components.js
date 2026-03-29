@@ -19,6 +19,14 @@
     { href: "legal.html", label: "Uvjeti korištenja i privatnost" }
   ];
 
+function getBasePathPrefix() {
+  return document.body?.dataset?.basePath || "";
+}
+
+function withBasePath(relativePath) {
+  return `${getBasePathPrefix()}${relativePath}`;
+}
+
   document.addEventListener("DOMContentLoaded", initShell);
 
   function initShell() {
@@ -64,8 +72,8 @@ function initLucideIcons() {
     const target = document.getElementById("site-header");
     if (!target) return;
 
-  const navHtml = NAV_ITEMS.map(
-      (item) => `<a href="${item.href}" data-page="${item.page}" class="header-nav-link">${item.label}</a>`
+    const navHtml = NAV_ITEMS.map(
+      (item) => `<a href="${withBasePath(item.href)}" data-page="${item.page}" class="header-nav-link">${item.label}</a>`
     ).join("");
 
     target.innerHTML = `
@@ -73,7 +81,7 @@ function initLucideIcons() {
         <div class="container">
           <div class="header-inner">
             <div class="header-logo">
-              <a href="index.html" aria-label="AutoMoto KLIK početna">
+              <a href="${withBasePath("index.html")}" aria-label="AutoMoto KLIK početna">
                 <span class="header-logo-mark">AMK</span>
                 <span class="header-logo-text">AutoMoto KLIK!</span>
               </a>
@@ -95,8 +103,8 @@ function initLucideIcons() {
     const currentYear = new Date().getFullYear();
 
     const linksHtml = FOOTER_ITEMS.map(
-      (item) => `<a href="${item.href}">${item.label}</a>`
-    ).join("");
+        (item) => `<a href="${withBasePath(item.href)}">${item.label}</a>`
+      ).join("");
 
     target.innerHTML = `
       <footer class="footer">

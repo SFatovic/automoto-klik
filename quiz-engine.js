@@ -78,7 +78,7 @@ async function fetchJson(path) {
 async function loadQuizManifest() {
   if (quizState.manifest) return quizState.manifest;
 
-  const manifest = await fetchJson("data/quizzes-manifest.json");
+  const manifest = await fetchJson(withBasePath("data/quizzes-manifest.json"));
   quizState.manifest = Array.isArray(manifest) ? manifest : [];
 
   return quizState.manifest;
@@ -103,72 +103,6 @@ async function loadQuizListPage() {
 
   renderQuizCategoryFilters(manifest);
   renderQuizCards(manifest);
-
-  const grouped = groupQuizzesByCategory(manifest);
-  let html = "";
-
-  Object.keys(quizCategoryMap).forEach((categoryKey) => {
-    const quizzes = grouped[categoryKey];
-    if (!quizzes || quizzes.length === 0) return;
-
-    html += `
-      <div class="col-12 mt-4">
-        <h3 class="cards-section-title mb-3">${quizCategoryMap[categoryKey].title}</h3>
-      </div>
-    `;
-
-    html += quizzes
-      .map(
-    (quiz) => `
-      <div class="col-md-6 col-lg-4">
-        <a
-          href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
-          class="quiz-card-link text-decoration-none d-block h-100"
-          aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
-        >
-          <article class="quiz-card h-100">
-            <div class="quiz-card-body">
-              <div class="quiz-card-badges mb-3">
-                <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(quiz.category))}</span>
-                ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
-              </div>
-
-              <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
-
-              ${
-                quiz.coverImage
-                  ? `
-                    <div class="quiz-card-cover">
-                      <img
-                        src="${escapeHtml(quiz.coverImage)}"
-                        alt="${escapeHtml(quiz.title)} naslovna fotografija"
-                        class="quiz-card-cover-image"
-                        loading="lazy"
-                      />
-                    </div>
-                  `
-                  : `
-                    <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
-                  `
-              }
-
-              <div class="quiz-card-meta-list">
-                <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
-                ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
-              </div>
-
-              <div class="card-spacer"></div>
-              <span class="quiz-card-cta">Pokreni kviz</span>
-            </div>
-          </article>
-        </a>
-      </div>
-    `
-  )
-  .join("");
-  });
-
-  grid.innerHTML = html;
 }
 
 function renderQuizCategoryFilters(items) {
@@ -238,7 +172,7 @@ function renderQuizCards(items) {
         </div>
       </div>
     `;
-        return;
+    return;
   }
 
   const grouped = groupQuizzesByCategory(filteredItems);
@@ -254,58 +188,58 @@ function renderQuizCards(items) {
       </div>
     `;
 
-    html += quizzes
-      .map(
-        (quiz) => `
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="kviz.html?quiz=${encodeURIComponent(quiz.id)}"
-              class="quiz-card-link text-decoration-none d-block h-100"
-              aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
-            >
-              <article class="quiz-card h-100">
-                <div class="quiz-card-body">
-                  <div class="quiz-card-badges mb-3">
-                    <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(quiz.category))}</span>
-                    ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
-                  </div>
-
-                  <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
-
-                  ${
-                    quiz.coverImage
-                      ? `
-                        <div class="quiz-card-cover">
-                          <img
-                            src="${escapeAttribute(quiz.coverImage)}"
-                            alt="${escapeAttribute(quiz.title)} naslovna fotografija"
-                            class="quiz-card-cover-image"
-                            loading="lazy"
-                          />
-                        </div>
-                      `
-                      : `
-                        <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
-                      `
-                  }
-
-                  <div class="quiz-card-meta-list">
-                    <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
-                    ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
-                  </div>
-
-                  <div class="card-spacer"></div>
-                  <span class="quiz-card-cta">Pokreni kviz</span>
-                </div>
-              </article>
-            </a>
-          </div>
-        `
-      )
-      .join("");
+    html += quizzes.map((quiz) => renderQuizCard(quiz)).join("");
   });
 
   grid.innerHTML = html;
+}
+
+function renderQuizCard(quiz) {
+  return `
+    <div class="col-md-6 col-lg-4">
+      <a
+        href="${getQuizCardLink(quiz)}"
+        class="quiz-card-link text-decoration-none d-block h-100"
+        aria-label="Pokreni kviz ${escapeHtml(quiz.title)}"
+      >
+        <article class="quiz-card h-100">
+          <div class="quiz-card-body">
+            <div class="quiz-card-badges mb-3">
+              <span class="quiz-card-badge">${escapeHtml(getCategoryEyebrow(quiz.category))}</span>
+              ${quiz.difficulty ? `<span class="quiz-card-badge quiz-card-badge-muted">${escapeHtml(quiz.difficulty)}</span>` : ""}
+            </div>
+
+            <h4 class="quiz-card-title">${escapeHtml(quiz.title)}</h4>
+
+            ${
+              quiz.coverImage
+                ? `
+                  <div class="quiz-card-cover">
+                    <img
+                      src="${escapeAttribute(resolveAssetPath(quiz.coverImage))}"
+                      alt="${escapeAttribute(quiz.title)} naslovna fotografija"
+                      class="quiz-card-cover-image"
+                      loading="lazy"
+                    />
+                  </div>
+                `
+                : `
+                  <div class="quiz-card-cover quiz-card-cover-placeholder" aria-hidden="true"></div>
+                `
+            }
+
+            <div class="quiz-card-meta-list">
+              <span class="quiz-card-meta">${Number(quiz.questionCount) || 0} pitanja</span>
+              ${quiz.estimatedTime ? `<span class="quiz-card-meta">${escapeHtml(quiz.estimatedTime)}</span>` : ""}
+            </div>
+
+            <div class="card-spacer"></div>
+            <span class="quiz-card-cta">Pokreni kviz</span>
+          </div>
+        </article>
+      </a>
+    </div>
+  `;
 }
 
 function getQuizCategoryCounts(items) {
@@ -315,6 +249,50 @@ function getQuizCategoryCounts(items) {
     accumulator[item.category] = (accumulator[item.category] || 0) + 1;
     return accumulator;
   }, {});
+}
+
+function getBasePathPrefix() {
+  const explicitBasePath = document.body?.dataset?.basePath;
+  if (explicitBasePath) return explicitBasePath;
+
+  const path = window.location.pathname.toLowerCase();
+  return path.includes("/kvizovi/") ? "../" : "";
+}
+
+function withBasePath(relativePath) {
+  return `${getBasePathPrefix()}${relativePath}`;
+}
+
+function resolveAssetPath(path) {
+  if (!path) return "";
+
+  const normalizedPath = String(path).trim();
+
+  if (
+    normalizedPath.startsWith("http://") ||
+    normalizedPath.startsWith("https://") ||
+    normalizedPath.startsWith("//") ||
+    normalizedPath.startsWith("data:")
+  ) {
+    return normalizedPath;
+  }
+
+  return withBasePath(normalizedPath);
+}
+
+function getQuizCardLink(quizItem) {
+  const quizId = typeof quizItem === "string" ? quizItem : quizItem?.id;
+  const quizSlug = typeof quizItem === "object" ? quizItem?.slug : "";
+
+  if (quizSlug) {
+    return withBasePath(`kvizovi/${quizSlug}.html`);
+  }
+
+  if (quizId) {
+    return withBasePath(`kvizovi/${quizId}-kviz.html`);
+  }
+
+  return withBasePath("kvizovi.html");
 }
 
 function groupQuizzesByCategory(items) {
@@ -330,12 +308,28 @@ function groupQuizzesByCategory(items) {
   }, {});
 }
 
-async function loadSingleQuizPage() {
+function getRequestedQuizId() {
+  const bodyQuizId = document.body?.dataset?.quizId?.trim();
+
+  if (bodyQuizId) {
+    return bodyQuizId;
+  }
+
   const params = new URLSearchParams(window.location.search);
-  const quizId = params.get("quiz");
+  const queryQuizId = params.get("quiz");
+
+  if (queryQuizId && queryQuizId.trim()) {
+    return queryQuizId.trim();
+  }
+
+  return null;
+}
+
+async function loadSingleQuizPage() {
+  const quizId = getRequestedQuizId();
 
   if (!quizId) {
-    renderQuizError("Nedostaje ID kviza u URL-u.");
+    renderQuizError("Nedostaje ID kviza.");
     return;
   }
 
@@ -347,7 +341,7 @@ async function loadSingleQuizPage() {
     return;
   }
 
-  const quiz = await fetchJson(manifestItem.file);
+  const quiz = await fetchJson(withBasePath(manifestItem.file));
 
   if (!quiz || !Array.isArray(quiz.questions) || quiz.questions.length === 0) {
     renderQuizError("Kviz nema ispravno definirana pitanja.");
@@ -357,11 +351,6 @@ async function loadSingleQuizPage() {
   quizState.quiz = quiz;
   quizState.manifestItem = manifestItem;
   resetQuizState();
-    const titleEl = document.getElementById("quizTitle");
-  const descEl = document.getElementById("quizDescription");
-
-  if (titleEl) titleEl.textContent = quiz.title;
-  if (descEl) descEl.textContent = quiz.description || manifestItem.description || "";
 
   document.title = `${quiz.title} | AutoMoto KLIK!`;
 
@@ -416,6 +405,7 @@ function renderQuizIntro() {
   const eyebrow = intro.eyebrow || getCategoryEyebrow(manifestItem?.category);
   const introText =
     intro.text ||
+    manifestItem?.introText ||
     quiz.description ||
     manifestItem?.description ||
     "Riješi kviz, testiraj svoje znanje i saznaj koliko stvarno poznaješ ovu temu.";
@@ -436,7 +426,7 @@ function renderQuizIntro() {
           ? `
             <div class="quiz-intro-cover-wrap quiz-intro-cover-wrap-compact">
               <img
-                src="${escapeAttribute(coverImage)}"
+                src="${escapeAttribute(resolveAssetPath(coverImage))}"
                 alt="${escapeAttribute(quiz.title)} naslovna fotografija"
                 class="quiz-intro-cover-image"
                 loading="eager"
@@ -465,7 +455,7 @@ function renderQuizIntro() {
             <button type="button" class="quiz-primary-btn quiz-primary-btn-showcase" id="startQuizBtn">
               ${escapeHtml(intro.ctaLabel || "Pokreni")}
             </button>
-            <a href="kvizovi.html" class="quiz-secondary-btn quiz-secondary-btn-showcase">
+            <a href="${withBasePath("kvizovi.html")}" class="quiz-secondary-btn quiz-secondary-btn-showcase">
               Natrag na kvizove
             </a>
           </div>
@@ -514,7 +504,7 @@ function renderQuestion() {
       </div>
 
       <div class="quiz-panel quiz-question-panel">
-        ${question.image ? `<div class="quiz-question-image-wrap"><img src="${escapeAttribute(question.image)}" alt="${escapeAttribute(question.question)}" class="quiz-question-image"></div>` : ""}
+        ${question.image ? `<div class="quiz-question-image-wrap"><img src="${escapeAttribute(resolveAssetPath(question.image))}" alt="${escapeAttribute(question.question)}" class="quiz-question-image"></div>` : ""}
         <h2 class="quiz-question-title">${escapeHtml(question.question)}</h2>
 
         <div class="quiz-answers" role="list">
@@ -555,15 +545,6 @@ function renderQuestion() {
   }
 }
 
-function goToPreviousQuestion() {
-  if (quizState.currentIndex > 0) {
-    quizState.currentIndex -= 1;
-    quizState.screen = "question";
-    quizState.pendingInterstitial = null;
-    renderCurrentScreen();
-  }
-}
-
 function goToNextStep() {
   const selectedAnswer = quizState.selectedAnswers[quizState.currentIndex];
 
@@ -591,7 +572,7 @@ function goToNextStep() {
   }
 
   quizState.currentIndex = nextQuestionIndex;
-     quizState.screen = "question";
+  quizState.screen = "question";
   renderCurrentScreen();
 }
 
@@ -671,18 +652,18 @@ function renderQuizResult() {
         <div class="quiz-result-actions quiz-result-actions-premium">
           <button type="button" class="quiz-primary-btn" id="restartQuizBtn">Riješi ponovno</button>
           <a href="#quiz-review-section" class="quiz-secondary-btn quiz-secondary-btn-result">Pregled odgovora</a>
-          <a href="kvizovi.html" class="quiz-secondary-btn quiz-secondary-btn-result">Još kvizova</a>
+          <a href="${withBasePath("kvizovi.html")}" class="quiz-secondary-btn quiz-secondary-btn-result">Još kvizova</a>
         </div>
       </div>
 
       <div class="quiz-panel quiz-result-cta-panel">
         <h3 class="quiz-subsection-title">Što dalje?</h3>
         <div class="quiz-cta-grid">
-          <a href="kvizovi.html" class="quiz-cta-card">
+          <a href="${withBasePath("kvizovi.html")}" class="quiz-cta-card">
             <strong>Istraži još kvizova</strong>
             <span>Pronađi novi brand, F1 ili opći auto kviz.</span>
           </a>
-          <a href="ai-upiti.html" class="quiz-cta-card">
+          <a href="${withBasePath("ai-upiti.html")}" class="quiz-cta-card">
             <strong>Isprobaj AI alat</strong>
             <span>Generiraj auto upit za ChatGPT ili Gemini.</span>
           </a>
@@ -768,7 +749,7 @@ function renderRelatedQuizzes() {
         .map(
           (item) => `
             <a
-              href="kviz.html?quiz=${encodeURIComponent(item.id)}"
+              href="${getQuizCardLink(item)}"
               class="quiz-card-link quiz-related-card-link text-decoration-none d-block h-100"
               aria-label="Pokreni kviz ${escapeHtml(item.title)}"
             >
@@ -785,7 +766,7 @@ function renderRelatedQuizzes() {
                       ? `
                         <div class="quiz-card-cover">
                           <img
-                            src="${escapeAttribute(item.coverImage)}"
+                            src="${escapeAttribute(resolveAssetPath(item.coverImage))}"
                             alt="${escapeAttribute(item.title)} naslovna fotografija"
                             class="quiz-card-cover-image"
                             loading="lazy"
@@ -866,7 +847,7 @@ function getResultProfile(percentage) {
 function showInlineQuizNotice(message) {
   const existingNotice = document.querySelector(".quiz-inline-notice");
   if (existingNotice) {
-        existingNotice.remove();
+    existingNotice.remove();
   }
 
   const actionsWrap = document.querySelector(".quiz-question-actions");
@@ -885,11 +866,6 @@ function showInlineQuizNotice(message) {
 
 function renderQuizError(message) {
   const contentEl = document.getElementById("quizContent");
-  const titleEl = document.getElementById("quizTitle");
-  const descEl = document.getElementById("quizDescription");
-
-  if (titleEl) titleEl.textContent = "Greška";
-  if (descEl) descEl.textContent = "Kviz trenutno nije dostupan.";
   if (!contentEl) return;
 
   updateProgressLabel("");
@@ -899,7 +875,7 @@ function renderQuizError(message) {
       <div class="quiz-panel quiz-error-panel">
         <h2 class="quiz-error-title">Ups, nešto je pošlo krivo.</h2>
         <p class="quiz-error-text">${escapeHtml(message)}</p>
-        <a href="kvizovi.html" class="quiz-primary-btn">Povratak na kvizove</a>
+        <a href="${withBasePath("kvizovi.html")}" class="quiz-primary-btn">Povratak na kvizove</a>
       </div>
     </section>
   `;
