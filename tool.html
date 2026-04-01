@@ -39,16 +39,14 @@
   <main>
     <section class="generator-section py-5">
       <div class="container">
-        <div class="row g-4">
+        <div class="row justify-content-center g-4 tool-flow-stack">
 
-          <div class="col-lg-6">
-            <div class="custom-card h-100">
+          <div class="col-12 col-xl-8 col-lg-10 tool-flow-card">
+            <div class="custom-card">
               <div class="card-body-custom">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <div>
-                    <p class="small-label mb-2">Aktivni alat</p>
-                    <h3 id="activeToolTitle" class="mb-0">Učitavanje alata...</h3>
-                  </div>
+                <div class="mb-3">
+                  <p class="small-label mb-2">Aktivni alat</p>
+                  <h3 id="activeToolTitle" class="mb-0">Učitavanje alata...</h3>
                 </div>
 
                 <p id="activeToolDescription" class="text-muted mb-4">
@@ -60,7 +58,7 @@
                     <!-- JS ubacuje polja -->
                   </div>
 
-                  <div class="mt-4 d-grid gap-2">
+                  <div class="mt-4 d-grid">
                     <button type="submit" id="generatePromptBtn" class="btn btn-primary btn-lg btn-premium">
                       <i data-lucide="sparkles"></i>
                       <span>Generiraj AI upit</span>
@@ -71,29 +69,25 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="custom-card h-100">
+          <div class="col-12 col-xl-8 col-lg-10 tool-flow-card">
+            <div class="custom-card">
               <div class="card-body-custom">
                 <div class="mb-3">
                   <p class="small-label mb-2">Generirani upit</p>
                   <h3 class="mb-0">AI prompt spreman za kopiranje</h3>
                 </div>
 
-                <p class="text-muted mb-4">
-                  Nakon ispunjavanja forme ovdje će se prikazati gotov prompt.
-                </p>
-
                 <div class="output-wrapper mb-3">
                   <textarea
                     id="promptOutput"
                     class="form-control output-box"
-                    rows="16"
+                    rows="8"
                     placeholder="Generirani AI upit pojavit će se ovdje..."
                     readonly
                   ></textarea>
                 </div>
 
-                <div class="d-grid gap-2">
+                <div class="d-grid">
                   <button type="button" id="copyPromptBtn" class="btn btn-primary btn-lg btn-premium" disabled>
                     <i data-lucide="copy"></i>
                     <span>Kopiraj upit</span>
@@ -101,10 +95,10 @@
                 </div>
 
                 <p class="output-note mt-3 mb-0">
-                  Savjet: kopiraj upit, zalijepi ga u ChatGPT i dodatno ga prilagodi po potrebi.
+                  Kopiraj upit i zalijepi ga u AI chat po izboru.
                 </p>
 
-                <div class="ai-links">
+                <div class="ai-links mt-4">
                   <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
                     <i data-lucide="message-square"></i>
                     <span>Otvori ChatGPT</span>

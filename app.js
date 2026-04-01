@@ -585,6 +585,21 @@ function generatePrompt() {
 
   trackClarityEvent("prompt_generated", state.activeTool);
   setButtonTemporaryText(dom.generatePromptBtn, "Upit generiran");
+
+  if (dom.copyPromptBtn && prompt.trim()) {
+    requestAnimationFrame(() => {
+      const header = document.querySelector(".site-header");
+      const headerOffset = header ? header.offsetHeight + 24 : 24;
+
+      const buttonTop =
+        dom.copyPromptBtn.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: buttonTop,
+        behavior: "smooth"
+      });
+    });
+  }
 }
 
 function applyPromptTemplate(template, data) {

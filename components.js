@@ -48,25 +48,30 @@ function initLucideIcons() {
 }
 
   function loadClarity() {
-    if (!CLARITY_ID) return;
-    if (window.clarity || document.querySelector("[data-clarity-script='true']")) {
-      return;
-    }
+  const isLocalhost =
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "localhost";
 
-    window.clarity =
-      window.clarity ||
-      function () {
-        (window.clarity.q = window.clarity.q || []).push(arguments);
-      };
+  if (!CLARITY_ID || isLocalhost) return;
 
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.async = true;
-    script.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
-    script.dataset.clarityScript = "true";
-
-    document.head.appendChild(script);
+  if (window.clarity || document.querySelector("[data-clarity-script='true']")) {
+    return;
   }
+
+  window.clarity =
+    window.clarity ||
+    function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
+  script.dataset.clarityScript = "true";
+
+  document.head.appendChild(script);
+}
 
   function renderHeader() {
     const target = document.getElementById("site-header");

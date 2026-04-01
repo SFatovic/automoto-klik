@@ -1,7 +1,6 @@
 [
   {
     "id": "alfa-romeo",
-    "slug": "alfa-romeo-kviz",
     "title": "Alfa Romeo kviz",
     "metaTitle": "Alfa Romeo kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi alfa romeo kviz i provjeri koliko poznaješ povijest, modele i tehnologiju Alfa Romea.",
@@ -14,7 +13,6 @@
   },
   {
     "id": "aston-martin",
-    "slug": "aston-martin-kviz",
     "title": "Aston Martin kviz",
     "metaTitle": "Aston Martin kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi aston martin kviz i provjeri koliko poznaješ povijest i modele brenda Aston Martin.",
@@ -27,7 +25,6 @@
   },
   {
     "id": "audi",
-    "slug": "audi-kviz",
     "title": "Audi kviz",
     "metaTitle": "Audi kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi audi kviz i provjeri koliko poznaješ povijest, modele i tehnologiju brenda Audi.",
@@ -40,7 +37,6 @@
   },
   {
     "id": "bmw",
-    "slug": "bmw-kviz",
     "title": "BMW kviz",
     "metaTitle": "BMW kviz – provjeri koliko poznaješ BMW | AutoMoto KLIK!",
     "metaDescription": "Riješi BMW kviz i testiraj znanje o modelima, povijesti i sportskom DNK-u jednog od najpoznatijih auto brendova.",
@@ -53,7 +49,6 @@
   },
   {
     "id": "ferrari",
-    "slug": "ferrari-kviz",
     "title": "Ferrari kviz",
     "metaTitle": "Ferrari kviz – testiraj znanje o Ferrariju | AutoMoto KLIK!",
     "metaDescription": "Riješi Ferrari kviz i provjeri koliko poznaješ povijest, modele i motorsport nasljeđe legendarnog talijanskog brenda.",
@@ -66,7 +61,6 @@
   },
   {
     "id": "fiat",
-    "slug": "fiat-kviz",
     "title": "Fiat kviz",
     "metaTitle": "Fiat kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi fiat kviz i provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Fiat.",
@@ -79,7 +73,6 @@
   },
   {
     "id": "ford",
-    "slug": "ford-kviz",
     "title": "Ford kviz",
     "metaTitle": "Ford kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi ford kviz i provjeri koliko poznaješ povijest, modele i utjecaj brenda Ford na autoindustriju.",
@@ -92,7 +85,6 @@
   },
   {
     "id": "honda",
-    "slug": "honda-kviz",
     "title": "Honda kviz",
     "metaTitle": "Honda kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi honda kviz i provjeri koliko poznaješ modele, motore i inovacije brenda Honda.",
@@ -105,7 +97,6 @@
   },
   {
     "id": "lamborghini",
-    "slug": "lamborghini-kviz",
     "title": "Lamborghini kviz",
     "metaTitle": "Lamborghini kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi lamborghini kviz i provjeri koliko poznaješ superautomobile, povijest i karakter brenda Lamborghini.",
@@ -118,7 +109,6 @@
   },
   {
     "id": "mazda",
-    "slug": "mazda-kviz",
     "title": "Mazda kviz",
     "metaTitle": "Mazda kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi mazda kviz i provjeri koliko poznaješ dizajn, modele i posebnosti brenda Mazda.",
@@ -131,7 +121,6 @@
   },
   {
     "id": "mclaren",
-    "slug": "mclaren-kviz",
     "title": "McLaren kviz",
     "metaTitle": "McLaren kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi mclaren kviz i provjeri koliko poznaješ povijest, utrkivanje i cestovne modele brenda McLaren.",
@@ -144,7 +133,6 @@
   },
   {
     "id": "mercedes-benz",
-    "slug": "mercedes-benz-kviz",
     "title": "Mercedes-Benz kviz",
     "metaTitle": "Mercedes-Benz kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi mercedes-benz kviz i provjeri koliko poznaješ luksuz, tehnologiju i povijest brenda Mercedes-Benz.",
@@ -157,7 +145,6 @@
   },
   {
     "id": "opel",
-    "slug": "opel-kviz",
     "title": "Opel kviz",
     "metaTitle": "Opel kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi opel kviz i provjeri koliko poznaješ povijest, modele i razvoj brenda Opel.",
@@ -170,7 +157,6 @@
   },
   {
     "id": "porsche",
-    "slug": "porsche-kviz",
     "title": "Porsche kviz",
     "metaTitle": "Porsche kviz – testiraj znanje o Porscheu | AutoMoto KLIK!",
     "metaDescription": "Riješi Porsche kviz i provjeri koliko poznaješ sportske modele, povijest i identitet legendarnog njemačkog brenda.",
@@ -183,7 +169,6 @@
   },
   {
     "id": "povijest",
-    "slug": "povijest-kviz",
     "title": "Povijest automobila kviz",
     "metaTitle": "Povijest automobila kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi povijest automobila kviz i provjeri koliko poznaješ ključne trenutke, izume i razvoj automobilske povijesti.",
@@ -196,7 +181,6 @@
   },
   {
     "id": "renault",
-    "slug": "renault-kviz",
     "title": "Renault kviz",
     "metaTitle": "Renault kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi renault kviz i provjeri koliko poznaješ povijest, modele i inovacije brenda Renault.",
@@ -209,7 +193,6 @@
   },
   {
     "id": "volkswagen",
-    "slug": "volkswagen-kviz",
     "title": "Volkswagen kviz",
     "metaTitle": "Volkswagen kviz – testiraj svoje auto znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi volkswagen kviz i provjeri koliko poznaješ povijest, najpoznatije modele i razvoj brenda Volkswagen.",
@@ -222,7 +205,6 @@
   },
   {
     "id": "f1-osnovni",
-    "slug": "f1-osnovni-kviz",
     "title": "Formula 1 – Osnovni kviz",
     "metaTitle": "Formula 1 kviz – testiraj svoje F1 znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi Formula 1 kviz i provjeri koliko znaš o pravilima, momčadima, vozačima i osnovama najpoznatijeg motorsporta.",
@@ -235,7 +217,6 @@
   },
   {
     "id": "ferrari-f1",
-    "slug": "ferrari-f1-kviz",
     "title": "Ferrari F1 Team kviz",
     "metaTitle": "Ferrari F1 kviz – testiraj znanje o Ferrari F1 timu | AutoMoto KLIK!",
     "metaDescription": "Riješi Ferrari F1 kviz i provjeri koliko poznaješ povijest, vozače, uspjehe i nasljeđe najpoznatije momčadi u Formuli 1.",
@@ -248,7 +229,6 @@
   },
   {
     "id": "red-bull-f1",
-    "slug": "red-bull-f1-kviz",
     "title": "Red Bull F1 Team kviz",
     "metaTitle": "Red Bull F1 kviz – provjeri znanje o Red Bull Racingu | AutoMoto KLIK!",
     "metaDescription": "Riješi Red Bull F1 kviz i testiraj znanje o vozačima, uspjesima i razvoju jedne od najjačih modernih F1 momčadi.",
@@ -261,7 +241,6 @@
   },
   {
     "id": "mclaren-f1",
-    "slug": "mclaren-f1-kviz",
     "title": "McLaren F1 Team kviz",
     "metaTitle": "McLaren F1 Team kviz – testiraj svoje F1 znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi mclaren f1 team kviz i koliko znaš o McLarenu i njegovoj povijesti?",
@@ -274,7 +253,6 @@
   },
   {
     "id": "mercedes-f1",
-    "slug": "mercedes-f1-kviz",
     "title": "Mercedes F1 Team kviz",
     "metaTitle": "Mercedes F1 Team kviz – testiraj svoje F1 znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi mercedes f1 team kviz i provjeri svoje znanje o Mercedes-AMG Petronas F1 timu.",
@@ -287,7 +265,6 @@
   },
   {
     "id": "williams-f1",
-    "slug": "williams-f1-kviz",
     "title": "Williams F1 Team kviz",
     "metaTitle": "Williams F1 Team kviz – testiraj svoje F1 znanje | AutoMoto KLIK!",
     "metaDescription": "Riješi williams f1 team kviz i provjeri svoje znanje o legendarnom Williams F1 timu.",

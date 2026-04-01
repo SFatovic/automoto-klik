@@ -5364,5 +5364,446 @@ textarea.form-control {
   .quiz-related-quiz-card .quiz-card-title {
   font-size: clamp(1.3rem, 7vw, 1.7rem) !important;
 }
+}
 
+/* ========================================
+   TOOL PAGE — VERTICAL TASK FLOW
+======================================== */
+
+#toolPage .generator-section {
+  padding-top: 56px !important;
+  padding-bottom: 72px !important;
+}
+
+#toolPage .tool-flow-stack {
+  row-gap: 24px !important;
+}
+
+#toolPage .tool-flow-card {
+  display: flex;
+  justify-content: center;
+}
+
+#toolPage .tool-flow-card .custom-card {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #050507 0%, #0a0a0c 56%, #1a1a1f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 24px 42px rgba(10, 10, 12, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  color: var(--color-text-inverse);
+}
+
+#toolPage .tool-flow-card .custom-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 42%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 18%);
+  pointer-events: none;
+}
+
+#toolPage .tool-flow-card .card-body-custom {
+  position: relative;
+  z-index: 1;
+  padding: 32px;
+}
+
+/* card intro hierarchy */
+#toolPage .tool-flow-card .mb-3:first-child {
+  margin-bottom: 18px !important;
+}
+
+#toolPage .tool-flow-card .small-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
+    linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(245, 245, 247, 0.78);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow:
+    0 6px 16px rgba(10, 10, 12, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+#toolPage .tool-flow-card h3 {
+  margin: 0;
+  color: rgba(245, 245, 247, 0.98);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+}
+
+#toolPage .tool-flow-card .text-muted,
+#toolPage .tool-flow-card #activeToolDescription,
+#toolPage .tool-flow-card .output-note {
+  color: rgba(245, 245, 247, 0.72) !important;
+}
+
+#toolPage .tool-flow-card #activeToolDescription {
+  max-width: 62ch;
+  margin-bottom: 28px !important;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+#toolPage #promptForm {
+  margin-bottom: 0;
+}
+
+/* typography inside cards */
+#toolPage .tool-flow-card .form-label,
+#toolPage .tool-flow-card .form-check-label {
+  color: rgba(245, 245, 247, 0.94);
+}
+
+#toolPage .tool-flow-card .required-mark {
+  color: #ff7b7b;
+}
+
+/* inputs */
+#toolPage .tool-flow-card .form-control,
+#toolPage .tool-flow-card .form-select {
+  border-color: rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%);
+  color: rgba(245, 245, 247, 0.96);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+#toolPage .tool-flow-card .form-control:hover,
+#toolPage .tool-flow-card .form-select:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+#toolPage .tool-flow-card .form-control:focus,
+#toolPage .tool-flow-card .form-select:focus {
+  border-color: rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.06) 100%);
+  color: rgba(245, 245, 247, 0.98);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 0 0 4px rgba(255,255,255,0.06);
+}
+
+#toolPage .tool-flow-card .form-control::placeholder,
+#toolPage .tool-flow-card textarea.form-control::placeholder {
+  color: rgba(245, 245, 247, 0.46);
+}
+
+/* select arrow + selected text readability */
+#toolPage .tool-flow-card .form-select {
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23f5f5f7' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, right 16px center;
+  background-size: 100% 100%, 16px 16px;
+}
+
+#toolPage .tool-flow-card .form-select option {
+  color: #0a0a0c;
+  background: #ffffff;
+}
+
+/* readonly output field */
+#toolPage .tool-flow-card .form-control[readonly],
+#toolPage .tool-flow-card .form-control:read-only {
+  color: rgba(245, 245, 247, 0.96);
+  background: transparent;
+  border-color: transparent;
+}
+
+/* checkbox group */
+#toolPage .tool-flow-card .checkbox-group {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+#toolPage .tool-flow-card .form-check {
+  border-radius: 16px;
+  border: 1px solid transparent;
+}
+
+#toolPage .tool-flow-card .form-check:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+#toolPage .tool-flow-card .form-check-input {
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+#toolPage .tool-flow-card .form-check-input:focus {
+  border-color: rgba(255,255,255,0.30);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.10);
+}
+
+/* checkbox group */
+#toolPage .tool-flow-card .checkbox-group {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 100%);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+#toolPage .tool-flow-card .form-check {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 64px;
+  margin-bottom: 10px;
+  padding: 0 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.025);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+#toolPage .tool-flow-card .form-check:last-child {
+  margin-bottom: 0;
+}
+
+#toolPage .tool-flow-card .form-check:hover {
+  border-color: rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    0 8px 18px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+#toolPage .tool-flow-card .form-check-input {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(232,232,236,1) 100%);
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.94);
+}
+
+#toolPage .tool-flow-card .form-check-input:focus {
+  border-color: rgba(255,255,255,0.34);
+  box-shadow:
+    0 0 0 4px rgba(255,255,255,0.10),
+    0 2px 8px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.94);
+}
+
+#toolPage .tool-flow-card .form-check-input:checked {
+  border-color: rgba(255,255,255,0.98);
+  background:
+    radial-gradient(circle at center, #0a0a0c 0 32%, transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(233,233,237,1) 100%);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.22),
+    0 0 0 3px rgba(255,255,255,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.96);
+}
+
+#toolPage .tool-flow-card .form-check-label {
+  flex: 1;
+  margin: 0;
+  color: rgba(245,245,247,0.88);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  transition:
+    color var(--transition-base),
+    font-weight var(--transition-base),
+    letter-spacing var(--transition-base);
+}
+
+#toolPage .tool-flow-card .form-check:has(.form-check-input:checked) {
+  border-color: rgba(255,255,255,0.12);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.08) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 12px 24px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+#toolPage .tool-flow-card .form-check:has(.form-check-input:checked)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.00) 26%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+#toolPage .tool-flow-card .form-check:has(.form-check-input:checked) .form-check-label {
+  color: rgba(255,255,255,0.98);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* output panel */
+#toolPage .output-wrapper {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+#toolPage .output-box {
+  min-height: 170px;
+  color: rgba(245, 245, 247, 0.96);
+}
+
+#toolPage .output-note {
+  margin-top: 14px !important;
+  color: rgba(245, 245, 247, 0.74) !important;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* primary CTA buttons */
+#toolPage .tool-flow-card .btn-primary {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(231,231,235,1) 100%);
+  border: 1px solid rgba(10,10,12,0.08);
+  color: #0a0a0c;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.94);
+}
+
+#toolPage .tool-flow-card .btn-primary:hover,
+#toolPage .tool-flow-card .btn-primary:focus {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,224,228,1) 100%);
+  border-color: rgba(10,10,12,0.10);
+  color: #0a0a0c;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.98);
+}
+
+#toolPage .tool-flow-card .btn-primary:focus-visible {
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.98),
+    0 0 0 4px rgba(255,255,255,0.12);
+}
+
+#toolPage .tool-flow-card .btn-primary:disabled {
+  background: linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(205,205,212,0.82) 100%);
+  border-color: rgba(255,255,255,0.08);
+  color: rgba(10,10,12,0.52);
+  opacity: 1;
+  box-shadow: none;
+}
+
+/* external AI buttons */
+#toolPage .ai-links {
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+@media (min-width: 992px) {
+  #toolPage .tool-flow-stack {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #toolPage .generator-section {
+    padding-top: 40px !important;
+    padding-bottom: 56px !important;
+  }
+
+  #toolPage .tool-flow-card .card-body-custom {
+    padding: 24px;
+  }
+
+  #toolPage .tool-flow-card h3 {
+    font-size: clamp(1.75rem, 4vw, 2.2rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  #toolPage .generator-section {
+    padding-top: 28px !important;
+    padding-bottom: 44px !important;
+  }
+
+  #toolPage .tool-flow-stack {
+    row-gap: 18px !important;
+  }
+
+  #toolPage .tool-flow-card .custom-card {
+    border-radius: 22px;
+  }
+
+  #toolPage .tool-flow-card .card-body-custom {
+    padding: 22px;
+  }
+
+  #toolPage .tool-flow-card .small-label {
+    min-height: 28px;
+    padding: 0 11px;
+    font-size: 0.72rem;
+  }
+
+  #toolPage .output-box {
+    min-height: 220px;
+  }
+
+  #toolPage .ai-links {
+    justify-content: stretch;
+  }
 }
