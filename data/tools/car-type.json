@@ -1,7 +1,7 @@
 {
   "id": "car-type",
   "title": "Preporuka vrste automobila",
-  "description": "Na temelju načina korištenja, prioriteta i životne situacije generira AI upit za odabir najprikladnije vrste karoserije.",
+  "description": "Na temelju odabranih načina korištenja, prioriteta i životne situacije generira se AI upit za odabir najprikladnije vrste karoserije za tvoje potrebe.",
   "fields": [
     {
       "id": "forWho",
@@ -9,12 +9,12 @@
       "type": "select",
       "required": true,
       "options": [
-        "Samo za mene",
-        "Za partnerica / partnericu",
-        "Za mene i partnera/partnericu",
-        "Za obitelj s djecom",
+        "Za žensku osobu",
+        "Za mušku osobu",
+        "Za sebe i partnera/partnericu",
+        "Za cijelu obitelj",
         "Za mladu osobu",
-        "Za starijeg člana obitelji",
+        "Za stariju osobu",
         "Za službeno vozilo / posao / zaposlenika"
       ]
     },
@@ -26,7 +26,7 @@
       "options": [
         "Pretežno gradska vožnja",
         "Kombinacija grada i otvorene ceste",
-        "Duža putovanja / autoput",
+        "Česta duža putovanja / autoput",
         "Obiteljske aktivnosti i izleti",
         "Posao / profesionalna upotreba (npr. dostava, prevoz)",
         "Rekreativna ili vikend vožnja",
@@ -47,13 +47,14 @@
     },
     {
       "id": "luggage",
-      "label": "Prostor za prtljagu mi je",
+      "label": "Prostor za prtljagu mi",
       "type": "select",
       "required": true,
       "options": [
-        "Jako bitan - često prevozim veće stvari ili prtljagu",
-        "Ne tako bitan - povremeno prevozim veće stvari ili prtljagu",
-        "Nebitan - rijetko nešto prevozim"
+        "Nije presudan - rijetko prevozim veću prtljagu",
+        "Nije tako bitan - povremeno prevozim stvari ili prtljagu",
+        "Potreban - često prevozim više stvari ili prtljagu",
+        "Jako bitan - uvijek imam veće stvari ili prtljagu"
       ]
     },
     {
@@ -66,6 +67,7 @@
         "Ekonomičnost i niski troškovi",
         "Udobnost",
         "Performanse",
+        "Posebna verzija modela",
         "Sigurnost",
         "Moderan dizajn",
         "Kompaktnost",
@@ -77,7 +79,7 @@
       "id": "emotion",
       "label": "Koliko ti je važna praktičnost naspram emocije",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Prije svega praktičnost",
         "Balans praktičnosti i užitka",
@@ -90,9 +92,24 @@
       "type": "select",
       "required": false,
       "options": [
-        "Niži i više sportski",
-        "Srednji / nije mi presudno",
-        "Viši i pregledniji"
+        "Niži i dinamičniji",
+        "Viši i pregledniji",
+        "Nemam preferencije"
+      ]
+    },
+    {
+      "id": "budget",
+      "label": "Budžet / okvirni cjenovni rang",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Do 10.000 €",
+        "10.000 – 20.000 €",
+        "20.000 – 35.000 €",
+        "35.000 - 50.000 €",
+        "50.000 - 100.000 €",
+        "+100.000 €",
+        "Još ne znam"
       ]
     },
     {
@@ -103,5 +120,5 @@
       "required": false
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak koji pomaže pri odabiru najprikladnije vrste vozila.\n\nŽelim pomoć u odabiru najprikladnije vrste karoserije automobila prema mojim potrebama.\n\nPodaci:\n- Auto biram za: {{forWho}}\n- Primarna namjena: {{usage}}\n- Najčešći broj putnika: {{passengers}}\n- Prostor za prtljagu: {{luggage}}\n- Najvažniji prioriteti: {{priorities}}\n- Praktičnost vs emocija: {{emotion}}\n- Preferirani položaj sjedenja: {{height}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži glavni prijedlog vrste karoserije i objasni zašto je to najlogičniji izbor.\n2. Predloži alternativne opcije vrste karoserije i objasni zašto bi i one mogle imati smisla.\n3. Ukratko objasni prednosti i nedostatke svake relevantne opcije.\n4. Daj završni savjet za donošenje informirane odluke.\n5. Odgovor napiši jasno, praktično i bez nepotrebnog tehničkog žargona."
-}
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik koji pomaže korisniku odabrati najprikladniju vrstu karoserije automobila prema stvarnim životnim potrebama.\n\nTvoj zadatak je procijeniti koja vrsta karoserije ima najviše smisla za korisnika. Fokusiraj se prvenstveno na praktičnost, način korištenja, životnu situaciju, broj putnika, prostor, željeni osjećaj u vožnji i okvirni budžet. Nemoj previše ulaziti u motorizaciju, tehničke detalje ili pojedine marke osim ako je to korisno za primjer.\n\nPodaci:\n- Auto biram za: {{forWho}}\n- Primarna namjena: {{usage}}\n- Najčešći broj putnika: {{passengers}}\n- Prostor za prtljagu: {{luggage}}\n- Najvažniji prioriteti: {{priorities}}\n- Praktičnost vs emocija: {{emotion}}\n- Preferirani položaj sjedenja: {{height}}\n- Budžet / okvirni cjenovni rang: {{budget}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija odgovori u sljedećoj strukturi:\n\n1. Glavna preporuka\nPredloži jednu vrstu karoserije koja je najlogičniji izbor i objasni zašto.\n\n2. Alternativne opcije\nPredloži još 2 vrste karoserije koje također dolaze u obzir i objasni u kojim situacijama bi one mogle biti bolji izbor.\n\n3. Kratka usporedba opcija\nZa svaku relevantnu opciju napiši kratko:\n- Prednosti\n- Nedostatke\n- Za kakvog je korisnika najprikladnija\n\n4. Primjeri vozila\nNavedi 5 do 8 poznatih primjera modela vozila koji pripadaju glavnoj preporučenoj karoserijskoj kategoriji. Navedi ih samo kao čisti popis, bez detaljnog objašnjenja svakog modela.\n\n5. Završni savjet\nDaj jasan i praktičan zaključak što korisnik treba staviti u prvi plan pri konačnoj odluci.\n\nOdgovor napiši jasno, pregledno i praktično. Koristi kratke odlomke i jednostavne liste gdje pomažu čitljivosti. Izbjegavaj nepotreban tehnički žargon i generičke rečenice."
+  }

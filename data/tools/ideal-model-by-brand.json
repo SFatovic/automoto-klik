@@ -32,11 +32,12 @@
       "required": false,
       "options": [
         "Do 10.000 €",
-        "10.000 € – 20.000 €",
-        "20.000 € – 40.000 €",
-        "40.000 € – 70.000 €",
-        "70.000 €+",
-        "Nisam siguran"
+        "10.000 – 20.000 €",
+        "20.000 – 35.000 €",
+        "35.000 - 50.000 €",
+        "50.000 - 100.000 €",
+        "+100.000 €",
+        "Još ne znam"
       ]
     },
     {
@@ -65,21 +66,47 @@
       ]
     },
     {
+      "id": "bodyStylePreference",
+      "label": "Koji oblik karoserije preferiraš",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Mali gradski automobil",
+        "Hatchback",
+        "Fastback / liftback",
+        "GT / Grand tourer",
+        "Limuzina",
+        "Kompaktna limuzina",
+        "Luksuzna limuzina",
+        "Karavan",
+        "SUV / Crossover",
+        "Premium Luxury SUV",
+        "Coupe / Sportski automobil",
+        "Cabrio / roadster",
+        "Monovolumen / MPV",
+        "Kombi / putnički van",
+        "Pick-up / Terensko vozilo",
+        "Nemam preferencije"
+      ]
+    },
+    {
       "id": "priorities",
       "label": "Što ti je najvažnije kod auta",
       "type": "checkbox",
       "required": true,
       "options": [
-        "Performanse",
-        "Udobnost",
-        "Niska potrošnja",
-        "Pouzdanost",
-        "Luksuz i oprema",
-        "Tehnologija",
+        "Performanse i vozački osjećaj",
+        "Udobnost i svakodnevna uglađenost",
+        "Niska potrošnja i ekonomičnost",
+        "Pouzdanost i mirna kupnja",
+        "Luksuz i premium dojam",
+        "Tehnologija i moderna oprema",
         "Prostor i praktičnost",
-        "Imidž / dizajn",
+        "Dizajn, imidž i pojava",
         "Niski troškovi održavanja",
-        "Vrijednost pri preprodaji"
+        "Vrijednost pri preprodaji",
+        "Poseban karakter i emocija",
+        "Posebno idanje ili ograničena serija"
       ]
     },
     {
@@ -112,18 +139,11 @@
       "type": "checkbox",
       "required": false,
       "options": [
-        "Preferiram povišenu poziciju sjedenja (SUV / crossover)",
-        "Preferiram niži i sportskiji auto (limuzina / coupe)",
         "Automatski mjenjač",
         "Manualni mjenjač",
         "Pogon na prednje kotače (FWD)",
         "Pogon na stražnje kotače (RWD)",
-        "Pogon na sva četiri kotača (AWD / 4x4)",
-        "Manji gradski auto",
-        "Veći i prostran auto",
-        "Bitan mi je velik prtljažnik",
-        "Bitna mi je upravljivost i osjećaj u vožnji",
-        "Bitna mi je udobnost na dugim relacijama"
+        "Pogon na sva četiri kotača (AWD / 4x4)"
       ]
     },
     {
@@ -135,5 +155,5 @@
       "placeholder": "npr. želim SUV, bitan mi je automatski mjenjač, vozim puno autoceste"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za odabir idealnog modela unutar određenog brenda.\n\nŽelim da mi preporučiš najbolji model, motorizaciju i konfiguraciju unutar odabranog brenda na temelju mojih potreba.\n\nPodaci:\n- Brend: {{brand}}\n- Starost vozila: {{vehicleAge}}\n- Budžet: {{budget}}\n- Namjena: {{usage}}\n- Broj putnika: {{passengers}}\n- Prioriteti: {{priorities}}\n- Stil vožnje: {{drivingStyle}}\n- Preferencija pogona: {{fuelPreference}}\n- Tehničke i vozne preferencije: {{technicalPreferences}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n\n1. Predloži IDEALAN model unutar tog brenda (točan model, npr. BMW 3 Series, Audi A6, Mercedes GLC).\n2. Predloži konkretnu motorizaciju (npr. 2.0 TDI, 320d, 1.5 TSI itd.) i objasni zašto je najbolja za mene.\n3. Daj okvirnu cijenu tog vozila (novo ili rabljeno, ovisno o odabiru).\n4. Ukratko objasni zašto je taj model najbolji izbor s obzirom na moje potrebe.\n\n5. Predloži 2-3 ALTERNATIVNE opcije unutar istog brenda:\n- za svaku navedi model + motor\n- kratko objasni kome bi više odgovarala\n\n6. Posebno uzmi u obzir tehničke i vozne preferencije (visina vozila, pogon, mjenjač itd.) i prilagodi izbor modela tim željama gdje god je moguće.\n\n7. Ako postoje potencijalni nedostaci ili kompromisi, jasno ih navedi.\n\n8. Na kraju daj jasan zaključak u 2-3 rečenice (što uzeti i zašto).\n\nBudi konkretan, praktičan i fokusiran na realne preporuke."
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za odabir idealnog modela unutar određenog automobilskog brenda.\n\nŽelim da mi preporučiš najbolji model, motorizaciju i konfiguraciju unutar odabranog brenda na temelju mojih potreba.\n\nPodaci:\n- Brend: {{brand}}\n- Starost vozila: {{vehicleAge}}\n- Budžet: {{budget}}\n- Primarna namjena: {{usage}}\n- Broj putnika: {{passengers}}\n- Preferirani oblik karoserije: {{bodyStylePreference}}\n- Prioriteti: {{priorities}}\n- Stil vožnje: {{drivingStyle}}\n- Preferencija pogona: {{fuelPreference}}\n- Tehničke i vozne preferencije: {{technicalPreferences}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija odgovori u sljedećoj strukturi:\n\n1. Glavna preporuka\nPredloži IDEALAN model unutar tog brenda (točan model) i ukratko objasni zašto je to najbolji izbor za mene. Prikaži mi fotografije od naprijed, straga i iznutra.\n\n2. Preporučena motorizacija i konfiguracija\nPredloži konkretnu motorizaciju i ključnu konfiguraciju vozila koja najbolje odgovara mojim potrebama, uključujući tip motora, mjenjač i pogon ako je relevantno.\n\n3. Okvirna cijena\nDaj realan okvir cijene za takvu konfiguraciju, ovisno o tome radi li se o novom ili rabljenom vozilu.\n\n4. Zašto baš taj model\nU nekoliko konkretnih točaka objasni zašto taj model najbolje odgovara mojim prioritetima, stilu vožnje, željenom obliku karoserije i tehničkim preferencijama.\n\n5. Alternativne opcije unutar istog brenda\nPredloži 2 do 3 alternativna modela unutar istog brenda.\nZa svaki navedi:\n- model\n- preporučeni motor\n- kome bi više odgovarao\n- glavni razlog zašto bi ga netko izabrao umjesto glavne preporuke\n\n6. Kompromisi i nedostaci\nJasno navedi eventualne nedostatke, kompromise ili stvari na koje treba paziti kod glavne preporuke.\n\n8. Završni zaključak\nDaj jasan zaključak u 2 do 3 rečenice: što uzeti i zašto.\n\nBudi konkretan, praktičan, fokusiran na realne preporuke i kompaktan bez nepotrebnog ponavljanja."
 }

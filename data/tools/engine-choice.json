@@ -1,22 +1,34 @@
 {
   "id": "engine-choice",
   "title": "Preporuka motorizacije",
-  "description": "Na temelju načina vožnje, kilometraže, prioriteta i planova korištenja generira AI upit za odabir najprikladnije vrste motora.",
+  "description": "Na temelju načina vožnje, kilometraže, prioriteta i planova korištenja generiraj AI upit za odabir najprikladnije vrste motora prema tvojim potrebama.",
   "fields": [
     {
-      "id": "vehicleType",
-      "label": "Kakvo vozilo okvirno tražiš",
+      "id": "purchaseType",
+      "label": "Kupuješ",
       "type": "select",
       "required": true,
       "options": [
-        "Gradski automobil",
+        "Novo vozilo",
+        "Polovno vozilo",
+        "Nije mi bitno"
+      ]
+    },
+    {
+      "id": "vehicleType",
+      "label": "Za kakvo vozilo trebaš izbor",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Mali gradski automobil",
         "Kompaktni automobil",
         "Limuzina",
         "Karavan",
         "SUV / crossover",
-        "Terenac / 4x4",
+        "Terenac / pick-up (4x4)",
         "Sportski automobil",
-        "Službeno / poslovno vozilo",
+        "Dostavno vozilo",
+        "Kombi za prevoz putnika",
         "Još nisam siguran"
       ]
     },
@@ -32,7 +44,7 @@
         "Duža putovanja / autoput",
         "Posao / profesionalna upotreba",
         "Dinamična i energična vožnja",
-        "Različiti uvjeti tijekom godine"
+        "Univerzalno"
       ]
     },
     {
@@ -92,17 +104,15 @@
       ]
     },
     {
-      "id": "fuelPreference",
-      "label": "Imaš li već neku preferenciju",
+      "id": "drivetrainPreference",
+      "label": "Imaš li preferenciju pogona",
       "type": "select",
       "required": false,
       "options": [
-        "Benzin",
-        "Dizel",
-        "Hibrid",
-        "Plug-in hibrid",
-        "Električni pogon",
-        "Nemam jasnu preferenciju"
+        "Prednji pogon",
+        "Stražnji pogon",
+        "Pogon na sve kotače / 4x4",
+        "Nemam posebnu preferenciju"
       ]
     },
     {
@@ -111,7 +121,24 @@
       "type": "textarea",
       "rows": 4,
       "required": false
+    },
+    {
+      "id": "advancedPreference",
+      "label": "NAPREDNO: Dodatne preferencije motora",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Preferiram turbo motor",
+        "Preferiram atmosferski motor",
+        "Želim manji i učinkovitiji motor",
+        "Želim veći motor i više cilindara",
+        "Bitan mi je poseban karakter motora - zvuk i osjećaj",
+        "Preferiram redne motore",
+        "Preferiram V konfiguraciju motora",
+        "Zanimaju me specifične konfiguracije motora (Wankel, boxer i sl.)",
+        "Želim specifičnu poziciju motora (sredina ili nazad)"
+      ]
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za odabir najprikladnije motorizacije vozila.\n\nŽelim pomoć pri odabiru vrste motora koja najbolje odgovara mojim stvarnim potrebama, načinu vožnje i planiranom korištenju vozila.\n\nPodaci:\n- Vrsta vozila koje tražim: {{vehicleType}}\n- Najčešći način korištenja: {{usage}}\n- Godišnja kilometraža: {{annualMileage}}\n- Stil vožnje: {{drivingStyle}}\n- Najvažniji prioriteti: {{priority}}\n- Planirano zadržavanje vozila: {{ownership}}\n- Trenutna preferencija pogona: {{fuelPreference}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja vrsta motorizacije je za mene najlogičniji izbor (benzin, dizel, hibrid, plug-in hibrid ili električni pogon) i objasni zašto.\n2. Usporedi relevantne opcije koje dolaze u obzir za moj slučaj.\n3. Navedi glavne prednosti i moguće nedostatke svake bitne opcije.\n4. Upozori na moguće pogreške koje ljudi često rade pri odabiru motorizacije u sličnoj situaciji.\n5. Daj završnu preporuku jasno, praktično i bez nepotrebnog tehničkog žargona."
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za odabir najprikladnije motorizacije vozila prema stvarnim životnim potrebama, načinu vožnje i eventualnim naprednim preferencijama korisnika.\n\nTvoj zadatak je preporučiti najlogičniju motorizaciju za korisnika. U obzir uzmi vrstu kupnje (novo ili polovno vozilo), tip vozila, način korištenja, godišnju kilometražu, stil vožnje, prioritete, planirano zadržavanje vozila, osnovnu preferenciju pogona, eventualnu preferenciju rasporeda pogona (prednji, stražnji ili 4x4) i napredne tehničke preference. Ako korisnik pokazuje entuzijastičke ili mehaničke preference, uzmi ih u obzir, ali jasno odvoji racionalni izbor od emocionalnog ili entuzijastičkog izbora.\n\nPodaci:\n- Kupujem: {{purchaseType}}\n- Vrsta vozila koje tražim: {{vehicleType}}\n- Najčešći način korištenja: {{usage}}\n- Godišnja kilometraža: {{annualMileage}}\n- Stil vožnje: {{drivingStyle}}\n- Najvažniji prioriteti: {{priority}}\n- Planirano zadržavanje vozila: {{ownership}}\n- Trenutna preferencija pogona: {{fuelPreference}}\n- Dodatne napomene: {{notes}}\n- Napredne preferencije motora: {{advancedPreference}}\n- Preferencija pogona vozila: {{drivetrainPreference}}\n\nNa temelju tih informacija odgovori u sljedećoj strukturi:\n\n1. Glavna preporuka\nPredloži najlogičniju vrstu motorizacije za ovaj slučaj i objasni zašto.\n\n2. Što to konkretno znači u praksi\nObjasni kakav bi motor imao najviše smisla za korisnika, primjerice:\n- benzin, dizel, hibrid, plug-in hibrid ili električni pogon\n- mirniji i ekonomičniji pristup ili snažniji i karakterom zanimljiviji pristup\n- turbo ili atmosferski pristup ako je to relevantno\n- jednostavnija i racionalnija opcija ili entuzijastički zanimljivija opcija\n- koji tip pogona vozila ima najviše smisla ako je relevantno (prednji, stražnji ili 4x4)\n\n3. Alternativne opcije\nPredloži još 2 relevantne opcije koje također dolaze u obzir i objasni kada bi one mogle biti bolji izbor.\n\n4. Prednosti i nedostaci\nZa svaku bitnu opciju navedi kratko:\n- Prednosti\n- Nedostatke\n- Za kakvog je korisnika najprikladnija\n\n5. Najčešće pogreške pri odabiru\nUpozori na tipične pogreške koje ljudi rade u sličnoj situaciji, posebno kod izbora novog ili polovnog vozila.\n\n6. Završni savjet\nDaj jasan i praktičan zaključak. Ako postoji razlika između racionalnog izbora i entuzijastičkog/emocionalnog izbora, jasno to naglasi. Ako je preferencija pogona vozila bitna za slučaj korisnika, ukratko objasni treba li je pratiti ili ne treba biti presudna.\n\nOdgovor napiši jasno, pregledno, praktično i bez nepotrebnog tehničkog žargona. Ako korisnik pokaže napredniji interes za motore, slobodno uključi umjereno dublje objašnjenje, ali i dalje ostani razumljiv."
 }

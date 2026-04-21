@@ -1,18 +1,19 @@
 {
   "id": "car-condition-choice",
-  "title": "Novo, polovno ili testno vozilo?",
-  "description": "Na temelju budžeta, prioriteta i tolerancije na rizik generira AI upit za odabir između novog, polovnog ili testnog vozila.",
+  "title": "Najbolji način kupnje vozila za tebe?",
+  "description": "Na temelju budžeta, prioriteta i tolerancije na rizik generiraj AI upit za odabir između novog, polovnog ili testnog vozila.",
   "fields": [
     {
       "id": "budget",
-      "label": "Koliki ti je okvirni budžet",
+      "label": "Kako kupuješ vozilo",
       "type": "select",
       "required": true,
       "options": [
-        "Vrlo ograničen budžet",
-        "Umjeren budžet",
-        "Solidan budžet",
-        "Veći budžet"
+        "Gotovina / spreman budžet",
+        "Još mi malo fali za skupiti",
+        "Kredit",
+        "Leasing",
+        "Kombinacija vlastitog novca i financiranja"
       ]
     },
     {
@@ -22,25 +23,12 @@
       "required": true,
       "options": [
         "Što niža cijena",
-        "Što manji rizik",
-        "Garancija i sigurnost",
         "Što bolji omjer uloženog i dobivenog",
-        "Moderno i što novije vozilo",
+        "Mogućnost personalizacije",
+        "Garancija i sigurnost",
+        "Vozilo s provjernom povijesti",
         "Brza dostupnost vozila",
-        "Niži budući troškovi održavanja",
         "Što manje brige nakon kupnje"
-      ]
-    },
-    {
-      "id": "riskTolerance",
-      "label": "Koliko ti odgovara rizik kod kupnje",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Želim minimalan rizik",
-        "Prihvaćam manji rizik ako dobijem bolju vrijednost",
-        "Spreman sam na veći rizik radi niže cijene",
-        "Ovisi o stanju vozila i ponudi"
       ]
     },
     {
@@ -49,39 +37,27 @@
       "type": "select",
       "required": true,
       "options": [
+        "Vrlo, vrlo kratko",
         "Do 2 godine",
         "3 - 5 godina",
+        "Do isteka garancije",
         "5 - 8 godina",
-        "Dugoročno",
+        "Dugoročno, što duže to bolje",
         "Još ne znam"
       ]
     },
     {
-      "id": "usage",
-      "label": "Kako planiraš najčešće koristiti vozilo",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Pretežno gradska vožnja",
-        "Kombinacija grada i otvorene ceste",
-        "Duža putovanja / autoput",
-        "Obiteljske potrebe",
-        "Posao / svakodnevna intenzivna upotreba",
-        "Povremena vožnja"
-      ]
-    },
-    {
       "id": "importanceOfWarranty",
-      "label": "Koliko su ti važni garancija i bezbrižnost nakon kupnje",
+      "label": "Koliko ti je važno imati garanciju",
       "type": "select",
       "required": true,
       "options": [
-        "Vrlo važno",
+        "Obavezno",
         "Prilično važno",
         "Dobro je imati, ali nije presudno",
-        "Nije mi posebno važno"
+        "Nije mi posebno važno, sve se riješi"
       ]
-    },
+    },   
     {
       "id": "deliveryUrgency",
       "label": "Koliko ti je važna brza dostupnost vozila",
@@ -94,15 +70,50 @@
       ]
     },
     {
-      "id": "usedCarComfort",
-      "label": "Kako gledaš na polovno vozilo s urednom poviješću i dobrim stanjem",
+      "id": "sellerPreference",
+      "label": "Kakvu kupnju vozila preferiraš",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Od ovlaštenog salona / auto kuće",
+        "Od trgovca rabljenim vozilima",
+        "Od privatne osobe",
+        "Uvoz iz inozemstva",
+        "Vozilo s oglasnika",
+        "Vozilo preko preporuke / poznanika",
+        "Testno / demo vozilo iz salona",
+        "Vozilo s jamstvom / provjerenim porijeklom",
+        "Aukcija ili nadmetanje",
+        "Sve opcije dolaze u obzir"
+      ]
+    },
+    {
+      "id": "purchaseExperience",
+      "label": "Kakvo iskustvo do sada imaš s kupnjom vozila",
       "type": "select",
       "required": false,
       "options": [
-        "To mi je sasvim prihvatljivo",
-        "Prihvatljivo ako je provjereno",
-        "Radije bih izbjegao polovno vozilo",
-        "Nisam siguran"
+        "Nikakvo, nije me zanimalo",
+        "Nikada nisam kupovao vozilo",
+        "Kupovao sam, vrlo rijetko",
+        "Imam nešto iskustva",
+        "Kupovao sam više puta",
+        "Iskusan sam u trgovini vozilima"
+      ]
+    },
+    {
+      "id": "previousPurchaseSources",
+      "label": "Ako jesi, od koga si do sada kupovao vozila",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Od privatne osobe",
+        "Od auto kuće / salona",
+        "Od trgovca rabljenim vozilima",
+        "Putem oglasa / online oglasnika",
+        "Preko poznanika / preporuke",
+        "Putem uvoza / posrednika",
+        "Nemam prethodno iskustvo kupnje"
       ]
     },
     {
@@ -113,5 +124,5 @@
       "required": false
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak koji pomaže pri odluci između novog, polovnog i testnog vozila.\n\nŽelim pomoć pri odabiru koja je opcija kupnje vozila najlogičnija za mene: novo vozilo, polovno vozilo ili testno / demonstracijsko vozilo.\n\nPodaci:\n- Budžet: {{budget}}\n- Najvažniji prioriteti pri kupnji: {{purchasePriority}}\n- Tolerancija na rizik: {{riskTolerance}}\n- Planirano zadržavanje vozila: {{ownershipPlan}}\n- Najčešći način korištenja vozila: {{usage}}\n- Važnost garancije i bezbrižnosti: {{importanceOfWarranty}}\n- Važnost brze dostupnosti: {{deliveryUrgency}}\n- Stav prema polovnom vozilu: {{usedCarComfort}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži je li za mene najbolji izbor novo, polovno ili testno vozilo i objasni zašto.\n2. Ukratko usporedi sve tri opcije u kontekstu mojih potreba.\n3. Navedi glavne prednosti i moguće nedostatke svake relevantne opcije za moj slučaj.\n4. Upozori na tipične pogreške koje ljudi rade pri toj odluci.\n5. Daj jasan i praktičan završni savjet bez nepotrebnog žargona."
-}
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik koji pomaže korisniku donijeti realnu i informiranu odluku između novog, polovnog i testnog / demo vozila.\n\nTvoj zadatak je preporučiti jednu najlogičniju opciju kupnje vozila za korisnika. U obzir uzmi način kupnje i financiranja, prioritete, planirano trajanje vlasništva, važnost garancije, hitnost kupnje, preferirani izvor vozila, prethodno iskustvo s kupnjom i dodatne napomene.\n\nPodaci:\n- Kako kupujem vozilo: {{budget}}\n- Najvažniji prioriteti pri kupnji: {{purchasePriority}}\n- Koliko dugo planiram zadržati vozilo: {{ownershipPlan}}\n- Koliko mi je važna garancija: {{importanceOfWarranty}}\n- Koliko mi je važna brza dostupnost vozila: {{deliveryUrgency}}\n- Kakvu kupnju vozila preferiram: {{sellerPreference}}\n- Kakvo iskustvo do sada imam s kupnjom vozila: {{purchaseExperience}}\n- Ako jesam kupovao, od koga sam do sada kupovao vozila: {{previousPurchaseSources}}\n- Dodatne napomene: {{notes}}\n\nOdgovori jasno, sažeto i bez nepotrebnog ponavljanja. Koristi najviše 4 kratke cjeline.\n\n1. Glavna preporuka\nPredloži što je najlogičniji izbor za korisnika: novo vozilo, polovno vozilo ili testno / demo vozilo. Objasni ukratko zašto u 3 do 5 rečenica.\n\n2. Kratka usporedba opcija\nUsporedi samo opcije koje stvarno imaju smisla za ovog korisnika. Za svaku napiši 2 do 3 najvažnije prednosti ili nedostatka. Nemoj ponavljati iste argumente iz prethodnog dijela.\n\n3. Na što posebno paziti\nNavedi najvažnije rizike, zamke ili tipične pogreške koje korisnik treba izbjeći s obzirom na svoju situaciju.\n\n4. Završni savjet\nDaj jasan i praktičan zaključak u 2 do 4 rečenice. Ako postoji razlika između najsigurnijeg izbora i financijski najisplativijeg izbora, sažeto to naglasi.\n\nOdgovor neka bude pregledan, konkretan i umjerene duljine. Nemoj koristiti nepotreban tehnički žargon ni preduge odlomke."
+  }
