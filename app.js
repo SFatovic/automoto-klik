@@ -8,19 +8,102 @@ const state = {
 const categoryMap = {
   "car-selection": {
     title: "Odabir vozila",
-    shortLabel: "Odabir"
+    shortLabel: "Odabir",
+    description: "Alati za izbor vrste vozila, motora i načina kupnje.",
+    icon: "car-front",
+    theme: "selection"
   },
   "car-analysis": {
     title: "Analiza vozila",
-    shortLabel: "Analiza"
+    shortLabel: "Analiza",
+    description: "Alati za usporedbu, provjeru modela, brendova i mogućih rizika.",
+    icon: "search-check",
+    theme: "analysis"
   },
   "costs-and-purchase": {
     title: "Troškovi i kupnja",
-    shortLabel: "Troškovi"
+    shortLabel: "Troškovi",
+    description: "Alati za kupnju, održavanje, osiguranje, gume i razgovor s prodavateljem.",
+    icon: "wallet-cards",
+    theme: "costs"
   },
   "ownership-and-lifestyle": {
     title: "Vlasništvo i lifestyle",
-    shortLabel: "Lifestyle"
+    shortLabel: "Lifestyle",
+    description: "Alati za korištenje vozila, dodatnu opremu, filmove, serije i igre.",
+    icon: "sparkles",
+    theme: "lifestyle"
+  }
+};
+
+const toolVisualMap = {
+  "car-type": {
+    icon: "car-front",
+    shortDescription: "Pronađi tip auta koji odgovara tvojoj situaciji."
+  },
+  "engine-choice": {
+    icon: "gauge",
+    shortDescription: "Odaberi motor prema vožnji, kilometraži i prioritetima."
+  },
+  "car-condition-choice": {
+    icon: "badge-check",
+    shortDescription: "Usporedi novo, polovno i testno vozilo."
+  },
+  "ideal-model-by-brand": {
+    icon: "badge-star",
+    shortDescription: "Pronađi najbolji model unutar odabranog brenda."
+  },
+  "brand-overview": {
+    icon: "landmark",
+    shortDescription: "Upoznaj modele, tehnologiju i karakter brenda."
+  },
+  "compare-two-cars": {
+    icon: "git-compare",
+    shortDescription: "Usporedi dva auta po kriterijima koji su ti važni."
+  },
+  "car-weaknesses-analysis": {
+    icon: "triangle-alert",
+    shortDescription: "Provjeri mane, kvarove i rizike određenog modela."
+  },
+  "car-positive-analysis": {
+    icon: "circle-plus",
+    shortDescription: "Otkrij zašto je neki model poseban ili cijenjen."
+  },
+  "tire-choice": {
+    icon: "circle-dot",
+    shortDescription: "Odaberi gume prema stilu vožnje i uvjetima."
+  },
+  "car-maintenance-costs": {
+    icon: "calculator",
+    shortDescription: "Procijeni održavanje, servise, gume i redovne troškove."
+  },
+  "questions-for-seller": {
+    icon: "clipboard-list",
+    shortDescription: "Pripremi pametna pitanja za prodavatelja vozila."
+  },
+  "car-insurance-choice": {
+    icon: "shield-check",
+    shortDescription: "Odaberi razinu osiguranja prema vozilu i riziku."
+  },
+  "driving-tips-by-car": {
+    icon: "steering-wheel",
+    shortDescription: "Dobij savjete za bolju i pametniju vožnju svog auta."
+  },
+  "car-movies-series-recommender": {
+    icon: "clapperboard",
+    shortDescription: "Pronađi auto filmove, serije i dokumentarce."
+  },
+  "car-games-recommender": {
+    icon: "gamepad-2",
+    shortDescription: "Pronađi racing igre prema platformi i stilu igranja."
+  },
+  "factory-equipment-advisor": {
+    icon: "settings-2",
+    shortDescription: "Odaberi tvorničku opremu koja stvarno ima smisla."
+  },
+  "aftermarket-accessories-advisor": {
+    icon: "wrench",
+    shortDescription: "Pronađi dodatke i opremu korisnu za tvoje vozilo."
   }
 };
 
@@ -145,48 +228,6 @@ async function renderToolsListPage() {
 
   renderToolCategoryFilters(manifest);
   renderToolCards(manifest);
-
-  const grouped = groupByCategory(manifest);
-  let html = "";
-
-  Object.keys(categoryMap).forEach((categoryKey) => {
-    const tools = grouped[categoryKey];
-    if (!tools || tools.length === 0) return;
-
-    const category = categoryMap[categoryKey];
-
-    html += `
-  <div class="col-12 mt-4">
-    <h3 class="cards-section-title mb-3">${escapeHtml(category.title)}</h3>
-  </div>
-`;
-
-    html += tools
-  .map(
-    (tool) => `
-      <div class="col-md-6 col-lg-4">
-        <a
-          href="tool.html?tool=${encodeURIComponent(tool.id)}"
-          class="tool-card-link text-decoration-none d-block h-100"
-          data-tool-link="${escapeHtml(tool.id)}"
-          aria-label="Otvori alat ${escapeHtml(tool.title)}"
-        >
-          <article class="tool-card h-100">
-          <div class="tool-card-body">
-            <h4>${escapeHtml(tool.title)}</h4>
-            <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
-            <div class="card-spacer"></div>
-            <span class="tool-card-cta">Otvori alat →</span>
-          </div>
-        </article>
-        </a>
-      </div>
-    `
-  )
-  .join("");
-  });
-
-  dom.toolsGrid.innerHTML = html;
 }
 
 function renderToolCategoryFilters(items) {
@@ -269,39 +310,75 @@ function renderToolCards(items) {
     if (!tools || tools.length === 0) return;
 
     const category = categoryMap[categoryKey];
+    const theme = category.theme || "default";
 
     html += `
-      <div class="col-12 mt-4">
-        <h3 class="cards-section-title mb-3">${escapeHtml(category.title)}</h3>
+      <div class="col-12 tools-category-section tools-category-${escapeHtml(theme)}">
+        <section class="tools-category-panel" aria-labelledby="tools-category-${escapeHtml(categoryKey)}">
+          <div class="tools-category-header">
+            <div class="tools-category-heading">
+              <div class="tools-category-icon" aria-hidden="true">
+                <i data-lucide="${escapeHtml(category.icon || "sparkles")}"></i>
+              </div>
+
+              <div>
+                <span class="tools-category-kicker">${tools.length} ${tools.length === 1 ? "alat" : "alata"}</span>
+                <h3 id="tools-category-${escapeHtml(categoryKey)}" class="cards-section-title">
+                  ${escapeHtml(category.title)}
+                </h3>
+                <p class="tools-category-description">
+                  ${escapeHtml(category.description || "")}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tools-category-scroller">
+            <div class="tools-category-grid">
+              ${tools
+                .map((tool) => {
+                  const visual = getToolVisual(tool);
+                  const cardDescription = visual.shortDescription || tool.description || "";
+
+                  return `
+                    <div class="tools-category-card-item">
+                      <a
+                        href="tool.html?tool=${encodeURIComponent(tool.id)}"
+                        class="tool-card-link text-decoration-none d-block h-100"
+                        data-tool-link="${escapeHtml(tool.id)}"
+                        aria-label="Otvori alat ${escapeHtml(tool.title)}"
+                      >
+                        <article class="tool-card tool-card-visual h-100">
+                          <div class="tool-card-art" aria-hidden="true">
+                            <i data-lucide="${escapeHtml(visual.icon)}"></i>
+                          </div>
+
+                          <div class="tool-card-body tool-card-content">
+                            <div class="tool-card-topline">
+                              <span class="tool-card-badge">${escapeHtml(category.shortLabel)}</span>
+                            </div>
+
+                            <h4 class="tool-card-title">${escapeHtml(tool.title)}</h4>
+                            <p class="tool-card-text">${escapeHtml(cardDescription)}</p>
+
+                            <div class="card-spacer"></div>
+                            <span class="tool-card-cta">Otvori alat →</span>
+                          </div>
+                        </article>
+                      </a>
+                    </div>
+                  `;
+                })
+                .join("")}
+            </div>
+          </div>
+        </section>
       </div>
     `;
-
-    html += tools
-      .map(
-        (tool) => `
-          <div class="col-md-6 col-lg-4">
-            <a
-              href="tool.html?tool=${encodeURIComponent(tool.id)}"
-              class="tool-card-link text-decoration-none d-block h-100"
-              data-tool-link="${escapeHtml(tool.id)}"
-              aria-label="Otvori alat ${escapeHtml(tool.title)}"
-            >
-              <article class="tool-card h-100">
-                <div class="tool-card-body">
-                  <h4>${escapeHtml(tool.title)}</h4>
-                  <p class="tool-card-text">${escapeHtml(tool.description || "")}</p>
-                  <div class="card-spacer"></div>
-                  <span class="tool-card-cta">Otvori alat →</span>
-                </div>
-              </article>
-            </a>
-          </div>
-        `
-      )
-      .join("");
   });
 
   dom.toolsGrid.innerHTML = html;
+  refreshLucideIcons();
 }
 
 function getToolCategoryCounts(items) {
@@ -323,6 +400,21 @@ function groupByCategory(items) {
     accumulator[category].push(item);
     return accumulator;
   }, {});
+}
+
+function getToolVisual(tool) {
+  return (
+    toolVisualMap[tool.id] || {
+      icon: "sparkles",
+      shortDescription: tool.description || ""
+    }
+  );
+}
+
+function refreshLucideIcons() {
+  if (window.lucide && typeof window.lucide.createIcons === "function") {
+    window.lucide.createIcons();
+  }
 }
 
 async function loadSingleToolPage() {
