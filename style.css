@@ -6913,3 +6913,172 @@ textarea.form-control {
     font-size: 0.94rem;
   }
 }
+
+/* ========================================
+   HOMEPAGE HERO — PHOTO BACKGROUND OVERLAY
+   Premium automotive background image
+   Image path: assets/hero-background.jpg
+======================================== */
+
+body.homepage .hero-card.home-hero-card.home-hero-card-compact {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+
+  background:
+    linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #151519 100%) !important;
+}
+
+/* fotografija preko cijelog hero elementa */
+body.homepage .hero-card.home-hero-card.home-hero-card-compact::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+
+  background-image: url("assets/ai-bot.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  opacity: 0.95 !important;
+
+  filter:
+    grayscale(100%)
+    contrast(1.08)
+    brightness(0.72)
+    saturate(0.75)
+    blur(0.2px) !important;
+
+  transform: scale(1.02);
+}
+
+/* tamni premium overlay da tekst ostane čitljiv */
+body.homepage .hero-card.home-hero-card.home-hero-card-compact::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 7, 0.88) 0%,
+      rgba(5, 5, 7, 0.76) 34%,
+      rgba(5, 5, 7, 0.54) 62%,
+      rgba(5, 5, 7, 0.76) 100%
+    ),
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    ) !important;
+}
+
+/* postojeći tekst i desni blok moraju ostati iznad pozadine */
+body.homepage .hero-card.home-hero-card.home-hero-card-compact > .row,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .col-lg-7,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .col-lg-5,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .hero-title,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .hero-subtitle,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-card,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-stack,
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-stack-item {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* desni blok malo pojačaj da ostane čitljiv na fotki */
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.095) 0%,
+      rgba(255, 255, 255, 0.045) 100%
+    ) !important;
+
+  border-color: rgba(255, 255, 255, 0.14) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 18px 38px rgba(0, 0, 0, 0.18) !important;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* postojeći mali hero linkovi */
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-stack-item {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.105) 0%,
+      rgba(255, 255, 255, 0.048) 100%
+    ) !important;
+
+  border-color: rgba(255, 255, 255, 0.13) !important;
+}
+
+body.homepage .hero-card.home-hero-card.home-hero-card-compact .home-preview-stack-item:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.135) 0%,
+      rgba(255, 255, 255, 0.065) 100%
+    ) !important;
+
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* mobile: fotka slabija da ne smeta naslovu */
+@media (max-width: 767.98px) {
+  body.homepage .hero-card.home-hero-card.home-hero-card-compact::before {
+    opacity: 0.24 !important;
+    background-position: center center !important;
+
+    filter:
+      grayscale(100%)
+      contrast(1.06)
+      brightness(0.62)
+      saturate(0.7)
+      blur(0.35px) !important;
+  }
+
+  body.homepage .hero-card.home-hero-card.home-hero-card-compact::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 7, 0.88) 0%,
+        rgba(5, 5, 7, 0.74) 48%,
+        rgba(5, 5, 7, 0.82) 100%
+      ) !important;
+  }
+}
+
+/* AI UPITI HERO — ista pozadinska fotografija kao landing hero */
+
+body.ai-tools-page .tools-hero-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 7, 0.88) 0%,
+      rgba(5, 5, 7, 0.76) 35%,
+      rgba(5, 5, 7, 0.56) 65%,
+      rgba(5, 5, 7, 0.78) 100%
+    ),
+    url("assets/ai-bot.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* sadržaj ostaje iznad pozadine */
+body.ai-tools-page .tools-hero-card > * {
+  position: relative;
+  z-index: 2;
+}
