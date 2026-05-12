@@ -13,7 +13,7 @@
         "Za mušku osobu",
         "Za sebe i partnera/partnericu",
         "Za cijelu obitelj",
-        "Za mladu osobu",
+        "Za mlađu osobu",
         "Za stariju osobu",
         "Za službeno vozilo / posao / zaposlenika"
       ]
@@ -25,36 +25,32 @@
       "required": true,
       "options": [
         "Pretežno gradska vožnja",
-        "Kombinacija grada i otvorene ceste",
         "Česta duža putovanja / autoput",
-        "Obiteljske aktivnosti i izleti",
+        "Različite situacije / kombinirana vožnja",
         "Posao / profesionalna upotreba (npr. dostava, prevoz)",
-        "Rekreativna ili vikend vožnja",
-        "Različite situacije / kombinirana svakodnevna vožnja"
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
       "id": "passengers",
       "label": "Najčešći broj putnika",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "1–2 osobe",
-        "3–4 osobe",
-        "5 osoba",
+        "3–5 osobe",
         "6-7 osoba"
       ]
     },
     {
       "id": "luggage",
-      "label": "Prostor za prtljagu mi",
+      "label": "Prostor za prtljagu",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Nije presudan - rijetko prevozim veću prtljagu",
-        "Nije tako bitan - povremeno prevozim stvari ili prtljagu",
-        "Potreban - često prevozim više stvari ili prtljagu",
-        "Jako bitan - uvijek imam veće stvari ili prtljagu"
+        "Potreban - povremeno prevozim više stvari ili prtljagu",
+        "Jako bitan - često imam veće stvari ili prtljagu"
       ]
     },
     {
@@ -64,13 +60,13 @@
       "required": true,
       "options": [
         "Praktičnost i prostor",
+        "Kompaktnost",
         "Ekonomičnost i niski troškovi",
         "Udobnost",
         "Performanse",
         "Posebna verzija modela",
         "Sigurnost",
         "Moderan dizajn",
-        "Kompaktnost",
         "Luksuz i oprema",
         "Svestranost"
       ]

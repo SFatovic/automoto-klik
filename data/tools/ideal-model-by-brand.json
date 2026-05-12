@@ -17,9 +17,7 @@
       "required": true,
       "options": [
         "Novo vozilo",
-        "Do 3 godine staro",
-        "3 - 5 godina staro",
-        "5 - 10 godina staro",
+        "Polovno vozilo",
         "Youngtimer (cca 15-25 godina)",
         "Oldtimer (25+ godina)",
         "Nisam siguran"
@@ -44,25 +42,24 @@
       "id": "usage",
       "label": "Primarna namjena vozila",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
-        "Gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Obiteljska vožnja",
-        "Mješovita vožnja",
-        "Hobi / vikend vožnja"
+        "Pretežno gradska vožnja",
+        "Česta duža putovanja / autoput",
+        "Različite situacije / kombinirana vožnja",
+        "Posao / profesionalna upotreba (npr. dostava, prevoz)",
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
       "id": "passengers",
       "label": "Koliko ljudi se najčešće vozi",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
-        "1-2 osobe",
-        "2-4 osobe",
-        "4-5 osoba"
+        "1–2 osobe",
+        "3–5 osobe",
+        "6-7 osoba"
       ]
     },
     {
@@ -71,9 +68,9 @@
       "type": "select",
       "required": false,
       "options": [
+        "Nemam preferencije",
         "Mali gradski automobil",
         "Hatchback",
-        "Fastback / liftback",
         "GT / Grand tourer",
         "Limuzina",
         "Kompaktna limuzina",
@@ -84,9 +81,9 @@
         "Coupe / Sportski automobil",
         "Cabrio / roadster",
         "Monovolumen / MPV",
-        "Kombi / putnički van",
-        "Pick-up / Terensko vozilo",
-        "Nemam preferencije"
+        "Kombi putnički",
+        "Kombi teretni",
+        "Pick-up / Terensko vozilo"
       ]
     },
     {
@@ -95,18 +92,13 @@
       "type": "checkbox",
       "required": true,
       "options": [
-        "Performanse i vozački osjećaj",
-        "Udobnost i svakodnevna uglađenost",
-        "Niska potrošnja i ekonomičnost",
-        "Pouzdanost i mirna kupnja",
-        "Luksuz i premium dojam",
+        "Niska potrošnja i troškovi",
+        "Udobnost i svakodnevna praktičnost",
         "Tehnologija i moderna oprema",
-        "Prostor i praktičnost",
         "Dizajn, imidž i pojava",
-        "Niski troškovi održavanja",
-        "Vrijednost pri preprodaji",
-        "Poseban karakter i emocija",
-        "Posebno idanje ili ograničena serija"
+        "Luksuz i premium dojam",
+        "Performanse i vozački osjećaj",
+        "Posebno izdanje ili ograničena serija"
       ]
     },
     {

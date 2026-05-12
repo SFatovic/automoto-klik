@@ -4,22 +4,29 @@
   "description": "Saznaj stvarne mane, tipične kvarove i na što moraš paziti kod određenog vozila prije kupnje ili tijekom vlasništva.",
   "fields": [
     {
-      "id": "brandModel",
-      "label": "Marka i model vozila",
+      "id": "brand",
+      "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW 320d F30"
+      "placeholder": "npr. Porsche"
+    },
+    {
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. 911 Carrera"
     },
     {
       "id": "year",
-      "label": "Godište (ako znaš)",
+      "label": "Godište",
       "type": "text",
       "required": false,
       "placeholder": "npr. 2016"
     },
     {
       "id": "engine",
-      "label": "Motor / verzija (ako znaš)",
+      "label": "Motor / verzija",
       "type": "text",
       "required": false,
       "placeholder": "npr. 2.0 diesel, 190 KS"
@@ -31,21 +38,20 @@
       "required": true,
       "options": [
         "Razmišljam o kupnji",
-        "Već posjedujem vozilo",
-        "Uskoro kupujem konkretan primjerak"
+        "Već posjedujem vozilo"
       ]
     },
     {
       "id": "usage",
-      "label": "Kako će se vozilo koristiti",
+      "label": "Primarna namjena",
       "type": "select",
       "required": false,
       "options": [
-        "Gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Mješovita vožnja",
-        "Sportska / dinamična vožnja"
+        "Pretežno gradska vožnja",
+        "Česta duža putovanja / autoput",
+        "Različite situacije / kombinirana vožnja",
+        "Posao / profesionalna upotreba (npr. dostava, prevoz)",
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
@@ -54,26 +60,13 @@
       "type": "checkbox",
       "required": true,
       "options": [
+        "Troškovi održavanja",
+        "Tvornički opozivi i servisne akcije",
         "Tipični kvarovi",
         "Skrivene mane",
-        "Pouzdanost dugoročno",
-        "Troškovi održavanja",
+        "Dugoročna pouzdanost",
         "Iskustva vlasnika",
-        "Najskuplji potencijalni problemi",
-        "Na što paziti pri kupnji",
-        "Koliko je model rizičan",
-        "Sve od navedenog"
-      ]
-    },
-    {
-      "id": "budget",
-      "label": "Budžet za održavanje",
-      "type": "select",
-      "required": false,
-      "options": [
-        "Minimalan – želim što manje kvarova",
-        "Umjeren – očekujem normalne troškove",
-        "Veći – spreman sam ulagati u vozilo"
+        "Na što paziti pri kupnji"
       ]
     },
     {
@@ -83,9 +76,7 @@
       "required": true,
       "options": [
         "Kratko i jasno",
-        "Detaljno i stručno",
-        "Brutalno iskreno bez uljepšavanja",
-        "Kombinacija mehaničara i iskustva vlasnika"
+        "Detaljno i stručno"
       ]
     },
     {
@@ -97,5 +88,5 @@
       "placeholder": "npr. gledam konkretan oglas, važno mi je da izbjegnem skupe kvarove"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski mehaničar i savjetnik koji kombinira tehničko znanje, iskustva vlasnika i informacije iz auto foruma.\n\nŽelim realnu i iskrenu analizu mana i potencijalnih problema za određeno vozilo.\n\nPodaci:\n- Vozilo: {{brandModel}}\n- Godište: {{year}}\n- Motor / verzija: {{engine}}\n- Situacija: {{situation}}\n- Način korištenja: {{usage}}\n- Fokus: {{priority}}\n- Budžet za održavanje: {{budget}}\n- Stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Navedi najpoznatije i najčešće mane tog modela (uključujući stvarne probleme koje spominju vlasnici i mehaničari).\n2. Izdvoji tipične kvarove i slabe točke (motor, elektronika, ovjes, interijer i sl.).\n3. Objasni koji su kvarovi najskuplji i koliko mogu biti ozbiljni.\n4. Ako korisnik kupuje vozilo – napiši konkretno na što treba paziti pri kupnji i što OBAVEZNO provjeriti.\n5. Ako korisnik već posjeduje vozilo – napiši što preventivno treba pratiti i održavati.\n6. Procijeni koliko je model dugoročno pouzdan i koliko je rizičan.\n7. Ako je relevantno, dodaj kratki komentar o realnim troškovima održavanja.\n8. Na kraju daj jasan zaključak: isplati li se taj model ili postoje bolji izbori.\n\nBudi konkretan, realan i iskren. Nemoj uljepšavati stvari i izbjegavaj generičke odgovore."
+  "promptTemplate": "Ponašaj se kao iskusan automobilski mehaničar i savjetnik koji kombinira tehničko znanje, iskustva vlasnika i informacije iz auto foruma.\n\nŽelim realnu i iskrenu analizu mana i potencijalnih problema za određeno vozilo.\n\nPodaci:\n- Marka: {{brand}}\n- Model: {{model}}\n- Godište: {{year}}\n- Motor / verzija: {{engine}}\n- Situacija: {{situation}}\n- Način korištenja: {{usage}}\n- Fokus: {{priority}}\n- Stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Navedi najpoznatije i najčešće mane tog modela (uključujući stvarne probleme koje spominju vlasnici i mehaničari).\n2. Izdvoji tipične kvarove i slabe točke (motor, elektronika, ovjes, interijer i sl.).\n3. Objasni koji su kvarovi najskuplji i koliko mogu biti ozbiljni.\n4. Ako korisnik kupuje vozilo – napiši konkretno na što treba paziti pri kupnji i što OBAVEZNO provjeriti.\n5. Ako korisnik već posjeduje vozilo – napiši što preventivno treba pratiti i održavati.\n6. Procijeni koliko je model dugoročno pouzdan i koliko je rizičan.\n7. Ako je relevantno, dodaj kratki komentar o realnim troškovima održavanja.\n8. Na kraju daj jasan zaključak: isplati li se taj model ili postoje bolji izbori.\n\nBudi konkretan, realan i iskren. Nemoj uljepšavati stvari i izbjegavaj generičke odgovore."
 }

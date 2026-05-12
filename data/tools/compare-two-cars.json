@@ -8,7 +8,7 @@
       "label": "Prvo vozilo – marka i model",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW 320d"
+      "placeholder": "npr. VW Golf, BMW 3"
     },
     {
       "id": "carA_year",
@@ -47,16 +47,15 @@
     },
     {
       "id": "usage",
-      "label": "Za što ti auto najviše treba",
+      "label": "Primarna namjena",
       "type": "select",
       "required": true,
       "options": [
-        "Gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Obiteljska vožnja",
-        "Mješovita vožnja",
-        "Hobi / užitak u vožnji"
+        "Pretežno gradska vožnja",
+        "Česta duža putovanja / autoput",
+        "Različite situacije / kombinirana vožnja",
+        "Posao / profesionalna upotreba (npr. dostava, prevoz)",
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
@@ -65,20 +64,13 @@
       "type": "checkbox",
       "required": true,
       "options": [
-        "Performanse",
         "Potrošnja i ekonomičnost",
-        "Udobnost",
-        "Prostranost i praktičnost",
+        "Pouzdanost i troškovi održavanja",
+        "Udobnost i praktičnost",
         "Kvaliteta interijera",
+        "Imidž i dizajn eksterijera",
         "Tehnologija i oprema",
-        "Pouzdanost",
-        "Troškovi održavanja",
-        "Vozna dinamika",
-        "Pogodnost za grad",
-        "Pogodnost za autoput",
-        "Obiteljska upotreba",
-        "Vrijednost pri preprodaji",
-        "Imidž i dizajn"
+        "Performanse i vozna dinamika"
       ]
     },
     {
@@ -88,9 +80,8 @@
       "required": true,
       "options": [
         "Kratka i jasna usporedba",
-        "Detaljna usporedba po kategorijama",
-        "Naglasak na praktičnoj kupnji",
-        "Naglasak na vozačkom dojmu i emociji"
+        "Srednji pregled i zaključak",
+        "Detaljna analiza i usporedba"
       ]
     },
     {

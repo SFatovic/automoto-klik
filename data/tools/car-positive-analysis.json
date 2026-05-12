@@ -19,10 +19,10 @@
     },
     {
       "id": "generation",
-      "label": "Generacija ili godište (ako znaš)",
+      "label": "Godište",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 992 ili 2019+"
+      "placeholder": "npr. 2013"
     },
     {
       "id": "interest",
@@ -30,18 +30,13 @@
       "type": "checkbox",
       "required": true,
       "options": [
-        "Sve od navedenog",
         "Glavne prednosti modela",
-        "Reputacija i imidž",
-        "Tehnologija i inovacije",
-        "Performanse i vozački doživljaj",
         "Udobnost i svakodnevna upotreba",
         "Pouzdanost i kvaliteta izrade",
-        "Sportski uspjesi i povijest",
-        "Dizajn i posebnosti",
-        "Zašto ga ljudi vole",
+        "Tehnologija i inovacije",
+        "Performanse i vozački doživljaj",
+        "Reputacija i imidž",
         "Usporedba s konkurencijom",
-        "Vrijednost i status na tržištu",
         "Zanimljivosti i manje poznate činjenice"
       ]
     },
@@ -49,20 +44,18 @@
       "id": "usageContext",
       "label": "Kako razmišljaš o ovom vozilu",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Razmišljam o kupnji",
-        "Zanima me iz znatiželje",
-        "Fan sam brenda/modela",
-        "Radim istraživanje",
-        "Vlasnik sam"
+        "Vlasnik sam",
+        "Zanima me iz znatiželje"
       ]
     },
     {
       "id": "tone",
       "label": "Stil odgovora",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Kratko i informativno",
         "Detaljno i stručno",

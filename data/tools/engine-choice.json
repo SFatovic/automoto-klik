@@ -22,36 +22,32 @@
       "options": [
         "Mali gradski automobil",
         "Kompaktni automobil",
-        "Limuzina",
-        "Karavan",
+        "Limuzina / Karavan",
         "SUV / crossover",
         "Terenac / pick-up (4x4)",
         "Sportski automobil",
-        "Dostavno vozilo",
-        "Kombi za prevoz putnika",
+        "Dostavno vozilo / prevoz putnika",
         "Još nisam siguran"
       ]
     },
     {
       "id": "usage",
-      "label": "Najčešći način korištenja",
+      "label": "Primarna namjena",
       "type": "select",
       "required": true,
       "options": [
         "Pretežno gradska vožnja",
-        "Kratke relacije i svakodnevne obaveze",
-        "Kombinacija grada i otvorene ceste",
-        "Duža putovanja / autoput",
-        "Posao / profesionalna upotreba",
-        "Dinamična i energična vožnja",
-        "Univerzalno"
+        "Česta duža putovanja / autoput",
+        "Različite situacije / kombinirana vožnja",
+        "Posao / profesionalna upotreba (npr. dostava, prevoz)",
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
       "id": "annualMileage",
       "label": "Koliko otprilike kilometara radiš godišnje",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Manje od 10.000 km",
         "10.000 - 15.000 km",
@@ -64,30 +60,25 @@
       "id": "drivingStyle",
       "label": "Kakav stil vožnje preferiraš",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Miran i ekonomičan",
         "Balans ekonomičnosti i performansi",
         "Volim elastičnost i lako pretjecanje",
-        "Performanse su mi jako važne",
-        "Ovisi o situaciji"
+        "Performanse su mi jako važne"
       ]
     },
     {
       "id": "priority",
       "label": "Što ti je najvažnije kod motorizacije",
       "type": "checkbox",
-      "required": true,
+      "required": false,
       "options": [
         "Niska potrošnja",
         "Pouzdanost",
-        "Niski troškovi održavanja",
         "Performanse",
         "Udobna i tiha vožnja",
-        "Dobar izbor za grad",
-        "Dobar izbor za autoput",
-        "Ekološki prihvatljivija opcija",
-        "Dugoročna isplativost"
+        "Ekološki prihvatljivija opcija"
       ]
     },
     {
@@ -130,10 +121,8 @@
       "options": [
         "Preferiram turbo motor",
         "Preferiram atmosferski motor",
-        "Želim manji i učinkovitiji motor",
         "Želim veći motor i više cilindara",
         "Bitan mi je poseban karakter motora - zvuk i osjećaj",
-        "Preferiram redne motore",
         "Preferiram V konfiguraciju motora",
         "Zanimaju me specifične konfiguracije motora (Wankel, boxer i sl.)",
         "Želim specifičnu poziciju motora (sredina ili nazad)"

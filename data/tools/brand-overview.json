@@ -16,7 +16,7 @@
       "type": "select",
       "required": true,
       "options": [
-        "Kratki pregled (quick overview)",
+        "Kratki pregled",
         "Srednje detaljan pregled",
         "Detaljna analiza"
       ]
@@ -27,18 +27,14 @@
       "type": "checkbox",
       "required": true,
       "options": [
-        "Trenutna ponuda modela",
-        "Najpopularniji modeli",
-        "Filozofija i identitet brenda",
-        "Performanse i sportski modeli",
-        "Elektrifikacija i budućnost",
-        "Tehnologija i inovacije",
-        "Pouzdanost i reputacija",
-        "Cijene i tržišna pozicija",
+        "Trenutna ponuda modela (Cijene i tržišna pozicija)",
+        "Filozofija, reputacija i identitet brenda",
+        "Flagship modeli, tehnologija i inovacije",
+        "Najava novih modela i planovi za budućnost",
+        "Poslovanje, strategija i struktura",
+        "Usporedba s konkurencijom",
         "Motorsport i uspjesi",
-        "Najave novih modela",
-        "Poslovanje i strategija",
-        "Usporedba s konkurencijom"
+        "Povijest i naslijeđe"
       ]
     },
     {
@@ -48,9 +44,8 @@
       "required": true,
       "options": [
         "Razmišljam o kupnji",
-        "Općenito me zanima",
-        "Uspoređujem s drugim brendovima",
-        "Fan sam brenda"
+        "Vlasnik sam vozila",
+        "Znatiželja i istraživanje"
       ]
     },
     {

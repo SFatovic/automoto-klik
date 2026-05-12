@@ -50,7 +50,7 @@ const toolVisualMap = {
     shortDescription: "Usporedi novo, polovno i testno vozilo."
   },
   "ideal-model-by-brand": {
-    icon: "badge-star",
+    icon: "star",
     shortDescription: "Pronađi najbolji model unutar odabranog brenda."
   },
   "brand-overview": {
@@ -86,7 +86,7 @@ const toolVisualMap = {
     shortDescription: "Odaberi razinu osiguranja prema vozilu i riziku."
   },
   "driving-tips-by-car": {
-    icon: "steering-wheel",
+    icon: "gauge",
     shortDescription: "Dobij savjete za bolju i pametniju vožnju svog auta."
   },
   "car-movies-series-recommender": {

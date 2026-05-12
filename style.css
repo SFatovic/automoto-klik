@@ -7103,3 +7103,26 @@ body#toolPage .hero-card {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
+
+/* MOBILE INDEX HERO — jači prikaz pozadinske slike */
+@media (max-width: 767.98px) {
+  body.homepage .hero-card.home-hero-card.home-hero-card-compact::before {
+    opacity: 0.75 !important;
+    filter:
+      grayscale(100%)
+      contrast(1.08)
+      brightness(0.78)
+      saturate(0.75)
+      blur(0.15px) !important;
+  }
+
+  body.homepage .hero-card.home-hero-card.home-hero-card-compact::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 7, 0.78) 0%,
+        rgba(5, 5, 7, 0.62) 48%,
+        rgba(5, 5, 7, 0.72) 100%
+      ) !important;
+  }
+}
