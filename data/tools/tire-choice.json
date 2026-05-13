@@ -4,44 +4,44 @@
   "description": "Na temelju načina vožnje, uvjeta korištenja i prioriteta generira AI upit za odabir najprikladnije vrste guma.",
   "fields": [
     {
-      "id": "vehicleClass",
-      "label": "Tip vozila",
-      "type": "select",
+      "id": "brand",
+      "label": "Marka vozila",
+      "type": "text",
       "required": true,
-      "options": [
-        "Gradski automobil / hatchback",
-        "Kompaktni automobil",
-        "Limuzina",
-        "Karavan",
-        "SUV / crossover",
-        "Terenac (4x4)",
-        "Pick-Up",
-        "Monovolumen MPV",
-        "Kabriolet / roadster",
-        "Sportski automobil / coupe",
-        "Dostavno / radno vozilo",
-        "Putnički kombi"
-      ]
+      "placeholder": "npr. Porsche"
+    },
+    {
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. 911 Carrera"
+    },
+    {
+      "id": "generation",
+      "label": "Godište",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2013"
     },
     {
       "id": "tireUsage",
       "label": "Najčešći način korištenja",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Pretežno gradska vožnja",
-        "Kombinacija grada i otvorene ceste",
-        "Duža putovanja / autoput",
-        "Dinamična vožnja",
-        "Posao / profesionalna upotreba",
-        "Različiti uvjeti tijekom godine"
+        "Česta duža putovanja / autoput",
+        "Različite situacije / kombinirana vožnja",
+        "Posao / profesionalna upotreba (npr. dostava, prevoz)",
+        "Rekreativna ili vikend vožnja"
       ]
     },
     {
       "id": "type",
       "label": "Koju vrstu gume trebaš",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Ljetnu",
         "Zimsku",
@@ -53,7 +53,7 @@
       "id": "weather",
       "label": "U kakvim uvjetima najčešće voziš",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Uglavnom suho i umjereno vrijeme",
         "Često kiša i mokra cesta",
@@ -65,7 +65,7 @@
       "id": "tirePriority",
       "label": "Što ti je najvažnije kod guma",
       "type": "checkbox",
-      "required": true,
+      "required": false,
       "options": [
         "Sigurnost i prianjanje",
         "Dugotrajnost",
@@ -89,11 +89,21 @@
       ]
     },
     {
+      "id": "segment",
+      "label": "Koji segment gume želiš?",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Najbolje dostupne",
+        "Idealan omjer cijene i kvalitete",
+        "Najpovoljnije riješenje"
+      ]
+    },
+    {
       "id": "notes",
       "label": "Dodatne napomene",
       "type": "textarea",
       "rows": 4,
       "required": false
     }
-  ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za odabir guma.\n\nŽelim pomoć u odabiru najprikladnije vrste guma prema mojim potrebama.\n\nPodaci:\n- Tip vozila: {{vehicleClass}}\n- Najčešći način korištenja: {{tireUsage}}\n- Vrsta gume koju tražim: {{type}}\n- Uvjeti vožnje: {{weather}}\n- Najvažniji prioriteti: {{tirePriority}}\n- Godišnja kilometraža: {{annualMileage}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniju vrstu gume i objasni zašto.\n2. Ako ima smisla, navedi i alternativnu opciju.\n3. Ukratko objasni prednosti i nedostatke predloženog izbora.\n4. Daj praktičan završni savjet za kupnju.\n5. Odgovor napiši jasno, praktično i bez nepotrebnog tehničkog žargona."}
+  ],"promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za odabir guma.\n\nŽelim pomoć u odabiru najprikladnijih guma za konkretno vozilo i moj način korištenja.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište: {{generation}}\n- Najčešći način korištenja: {{tireUsage}}\n- Vrsta gume koju tražim: {{type}}\n- Uvjeti vožnje: {{weather}}\n- Najvažniji prioriteti kod guma: {{tirePriority}}\n- Godišnja kilometraža: {{annualMileage}}\n- Željeni segment gume: {{segment}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniju vrstu gume za ovo vozilo, navedi trenutne cijene i objasni zašto.\n2. Uzmi u obzir marku, model i godište vozila, način korištenja, uvjete vožnje, prioritete, godišnju kilometražu i željeni segment gume.\n3. Predloži 2 konkretna izbora guma koje bi imale smisla za ovaj slučaj. Za svaki prijedlog navedi:\n   - naziv modela gume\n   - kojoj vrsti vozača najbolje odgovara\n   - glavne prednosti\n   - moguće nedostatke ili kompromise\n4. Ako korisnik nije siguran koju vrstu gume treba, objasni razliku između ljetnih, zimskih i cjelogodišnjih guma u kontekstu njegovog korištenja.\n5. Ukratko objasni prednosti i nedostatke preporučenog izbora.\n6. Daj praktičan završni savjet za kupnju, uključujući napomenu da korisnik prije kupnje provjeri točnu dimenziju, indeks nosivosti i indeks brzine propisan za svoje vozilo.\n7. Odgovor napiši jasno, praktično i bez nepotrebnog tehničkog žargona."}

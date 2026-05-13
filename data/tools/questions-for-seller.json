@@ -10,9 +10,10 @@
       "required": true,
       "options": [
         "Privatna osoba - polovno vozilo",
-        "Trgovac / salon - polovno vozilo",
+        "Salon - polovno vozilo",
+        "Trgovac - uvozno vozilo",
         "Ovlašteni salon - novo vozilo",
-        "Ovlašteni salon - testno / demonstracijsko vozilo",
+        "Ovlašteni salon - testno / demon vozilo",
         "Još nisam siguran"
       ]
     },
@@ -31,14 +32,14 @@
       "label": "Marka vozila",
       "type": "text",
       "required": false,
-      "placeholder": "npr. BMW"
+      "placeholder": "npr. VW"
     },
     {
       "id": "carModel",
       "label": "Model vozila",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 320d"
+      "placeholder": "npr. Passat"
     },
     {
       "id": "carYear",
@@ -61,18 +62,14 @@
       "required": true,
       "options": [
         "Standardna pitanja pri kupnji vozila",
-        "Servisna povijest",
-        "Stvarno stanje vozila",
-        "Kilometraža",
-        "Moguće nezgode ili lakiranja",
+        "Servisna povijest i kilometraža",
+        "Stvarno stanje vozila i skriveni troškovi",
         "Garancija",
-        "Skriveni troškovi",
-        "Stanje guma i potrošnih dijelova",
-        "Pouzdanost modela",
-        "Razlog prodaje",
         "Dokumentacija i papiri",
-        "Mogućnost pregleda u servisu",
-        "Uvjeti financiranja ili plaćanja"
+        "Stanje potrošnih dijelova",
+        "Dodatna oprema uz vozilo",
+        "Uvjeti plaćanja i financiranja",
+        "Mogućnost dodatnog pregleda po dogovoru"
       ]
     },
     {
@@ -81,7 +78,7 @@
       "type": "select",
       "required": true,
       "options": [
-        "Kratka i osnovna lista pitanja",
+        "Osnovna lista pitanja",
         "Detaljna lista za ozbiljnu provjeru",
         "Pitanja za pregovaranje i spuštanje cijene",
         "Balansirano - provjera stanja i korektan razgovor"

@@ -32,17 +32,12 @@
       "placeholder": "npr. 2.0 TDI DSG R-Line"
     },
     {
-      "id": "annualMileage",
-      "label": "Koliko kilometara radiš godišnje",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Manje od 10.000 km",
-        "10.000 - 15.000 km",
-        "15.000 - 20.000 km",
-        "20.000 - 30.000 km",
-        "Više od 30.000 km"
-      ]
+      "id": "Mileage",
+      "label": "Koliko kilometara trenutno ima vozilo",
+      "type": "textarea",
+      "rows": 1,
+      "required": false,
+      "placeholder":"100.000"
     },
     {
       "id": "serviceApproach",
@@ -52,7 +47,6 @@
       "options": [
         "Ovlašteni servis",
         "Neovisni servis",
-        "Kombinacija ovlaštenog i neovisnog servisa",
         "Još nisam siguran"
       ]
     },
@@ -60,7 +54,7 @@
       "id": "insurancePreference",
       "label": "Koje osiguranje te zanima",
       "type": "checkbox",
-      "required": true,
+      "required": false,
       "options": [
         "Obvezno osiguranje",
         "Kasko osiguranje",
@@ -75,15 +69,13 @@
       "id": "maintenancePreference",
       "label": "Kakav pristup održavanju i troškovima preferiraš",
       "type": "checkbox",
-      "required": true,
+      "required": false,
       "options": [
-        "Originalni dijelovi",
-        "Zamjenski dijelovi",
-        "Skuplje i kvalitetnije opcije",
-        "Povoljnije opcije gdje ima smisla",
-        "Minimalni mogući trošak",
-        "Veća dugoročna pouzdanost",
-        "Optimalni trošak cijene i kvalitete"
+        "Isključivo originalni dijelovi",
+        "Performance / Tuning dijelovi",
+        "Najbolji zamjenski dijelovi",
+        "Standardni zamjenski dijelovi",
+        "Najpovoljnije opcije"
       ]
     },
     {
@@ -108,5 +100,5 @@
       "placeholder": "npr. želim realnu procjenu za održavanje bez pretjerivanja i bez premium troškova"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za procjenu troškova posjedovanja i održavanja vozila.\n\nŽelim procjenu troškova održavanja određenog automobila, uključujući najvažnije stavke koje vlasnik treba uzeti u obzir.\n\nPodaci:\n- Marka vozila: {{carBrand}}\n- Model vozila: {{carModel}}\n- Godina vozila: {{carYear}}\n- Motorizacija / linija / oprema: {{carVersion}}\n- Godišnja kilometraža: {{annualMileage}}\n- Gdje planiram održavati vozilo: {{serviceApproach}}\n- Vrste osiguranja koje me zanimaju: {{insurancePreference}}\n- Preferirani pristup održavanju i troškovima: {{maintenancePreference}}\n- Planirano zadržavanje vozila: {{ownershipPlan}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Procijeni koje glavne troškove održavanja i posjedovanja trebam očekivati za ovo vozilo.\n2. Uključi gdje je relevantno: mali servis, veliki servis, kočnice, ovjes, akumulator, gume, sezonsku zamjenu guma, registraciju, obvezno osiguranje, kasko i druge relevantne police, potrošne dijelove i moguće nepredviđene kvarove.\n3. Uzmi u obzir moj pristup održavanju i objasni kako izbor originalnih ili zamjenskih dijelova te skupljih ili povoljnijih opcija može utjecati na ukupne troškove.\n4. Ukratko objasni koje su stavke redovne i očekivane, a koje mogu biti povremene ili rizične.\n5. Daj okvirnu procjenu je li ovo vozilo jeftino, srednje skupo ili skupo za održavanje.\n6. Upozori na tipične troškove koje kupci često zaborave uračunati.\n7. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona."
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik i stručnjak za procjenu troškova posjedovanja i održavanja vozila.\n\nŽelim procjenu troškova održavanja određenog automobila, uključujući najvažnije stavke koje vlasnik treba uzeti u obzir.\n\nPodaci:\n- Marka vozila: {{carBrand}}\n- Model vozila: {{carModel}}\n- Godina vozila: {{carYear}}\n- Motorizacija / linija / oprema: {{carVersion}}\n- Trenutna kilometraža vozila: {{Mileage}}\n- Gdje planiram održavati vozilo: {{serviceApproach}}\n- Vrste osiguranja koje me zanimaju: {{insurancePreference}}\n- Preferirani pristup održavanju i troškovima: {{maintenancePreference}}\n- Planirano zadržavanje vozila: {{ownershipPlan}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Procijeni koje glavne troškove održavanja i posjedovanja trebam očekivati za ovo vozilo.\n2. Uključi gdje je relevantno: mali servis, veliki servis, kočnice, ovjes, akumulator, gume, sezonsku zamjenu guma, registraciju, obvezno osiguranje, kasko i druge relevantne police, potrošne dijelove i moguće nepredviđene kvarove.\n3. Uzmi u obzir moj pristup održavanju i objasni kako izbor originalnih ili zamjenskih dijelova te skupljih ili povoljnijih opcija može utjecati na ukupne troškove.\n4. Ukratko objasni koje su stavke redovne i očekivane, a koje mogu biti povremene ili rizične.\n5. Daj okvirnu procjenu je li ovo vozilo jeftino, srednje skupo ili skupo za održavanje.\n6. Upozori na tipične troškove koje kupci često zaborave uračunati.\n7. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona."
 }
