@@ -8,21 +8,21 @@
       "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. Porsche"
+      "placeholder": "npr. Škoda"
     },
     {
       "id": "model",
       "label": "Model vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. 911 Carrera"
+      "placeholder": "npr. Superb"
     },
     {
       "id": "generation",
       "label": "Godište",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2013"
+      "placeholder": "npr. 2023"
     },
     {
       "id": "interest",
