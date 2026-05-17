@@ -1,6 +1,6 @@
 {
   "id": "factory-equipment-advisor",
-  "title": "Tvornička oprema pri kupnji vozila",
+  "title": "Tvornička oprema pri kupnji novog vozila",
   "description": "Na temelju vozila, načina korištenja i prioriteta generira AI upit za odabir tvorničke opreme koja stvarno ima smisla pri kupnji vozila.",
   "fields": [
     {
@@ -18,13 +18,6 @@
       "placeholder": "npr. X3"
     },
     {
-      "id": "year",
-      "label": "Godište / generacija / aktualni model",
-      "type": "text",
-      "required": false,
-      "placeholder": "npr. 2025 ili G45"
-    },
-    {
       "id": "version",
       "label": "Motorizacija / paket / linija opreme",
       "type": "text",
@@ -32,83 +25,19 @@
       "placeholder": "npr. xDrive20d M Sport"
     },
     {
-      "id": "buyingStage",
-      "label": "U kojoj si fazi kupnje",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Tek istražujem",
-        "Uskoro konfiguriram novo vozilo",
-        "Uspoređujem više konfiguracija",
-        "Skoro donosim konačnu odluku"
-      ]
-    },
-    {
-      "id": "usage",
-      "label": "Kako će se vozilo najčešće koristiti",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Pretežno gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Obiteljska vožnja",
-        "Aktivan lifestyle / izleti",
-        "Posao / profesionalna upotreba",
-        "Mješovita vožnja"
-      ]
-    },
-    {
       "id": "equipmentFocus",
       "label": "Koja tvornička oprema te najviše zanima",
       "type": "checkbox",
       "required": true,
       "options": [
-        "Panoramski krov",
-        "Vrsta svjetala (LED / Matrix / Laser i slično)",
-        "Automatski mjenjač",
-        "Pogon na sva četiri kotača",
-        "Veći infotainment ekran",
-        "Napredni sigurnosni sustavi",
-        "Kamere i parking senzori",
-        "Adaptivni tempomat i asistencija u vožnji",
-        "Grijana sjedala i grijani volan",
-        "Ventilirana sjedala",
-        "Premium audio sustav",
-        "Kožna sjedala / napredniji interijer",
-        "Veći kotači",
-        "Sportski ovjes",
-        "Sportski detalji exsterijera",
-        "Head-up display",
-        "Ništa od navedenog"
-      ]
-    },
-    {
-      "id": "priorities",
-      "label": "Što ti je najvažnije kod odabira opreme",
-      "type": "checkbox",
-      "required": true,
-      "options": [
-        "vrijednost za novac",
-        "Sigurnost",
-        "Udobnost",
-        "Tehnologija",
-        "Premium dojam",
-        "Praktičnost u svakodnevici",
-        "Lakša preprodaja vozila",
-        "Da izbjegnem nepotrebne doplate"
-      ]
-    },
-    {
-      "id": "budgetLevel",
-      "label": "Kakav budžet imaš za doplatu opreme",
-      "type": "select",
-      "required": false,
-      "options": [
-        "Minimalan - samo što stvarno vrijedi",
-        "Umjeren - biram pametne doplate",
-        "Veći - želim jako dobru konfiguraciju",
-        "Nisam siguran"
+        "Vanjski izgled (sportski paket, felge, panorama i sl.)",
+        "Interijer, sjedala i udobnost",
+        "Rasvjeta i ambient light (LED / Matrix / Laser i sl.)",
+        "Asistencija u vožnji (modovi, tempomat i sl.)",
+        "Sigurnosni sustavi i pomoć pri parkiranju",
+        "Infotainment, Head-up i Audio sustavi",
+        "Ovjes (sportski, off-road i sl.)",
+        "Zimski paket (grijanje sjedala, volana i sl.)"
       ]
     },
     {
@@ -132,5 +61,4 @@
       "placeholder": "npr. želim da auto bude luksuzan, ali bez besmislenih doplata"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za konfiguraciju i odabir tvorničke opreme pri kupnji vozila.\n\nŽelim preporuku tvorničke dodatne opreme koja stvarno ima smisla za moje buduće vozilo, uz fokus na isplativost, praktičnost i realnu vrijednost.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište / generacija: {{year}}\n- Motorizacija / paket / linija opreme: {{version}}\n- Faza kupnje: {{buyingStage}}\n- Način korištenja vozila: {{usage}}\n- Tko se najčešće vozi: {{occupants}}\n- Fokus tvorničke opreme: {{equipmentFocus}}\n- Prioriteti pri odabiru: {{priorities}}\n- Budžet za doplatu opreme: {{budgetLevel}}\n- Željeni stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja tvornička oprema ima najviše smisla za mene i objasni zašto.\n2. Jasno odvoji opremu na:\n   - must-have opcije\n   - dobre, ali ne nužne opcije\n   - opcije koje se često ne isplate ili su više stvar prestiža nego stvarne koristi\n3. Obradi detaljno stavke koje sam označio, uključujući panoramu, svjetla, sigurnosne sustave, kamere, grijanja, infotainment, premium audio i ostalu relevantnu tvorničku opremu.\n4. Objasni koje opcije najviše poboljšavaju svakodnevno korištenje, sigurnost, udobnost i buduću vrijednost vozila.\n5. Ako postoji oprema koja dobro zvuči marketinški, ali često nije vrijedna doplate, jasno upozori na to.\n6. Ako je relevantno, navedi što se bolje uzima tvornički odmah, a što nije presudno imati iz konfiguratora.\n7. Na kraju izdvoji:\n   - 5 tvorničkih opcija koje bih najprije trebao uzeti\n   - 3 doplate koje mogu preskočiti ako želim biti racionalan s budžetom\n8. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona.\n\nBudi konkretan, koristan i fokusiran na stvarne potrebe korisnika."
-}
+  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za konfiguraciju i odabir tvorničke opreme pri kupnji novog vozila.\n\nŽelim preporuku tvorničke dodatne opreme koja stvarno ima smisla za moje buduće vozilo, uz fokus na isplativost, praktičnost, udobnost, sigurnost i realnu vrijednost.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Motorizacija / paket / linija opreme: {{version}}\n- Fokus tvorničke opreme: {{equipmentFocus}}\n- Željeni stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja tvornička oprema ima najviše smisla za ovo vozilo i moj način korištenja.\n2. Jasno odvoji opremu na:\n   - must-have opcije\n   - dobre, ali ne nužne opcije\n   - opcije koje se često ne isplate ili su više stvar prestiža nego stvarne koristi\n3. Obradi stavke koje sam označio u fokusu tvorničke opreme, poput vanjskog izgleda, interijera, sjedala, udobnosti, rasvjete, ambient lighta, asistencije u vožnji, sigurnosnih sustava, pomoći pri parkiranju, infotainmenta, Head-up displaya, audio sustava, ovjesa ili zimskog paketa.\n4. Objasni koje opcije najviše poboljšavaju svakodnevno korištenje, sigurnost, udobnost, dojam u vožnji i buduću vrijednost vozila.\n5. Ako postoji oprema koja dobro zvuči marketinški, ali često nije vrijedna doplate, jasno upozori na to.\n6. Ako je relevantno, navedi što se isplati uzeti tvornički odmah, a što nije presudno imati iz konfiguratora.\n7. Prilagodi dubinu i ton odgovora prema odabranom željenom stilu odgovora.\n8. Na kraju izdvoji:\n   - 5 tvorničkih opcija koje bih najprije trebao uzeti\n   - 3 doplate koje mogu preskočiti ako želim biti racionalan\n9. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona.\n\nBudi konkretan, koristan i fokusiran na stvarne potrebe korisnika."}

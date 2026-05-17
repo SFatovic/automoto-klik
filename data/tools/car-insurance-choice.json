@@ -4,49 +4,48 @@
   "description": "Na temelju vozila, načina korištenja i preferencija generira AI upit za odabir najprikladnijeg osiguranja (obavezno, kasko, polukasko).",
   "fields": [
     {
-      "id": "carValue",
-      "label": "Procijenjena vrijednost vozila",
-      "type": "select",
+      "id": "brand",
+      "label": "Marka vozila",
+      "type": "text",
       "required": true,
-      "options": [
-        "Do 5.000 €",
-        "5.000 € – 15.000 €",
-        "15.000 € – 30.000 €",
-        "30.000 € – 60.000 €",
-        "60.000 €+",
-        "Nisam siguran"
-      ]
+      "placeholder": "npr. Porsche"
     },
     {
-      "id": "carAge",
-      "label": "Starost vozila",
-      "type": "select",
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
       "required": true,
-      "options": [
-        "Novo vozilo (0-2 godine)",
-        "Relativno novo (3-5 godina)",
-        "Srednje staro (6-10 godina)",
-        "Starije vozilo (10+ godina)"
-      ]
+      "placeholder": "npr. 911 Carrera"
+    },
+    {
+      "id": "year",
+      "label": "Godište",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2016"
+    },
+    {
+      "id": "engine",
+      "label": "Motor / verzija",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2.0 diesel, 190 KS"
     },
     {
       "id": "usageType",
-      "label": "Kako najčešće koristiš vozilo",
+      "label": "Na koji način posjeduješ vozilo",
       "type": "select",
       "required": true,
       "options": [
-        "Gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Mješovita vožnja",
-        "Rijetko koristim vozilo"
+        "Privatno vlasništvo",
+        "Na firmu"
       ]
     },
     {
       "id": "parking",
       "label": "Gdje najčešće parkiraš vozilo",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Garaža / privatni parking",
         "Ulica / javni parking",
@@ -57,7 +56,7 @@
       "id": "riskFactors",
       "label": "Koji su tvoji najveći strahovi ili rizici",
       "type": "checkbox",
-      "required": true,
+      "required": false,
       "options": [
         "Krađa vozila",
         "Oštećenja na parkingu",
@@ -72,7 +71,7 @@
       "id": "budget",
       "label": "Koliko si spreman izdvajati za osiguranje",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Minimalno - samo najosnovnije",
         "Umjereno - balans cijene i zaštite",
@@ -80,10 +79,22 @@
       ]
     },
     {
+      "id": "buyOption",
+      "label": "Kako planiraš kupiti osiguranje",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Preko poznanika",
+        "U poslovnici",
+        "Preko interneta",
+        "Nisam siguran"
+      ]
+    },
+    {
       "id": "ownershipPlan",
       "label": "Koliko dugo planiraš zadržati vozilo",
       "type": "select",
-      "required": true,
+      "required": false,
       "options": [
         "Kratkoročno (do 1-2 godine)",
         "Srednjoročno (3-5 godina)",
@@ -99,5 +110,4 @@
       "placeholder": "npr. vozilo je financirano leasingom, često putujem u inozemstvo, vozilo mi je poslovno sredstvo"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan stručnjak za auto osiguranje i financijsko planiranje vezano uz vozila.\n\nŽelim pomoć u odabiru najprikladnijeg tipa auto osiguranja (obavezno, kasko, polukasko ili kombinacije) s obzirom na moje vozilo i potrebe.\n\nPodaci:\n- Vrijednost vozila: {{carValue}}\n- Starost vozila: {{carAge}}\n- Način korištenja: {{usageType}}\n- Način parkiranja: {{parking}}\n- Najveći rizici i brige: {{riskFactors}}\n- Budžet: {{budget}}\n- Plan zadržavanja vozila: {{ownershipPlan}}\n- Dodatne napomene: {{additionalNotes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniji tip osiguranja (samo obavezno, polukasko, puni kasko ili kombinaciju) i jasno objasni zašto.\n2. Ukratko objasni razliku između obaveznog osiguranja, kaska i polukaska.\n3. Navedi koje konkretne rizike pokriva preporučena opcija, a koje ne.\n4. Daj procjenu isplativosti (kada se isplati uzeti kasko, a kada ne).\n5. Predloži dodatne opcije ili pakete koje bi imale smisla (npr. zaštita bonusa, asistencija na cesti i sl.).\n6. Ako postoji više dobrih opcija, usporedi ih i objasni prednosti i nedostatke.\n7. Na kraju daj jasan zaključak i preporuku u jednoj ili dvije rečenice."
-}
+ "promptTemplate": "Ponašaj se kao iskusan stručnjak za auto osiguranje i financijsko planiranje vezano uz vozila.\n\nŽelim pomoć u odabiru najprikladnijeg tipa auto osiguranja: obavezno osiguranje, polukasko, puni kasko ili kombinacija dodatnih pokrića.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište: {{year}}\n- Motor / verzija: {{engine}}\n- Način posjedovanja vozila: {{usageType}}\n- Gdje najčešće parkiram vozilo: {{parking}}\n- Najveći rizici i brige: {{riskFactors}}\n- Budžet za osiguranje: {{budget}}\n- Kako planiram kupiti osiguranje: {{buyOption}}\n- Koliko dugo planiram zadržati vozilo: {{ownershipPlan}}\n- Dodatne napomene: {{additionalNotes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniji tip osiguranja za ovo vozilo i moj način korištenja: samo obavezno osiguranje, polukasko, puni kasko ili kombinaciju dodatnih pokrića.\n2. Jasno objasni zašto je ta opcija najbolja s obzirom na marku, model, godište, motor/verziju, način posjedovanja, parkiranje, rizike, budžet i plan zadržavanja vozila.\n3. Ukratko objasni razliku između obaveznog osiguranja, polukaska i punog kaska.\n4. Navedi koje konkretne rizike preporučena opcija pokriva, a koje ne pokriva.\n5. Daj procjenu isplativosti: kada se za ovakvo vozilo isplati uzeti kasko ili polukasko, a kada bi bilo dovoljno samo obavezno osiguranje.\n6. Predloži dodatne opcije ili pakete koji bi mogli imati smisla, npr. zaštita bonusa, asistencija na cesti, stakla, tuča, krađa, zamjensko vozilo ili zaštita od štete na parkingu.\n7. Ako postoji više dobrih opcija, usporedi ih i jasno navedi prednosti, nedostatke i kome bi koja opcija bolje odgovarala.\n8. Uključi praktičan savjet kako pristupiti kupnji osiguranja, posebno ako korisnik planira kupiti preko poznanika, u poslovnici, preko interneta ili još nije siguran.\n9. Na kraju daj jasan zaključak i preporuku u jednoj ili dvije rečenice.\n\nOdgovor neka bude praktičan, razumljiv i bez nepotrebnog pravnog ili osigurateljnog žargona. Napomeni da se konačna ponuda i uvjeti pokrića moraju provjeriti kod osiguravajućeg društva jer se cijene, uvjeti i isključenja razlikuju po osiguratelju i polici."}

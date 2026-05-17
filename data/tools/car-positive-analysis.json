@@ -52,18 +52,6 @@
       ]
     },
     {
-      "id": "tone",
-      "label": "Stil odgovora",
-      "type": "select",
-      "required": false,
-      "options": [
-        "Kratko i informativno",
-        "Detaljno i stručno",
-        "Inspirativno i storytelling",
-        "Kombinacija tehničkog i emocionalnog"
-      ]
-    },
-    {
       "id": "depth",
       "label": "Razina detalja",
       "type": "select",

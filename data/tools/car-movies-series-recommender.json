@@ -1,0 +1,63 @@
+{
+  "id": "car-movies-series-recommender",
+  "title": "Preporuka filmova i serija o automobilima",
+  "description": "Na temelju tvojih preferencija generira AI upit za preporuku filmova, serija, dokumentaraca i motorsport sadržaja o automobilima.",
+  "fields": [
+    {
+      "id": "contentType",
+      "label": "Kakav sadržaj želiš",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Film",
+        "Serija",
+        "Reality emisije",
+        "Dokumentarac",
+        "Animirani sadržaj",
+        "Prijenosi utrka i motorsport sadržaj",
+        "Podcasti i edukativni sadržaj",
+        "Kratki video sadržaji na Youtube",
+        "Sve od navedenog"
+      ]
+    },
+    {
+      "id": "mainTheme",
+      "label": "Koje teme te najviše zanimaju",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Ulične utrke",
+        "Motorsport i profesionalne utrke",
+        "Formula 1",
+        "Rally i off-road",
+        "Akcija i jurnjava",
+        "Pljačka i kriminal",
+        "Priča o vozačima i rivalstvima",
+        "Mehanika, tuning i slaganje auta",
+        "Lifestyle i car culture",
+        "Poslovanje i inovacije u autoindustriji",
+        "Klasični automobili",
+        "Superautomobili i egzotika"
+      ]
+    },
+    {
+      "id": "platformGoal",
+      "label": "Što želiš od preporuke",
+      "type": "checkbox",
+      "required": false,
+      "options": [
+        "Najpopularnije stvari",
+        "Najbolje klasike koje treba pogledati",
+        "Manje poznate skrivene dragulje"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. volim određeni F1 tim, neki brand automobila ili zanimaju me testovi automobila"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao stručnjak za filmove, serije i automotive lifestyle sadržaj.\n\nŽelim personaliziranu preporuku:\n\nPodaci:\n- Vrsta sadržaja: {{contentType}}\n- Glavne teme: {{mainTheme}}\n- Cilj preporuke: {{platformGoal}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Preporuči mi najrelevantniji sadržaj o automobilima.\n2. Za svaku preporuku navedi:\n   - naziv\n   - vrstu sadržaja\n   - kratki opis radnje bez spoilera\n   - trajanje filma ili broj sezona / epizoda ako je serija\n   - zašto je baš relevantan za moje preferencije\n3. Ako je korisno, grupiraj preporuke po kategorijama.\n4. Preporuči i 1-2 trailera ili tipove trailera koje vrijedi pogledati prije odabira naslova.\n5. Na kraju izdvoji:\n   - 3 najbolja izbora za mene\n   - 2 alternativna\n   - 1 'siguran klasik' koji gotovo svaki auto fan treba pogledati\n6. Budi konkretan, zabavan i koristan, ali bez spoilera i bez generičkih opisa."}

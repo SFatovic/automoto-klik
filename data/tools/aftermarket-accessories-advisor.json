@@ -32,104 +32,38 @@
       "placeholder": "npr. B4 AWD Plus"
     },
     {
-      "id": "ownershipStage",
-      "label": "U kojoj si situaciji s vozilom",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Već imam vozilo i želim ga unaprijediti",
-        "Kupujem rabljeno vozilo i planiram dodatke",
-        "Planiram odmah nakon kupnje dodati opremu",
-        "Tek istražujem što bi imalo smisla"
-      ]
-    },
-    {
-      "id": "usage",
-      "label": "Kako najčešće koristiš vozilo",
-      "type": "select",
-      "required": true,
-      "options": [
-        "Pretežno gradska vožnja",
-        "Dnevna vožnja na posao",
-        "Duža putovanja / autoput",
-        "Obiteljska vožnja",
-        "Aktivan lifestyle / sport i izleti",
-        "Posao / profesionalna upotreba",
-        "Mješovita vožnja"
-      ]
-    },
-    {
-      "id": "lifestyleNeeds",
-      "label": "Koje situacije i potrebe su ti bitne",
-      "type": "checkbox",
-      "required": true,
-      "options": [
-        "Prijevoz djece",
-        "Prijevoz kućnih ljubimaca",
-        "Prijevoz bicikla",
-        "Više prtljažnog prostora",
-        "Putovanja i godišnji odmori",
-        "Zaštita interijera i prtljažnika",
-        "Lakše parkiranje i manevriranje",
-        "Bolja organizacija u kabini",
-        "Bolja zaštita vozila izvana",
-        "Održavanje i njega vozila",
-        "Bolja tehnologija i povezivost",
-        "Zimski uvjeti i loše vrijeme"
-      ]
-    },
-    {
       "id": "aftermarketFocus",
       "label": "Koja naknadna dodatna oprema te najviše zanima",
       "type": "checkbox",
       "required": true,
       "options": [
-        "Nosači bicikla",
-        "Krovni nosači i krovna kutija",
-        "Gumene ili premium podne obloge",
-        "Kadica prtljažnika",
-        "Zaštita sjedala i interijera",
-        "Dodaci za kućne ljubimce",
-        "Punjači i držači za mobitel",
-        "Dash cam / kamera",
-        "Parking kamera ili senzori naknadno",
-        "Organizatori prtljažnika",
-        "Zimska oprema",
-        "Zaštita laka i detailing",
-        "Folije / zaštita stakala",
-        "Ambijentalna ili dodatna rasvjeta",
+        "Prijevoz djece",
+        "Prijevoz kućnih ljubimaca",
+        "Prijevoz bicikla, skija i sl.",
+        "Krovne kutije",
         "Kuka za vuču",
-        "Kemije za održavanje i aditivi",
-        "Ulja i tekućine",
-        "Praktični putni dodaci"
-      ]
-    },
-    {
-      "id": "priorities",
-      "label": "Što ti je najvažnije kod dodataka",
-      "type": "checkbox",
-      "required": true,
-      "options": [
-        "Da stvarno vrijede novca",
-        "Da poboljšaju svakodnevno korištenje",
-        "Da povećaju sigurnost",
-        "Da podignu udobnost",
-        "Da olakšaju putovanja i prijevoz stvari",
-        "Da zaštite vozilo i interijer",
-        "Da budu dugoročno isplativi",
-        "Da izbjegnem nepotrebne kupnje"
+        "Praktični putni dodaci",
+        "Zaštita interijera i prtljažnika",
+        "Zaštita i održavanje eksterijera",
+        "Kamere i senzori",
+        "Bolja organizacija stvari",
+        "Bolje ozvučenje",
+        "Punjači i držači za mobitel",
+        "Zimska oprema",
+        "Dodatni set kotača",
+        "Aditivi i tekučine",
+        "Oprema za pranje i čišćenje"
       ]
     },
     {
       "id": "budgetLevel",
-      "label": "Kakav budžet imaš za dodatke",
+      "label": "Koju vrstu opreme želiš",
       "type": "select",
       "required": false,
       "options": [
-        "Minimalan - samo najkorisnije osnove",
-        "Umjeren - biram ono što stvarno ima smisla",
-        "Veći - spreman sam više uložiti u praktičnost i dojam",
-        "Nisam siguran"
+        "Povoljne opcije - samo najkorisnije osnove",
+        "Umjerenu - najbolja vrijednost za novac",
+        "Najbolju - samo najkvalitetnije"
       ]
     },
     {
@@ -139,9 +73,7 @@
       "required": true,
       "options": [
         "Kratak i praktičan pregled",
-        "Detaljna preporuka po kategorijama",
-        "Naglasak na value for money",
-        "Naglasak na lifestyle i praktičnost"
+        "Detaljna preporuka po artiklima"
       ]
     },
     {
@@ -153,5 +85,5 @@
       "placeholder": "npr. često putujem, vozim psa i bicikl, želim da auto bude uredniji i praktičniji"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za naknadnu dodatnu opremu, dodatke i praktična rješenja za vozila. Daj mi konkretne linkove na tražene proizvode iz intrenet trgovina koje rade u hrvatskoj.\n\nŽelim preporuku naknadne dodatne opreme i korisnih dodataka za svoje vozilo, s fokusom na stvarne potrebe, praktičnost i value for money.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište / generacija: {{year}}\n- Motorizacija / verzija / oprema: {{version}}\n- Situacija s vozilom: {{ownershipStage}}\n- Način korištenja vozila: {{usage}}\n- Životne situacije i potrebe: {{lifestyleNeeds}}\n- Fokus dodatne opreme: {{aftermarketFocus}}\n- Prioriteti pri odabiru: {{priorities}}\n- Budžet: {{budgetLevel}}\n- Željeni stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja naknadna dodatna oprema i koji dodaci imaju najviše smisla za mene i objasni zašto.\n2. Grupiraj preporuke po logičnim kategorijama kao što su sigurnost, praktičnost, putovanja, zaštita interijera, lifestyle, tehnologija i održavanje vozila.\n3. Obradi detaljno teme koje sam označio, uključujući nosače bicikla, dodatke za kućne ljubimce, zaštitu interijera, dash cam, organizaciju prtljažnika, zimske dodatke, detailing i ostale korisne dodatke.\n4. Ako postoji dodatna oprema koja djeluje privlačno, ali se često ne isplati ili se rijetko koristi, jasno upozori na to.\n5. Ako ima smisla, odvoji preporuke na:\n   - osnovne dodatke koje bi gotovo svaki vlasnik trebao razmotriti\n   - dodatke za specifične potrebe i lifestyle\n6. Na kraju izdvoji:\n   - 5 dodataka koje bih najprije trebao uzeti\n   - 3 stvari koje mogu preskočiti ako želim biti racionalan s budžetom\n7. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona.\n\nBudi konkretan, koristan i fokusiran na stvarne potrebe korisnika."
-}
+  "promptTemplate": "Ponašaj se kao praktičan automobilski savjetnik za dodatnu opremu, organizaciju vozila i svakodnevno korištenje auta.\n\nŽelim preporuku naknadne dodatne opreme za svoje vozilo.\n\nPodaci:\n- Marka: {{brand}}\n- Model: {{model}}\n- Godište / generacija: {{year}}\n- Motorizacija / verzija / oprema: {{version}}\n- Fokus dodatne opreme: {{aftermarketFocus}}\n- Budžet / razina opreme: {{budgetLevel}}\n- Stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju podataka:\n1. Ukratko procijeni koje vrste dodatne opreme imaju najviše smisla za ovo vozilo i način korištenja.\n2. Preporuči najkorisnije dodatke po prioritetu: obavezno, korisno i opcionalno.\n3. Za svaki važniji prijedlog objasni čemu služi, zašto ima smisla i na što paziti pri kupnji ili ugradnji.\n4. Ako je relevantno, razlikuj originalnu/OEM opremu od kvalitetne aftermarket alternative.\n5. Upozori na moguće probleme s kompatibilnošću, homologacijom, sigurnošću, jamstvom ili nekvalitetnom ugradnjom.\n6. Na kraju daj kratak zaključak: što bih prvo kupio, što može čekati i što bih izbjegao.\n\nBudi konkretan, praktičan i bez generičkih savjeta. Ako neki podatak nedostaje, navedi što treba dodatno provjeriti prije kupnje."
+  }

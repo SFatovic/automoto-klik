@@ -18,18 +18,11 @@
       "placeholder": "npr. 320d"
     },
     {
-      "id": "version",
-      "label": "Verzija / oprema",
-      "type": "text",
-      "required": false,
-      "placeholder": "npr. M Sport, R-Line, AMG Line"
-    },
-    {
       "id": "year",
-      "label": "Godište ili generacija",
+      "label": "Godište",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2021 ili G20"
+      "placeholder": "npr. 2021"
     },
     {
       "id": "engine",
@@ -65,7 +58,7 @@
     },
     {
       "id": "drivingModes",
-      "label": "Ima li vozilo modove vožnje",
+      "label": "Ima li vozilo modove vožnje (Normal, Sport, Eco, itd.)",
       "type": "select",
       "required": false,
       "options": [
@@ -76,17 +69,22 @@
     },
     {
       "id": "usage",
-      "label": "Kako najčešće koristiš vozilo",
-      "type": "select",
+      "label": "Kako najčešće voziš",
+      "type": "checkbox",
       "required": true,
       "options": [
         "Pretežno gradska vožnja",
-        "Dnevna vožnja na posao",
+        "Vangradska vožnja, zavojite ceste",
         "Duža putovanja / autoput",
-        "Mješovita vožnja",
-        "Obiteljska vožnja",
+        "Obiteljska vožnja, što sigurnije",
         "Dinamična / sportska vožnja",
-        "Povremena vožnja"
+        "Noćna vožnja",
+        "Često u gužvi, kreni - stani",
+        "Kiša i mokra cesta",
+        "Snijeg i zimski uvjeti",
+        "Vožnja po makadamu",
+        "Profesionlana vožnja",
+        "Vožnja s putnicima i teretom"
       ]
     },
     {
@@ -95,26 +93,11 @@
       "type": "select",
       "required": true,
       "options": [
+        "Sigurnost na prvom mjestu",
         "Miran i opušten",
-        "Balansiran",
-        "Dinamičan",
-        "Želim naučiti voziti bolje i pametnije"
-      ]
-    },
-    {
-      "id": "conditions",
-      "label": "U kojim uvjetima najčešće voziš",
-      "type": "checkbox",
-      "required": true,
-      "options": [
-        "Grad i gužve",
-        "Otvorena cesta",
-        "Autoput",
-        "Kiša i mokra cesta",
-        "Zima i hladni uvjeti",
-        "Brdske / zavojite ceste",
-        "Vožnja s putnicima i teretom",
-        "Noćna vožnja"
+        "Blago dinamičan",
+        "Sportski, ali oprezno",
+        "Pun gas!"
       ]
     },
     {
@@ -123,16 +106,13 @@
       "type": "checkbox",
       "required": true,
       "options": [
-        "Veću sigurnost",
-        "Nižu potrošnju",
-        "Bolju kontrolu i osjećaj u vožnji",
-        "Bolje korištenje automatskog mjenjača",
-        "Bolje korištenje modova vožnje",
+        "Sigurnost u prometu",
         "Mirniju i ugodniju vožnju",
-        "Dinamičniju vožnju kad ima smisla",
-        "Manje trošenje kočnica i guma",
-        "Dugoročnu brigu o vozilu",
-        "Više samopouzdanja za volanom"
+        "Nižu potrošnju goriva",
+        "Manje trošenje kočnica, guma i motora",
+        "Bolju kontrolu i osjećaj u vožnji",
+        "Bolje korištenje modova vožnje",
+        "Dinamičnu vožnju"
       ]
     },
     {
@@ -144,5 +124,5 @@
       "placeholder": "npr. želim bolje koristiti auto na autocesti, ne znam kada koristiti Sport ili Eco mod, zanima me kako voziti uglađenije"
     }
   ],
-  "promptTemplate": "Ponašaj se kao iskusan automobilski instruktor i stručnjak za vožnju koji razumije tehniku vožnje, ponašanje vozila i praktične navike vozača.\n\nŽelim personalizirane savjete za vožnju konkretnog vozila koje vozim, s fokusom na sigurnost, efikasnost, kontrolu i bolje iskorištavanje njegovih mogućnosti.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Verzija / oprema: {{version}}\n- Godište / generacija: {{year}}\n- Motor: {{engine}}\n- Pogon: {{drivetrain}}\n- Mjenjač: {{transmission}}\n- Ima li vozilo modove vožnje: {{drivingModes}}\n- Najčešći način korištenja: {{usage}}\n- Moj stil vožnje: {{drivingStyle}}\n- Uvjeti vožnje: {{conditions}}\n- Što želim poboljšati: {{goals}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Daj najbolje personalizirane savjete za vožnju baš za ovo vozilo i moj način korištenja.\n2. Uključi praktične navike i tips & tricks koji mogu poboljšati sigurnost, udobnost, kontrolu i svakodnevni dojam u vožnji.\n3. Ako je relevantno, objasni kako najbolje koristiti pogon, motor, mjenjač i eventualne modove vožnje.\n4. Daj konkretne savjete za efikasniju vožnju, manju potrošnju i manje trošenje vozila.\n5. Ako korisnik želi dinamičniju vožnju, objasni kako voziti življe i sigurnije bez pretjerivanja i bez loših navika.\n6. Upozori na tipične greške koje vozači rade s ovakvim tipom vozila, pogona ili mjenjača.\n7. Ako je relevantno, uključi savjete za vožnju u specifičnim uvjetima kao što su kiša, zima, autoput, grad ili zavojite ceste.\n8. Daj i kratke savjete za dugoročnu brigu o vozilu kroz stil vožnje.\n9. Na kraju složi jasan sažetak: koje 3 navike trebam odmah usvojiti i koje 3 stvari trebam izbjegavati.\n\nBudi konkretan, praktičan i jasan. Izbjegavaj generičke savjete i prilagodi odgovor baš navedenom vozilu i situaciji."
+  "promptTemplate": "Ponašaj se kao iskusan automobilski instruktor i stručnjak za vožnju koji razumije tehniku vožnje, ponašanje vozila i praktične navike vozača.\n\nŽelim personalizirane savjete za vožnju konkretnog vozila koje vozim. \n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište: {{year}}\n- Motor: {{engine}}\n- Pogon: {{drivetrain}}\n- Mjenjač: {{transmission}}\n- Ima li vozilo modove vožnje: {{drivingModes}}\n- Kako najčešće vozim: {{usage}}\n- Moj stil vožnje: {{drivingStyle}}\n- Što želim poboljšati u vožnji: {{goals}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Daj najbolje personalizirane savjete za vožnju baš za ovo vozilo i moj način korištenja.\n2. Uzmi u obzir marku, model, godište, motor, pogon, mjenjač, modove vožnje, najčešći način korištenja, stil vožnje i ciljeve koje želim poboljšati.\n\n4. Ako je relevantno, objasni kako najbolje koristiti pogon, motor, mjenjač i eventualne modove vožnje.\n\n\n7. Upozori na tipične greške koje vozači rade s ovakvim tipom vozila, pogona ili mjenjača.\n\n9. Daj kratke savjete za dugoročnu brigu o vozilu kroz stil vožnje.\n\n\nBudi konkretan, praktičan i jasan. Izbjegavaj generičke savjete i prilagodi odgovor baš navedenom vozilu, načinu vožnje i situaciji."
 }
