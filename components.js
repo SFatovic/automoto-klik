@@ -8,6 +8,7 @@
     { href: "index.html", label: "Početna", page: "index" },
     { href: "ai-upiti.html", label: "AI alati", page: "ai-upiti" },
     { href: "kvizovi.html", label: "Kvizovi", page: "kvizovi" },
+    { href: "moje-vozilo.html", label: "Moje vozilo", page: "moje-vozilo" },
     { href: "o-projektu.html", label: "O projektu", page: "o-projektu" }
   ];
 
@@ -15,6 +16,7 @@
     { href: "index.html", label: "Početna" },
     { href: "ai-upiti.html", label: "AI alati" },
     { href: "kvizovi.html", label: "Kvizovi" },
+    { href: "moje-vozilo.html", label: "Moje vozilo" },
     { href: "o-projektu.html", label: "O projektu" },
     { href: "legal.html", label: "Uvjeti korištenja i privatnost" }
   ];
@@ -161,6 +163,7 @@ function initLucideIcons() {
 
     if (path.includes("ai-upiti") || path.includes("tool")) return "ai-upiti";
     if (path.includes("kvizovi") || path.includes("kviz")) return "kvizovi";
+    if (path.includes("moje-vozilo")) return "moje-vozilo";
     if (path.includes("o-projektu")) return "o-projektu";
 
     return "index";
