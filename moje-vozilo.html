@@ -28,134 +28,90 @@
 
   <div id="site-header"></div>
 
-  <section class="hero-wrap tools-hero-wrap">
-    <div class="container">
-      <div class="hero-card tools-hero-card my-vehicle-hero-card">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-8">
-            <p class="hero-kicker">Moje vozilo</p>
-            <h1 class="hero-title hero-title-small tools-hero-title">
-              Kreiraj svoj lokalni profil vozila.
-            </h1>
-            <p class="hero-subtitle tools-hero-subtitle mb-0">
-              Unesi marku, model, godinu, motor i fotografiju vozila. Profil ostaje spremljen lokalno na ovom uređaju i u ovom pregledniku.
-            </p>
-          </div>
-          <div class="col-lg-4">
-            <div class="hero-preview-card tools-hero-preview">
-              <p class="preview-label">Tvoj profil</p>
-              <div class="tools-hero-steps">
-                <div class="tools-hero-step">
-                  <strong>Podaci vozila</strong>
-                  <span>Osnovni podaci ostaju spremljeni u ovom pregledniku.</span>
-                </div>
-                <div class="tools-hero-step">
-                  <strong>Fotografija</strong>
-                  <span>Fotografija vozila ostaje spremljena lokalno na ovom uređaju.</span>
-                </div>
-                <div class="tools-hero-step">
-                  <strong>Povratak profila</strong>
-                  <span>Kad se vratiš na stranicu, tvoj profil vozila ponovno će se prikazati.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="my-vehicle-hero-trust-note">Podaci se ne šalju na server.</div>
-
-        <button
-          id="vehicleFormToggle"
-          type="button"
-          class="my-vehicle-trigger"
-          aria-expanded="false"
-          aria-controls="vehicleFormPanel"
-        >
-          <span class="my-vehicle-trigger-icon" aria-hidden="true">
-            <i data-lucide="car-front"></i>
-          </span>
-          <span class="my-vehicle-trigger-copy">
-            <strong id="vehicleFormToggleText">Dodaj svoje vozilo</strong>
-            <small>Otvori obrazac za unos ili izmjenu podataka</small>
-          </span>
-          <span class="my-vehicle-trigger-chevron" aria-hidden="true">
-            <i data-lucide="chevron-down"></i>
-          </span>
-        </button>
-      </div>
-    </div>
-  </section>
-
   <main id="main-content">
     <section class="home-section">
       <div class="container">
-        <div class="my-vehicle-layout">
-          <div id="vehicleFormPanel" class="my-vehicle-collapsible" aria-hidden="true">
-            <div class="my-vehicle-collapsible-inner">
-              <article class="my-vehicle-panel my-vehicle-form-panel">
-                <h2 class="section-title mb-3">Podaci o vozilu</h2>
-                <p class="section-subtitle mb-4">
-                  Spremi svoj profil vozila lokalno i ažuriraj ga kad god želiš.
-                </p>
-
-                <form id="myVehicleForm" novalidate>
-                  <div class="mb-3">
-                    <label for="vehicleBrand" class="form-label">Marka vozila</label>
-                    <input id="vehicleBrand" name="brand" type="text" class="form-control" placeholder="Npr. BMW" autocomplete="off" />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="vehicleModel" class="form-label">Model vozila</label>
-                    <input id="vehicleModel" name="model" type="text" class="form-control" placeholder="Npr. 320d" autocomplete="off" />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="vehicleYear" class="form-label">Godina</label>
-                    <input id="vehicleYear" name="year" type="number" class="form-control" placeholder="Npr. 2019" min="1900" max="2100" inputmode="numeric" />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="vehicleEngine" class="form-label">Motor</label>
-                    <input id="vehicleEngine" name="engine" type="text" class="form-control" placeholder="Npr. 2.0 TDI 110kW" autocomplete="off" />
-                  </div>
-
-                  <div class="mb-4">
-                    <label for="vehiclePhoto" class="form-label">Fotografija vozila</label>
-                    <input
-                      id="vehiclePhoto"
-                      name="photo"
-                      type="file"
-                      class="form-control"
-                      accept="image/*"
-                      aria-label="Dodaj fotografiju vozila"
-                    />
-                  </div>
-
-                  <div class="my-vehicle-actions">
-                    <button id="saveVehicleBtn" type="button" class="btn btn-primary">Spremi vozilo</button>
-                    <button id="editVehicleBtn" type="button" class="btn btn-hero-secondary">Izmijeni podatke</button>
-                    <button id="deleteVehicleBtn" type="button" class="btn quiz-secondary-btn">Obriši profil</button>
-                  </div>
-                </form>
-
-                <p id="vehicleStatusMessage" class="my-vehicle-status" role="status" aria-live="polite"></p>
-              </article>
-            </div>
+        <div class="row justify-content-center mb-4 mb-lg-5">
+          <div class="col-xl-9 col-lg-10 text-center">
+            <h1 class="section-title mb-3">Moje vozilo</h1>
+            <p class="section-subtitle mb-0">
+              Informacije, preporuke i sadržaj vezan za opremanje i nadogradnju vozila na jednom mjestu.
+            </p>
           </div>
+        </div>
+        <div class="myv-wrap">
 
-          <article class="my-vehicle-panel my-vehicle-preview-panel">
-            <h2 class="section-title mb-3">Pregled profila</h2>
-            <div class="my-vehicle-preview-card" id="myVehiclePreviewCard">
-              <img id="myVehiclePreviewImage" class="my-vehicle-preview-image" alt="Fotografija vozila iz profila" />
-              <div class="my-vehicle-preview-overlay"></div>
-              <div class="my-vehicle-preview-content">
-                <span class="my-vehicle-preview-label">Moje vozilo</span>
-                <h3 id="myVehiclePreviewTitle" class="my-vehicle-preview-title">Marka Model</h3>
-                <p id="myVehiclePreviewMeta" class="my-vehicle-preview-meta">Godina • Motor</p>
-                <p id="myVehiclePreviewState" class="my-vehicle-preview-state">Unesi podatke i spremi profil vozila.</p>
+          <div class="myv-card">
+
+            <!-- Foto zona — klikni za upload -->
+            <div class="myv-photo-zone" id="myvPhotoZone" role="button" tabindex="0" aria-label="Dodaj ili promijeni fotografiju vozila">
+              <img id="myVehiclePreviewImage" class="myv-photo-img" alt="" />
+              <div class="myv-photo-overlay"></div>
+
+              <div class="myv-photo-placeholder" id="myvPhotoPlaceholder">
+                <div class="myv-camera-icon">
+                  <i data-lucide="camera"></i>
+                </div>
+                <span>Dodaj fotografiju</span>
+              </div>
+
+              <div class="myv-photo-info" id="myvPhotoInfo">
+                <h2 id="myVehiclePreviewTitle" class="myv-preview-title">—</h2>
+                <p id="myVehiclePreviewMeta" class="myv-preview-meta"></p>
+              </div>
+
+              <button class="myv-photo-change-btn" id="myvChangePhotoBtn" aria-label="Promijeni fotografiju" type="button">
+                <i data-lucide="camera"></i>
+              </button>
+
+              <input id="vehiclePhoto" name="photo" type="file" class="myv-photo-input" accept="image/*" tabindex="-1" aria-hidden="true" />
+            </div>
+
+            <!-- Toggle gumb -->
+            <div class="myv-bottom">
+              <button class="myv-toggle" id="myvToggleBtn" type="button" aria-expanded="false" aria-controls="myvFormCollapsible">
+                <span class="myv-toggle-icon"><i data-lucide="sliders-horizontal"></i></span>
+                <span class="myv-toggle-label" id="myvToggleLabel">Uredi podatke</span>
+                <span class="myv-toggle-chevron"><i data-lucide="chevron-down"></i></span>
+              </button>
+
+              <!-- Collapsible forma -->
+              <div class="myv-collapsible" id="myvFormCollapsible">
+                <div class="myv-collapsible-inner">
+                  <div class="myv-fields">
+                    <form id="myVehicleForm" novalidate>
+                      <div class="myv-fields-grid">
+                        <div class="myv-field">
+                          <label for="vehicleBrand">Marka</label>
+                          <input id="vehicleBrand" name="brand" type="text" placeholder="npr. BMW" autocomplete="off" />
+                        </div>
+                        <div class="myv-field">
+                          <label for="vehicleModel">Model</label>
+                          <input id="vehicleModel" name="model" type="text" placeholder="npr. 320d" autocomplete="off" />
+                        </div>
+                        <div class="myv-field">
+                          <label for="vehicleYear">Godina</label>
+                          <input id="vehicleYear" name="year" type="number" placeholder="npr. 2019" min="1900" max="2100" inputmode="numeric" />
+                        </div>
+                        <div class="myv-field">
+                          <label for="vehicleEngine">Motor</label>
+                          <input id="vehicleEngine" name="engine" type="text" placeholder="npr. 2.0 TDI 110kW" autocomplete="off" />
+                        </div>
+                      </div>
+
+                      <div class="myv-actions">
+                        <button id="saveVehicleBtn" type="button" class="btn btn-primary">Spremi profil</button>
+                        <button id="deleteVehicleBtn" type="button" class="btn quiz-secondary-btn">Obriši</button>
+                      </div>
+                    </form>
+
+                    <p id="vehicleStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
+
+          </div>
         </div>
       </div>
     </section>

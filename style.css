@@ -3103,283 +3103,361 @@ textarea.form-control {
    MY VEHICLE PAGE
 ======================================== */
 
-.my-vehicle-layout {
-  display: grid;
-  gap: 18px;
-}
-
 .my-vehicle-hero-card {
-  padding-bottom: clamp(20px, 2.4vw, 28px);
+  padding-bottom: clamp(16px, 2vw, 24px);
 }
 
-.my-vehicle-hero-trust-note {
-  margin-top: 16px;
-  margin-bottom: 14px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(232, 238, 248, 0.86);
-  font-size: 0.9rem;
+.my-vehicle-page .section-title {
+  color: #0d1117;
 }
 
-.my-vehicle-panel {
-  padding: 28px;
+.my-vehicle-page .section-subtitle {
+  color: #3a4555;
+}
+
+/* ── Unified vehicle card ── */
+
+.myv-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.myv-card {
+  width: 100%;
+  max-width: 860px;
   border-radius: 28px;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background:
-    radial-gradient(circle at 82% 18%, rgba(58, 160, 255, 0.18) 0%, rgba(58, 160, 255, 0) 45%),
+    radial-gradient(circle at 82% 18%, rgba(58, 160, 255, 0.14) 0%, rgba(58, 160, 255, 0) 45%),
     linear-gradient(145deg, #06070b 0%, #0c111a 56%, #111827 100%);
   box-shadow:
-    0 18px 34px rgba(3, 8, 18, 0.42),
+    0 24px 48px rgba(3, 8, 18, 0.52),
     0 0 0 1px rgba(133, 190, 255, 0.07) inset;
 }
 
-.my-vehicle-trigger {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 16px 18px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background:
-    radial-gradient(circle at 85% 14%, rgba(64, 162, 255, 0.18) 0%, rgba(64, 162, 255, 0) 42%),
-    linear-gradient(145deg, #05070c 0%, #0c121c 56%, #111827 100%);
-  box-shadow:
-    0 14px 28px rgba(2, 8, 18, 0.34),
-    0 0 0 1px rgba(135, 193, 255, 0.06) inset;
-  color: #eef4ff;
-  text-align: left;
-  transition:
-    transform var(--transition-fast),
-    border-color var(--transition-base),
-    box-shadow var(--transition-base);
-}
+/* ── Photo zone ── */
 
-.my-vehicle-trigger:hover {
-  transform: translateY(-1px);
-  border-color: rgba(168, 215, 255, 0.32);
-  box-shadow:
-    0 18px 32px rgba(2, 8, 18, 0.42),
-    0 0 0 1px rgba(168, 215, 255, 0.1) inset;
-}
-
-.my-vehicle-trigger:focus-visible {
-  outline: 0;
-  border-color: rgba(160, 214, 255, 0.52);
-  box-shadow:
-    0 0 0 3px rgba(130, 196, 255, 0.2),
-    0 18px 32px rgba(2, 8, 18, 0.42);
-}
-
-.my-vehicle-trigger-icon,
-.my-vehicle-trigger-chevron {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(233, 244, 255, 0.94);
-  flex-shrink: 0;
-}
-
-.my-vehicle-trigger-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.my-vehicle-trigger-copy strong {
-  font-size: 1.02rem;
-  letter-spacing: 0.01em;
-}
-
-.my-vehicle-trigger-copy small {
-  color: rgba(228, 236, 247, 0.72);
-  font-size: 0.84rem;
-}
-
-.my-vehicle-trigger-chevron {
-  margin-left: auto;
-  transition: transform var(--transition-fast);
-}
-
-.my-vehicle-trigger.is-open .my-vehicle-trigger-chevron {
-  transform: rotate(180deg);
-}
-
-.my-vehicle-collapsible {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition:
-    grid-template-rows 0.28s ease,
-    opacity 0.22s ease;
-}
-
-.my-vehicle-collapsible.is-open {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.my-vehicle-collapsible-inner {
-  overflow: hidden;
-}
-
-.my-vehicle-form-panel {
-  margin-top: 2px;
-}
-
-.my-vehicle-form-panel .section-subtitle {
-  color: rgba(228, 234, 244, 0.78);
-}
-
-.my-vehicle-form-panel .form-label {
-  color: rgba(232, 238, 248, 0.92);
-}
-
-.my-vehicle-form-panel .form-control {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
-  color: #f5f7fc;
-}
-
-.my-vehicle-form-panel .form-control::placeholder {
-  color: rgba(226, 232, 245, 0.62);
-}
-
-.my-vehicle-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.my-vehicle-actions .btn {
-  flex: 1 1 180px;
-}
-
-.my-vehicle-status {
-  min-height: 1.6rem;
-  margin: 14px 2px 0;
-  color: rgba(205, 227, 255, 0.9);
-  font-size: 0.92rem;
-}
-
-.my-vehicle-preview-card {
+.myv-photo-zone {
   position: relative;
-  min-height: clamp(320px, 42vw, 480px);
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  height: clamp(260px, 38vw, 420px);
+  cursor: pointer;
   background:
-    radial-gradient(circle at 16% 16%, rgba(46, 130, 255, 0.26) 0%, rgba(46, 130, 255, 0) 42%),
-    linear-gradient(150deg, #06070b 0%, #101827 58%, #151b28 100%);
+    radial-gradient(circle at 20% 20%, rgba(46, 130, 255, 0.22) 0%, transparent 52%),
+    #07101e;
+  overflow: hidden;
 }
 
-.my-vehicle-preview-image {
+.myv-photo-zone:focus-visible {
+  outline: 3px solid rgba(130, 196, 255, 0.5);
+  outline-offset: -3px;
+}
+
+.myv-photo-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.myv-photo-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(1.08) contrast(1.08);
+  filter: saturate(1.08) contrast(1.06);
+  display: none;
 }
 
-.my-vehicle-preview-overlay {
+.myv-photo-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(160deg, rgba(5, 10, 22, 0.28) 6%, rgba(8, 14, 26, 0.72) 58%, rgba(3, 6, 14, 0.9) 100%);
-  backdrop-filter: blur(1.2px);
+  background: linear-gradient(170deg, rgba(5, 10, 22, 0.12) 0%, rgba(5, 10, 22, 0.64) 55%, rgba(3, 6, 14, 0.88) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.my-vehicle-preview-content {
-  position: relative;
+.myv-card.has-photo .myv-photo-overlay {
+  opacity: 1;
+}
+
+.myv-photo-placeholder {
+  position: absolute;
+  inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: inherit;
-  padding: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(180, 210, 255, 0.55);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: opacity 0.25s ease;
 }
 
-.my-vehicle-preview-label {
+.myv-card.has-photo .myv-photo-placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.myv-camera-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(200, 225, 255, 0.7);
+}
+
+.myv-camera-icon [data-lucide] {
+  width: 22px;
+  height: 22px;
+}
+
+.myv-photo-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.myv-photo-badge {
   display: inline-flex;
   align-self: flex-start;
-  margin-bottom: 14px;
-  padding: 7px 12px;
+  margin-bottom: 6px;
+  padding: 5px 11px;
   border-radius: 999px;
-  border: 1px solid rgba(212, 233, 255, 0.28);
-  background: rgba(11, 25, 45, 0.5);
-  color: rgba(226, 241, 255, 0.92);
-  font-size: 0.76rem;
+  border: 1px solid rgba(212, 233, 255, 0.24);
+  background: rgba(11, 25, 45, 0.55);
+  color: rgba(220, 238, 255, 0.88);
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-.my-vehicle-preview-title {
+.myv-preview-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.2vw, 2.8rem);
-  line-height: 1;
-  color: #ffffff;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-.my-vehicle-preview-meta {
-  margin: 10px 0 12px;
-  color: rgba(228, 236, 247, 0.86);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.my-vehicle-preview-state {
+.myv-preview-meta {
   margin: 0;
-  color: rgba(228, 236, 247, 0.72);
-  font-size: 0.92rem;
+  color: rgba(228, 236, 247, 0.82);
+  font-size: 0.96rem;
+  font-weight: 500;
+  min-height: 1.4em;
 }
 
-.my-vehicle-preview-panel {
-  margin-top: 2px;
+.myv-photo-change-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(8, 16, 32, 0.65);
+  color: rgba(220, 238, 255, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  backdrop-filter: blur(6px);
 }
 
-.my-vehicle-page .section-title {
-  color: #f8faff;
+.myv-photo-change-btn [data-lucide] {
+  width: 16px;
+  height: 16px;
 }
 
-.my-vehicle-form-panel .btn:focus-visible,
-.my-vehicle-form-panel .form-control:focus-visible,
-.my-vehicle-form-panel .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(130, 196, 255, 0.24);
+.myv-photo-change-btn:hover {
+  background: rgba(8, 16, 32, 0.88);
+  transform: scale(1.06);
 }
 
-@media (max-width: 991.98px) {
-  .my-vehicle-panel {
-    padding: 24px;
-    border-radius: 24px;
+.myv-card.has-photo .myv-photo-change-btn {
+  display: flex;
+}
+
+/* ── Bottom / toggle / collapsible ── */
+
+.myv-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.myv-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 22px;
+  background: transparent;
+  border: none;
+  color: rgba(210, 230, 255, 0.88);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.myv-toggle:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.myv-toggle:focus-visible {
+  outline: none;
+  background: rgba(130, 196, 255, 0.08);
+}
+
+.myv-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  color: rgba(200, 225, 255, 0.8);
+}
+
+.myv-toggle-icon [data-lucide] {
+  width: 16px;
+  height: 16px;
+}
+
+.myv-toggle-label {
+  font-size: 0.93rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.myv-toggle-chevron {
+  display: flex;
+  align-items: center;
+  color: rgba(180, 210, 255, 0.5);
+  transition: transform 0.26s ease;
+}
+
+.myv-toggle-chevron [data-lucide] {
+  width: 18px;
+  height: 18px;
+}
+
+.myv-toggle[aria-expanded="true"] .myv-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.myv-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.3s ease,
+    opacity 0.24s ease;
+}
+
+.myv-collapsible.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.myv-collapsible-inner {
+  overflow: hidden;
+}
+
+/* ── Fields ── */
+
+.myv-fields {
+  padding: 6px 22px 22px;
+}
+
+.myv-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.myv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.myv-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(210, 228, 252, 0.78);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.myv-field input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: #f2f6ff;
+  font-size: 0.97rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.myv-field input::placeholder {
+  color: rgba(210, 225, 248, 0.4);
+}
+
+.myv-field input:focus {
+  border-color: rgba(130, 196, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(130, 196, 255, 0.18);
+}
+
+.myv-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.myv-actions .btn {
+  flex: 1;
+}
+
+.myv-status {
+  min-height: 1.5rem;
+  margin: 14px 2px 0;
+  color: rgba(200, 225, 255, 0.82);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 480px) {
+  .myv-fields-grid {
+    grid-template-columns: 1fr;
   }
 
-  .my-vehicle-preview-card {
-    min-height: clamp(280px, 64vw, 430px);
-  }
-
-  .my-vehicle-trigger {
-    padding: 14px 16px;
-  }
-
-  .my-vehicle-trigger-copy small {
-    font-size: 0.8rem;
-  }
-
-  .my-vehicle-hero-trust-note {
-    margin-top: 14px;
-    margin-bottom: 12px;
-    font-size: 0.84rem;
+  .myv-fields {
+    padding: 20px;
   }
 }
 

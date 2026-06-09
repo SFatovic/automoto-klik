@@ -9,8 +9,7 @@
     imageBlob: null,
     imageUrl: "",
     indexedDbAvailable: true,
-    hasProfile: false,
-    isFormOpen: false
+    hasProfile: false
   };
 
   const dom = {};
@@ -22,14 +21,9 @@
     bindEvents();
     await restoreProfile();
     updatePreview();
-    updateToggleUi();
-    setFormExpanded(false);
   }
 
   function cacheDom() {
-    dom.formPanel = document.getElementById("vehicleFormPanel");
-    dom.formToggle = document.getElementById("vehicleFormToggle");
-    dom.formToggleText = document.getElementById("vehicleFormToggleText");
     dom.form = document.getElementById("myVehicleForm");
     dom.brand = document.getElementById("vehicleBrand");
     dom.model = document.getElementById("vehicleModel");
@@ -37,42 +31,51 @@
     dom.engine = document.getElementById("vehicleEngine");
     dom.photo = document.getElementById("vehiclePhoto");
     dom.saveBtn = document.getElementById("saveVehicleBtn");
-    dom.editBtn = document.getElementById("editVehicleBtn");
     dom.deleteBtn = document.getElementById("deleteVehicleBtn");
     dom.status = document.getElementById("vehicleStatusMessage");
-    dom.previewCard = document.getElementById("myVehiclePreviewCard");
+    dom.card = document.querySelector(".myv-card");
+    dom.photoZone = document.getElementById("myvPhotoZone");
+    dom.changePhotoBtn = document.getElementById("myvChangePhotoBtn");
     dom.previewImage = document.getElementById("myVehiclePreviewImage");
     dom.previewTitle = document.getElementById("myVehiclePreviewTitle");
     dom.previewMeta = document.getElementById("myVehiclePreviewMeta");
-    dom.previewState = document.getElementById("myVehiclePreviewState");
+    dom.toggleBtn = document.getElementById("myvToggleBtn");
+    dom.toggleLabel = document.getElementById("myvToggleLabel");
+    dom.collapsible = document.getElementById("myvFormCollapsible");
   }
 
   function bindEvents() {
-    dom.formToggle.addEventListener("click", onToggleForm);
     dom.saveBtn.addEventListener("click", onSaveProfile);
-    dom.editBtn.addEventListener("click", onEditProfile);
     dom.deleteBtn.addEventListener("click", onDeleteProfile);
+    dom.toggleBtn.addEventListener("click", onToggleForm);
+
+    dom.photoZone.addEventListener("click", onPhotoZoneClick);
+    dom.photoZone.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); dom.photo.click(); }
+    });
+    dom.changePhotoBtn.addEventListener("click", (e) => { e.stopPropagation(); dom.photo.click(); });
+    dom.photo.addEventListener("change", onPhotoSelected);
+
+    [dom.brand, dom.model, dom.year, dom.engine].forEach(input => {
+      input.addEventListener("input", updatePreview);
+    });
+  }
+
+  function onPhotoZoneClick() {
+    dom.photo.click();
   }
 
   function onToggleForm() {
-    setFormExpanded(!state.isFormOpen);
+    const isOpen = dom.collapsible.classList.toggle("is-open");
+    dom.toggleBtn.setAttribute("aria-expanded", isOpen);
+    dom.toggleLabel.textContent = isOpen ? "Zatvori" : "Uredi podatke";
   }
 
-  function setFormExpanded(expanded) {
-    state.isFormOpen = expanded;
-    dom.formToggle.setAttribute("aria-expanded", String(expanded));
-    dom.formPanel.setAttribute("aria-hidden", String(!expanded));
-    dom.formPanel.classList.toggle("is-open", expanded);
-    dom.formToggle.classList.toggle("is-open", expanded);
-    updateToggleUi();
-  }
-
-  function updateToggleUi() {
-    if (state.isFormOpen) {
-      dom.formToggleText.textContent = "Zatvori obrazac";
-      return;
-    }
-    dom.formToggleText.textContent = state.hasProfile ? "Izmijeni podatke vozila" : "Dodaj svoje vozilo";
+  function onPhotoSelected() {
+    const file = dom.photo.files && dom.photo.files[0];
+    if (!file) return;
+    state.imageBlob = file;
+    updatePreview();
   }
 
   async function restoreProfile() {
@@ -98,11 +101,8 @@
   }
 
   async function onSaveProfile() {
-    await persistProfile("Profil vozila je spremljen.");
-  }
-
-  async function onEditProfile() {
-    await persistProfile("Profil vozila je ažuriran.");
+    const message = state.hasProfile ? "Profil vozila je ažuriran." : "Profil vozila je spremljen.";
+    await persistProfile(message);
   }
 
   async function persistProfile(successMessage) {
@@ -120,7 +120,6 @@
           setStatus("Podaci su spremljeni, ali fotografija nije trajno spremljena u ovom pregledniku.");
           state.hasProfile = profileHasData(payload, state.imageBlob);
           updatePreview();
-          updateToggleUi();
           return;
         }
       }
@@ -129,7 +128,13 @@
     state.hasProfile = profileHasData(payload, state.imageBlob);
     setStatus(state.indexedDbAvailable ? successMessage : "Podaci su spremljeni, ali fotografiju nije moguće trajno spremiti u ovom pregledniku.");
     updatePreview();
-    setFormExpanded(false);
+    closeForm();
+  }
+
+  function closeForm() {
+    dom.collapsible.classList.remove("is-open");
+    dom.toggleBtn.setAttribute("aria-expanded", "false");
+    dom.toggleLabel.textContent = "Uredi podatke";
   }
 
   async function onDeleteProfile() {
@@ -153,7 +158,6 @@
     dom.form.reset();
     updatePreview();
     setStatus("Profil vozila je obrisan.");
-    setFormExpanded(false);
   }
 
   function readFormData() {
@@ -194,11 +198,9 @@
     const data = readFormData();
     const title = [data.brand, data.model].filter(Boolean).join(" ");
     const yearEngine = [data.year, data.engine].filter(Boolean).join(" • ");
-    const hasData = Boolean(title || yearEngine);
 
-    dom.previewTitle.textContent = title || "Marka Model";
-    dom.previewMeta.textContent = yearEngine || "Godina • Motor";
-    dom.previewState.textContent = hasData ? "Profil vozila je spreman." : "Unesi podatke i spremi profil vozila.";
+    dom.previewTitle.textContent = title || "—";
+    dom.previewMeta.textContent = yearEngine;
 
     if (state.imageUrl) {
       URL.revokeObjectURL(state.imageUrl);
@@ -207,11 +209,11 @@
 
     if (state.imageBlob) {
       state.imageUrl = URL.createObjectURL(state.imageBlob);
-      dom.previewCard.classList.add("has-image");
+      dom.card.classList.add("has-photo");
       dom.previewImage.src = state.imageUrl;
       dom.previewImage.style.display = "block";
     } else {
-      dom.previewCard.classList.remove("has-image");
+      dom.card.classList.remove("has-photo");
       dom.previewImage.removeAttribute("src");
       dom.previewImage.style.display = "none";
     }
