@@ -112,6 +112,38 @@
             </div>
 
           </div>
+
+          <div class="myv-card myv-ai-card">
+            <div class="myv-ai-header">
+              <h2 class="myv-ai-title">AI upiti</h2>
+              <p class="myv-ai-subtitle">Klikom kopiraj pripremljen upit i zalijepi ga u omiljeni AI chatbot</p>
+            </div>
+
+            <div class="myv-ai-grid" id="vehicleAiToolsGrid">
+              <!-- JS ubacuje gumbe -->
+            </div>
+
+            <div class="myv-ai-footer">
+              <p class="myv-ai-footer-label">Odaberi AI chatbot za odgovor</p>
+              <div class="ai-links myv-ai-links">
+                <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
+                  <i data-lucide="message-square"></i>
+                  <span>ChatGPT</span>
+                </a>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="ai-btn gemini">
+                  <i data-lucide="sparkles"></i>
+                  <span>Gemini</span>
+                </a>
+                <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="ai-btn claude">
+                  <i data-lucide="bot"></i>
+                  <span>Claude</span>
+                </a>
+              </div>
+            </div>
+
+            <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -121,6 +153,7 @@
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="components.js" defer></script>
+  <script src="utils.js" defer></script>
   <script src="moje-vozilo.js" defer></script>
 </body>
 </html>

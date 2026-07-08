@@ -117,5 +117,19 @@
   "description": "Saznaj koji dodaci i naknadna oprema stvarno imaju smisla za tvoje vozilo i tvoj lifestyle.",
   "file": "data/tools/aftermarket-accessories-advisor.json",
   "category": "ownership-and-lifestyle"
+  },
+  {
+    "id": "car-overview-analysis",
+    "title": "Sveobuhvatna analiza vozila",
+    "description": "Sveobuhvatan pregled konkretnog modela vozila – pouzdanost, tržišna pozicija, iskustva vlasnika i opći dojam na jednom mjestu.",
+    "file": "data/tools/car-overview-analysis.json",
+    "category": "car-analysis"
+  },
+  {
+    "id": "car-history-future",
+    "title": "Povijest i budućnost vozila",
+    "description": "Saznaj kako se model razvijao kroz generacije te što se zna o njegovoj budućnosti, nasljedniku ili planovima proizvođača.",
+    "file": "data/tools/car-history-future.json",
+    "category": "car-analysis"
   }
 ]

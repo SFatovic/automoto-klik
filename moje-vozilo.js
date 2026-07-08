@@ -4,12 +4,23 @@
   const DB_VERSION = 1;
   const STORE_NAME = "vehicleAssets";
   const PHOTO_RECORD_ID = "profilePhoto";
+  const AI_TOOLS_URL = "data/vozilo_ai_upiti.json";
+
+  const AI_ICON_MAP = {
+    "ti-file-search": "file-search",
+    "ti-thumb-up": "thumbs-up",
+    "ti-alert-triangle": "triangle-alert",
+    "ti-tool": "wrench",
+    "ti-arrows-left-right": "arrow-left-right",
+    "ti-history": "history"
+  };
 
   const state = {
     imageBlob: null,
     imageUrl: "",
     indexedDbAvailable: true,
-    hasProfile: false
+    hasProfile: false,
+    aiTools: []
   };
 
   const dom = {};
@@ -21,6 +32,7 @@
     bindEvents();
     await restoreProfile();
     updatePreview();
+    await loadAiTools();
   }
 
   function cacheDom() {
@@ -42,12 +54,15 @@
     dom.toggleBtn = document.getElementById("myvToggleBtn");
     dom.toggleLabel = document.getElementById("myvToggleLabel");
     dom.collapsible = document.getElementById("myvFormCollapsible");
+    dom.aiToolsGrid = document.getElementById("vehicleAiToolsGrid");
+    dom.aiStatus = document.getElementById("vehicleAiStatusMessage");
   }
 
   function bindEvents() {
     dom.saveBtn.addEventListener("click", onSaveProfile);
     dom.deleteBtn.addEventListener("click", onDeleteProfile);
     dom.toggleBtn.addEventListener("click", onToggleForm);
+    dom.aiToolsGrid.addEventListener("click", onAiToolClick);
 
     dom.photoZone.addEventListener("click", onPhotoZoneClick);
     dom.photoZone.addEventListener("keydown", (e) => {
@@ -158,6 +173,91 @@
     dom.form.reset();
     updatePreview();
     setStatus("Profil vozila je obrisan.");
+  }
+
+  async function loadAiTools() {
+    try {
+      const response = await fetch(AI_TOOLS_URL);
+      if (!response.ok) {
+        throw new Error(`Neuspješno dohvaćanje ${AI_TOOLS_URL}`);
+      }
+
+      const manifest = await response.json();
+      state.aiTools = Array.isArray(manifest.tools) ? manifest.tools : [];
+      renderAiTools();
+    } catch (error) {
+      console.error("AI upiti nisu učitani:", error);
+      dom.aiToolsGrid.innerHTML = "";
+    }
+  }
+
+  function renderAiTools() {
+    dom.aiToolsGrid.innerHTML = state.aiTools
+      .map((tool) => {
+        const icon = AI_ICON_MAP[tool.icon] || "sparkles";
+        return `
+          <button type="button" class="myv-ai-btn" data-ai-tool-id="${escapeHtml(tool.tool_id)}">
+            <span class="myv-ai-btn-icon"><i data-lucide="${escapeHtml(icon)}"></i></span>
+            <span class="myv-ai-btn-label">${escapeHtml(tool.label)}</span>
+          </button>
+        `;
+      })
+      .join("");
+
+    refreshLucideIcons();
+  }
+
+  async function onAiToolClick(event) {
+    const button = event.target.closest("[data-ai-tool-id]");
+    if (!button) return;
+
+    const tool = state.aiTools.find((item) => item.tool_id === button.dataset.aiToolId);
+    if (!tool) return;
+
+    const data = readFormData();
+    if (!data.brand && !data.model && !data.year && !data.engine) {
+      setAiStatus("Prvo unesi i spremi podatke o vozilu.");
+      return;
+    }
+
+    const prompt = buildAiPrompt(tool.prompt_template, data);
+
+    try {
+      await navigator.clipboard.writeText(prompt);
+      setAiStatus(`Upit "${tool.label}" je kopiran — zalijepi ga u AI chat.`);
+      setButtonTemporaryLabel(button, "Kopirano!");
+    } catch (error) {
+      console.error("Kopiranje upita nije uspjelo:", error);
+      setAiStatus("Kopiranje u međuspremnik nije uspjelo. Pokušaj ponovno.");
+    }
+  }
+
+  function buildAiPrompt(template, data) {
+    return String(template || "")
+      .replace(/\{marka\}/g, data.brand || "")
+      .replace(/\{model\}/g, data.model || "")
+      .replace(/\{godina\}/g, data.year || "")
+      .replace(/\{motor\}/g, data.engine || "")
+      .replace(/[ \t]{2,}/g, " ")
+      .trim();
+  }
+
+  function setButtonTemporaryLabel(button, text, delay = 1500) {
+    const label = button.querySelector(".myv-ai-btn-label");
+    if (!label) return;
+
+    const originalText = button.dataset.originalLabel || label.textContent;
+    button.dataset.originalLabel = originalText;
+    label.textContent = text;
+
+    window.clearTimeout(button._labelResetTimeout);
+    button._labelResetTimeout = window.setTimeout(() => {
+      label.textContent = originalText;
+    }, delay);
+  }
+
+  function setAiStatus(message) {
+    dom.aiStatus.textContent = message;
   }
 
   function readFormData() {

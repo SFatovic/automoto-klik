@@ -1,0 +1,82 @@
+{
+  "id": "car-history-future",
+  "title": "Povijest i budućnost vozila",
+  "description": "Saznaj kako se model razvijao kroz generacije te što se zna o njegovoj budućnosti, nasljedniku ili planovima proizvođača.",
+  "fields": [
+    {
+      "id": "brand",
+      "label": "Marka vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. Volkswagen"
+    },
+    {
+      "id": "model",
+      "label": "Model vozila",
+      "type": "text",
+      "required": true,
+      "placeholder": "npr. Golf"
+    },
+    {
+      "id": "year",
+      "label": "Godište",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 2019"
+    },
+    {
+      "id": "engine",
+      "label": "Motor / verzija",
+      "type": "text",
+      "required": false,
+      "placeholder": "npr. 1.5 TSI"
+    },
+    {
+      "id": "focus",
+      "label": "Što te najviše zanima",
+      "type": "checkbox",
+      "required": true,
+      "options": [
+        "Povijest i razvoj kroz generacije",
+        "Ključne prekretnice i redizajni",
+        "Trenutna generacija i pozicija na tržištu",
+        "Najavljeni nasljednik ili facelift",
+        "Planovi proizvođača za budućnost",
+        "Prelazak na elektrifikaciju ili hibrid",
+        "Rizik prestanka proizvodnje",
+        "Zanimljivosti i manje poznate činjenice"
+      ]
+    },
+    {
+      "id": "usageContext",
+      "label": "Kako razmišljaš o ovom vozilu",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Vlasnik sam",
+        "Razmišljam o kupnji",
+        "Zanima me iz znatiželje"
+      ]
+    },
+    {
+      "id": "depth",
+      "label": "Razina detalja",
+      "type": "select",
+      "required": false,
+      "options": [
+        "Kratki pregled",
+        "Srednje detaljno",
+        "Detaljna analiza"
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Dodatne napomene",
+      "type": "textarea",
+      "rows": 4,
+      "required": false,
+      "placeholder": "npr. zanima me hoće li ovaj model dobiti nasljednika ili se gasi"
+    }
+  ],
+  "promptTemplate": "Ponašaj se kao automobilski povjesničar i analitičar industrije koji poznaje razvoj modela kroz generacije te aktualne planove proizvođača.\n\nŽelim saznati povijest razvoja određenog modela automobila i ono što je poznato o njegovoj budućnosti.\n\nPodaci:\n- Marka: {{brand}}\n- Model: {{model}}\n- Godište: {{year}}\n- Motor / verzija: {{engine}}\n- Fokus: {{focus}}\n- Kontekst korisnika: {{usageContext}}\n- Razina detalja: {{depth}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Ukratko opiši povijest modela kroz generacije, od prve do trenutne.\n2. Izdvoji ključne prekretnice, redizajne i tehnološke promjene koje su obilježile model.\n3. Objasni gdje se trenutna generacija nalazi na tržištu i kako je prihvaćena.\n4. Ako je relevantno, opiši što je poznato o nasljedniku, facelift verziji ili sljedećoj generaciji – uz jasnu napomenu da takve informacije treba dodatno provjeriti iz novijih izvora jer se planovi mijenjaju.\n5. Ako je relevantno, spomeni planove proizvođača vezane uz elektrifikaciju, hibridizaciju ili prestanak proizvodnje modela.\n6. Dodaj zanimljivosti ili manje poznate činjenice iz povijesti modela ako postoje.\n7. Na kraju daj kratak zaključak: kako bi opisao putanju ovog modela i što realno očekivati u budućnosti.\n\nBudi konkretan i jasno razdvoji potvrđene činjenice od nagađanja ili neslužbenih najava."
+}
