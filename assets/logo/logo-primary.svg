@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#05070d"></stop><stop offset="55%" stop-color="#0d1a34"></stop><stop offset="100%" stop-color="#1c2f57"></stop></linearGradient></defs>
+  
+  <rect width="900" height="620" fill="#FFFFFF"></rect>
+  <g transform="translate(370,60)">
+    <svg width="160" height="160" viewBox="0 0 240 240" fill="none">
+    <path d="M36,148 C31,84 58,32 120,29 C182,32 209,84 204,148 C205,170 198,188 180,198 C161,208 141,211 120,211 C99,211 79,208 60,198 C42,188 35,170 36,148 Z" fill="url(#g)"></path>
+    <path d="M50,118 L190,118 Q195,118 194,125 L184,168 Q182,178 170,178 L70,178 Q58,178 56,168 L46,125 Q45,118 50,118 Z" fill="#FAFBFC"></path>
+    <rect x="83" y="134" width="20" height="26" rx="10" fill="url(#g)"></rect>
+    <rect x="137" y="134" width="20" height="26" rx="10" fill="url(#g)"></rect>
+    <path d="M98,168 Q116,180 138,164" stroke="url(#g)" stroke-width="9" stroke-linecap="round" fill="none"></path></svg>
+  </g>
+  <text x="450" y="330" text-anchor="middle" font-family="Genos, sans-serif" font-size="64" font-weight="600" fill="#16224A" letter-spacing="0.5">AutoZnalac</text>
+  <text x="450" y="378" text-anchor="middle" font-family="Genos, sans-serif" font-size="19" font-weight="500" font-style="italic" fill="#3a4568" letter-spacing="4" style="text-transform:uppercase">TVOJ DIGITALNI SAVJETNIK</text>
+</svg>

@@ -160,7 +160,7 @@ async function loadSingleQuizPage() {
   quizState.manifestItem = manifestItem;
   resetQuizState();
 
-  document.title = `${quiz.title} | AutoMoto KLIK!`;
+  document.title = `${quiz.title} | AutoZnalac`;
 
   renderCurrentScreen();
 }

@@ -1,4 +1,4 @@
-# AutoMoto KLIK! — kontekst za Claude
+# AutoZnalac — kontekst za Claude
 
 ## Projekt
 

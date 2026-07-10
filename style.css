@@ -6,7 +6,7 @@
    - Organized for safer future maintenance without changing current HTML/JS hooks.
 ======================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Genos:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Genos:wght@400;600;700&family=Open+Sans:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* ========================================
    AMK DESIGN SYSTEM
@@ -17,41 +17,42 @@
 
   /* Typography */
   --font-display: "Genos", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Open Sans", "Inter", sans-serif;
   --font-mono: "SFMono-Regular", "Consolas", "Monaco", "Courier New", monospace;
 
   /* Brand */
-  --color-primary: #0a0a0c;
-  --color-primary-strong: #000000;
-  --color-primary-soft: #ececef;
-  --color-primary-tint: #f7f7f8;
+  --color-primary: #26418f;
+  --color-primary-strong: #16224a;
+  --color-primary-soft: #eef1fa;
+  --color-primary-tint: #f5f7fc;
 
-  --color-accent: #0a0a0c;
-  --color-accent-hover: #1d1d22;
-  --color-accent-soft: #efeff1;
+  --color-accent: #26418f;
+  --color-accent-hover: #1e3573;
+  --color-accent-soft: #eef1fa;
 
   /* Surfaces */
-  --color-bg: #f5f5f7;
-  --color-bg-soft: #ededf0;
+  --color-bg: #fafbfc;
+  --color-bg-soft: #f0f2f5;
   --color-surface: #ffffff;
   --color-surface-elevated: #ffffff;
-  --color-surface-subtle: #fafafb;
+  --color-surface-subtle: #fafbfc;
 
   /* Borders */
-  --color-border: #ddddE3;
-  --color-border-strong: #c9c9d1;
+  --color-border: #d3d6d9;
+  --color-border-strong: #b7bcc2;
 
   /* Text */
-  --color-text: #0a0a0c;
-  --color-text-soft: #55555f;
-  --color-text-muted: #73737d;
-  --color-text-inverse: #f5f5f7;
-  --color-text-inverse-soft: rgba(245, 245, 247, 0.82);
+  --color-text: #101216;
+  --color-text-soft: #565c63;
+  --color-text-muted: #8c9096;
+  --color-text-inverse: #f2f3f4;
+  --color-text-inverse-soft: rgba(242, 243, 244, 0.82);
 
   /* States */
-  --color-success: #166534;
-  --color-danger: #b91c1c;
-  --color-warning: #9a3412;
+  --color-success: #3fa65b;
+  --color-danger: #c15b4a;
+  --color-warning: #b9843d;
+  --color-info: #2e7d9a;
 
   /* External buttons */
   --color-linkedin: #0a66c2;
@@ -62,24 +63,24 @@
   --color-gemini-hover: #3367d6;
 
   /* Effects */
-  --color-shadow: rgba(10, 10, 12, 0.08);
-  --color-shadow-strong: rgba(10, 10, 12, 0.16);
-  --color-overlay: rgba(10, 10, 12, 0.04);
+  --color-shadow: rgba(16, 18, 22, 0.08);
+  --color-shadow-strong: rgba(16, 18, 22, 0.16);
+  --color-overlay: rgba(16, 18, 22, 0.04);
 
   /* Gradients */
   --gradient-hero:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 24%),
     radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05), transparent 26%),
-    linear-gradient(135deg, #050507 0%, #0a0a0c 54%, #151519 100%);
+    linear-gradient(135deg, #05070d 0%, #0d1a34 55%, #1c2f57 100%);
 
   --gradient-card:
-    linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #19191d 100%);
+    linear-gradient(135deg, #05070d 0%, #0d1a34 58%, #1c2f57 100%);
 
   --gradient-button:
-    linear-gradient(135deg, #050507 0%, #151519 100%);
+    linear-gradient(135deg, #26418f 0%, #16224a 100%);
 
   --gradient-footer:
-    linear-gradient(135deg, #050507 0%, #0a0a0c 60%, #141418 100%);
+    linear-gradient(135deg, #05070d 0%, #0d1a34 60%, #1c2f57 100%);
 
   /* Radii */
   --radius-xs: 6px;
@@ -91,12 +92,12 @@
   --radius-pill: 999px;
 
   /* Shadows */
-  --shadow-xs: 0 2px 8px rgba(10, 10, 12, 0.04);
-  --shadow-sm: 0 6px 18px rgba(10, 10, 12, 0.06);
-  --shadow-md: 0 10px 30px rgba(10, 10, 12, 0.08);
-  --shadow-lg: 0 18px 42px rgba(10, 10, 12, 0.14);
-  --shadow-focus: 0 0 0 4px rgba(10, 10, 12, 0.12);
-  --shadow-accent-focus: 0 0 0 4px rgba(10, 10, 12, 0.14);
+  --shadow-xs: 0 2px 8px rgba(16, 18, 22, 0.04);
+  --shadow-sm: 0 6px 18px rgba(16, 18, 22, 0.06);
+  --shadow-md: 0 10px 30px rgba(16, 18, 22, 0.08);
+  --shadow-lg: 0 18px 42px rgba(16, 18, 22, 0.14);
+  --shadow-focus: 0 0 0 4px rgba(38, 65, 143, 0.25);
+  --shadow-accent-focus: 0 0 0 4px rgba(38, 65, 143, 0.25);
 
   /* Spacing */
   --space-0: 0;
@@ -133,11 +134,11 @@
 
   /* Aliases for legacy / quiz compatibility */
   --bg-card: #ffffff;
-  --bg-dark: #0a0a0c;
-  --text-primary: #0a0a0c;
-  --text-secondary: #55555f;
-  --text-white: #f5f5f7;
-  --blue-600: #0a0a0c;
+  --bg-dark: #101216;
+  --text-primary: #101216;
+  --text-secondary: #565c63;
+  --text-white: #f2f3f4;
+  --blue-600: #26418f;
 
   /* Form fields */
   --field-height: 58px;
@@ -151,20 +152,20 @@
   --field-bg-focus:
     linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,252,1) 100%);
 
-  --field-border: rgba(10, 10, 12, 0.10);
-  --field-border-strong: rgba(10, 10, 12, 0.16);
-  --field-border-focus: rgba(10, 10, 12, 0.22);
+  --field-border: rgba(16, 18, 22, 0.10);
+  --field-border-strong: rgba(16, 18, 22, 0.16);
+  --field-border-focus: rgba(16, 18, 22, 0.22);
 
   --field-shadow:
-    0 8px 20px rgba(10, 10, 12, 0.05),
+    0 8px 20px rgba(16, 18, 22, 0.05),
     0 1px 0 rgba(255,255,255,0.95) inset;
   --field-shadow-hover:
-    0 12px 26px rgba(10, 10, 12, 0.07),
+    0 12px 26px rgba(16, 18, 22, 0.07),
     0 1px 0 rgba(255,255,255,1) inset;
   --field-shadow-focus:
-    0 14px 30px rgba(10, 10, 12, 0.08),
+    0 14px 30px rgba(16, 18, 22, 0.08),
     0 1px 0 rgba(255,255,255,1) inset,
-    0 0 0 4px rgba(10, 10, 12, 0.08);
+    0 0 0 4px rgba(16, 18, 22, 0.08);
 
   --field-placeholder: #8a8a94;
   --field-text: var(--color-text);
@@ -194,10 +195,10 @@
 
   --btn-dark-bg:
     linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
-    linear-gradient(135deg, #070709 0%, #111114 52%, #1a1a1f 100%);
+    linear-gradient(135deg, #16224a 0%, #26418f 52%, #1e3573 100%);
   --btn-dark-bg-hover:
     linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%),
-    linear-gradient(135deg, #0b0b0e 0%, #17171b 52%, #232329 100%);
+    linear-gradient(135deg, #1e3573 0%, #3157ac 52%, #2a4a9c 100%);
 
   --btn-light-bg:
     linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(245,245,247,0.98) 100%);
@@ -206,31 +207,31 @@
 
   --btn-border-dark: rgba(255, 255, 255, 0.14);
   --btn-border-dark-strong: rgba(255, 255, 255, 0.22);
-  --btn-border-light: rgba(10, 10, 12, 0.10);
-  --btn-border-light-strong: rgba(10, 10, 12, 0.16);
+  --btn-border-light: rgba(16, 18, 22, 0.10);
+  --btn-border-light-strong: rgba(16, 18, 22, 0.16);
 
   --btn-shadow-dark:
-    0 10px 24px rgba(10, 10, 12, 0.16),
+    0 10px 24px rgba(16, 18, 22, 0.16),
     0 0 0 1px rgba(255,255,255,0.02) inset,
     0 1px 0 rgba(255,255,255,0.08) inset;
   --btn-shadow-dark-hover:
-    0 16px 34px rgba(10, 10, 12, 0.22),
+    0 16px 34px rgba(16, 18, 22, 0.22),
     0 0 0 1px rgba(255,255,255,0.03) inset,
     0 1px 0 rgba(255,255,255,0.10) inset,
     0 0 24px rgba(255,255,255,0.04);
 
   --btn-shadow-light:
-    0 8px 20px rgba(10, 10, 12, 0.08),
+    0 8px 20px rgba(16, 18, 22, 0.08),
     0 1px 0 rgba(255,255,255,0.92) inset;
   --btn-shadow-light-hover:
-    0 14px 28px rgba(10, 10, 12, 0.12),
+    0 14px 28px rgba(16, 18, 22, 0.12),
     0 1px 0 rgba(255,255,255,1) inset;
 
   --btn-shadow-focus-dark: 0 0 0 4px rgba(255,255,255,0.12);
-  --btn-shadow-focus-light: 0 0 0 4px rgba(10,10,12,0.10);
+  --btn-shadow-focus-light: 0 0 0 4px rgba(16,18,22,0.10);
 
   --btn-accent-shadow:
-    0 14px 32px rgba(10, 10, 12, 0.18),
+    0 14px 32px rgba(16, 18, 22, 0.18),
     0 0 0 1px rgba(255,255,255,0.03) inset,
     0 1px 0 rgba(255,255,255,0.10) inset,
     0 0 22px rgba(255,255,255,0.05);
@@ -249,25 +250,29 @@
     );
 
   --btn-glow-dark:
-    0 18px 38px rgba(10, 10, 12, 0.24),
+    0 18px 38px rgba(16, 18, 22, 0.24),
     0 0 0 1px rgba(255,255,255,0.03) inset,
     0 1px 0 rgba(255,255,255,0.11) inset,
     0 0 26px rgba(255,255,255,0.06);
 
   --btn-glow-accent:
-    0 18px 38px rgba(10, 10, 12, 0.22),
+    0 18px 38px rgba(16, 18, 22, 0.22),
     0 0 0 1px rgba(255,255,255,0.03) inset,
     0 1px 0 rgba(255,255,255,0.10) inset,
     0 0 24px rgba(255,255,255,0.05);
 
   --btn-active-shadow:
-    0 8px 16px rgba(10, 10, 12, 0.18),
+    0 8px 16px rgba(16, 18, 22, 0.18),
     0 0 0 1px rgba(255,255,255,0.03) inset,
     0 1px 0 rgba(255,255,255,0.08) inset;
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
+  --color-bg: #0b0d10;
+  --color-surface: #16181c;
+  --color-text: #f2f3f4;
+  --color-primary: #6b8fe0;
 }
 
 /* ========================================
@@ -333,7 +338,7 @@ button {
 }
 
 ::selection {
-  background: rgba(10, 10, 12, 0.12);
+  background: rgba(16, 18, 22, 0.12);
     color: var(--color-text);
 }
 
@@ -362,7 +367,7 @@ code {
     padding: 10px 14px;
     border-radius: var(--radius-md);
     background: #ffffff;
-    color: #0a0a0c;
+    color: #101216;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-md);
 }
@@ -379,10 +384,10 @@ code {
   position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 10, 12, 0.96);
+    background: rgba(16, 18, 22, 0.96);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(10, 10, 12, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 18, 22, 0.08);
 }
 
 .site-header::after {
@@ -423,21 +428,10 @@ code {
 }
 
 .header-logo-mark {
-  display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    height: 44px;
-    padding: 0 var(--space-2);
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: var(--color-text-inverse);
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: block;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
 }
 
 .header-logo-text {
@@ -500,7 +494,7 @@ code {
 .hero-wrap {
   position: relative;
     padding: var(--space-12) 0 var(--space-8);
-    background: linear-gradient(180deg, #f3f3f5 0%, #f5f5f7 100%);
+    background: linear-gradient(180deg, #f0f2f5 0%, #fafbfc 100%);
 }
 
 .hero-wrap::before {
@@ -508,8 +502,8 @@ code {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at top left, rgba(10, 10, 12, 0.05), transparent 24%),
-      radial-gradient(circle at top right, rgba(10, 10, 12, 0.03), transparent 22%);
+      radial-gradient(circle at top left, rgba(16, 18, 22, 0.05), transparent 24%),
+      radial-gradient(circle at top right, rgba(16, 18, 22, 0.03), transparent 22%);
     pointer-events: none;
 }
 
@@ -700,7 +694,7 @@ code {
 .home-seo-card,
 .home-info-tile,
 .promo-banner {
-  box-shadow: 0 16px 38px rgba(10, 10, 12, 0.06);
+  box-shadow: 0 16px 38px rgba(16, 18, 22, 0.06);
 }
 
 .category-card,
@@ -712,7 +706,7 @@ code {
     height: 100%;
     overflow: hidden;
     border-radius: 24px;
-    background: linear-gradient(135deg, #050507 0%, #0a0a0c 56%, #1a1a1f 100%);
+    background: linear-gradient(135deg, #05070d 0%, #101216 56%, #1c2f57 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--color-text-inverse);
     transition:
@@ -766,7 +760,7 @@ code {
 .home-entry-card:hover,
 .home-content-card:hover {
   transform: translateY(-4px);
-    box-shadow: 0 24px 42px rgba(10, 10, 12, 0.12);
+    box-shadow: 0 24px 42px rgba(16, 18, 22, 0.12);
 }
 
 .category-link:focus-visible,
@@ -779,7 +773,7 @@ code {
 .tool-card-link:focus-visible .tool-card,
 .quiz-card-link:focus-visible .quiz-card {
   box-shadow:
-      0 24px 42px rgba(10, 10, 12, 0.12),
+      0 24px 42px rgba(16, 18, 22, 0.12),
       0 0 0 4px rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
 }
@@ -959,7 +953,7 @@ code {
     position: absolute;
     inset: 0 auto 0 0;
     width: 4px;
-    background: linear-gradient(180deg, #0a0a0c, #4a4a53);
+    background: linear-gradient(180deg, #101216, #3157ac);
     border-radius: 999px;
 }
 
@@ -1093,7 +1087,7 @@ textarea.form-control {
 .form-control:read-only {
   background:
       linear-gradient(180deg, rgba(249,249,251,1) 0%, rgba(242,242,246,1) 100%);
-    border-color: rgba(10,10,12,0.08);
+    border-color: rgba(16,18,22,0.08);
     color: var(--color-text);
 }
 
@@ -1129,11 +1123,11 @@ textarea.form-control {
   margin: 0;
     padding: 18px 18px 6px;
     border-radius: 24px;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     background:
       linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,248,250,0.98) 100%);
     box-shadow:
-      0 8px 20px rgba(10, 10, 12, 0.05),
+      0 8px 20px rgba(16, 18, 22, 0.05),
       0 1px 0 rgba(255,255,255,0.95) inset;
 }
 
@@ -1156,7 +1150,7 @@ textarea.form-control {
 }
 
 .form-check:hover {
-  background: rgba(10, 10, 12, 0.035);
+  background: rgba(16, 18, 22, 0.035);
 }
 
 .form-check-input {
@@ -1166,8 +1160,8 @@ textarea.form-control {
     flex-shrink: 0;
     border-radius: 8px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.18);
-    box-shadow: 0 2px 8px rgba(10,10,12,0.04);
+    border: 1px solid rgba(16, 18, 22, 0.18);
+    box-shadow: 0 2px 8px rgba(16,18,22,0.04);
     cursor: pointer;
 }
 
@@ -1175,13 +1169,13 @@ textarea.form-control {
   background-color: var(--color-primary);
     border-color: var(--color-primary);
     box-shadow:
-      0 6px 14px rgba(10,10,12,0.14),
-      0 0 0 3px rgba(10,10,12,0.06);
+      0 6px 14px rgba(16,18,22,0.14),
+      0 0 0 3px rgba(16,18,22,0.06);
 }
 
 .form-check-input:focus {
   border-color: var(--field-border-focus);
-    box-shadow: 0 0 0 4px rgba(10,10,12,0.08);
+    box-shadow: 0 0 0 4px rgba(16,18,22,0.08);
 }
 
 .form-check-label {
@@ -1203,11 +1197,11 @@ textarea.form-control {
 .output-wrapper {
   overflow: hidden;
     border-radius: 26px;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     background:
       linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(247,247,250,0.98) 100%);
     box-shadow:
-      0 12px 28px rgba(10, 10, 12, 0.05),
+      0 12px 28px rgba(16, 18, 22, 0.05),
       0 1px 0 rgba(255,255,255,0.95) inset;
 }
 
@@ -1364,14 +1358,14 @@ textarea.form-control {
       rgba(255,255,255,0.05);
     color: var(--color-text-inverse);
     box-shadow:
-      0 10px 24px rgba(10,10,12,0.12),
+      0 10px 24px rgba(16,18,22,0.12),
       0 1px 0 rgba(255,255,255,0.10) inset;
     backdrop-filter: blur(10px);
 }
 
 .btn-hero-secondary:focus-visible {
   box-shadow:
-      0 16px 30px rgba(10,10,12,0.18),
+      0 16px 30px rgba(16,18,22,0.18),
       0 0 0 4px rgba(255,255,255,0.12);
 }
 
@@ -1462,7 +1456,7 @@ textarea.form-control {
 }
 
 .ai-btn:focus-visible {
-  box-shadow: var(--btn-accent-shadow), 0 0 0 4px rgba(10,10,12,0.10);
+  box-shadow: var(--btn-accent-shadow), 0 0 0 4px rgba(16,18,22,0.10);
 }
 
 /* DISABLED */
@@ -1642,13 +1636,13 @@ textarea.form-control {
     border-color: rgba(255,255,255,0.24);
     color: var(--color-text-inverse);
     box-shadow:
-      0 16px 30px rgba(10,10,12,0.18),
+      0 16px 30px rgba(16,18,22,0.18),
       0 1px 0 rgba(255,255,255,0.12) inset,
       0 0 22px rgba(255,255,255,0.04);
     transform: translateY(-2px);
 
     box-shadow:
-      0 18px 34px rgba(10,10,12,0.22),
+      0 18px 34px rgba(16,18,22,0.22),
       0 1px 0 rgba(255,255,255,0.12) inset,
       0 0 24px rgba(255,255,255,0.06);
 }
@@ -1783,12 +1777,20 @@ textarea.form-control {
 }
 
 .footer-title {
-  margin-bottom: var(--space-2);
+  display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
     color: var(--color-text-inverse);
     font-family: var(--font-display);
     font-size: 1.95rem;
     font-weight: 700;
     letter-spacing: 0.03em;
+}
+
+.footer-logo-mark {
+  display: block;
+    flex-shrink: 0;
 }
 
 .footer-text {
@@ -1862,8 +1864,8 @@ textarea.form-control {
     margin-bottom: 14px;
     padding: 7px 14px;
     border-radius: 999px;
-    background: #ececef;
-    color: #0a0a0c;
+    background: #eef1fa;
+    color: #101216;
     font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1874,25 +1876,25 @@ textarea.form-control {
   display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #0a0a0c;
+    color: #101216;
     font-weight: 700;
     letter-spacing: 0.01em;
 }
 
 .home-inline-link:hover {
-  color: #0a0a0c;
+  color: #101216;
     transform: translateX(2px);
 }
 
 .home-hero-wrap {
   padding: 64px 0 48px;
-    background: linear-gradient(180deg, #f3f3f5 0%, #f5f5f7 100%);
+    background: linear-gradient(180deg, #f0f2f5 0%, #fafbfc 100%);
 }
 
 .home-hero-wrap::before {
   background:
-      radial-gradient(circle at top left, rgba(10, 10, 12, 0.05), transparent 24%),
-      radial-gradient(circle at top right, rgba(10, 10, 12, 0.03), transparent 22%);
+      radial-gradient(circle at top left, rgba(16, 18, 22, 0.05), transparent 24%),
+      radial-gradient(circle at top right, rgba(16, 18, 22, 0.03), transparent 22%);
 }
 
 .home-hero-card {
@@ -1956,13 +1958,13 @@ textarea.form-control {
     overflow: hidden;
     border-radius: 28px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
 }
 
 .home-entry-card-dark {
-  background: linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #19191d 100%);
+  background: linear-gradient(135deg, #05070d 0%, #101216 58%, #1c2f57 100%);
     border-color: rgba(255, 255, 255, 0.08);
-    color: #f5f5f7;
+    color: #f2f3f4;
 }
 
 .home-entry-card-body {
@@ -1979,8 +1981,8 @@ textarea.form-control {
     margin-bottom: 16px;
     padding: 7px 12px;
     border-radius: 999px;
-    background: rgba(10, 10, 12, 0.06);
-    color: #0a0a0c;
+    background: rgba(16, 18, 22, 0.06);
+    color: #101216;
     font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -2036,14 +2038,14 @@ textarea.form-control {
     min-height: 100%;
     border-radius: 24px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     overflow: hidden;
 }
 
 .home-content-card-dark {
-  background: linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #18181c 100%);
+  background: linear-gradient(135deg, #05070d 0%, #101216 58%, #1c2f57 100%);
     border-color: rgba(255, 255, 255, 0.08);
-    color: #f5f5f7;
+    color: #f2f3f4;
 }
 
 .home-content-card-body {
@@ -2096,9 +2098,9 @@ textarea.form-control {
     gap: 24px;
     padding: 28px 32px;
     border-radius: 28px;
-    background: linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #18181c 100%);
+    background: linear-gradient(135deg, #05070d 0%, #101216 58%, #1c2f57 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #f5f5f7;
+    color: #f2f3f4;
 }
 
 .promo-banner-compact {
@@ -2181,7 +2183,7 @@ textarea.form-control {
   transform: translateY(-1px);
   border-color: rgba(255, 255, 255, 0.36);
   background: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 12px 28px rgba(10, 10, 12, 0.22);
+  box-shadow: 0 12px 28px rgba(16, 18, 22, 0.22);
   color: #ffffff;
 }
 
@@ -2278,7 +2280,7 @@ textarea.form-control {
   background:
     radial-gradient(circle at 86% 18%, rgba(255, 122, 46, 0.3) 0%, rgba(255, 122, 46, 0) 48%),
     radial-gradient(circle at 14% 86%, rgba(255, 72, 0, 0.22) 0%, rgba(255, 72, 0, 0) 44%),
-    linear-gradient(138deg, #0b0b0e 0%, #1a1210 52%, #26140f 100%);
+    linear-gradient(138deg, #05070d 0%, #1a1210 52%, #26140f 100%);
   border-color: rgba(255, 138, 68, 0.34);
   box-shadow:
     0 18px 36px rgba(24, 11, 8, 0.34),
@@ -2312,7 +2314,7 @@ textarea.form-control {
   padding: 32px;
     border-radius: 28px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
 }
 
 .home-seo-title,
@@ -2321,7 +2323,7 @@ textarea.form-control {
     font-family: var(--font-display);
     font-size: clamp(1.9rem, 2.4vw, 2.3rem);
     line-height: 1;
-    color: #0a0a0c;
+    color: #101216;
 }
 
 .home-seo-text,
@@ -2341,7 +2343,7 @@ textarea.form-control {
     padding: 28px;
     border-radius: 24px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
 }
 
 /* ========================================
@@ -2350,7 +2352,7 @@ textarea.form-control {
 
 .quiz-panel {
   background: var(--bg-card);
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     border-radius: var(--radius-2xl);
     box-shadow: var(--shadow-sm);
     padding: clamp(20px, 3vw, 32px);
@@ -2379,8 +2381,8 @@ textarea.form-control {
     justify-content: center;
     padding: 7px 14px;
     border-radius: 999px;
-    background: rgba(10, 10, 12, 0.06);
-    color: #0a0a0c;
+    background: rgba(16, 18, 22, 0.06);
+    color: #101216;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -2434,7 +2436,7 @@ textarea.form-control {
 
 .quiz-intro-meta-card {
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     border-radius: var(--radius-xl);
     padding: var(--space-5);
     text-align: left;
@@ -2475,7 +2477,7 @@ textarea.form-control {
   display: block;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(135deg, #0a0a0c 0%, #24242a 100%);
+    background: linear-gradient(135deg, #101216 0%, #26418f 100%);
 }
 
 .quiz-question-image {
@@ -2494,7 +2496,7 @@ textarea.form-control {
     padding: 12px 16px;
     border-radius: var(--radius-lg);
     background: #fff7ed;
-    color: #9a3412;
+    color: #b9843d;
     border: 1px solid rgba(245, 158, 11, 0.22);
     font-size: 0.95rem;
     font-weight: 600;
@@ -2506,10 +2508,10 @@ textarea.form-control {
     margin: var(--space-6) auto;
     border-radius: 50%;
     padding: 16px;
-    background: conic-gradient(from 180deg, #0a0a0c, #2a2a30, #71717b, #0a0a0c);
+    background: conic-gradient(from 180deg, #101216, #26418f, #6b8fe0, #101216);
     display: grid;
     place-items: center;
-    box-shadow: 0 20px 40px rgba(10, 10, 12, 0.12);
+    box-shadow: 0 20px 40px rgba(16, 18, 22, 0.12);
 }
 
 .quiz-score-ring-inner {
@@ -2551,7 +2553,7 @@ textarea.form-control {
     gap: 8px;
     padding: 18px;
     border-radius: var(--radius-xl);
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     text-decoration: none;
     color: inherit;
@@ -2560,8 +2562,8 @@ textarea.form-control {
 .quiz-cta-card:hover,
 .quiz-related-card:hover {
   transform: translateY(-2px);
-    border-color: rgba(10, 10, 12, 0.16);
-    box-shadow: 0 16px 32px rgba(10, 10, 12, 0.08);
+    border-color: rgba(16, 18, 22, 0.16);
+    box-shadow: 0 16px 32px rgba(16, 18, 22, 0.08);
 }
 
 .quiz-cta-card strong,
@@ -2860,9 +2862,8 @@ textarea.form-control {
 }
 
   .header-logo-mark {
-  min-width: 40px;
-      height: 40px;
-      font-size: 1rem;
+  width: 36px;
+      height: 36px;
 }
 
   .header-nav {
@@ -3029,8 +3030,8 @@ textarea.form-control {
   padding: 32px;
     border-radius: 28px;
     background: #ffffff;
-    border: 1px solid rgba(10, 10, 12, 0.08);
-    box-shadow: 0 16px 38px rgba(10, 10, 12, 0.06);
+    border: 1px solid rgba(16, 18, 22, 0.08);
+    box-shadow: 0 16px 38px rgba(16, 18, 22, 0.06);
 }
 
 .tools-page-seo-title {
@@ -3038,7 +3039,7 @@ textarea.form-control {
     font-family: var(--font-display);
     font-size: clamp(1.9rem, 2.4vw, 2.3rem);
     line-height: 1;
-    color: #0a0a0c;
+    color: #101216;
 }
 
 .tools-page-seo-text {
@@ -3190,7 +3191,7 @@ textarea.form-control {
   border-radius: 10px;
   padding: 8px 14px;
   background: #f2f6ff;
-  color: #0a0a0c;
+  color: #101216;
   font-size: 0.82rem;
   font-weight: 600;
   white-space: nowrap;
@@ -3740,13 +3741,13 @@ textarea.form-control {
 
 .home-hero-wrap {
   padding: 64px 0 48px;
-  background: linear-gradient(180deg, #f3f3f5 0%, #f5f5f7 100%);
+  background: linear-gradient(180deg, #f0f2f5 0%, #fafbfc 100%);
 }
 
 .home-hero-wrap::before {
   background:
-    radial-gradient(circle at top left, rgba(10, 10, 12, 0.05), transparent 24%),
-    radial-gradient(circle at top right, rgba(10, 10, 12, 0.03), transparent 22%);
+    radial-gradient(circle at top left, rgba(16, 18, 22, 0.05), transparent 24%),
+    radial-gradient(circle at top right, rgba(16, 18, 22, 0.03), transparent 22%);
 }
 
 .home-hero-wrap-compact {
@@ -3820,7 +3821,7 @@ textarea.form-control {
     linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
   border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow:
-    0 10px 24px rgba(10, 10, 12, 0.14),
+    0 10px 24px rgba(16, 18, 22, 0.14),
     inset 0 1px 0 rgba(255,255,255,0.08);
   color: var(--color-text-inverse);
   overflow: hidden;
@@ -3855,7 +3856,7 @@ textarea.form-control {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.05) 100%);
   box-shadow:
-    0 18px 34px rgba(10, 10, 12, 0.22),
+    0 18px 34px rgba(16, 18, 22, 0.22),
     inset 0 1px 0 rgba(255,255,255,0.10),
     0 0 24px rgba(255,255,255,0.04);
 }
@@ -3866,7 +3867,7 @@ textarea.form-control {
 
 .home-preview-stack-item:focus-visible {
   box-shadow:
-    0 18px 34px rgba(10, 10, 12, 0.22),
+    0 18px 34px rgba(16, 18, 22, 0.22),
     inset 0 1px 0 rgba(255,255,255,0.10),
     0 0 0 4px rgba(255,255,255,0.12);
 }
@@ -4037,11 +4038,11 @@ textarea.form-control {
 .promo-banner-label {
   background:
       linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-      linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+      linear-gradient(135deg, #05070d 0%, #15151a 56%, #202027 100%);
     border-color: rgba(255,255,255,0.10);
     color: rgba(245,245,247,0.86);
     box-shadow:
-      0 6px 16px rgba(10, 10, 12, 0.10),
+      0 6px 16px rgba(16, 18, 22, 0.10),
       0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
@@ -4050,10 +4051,10 @@ textarea.form-control {
 .home-section-kicker {
   background:
       linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(244,244,247,0.98) 100%);
-    border-color: rgba(10,10,12,0.08);
-    color: rgba(10,10,12,0.78);
+    border-color: rgba(16,18,22,0.08);
+    color: rgba(16,18,22,0.78);
     box-shadow:
-      0 5px 14px rgba(10, 10, 12, 0.05),
+      0 5px 14px rgba(16, 18, 22, 0.05),
       0 1px 0 rgba(255,255,255,0.92) inset;
 }
 
@@ -4104,12 +4105,12 @@ textarea.form-control {
 
     background:
       linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-      linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+      linear-gradient(135deg, #05070d 0%, #15151a 56%, #202027 100%);
     border: 1px solid rgba(255,255,255,0.10);
 
     color: rgba(245,245,247,0.86) !important;
     box-shadow:
-      0 6px 16px rgba(10, 10, 12, 0.10),
+      0 6px 16px rgba(16, 18, 22, 0.10),
       0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
@@ -4173,17 +4174,17 @@ textarea.form-control {
     min-height: 46px;
     padding: 0 18px;
     border-radius: 999px;
-    border: 1px solid rgba(10, 10, 12, 0.1);
+    border: 1px solid rgba(16, 18, 22, 0.1);
     background:
       linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(244,244,247,0.98) 100%);
-    color: rgba(10,10,12,0.78);
+    color: rgba(16,18,22,0.78);
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
     box-shadow:
-      0 8px 20px rgba(10, 10, 12, 0.05),
+      0 8px 20px rgba(16, 18, 22, 0.05),
       0 1px 0 rgba(255,255,255,0.92) inset;
     cursor: pointer;
     transition:
@@ -4207,21 +4208,21 @@ textarea.form-control {
 
 .quiz-filter-chip:hover {
   transform: translateY(-1px);
-    border-color: rgba(10, 10, 12, 0.16);
-    color: rgba(10,10,12,0.92);
+    border-color: rgba(16, 18, 22, 0.16);
+    color: rgba(16,18,22,0.92);
     box-shadow:
-      0 12px 24px rgba(10, 10, 12, 0.08),
+      0 12px 24px rgba(16, 18, 22, 0.08),
       0 1px 0 rgba(255,255,255,0.92) inset;
 }
 
 .quiz-filter-chip.is-active {
   background:
       linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-      linear-gradient(135deg, #050507 0%, #0a0a0c 56%, #1a1a1f 100%);
+      linear-gradient(135deg, #05070d 0%, #101216 56%, #1c2f57 100%);
     border-color: rgba(255,255,255,0.1);
     color: rgba(245,245,247,0.92);
     box-shadow:
-      0 14px 28px rgba(10, 10, 12, 0.14),
+      0 14px 28px rgba(16, 18, 22, 0.14),
       0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
@@ -4244,7 +4245,7 @@ textarea.form-control {
     height: 24px;
     padding: 0 8px;
     border-radius: 999px;
-    background: rgba(10,10,12,0.06);
+    background: rgba(16,18,22,0.06);
     color: inherit;
     font-size: 0.8rem;
     font-weight: 700;
@@ -4298,7 +4299,7 @@ textarea.form-control {
 .quiz-card-cover-placeholder {
   background:
       linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
-      linear-gradient(135deg, #0a0a0c 0%, #121218 55%, #1a1a1f 100%);
+      linear-gradient(135deg, #101216 0%, #16224a 55%, #1c2f57 100%);
 }
 
 @media (max-width: 767.98px) {
@@ -4361,7 +4362,7 @@ textarea.form-control {
     padding: clamp(24px, 4vw, 40px);
     border-radius: var(--radius-2xl);
     background: var(--bg-card);
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     box-shadow: var(--shadow-sm);
     text-align: center;
 
@@ -4627,7 +4628,7 @@ textarea.form-control {
     border-radius: 32px;
     background: linear-gradient(135deg, #040405 0%, #09090b 58%, #16161b 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 28px 60px rgba(10, 10, 12, 0.16);
+    box-shadow: 0 28px 60px rgba(16, 18, 22, 0.16);
 
     overflow: hidden;
     border-radius: 28px;
@@ -4663,10 +4664,10 @@ textarea.form-control {
 
 .quiz-primary-btn-showcase:hover {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(228,228,232,1) 100%);
-    color: #0a0a0c;
+    color: #101216;
 
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(226,226,230,1) 100%);
-    color: #0a0a0c;
+    color: #101216;
 }
 
 .quiz-secondary-btn-showcase:hover {
@@ -4865,7 +4866,7 @@ textarea.form-control {
     align-items: flex-start;
     gap: 12px;
     padding: 16px 18px;
-    border: 1px solid rgba(10, 10, 12, 0.12);
+    border: 1px solid rgba(16, 18, 22, 0.12);
     border-radius: var(--radius-xl);
     background: #fff;
     cursor: pointer;
@@ -4883,17 +4884,17 @@ textarea.form-control {
 }
 
 .quiz-answer-option:hover {
-  border-color: rgba(10, 10, 12, 0.18);
-    background: rgba(10, 10, 12, 0.03);
+  border-color: rgba(16, 18, 22, 0.18);
+    background: rgba(16, 18, 22, 0.03);
 
     border-color: rgba(255,255,255,0.16);
     background: linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.045) 100%);
 }
 
 .quiz-answer-option.is-selected {
-  border-color: rgba(10, 10, 12, 0.3);
-    background: rgba(10, 10, 12, 0.05);
-    box-shadow: inset 0 0 0 1px rgba(10, 10, 12, 0.04);
+  border-color: rgba(16, 18, 22, 0.3);
+    background: rgba(16, 18, 22, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(16, 18, 22, 0.04);
 
     border-color: rgba(255,255,255,0.18);
     background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.055) 100%);
@@ -5022,8 +5023,8 @@ textarea.form-control {
       font-weight: 800;
       letter-spacing: 0.01em;
       background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(230,230,234,1) 100%);
-      color: #0a0a0c;
-      border: 1px solid rgba(10,10,12,0.08);
+      color: #101216;
+      border: 1px solid rgba(16,18,22,0.08);
       box-shadow:
         0 10px 24px rgba(0,0,0,0.16),
         inset 0 1px 0 rgba(255,255,255,0.92);
@@ -5032,7 +5033,7 @@ textarea.form-control {
   .quiz-question-actions .quiz-primary-btn:hover,
   .quiz-question-actions .quiz-primary-btn:focus {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,224,228,1) 100%);
-      color: #0a0a0c;
+      color: #101216;
 }
 
 }
@@ -5060,8 +5061,8 @@ textarea.form-control {
     font-weight: 800;
     letter-spacing: 0.01em;
     background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(230,230,234,1) 100%);
-    color: #0a0a0c;
-    border: 1px solid rgba(10,10,12,0.08);
+    color: #101216;
+    border: 1px solid rgba(16,18,22,0.08);
     box-shadow:
       0 10px 24px rgba(0,0,0,0.16),
       inset 0 1px 0 rgba(255,255,255,0.92);
@@ -5070,7 +5071,7 @@ textarea.form-control {
 .quiz-question-actions-single .quiz-primary-btn-strong:hover,
 .quiz-question-actions-single .quiz-primary-btn-strong:focus {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,224,228,1) 100%);
-    color: #0a0a0c;
+    color: #101216;
 }
 
 @media (max-width: 767.98px) {
@@ -5161,7 +5162,7 @@ textarea.form-control {
     border-radius: 999px;
     background:
       linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-      linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+      linear-gradient(135deg, #05070d 0%, #15151a 56%, #202027 100%);
     color: rgba(245, 245, 247, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.10);
     font-family: "Inter", sans-serif;
@@ -5171,7 +5172,7 @@ textarea.form-control {
     text-transform: uppercase;
     line-height: 1;
     box-shadow:
-      0 4px 12px rgba(10, 10, 12, 0.10),
+      0 4px 12px rgba(16, 18, 22, 0.10),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
@@ -5196,7 +5197,7 @@ textarea.form-control {
     margin-bottom: 18px;
     background:
       linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
-      linear-gradient(135deg, #0b0b0e 0%, #14141a 100%);
+      linear-gradient(135deg, #05070d 0%, #14141a 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 22px;
@@ -5242,8 +5243,8 @@ textarea.form-control {
     padding: 0 18px;
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(236,236,240,1) 100%);
-    border: 1px solid rgba(10,10,12,0.07);
-    color: #0a0a0c !important;
+    border: 1px solid rgba(16,18,22,0.07);
+    color: #101216 !important;
     font-family: "Inter", sans-serif;
     font-size: 0.92rem;
     font-weight: 700;
@@ -5263,7 +5264,7 @@ textarea.form-control {
 .quiz-card-link:hover .quiz-card-cta {
   transform: translateY(-1px);
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,234,1) 100%);
-    color: #0a0a0c !important;
+    color: #101216 !important;
     box-shadow:
       0 12px 22px rgba(0,0,0,0.12),
       inset 0 1px 0 rgba(255,255,255,0.95);
@@ -5302,7 +5303,7 @@ textarea.form-control {
 
 .quiz-intro-panel-showcase .quiz-intro-eyebrow {
   background: rgba(255,255,255,0.92);
-    color: #2a2a30;
+    color: #26418f;
     border: 1px solid rgba(255,255,255,0.5);
 
     display: inline-flex;
@@ -5311,7 +5312,7 @@ textarea.form-control {
     padding: 8px 14px;
     border-radius: 999px;
     background: rgba(255,255,255,0.94);
-    color: #2a2a30;
+    color: #26418f;
     border: 1px solid rgba(255,255,255,0.52);
     font-size: 0.78rem;
     font-weight: 700;
@@ -5326,7 +5327,7 @@ textarea.form-control {
     border-radius: 999px;
     background:
       linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-      linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+      linear-gradient(135deg, #05070d 0%, #15151a 56%, #202027 100%);
     color: rgba(245, 245, 247, 0.82);
     border: 1px solid rgba(255, 255, 255, 0.10);
     font-family: "Inter", sans-serif;
@@ -5336,7 +5337,7 @@ textarea.form-control {
     text-transform: uppercase;
     line-height: 1;
     box-shadow:
-      0 4px 12px rgba(10, 10, 12, 0.10),
+      0 4px 12px rgba(16, 18, 22, 0.10),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
@@ -5537,19 +5538,19 @@ textarea.form-control {
 
 .quiz-primary-btn-showcase {
   background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(236,236,240,1) 100%);
-    border-color: rgba(10, 10, 12, 0.06);
-    color: #0a0a0c;
+    border-color: rgba(16, 18, 22, 0.06);
+    color: #101216;
     box-shadow: 0 10px 24px rgba(0,0,0,0.18), 0 1px 0 rgba(255,255,255,0.92) inset;
 
     background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(232,232,236,1) 100%);
-    border: 1px solid rgba(10,10,12,0.06);
-    color: #0a0a0c;
+    border: 1px solid rgba(16,18,22,0.06);
+    color: #101216;
     box-shadow: 0 10px 24px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.9);
 
     min-width: 240px;
     background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(231,231,235,1) 100%);
-    border: 1px solid rgba(10,10,12,0.06);
-    color: #0a0a0c;
+    border: 1px solid rgba(16,18,22,0.06);
+    color: #101216;
     box-shadow:
       0 12px 24px rgba(0,0,0,0.14),
       inset 0 1px 0 rgba(255,255,255,0.94);
@@ -5558,7 +5559,7 @@ textarea.form-control {
 .quiz-primary-btn-showcase:hover,
 .quiz-primary-btn-showcase:focus {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,224,228,1) 100%);
-    color: #0a0a0c;
+    color: #101216;
 }
 
 .quiz-secondary-btn-showcase {
@@ -5736,7 +5737,7 @@ textarea.form-control {
   width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, #060608 0%, #0a0a0c 56%, #17171c 100%);
+    background: linear-gradient(135deg, #05070d 0%, #101216 56%, #1c2f57 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -5780,8 +5781,8 @@ textarea.form-control {
 
 .quiz-secondary-btn-result {
   background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(238,238,242,1) 100%);
-    border: 1px solid rgba(10,10,12,0.08);
-    color: #0a0a0c;
+    border: 1px solid rgba(16,18,22,0.08);
+    color: #101216;
     box-shadow:
       0 8px 18px rgba(0,0,0,0.08),
       inset 0 1px 0 rgba(255,255,255,0.92);
@@ -5790,7 +5791,7 @@ textarea.form-control {
 .quiz-secondary-btn-result:hover,
 .quiz-secondary-btn-result:focus {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(232,232,236,1) 100%);
-    color: #0a0a0c;
+    color: #101216;
 }
 
 .quiz-result-cta-panel,
@@ -5813,17 +5814,17 @@ textarea.form-control {
   border-radius: 16px;
     padding: 16px 16px 14px;
     background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(245,245,247,1) 100%);
-    border: 1px solid rgba(10,10,12,0.08);
+    border: 1px solid rgba(16,18,22,0.08);
     box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 
 .quiz-cta-card strong {
-  color: #0a0a0c;
+  color: #101216;
     font-size: 0.98rem;
 }
 
 .quiz-cta-card span {
-  color: rgba(10,10,12,0.66);
+  color: rgba(16,18,22,0.66);
     line-height: 1.55;
 }
 
@@ -5865,11 +5866,11 @@ textarea.form-control {
 .quiz-review-item {
   border-radius: var(--radius-xl);
     padding: var(--space-5);
-    border: 1px solid rgba(10, 10, 12, 0.08);
+    border: 1px solid rgba(16, 18, 22, 0.08);
     background: #fff;
 
     background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,248,250,1) 100%);
-    border: 1px solid rgba(10,10,12,0.08);
+    border: 1px solid rgba(16,18,22,0.08);
     border-radius: 16px;
     padding: 16px 16px 14px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -5890,7 +5891,7 @@ textarea.form-control {
 .quiz-review-number {
   color: var(--text-secondary);
 
-    color: rgba(10,10,12,0.62);
+    color: rgba(16,18,22,0.62);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -5899,7 +5900,7 @@ textarea.form-control {
 .quiz-review-status {
   color: var(--bg-dark);
 
-    color: rgba(10,10,12,0.82);
+    color: rgba(16,18,22,0.82);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -5910,7 +5911,7 @@ textarea.form-control {
     color: var(--bg-dark);
     font-size: 1.12rem;
 
-    color: #111114;
+    color: #16224a;
     font-size: 1.02rem;
     line-height: 1.4;
     margin: 0 0 10px;
@@ -5918,14 +5919,14 @@ textarea.form-control {
 }
 
 .quiz-review-answer {
-  color: #1a1a1f !important;
+  color: #1c2f57 !important;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 6px;
 }
 
 .quiz-review-answer strong {
-  color: #0a0a0c;
+  color: #101216;
     font-weight: 700;
 }
 
@@ -5933,7 +5934,7 @@ textarea.form-control {
   margin-bottom: 0;
     font-style: italic;
 
-    color: rgba(10,10,12,0.68) !important;
+    color: rgba(16,18,22,0.68) !important;
     font-size: 0.92rem;
     line-height: 1.55;
     margin-top: 8px;
@@ -6205,10 +6206,10 @@ textarea.form-control {
   width: 100%;
   border-radius: 28px;
   overflow: hidden;
-  background: linear-gradient(135deg, #050507 0%, #0a0a0c 56%, #1a1a1f 100%);
+  background: linear-gradient(135deg, #05070d 0%, #101216 56%, #1c2f57 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    0 24px 42px rgba(10, 10, 12, 0.14),
+    0 24px 42px rgba(16, 18, 22, 0.14),
     inset 0 1px 0 rgba(255,255,255,0.03);
   color: var(--color-text-inverse);
 }
@@ -6243,7 +6244,7 @@ textarea.form-control {
   border-radius: 999px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%),
-    linear-gradient(135deg, #0b0b0e 0%, #15151a 56%, #202027 100%);
+    linear-gradient(135deg, #05070d 0%, #15151a 56%, #202027 100%);
   border: 1px solid rgba(255,255,255,0.10);
   color: rgba(245, 245, 247, 0.78);
   font-size: 0.74rem;
@@ -6251,7 +6252,7 @@ textarea.form-control {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   box-shadow:
-    0 6px 16px rgba(10, 10, 12, 0.10),
+    0 6px 16px rgba(16, 18, 22, 0.10),
     inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
@@ -6339,7 +6340,7 @@ textarea.form-control {
 }
 
 #toolPage .tool-flow-card .form-select option {
-  color: #0a0a0c;
+  color: #101216;
   background: #ffffff;
 }
 
@@ -6456,7 +6457,7 @@ textarea.form-control {
 #toolPage .tool-flow-card .form-check-input:checked {
   border-color: rgba(255,255,255,0.98);
   background:
-    radial-gradient(circle at center, #0a0a0c 0 32%, transparent 36%),
+    radial-gradient(circle at center, #101216 0 32%, transparent 36%),
     linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(233,233,237,1) 100%);
   box-shadow:
     0 8px 18px rgba(0,0,0,0.22),
@@ -6530,8 +6531,8 @@ textarea.form-control {
 /* primary CTA buttons */
 #toolPage .tool-flow-card .btn-primary {
   background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(231,231,235,1) 100%);
-  border: 1px solid rgba(10,10,12,0.08);
-  color: #0a0a0c;
+  border: 1px solid rgba(16,18,22,0.08);
+  color: #101216;
   box-shadow:
     0 10px 24px rgba(0,0,0,0.18),
     inset 0 1px 0 rgba(255,255,255,0.94);
@@ -6540,8 +6541,8 @@ textarea.form-control {
 #toolPage .tool-flow-card .btn-primary:hover,
 #toolPage .tool-flow-card .btn-primary:focus {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,224,228,1) 100%);
-  border-color: rgba(10,10,12,0.10);
-  color: #0a0a0c;
+  border-color: rgba(16,18,22,0.10);
+  color: #101216;
   box-shadow:
     0 14px 28px rgba(0,0,0,0.22),
     inset 0 1px 0 rgba(255,255,255,0.98);
@@ -6557,7 +6558,7 @@ textarea.form-control {
 #toolPage .tool-flow-card .btn-primary:disabled {
   background: linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(205,205,212,0.82) 100%);
   border-color: rgba(255,255,255,0.08);
-  color: rgba(10,10,12,0.52);
+  color: rgba(16,18,22,0.52);
   opacity: 1;
   box-shadow: none;
 }
@@ -6644,8 +6645,8 @@ textarea.form-control {
   border-radius: 30px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,247,249,0.96));
-  border: 1px solid rgba(10, 10, 12, 0.08);
-  box-shadow: 0 18px 40px rgba(10, 10, 12, 0.055);
+  border: 1px solid rgba(16, 18, 22, 0.08);
+  box-shadow: 0 18px 40px rgba(16, 18, 22, 0.055);
 }
 
 .ai-tools-page .tools-category-panel::before {
@@ -6659,25 +6660,25 @@ textarea.form-control {
 .ai-tools-page .tools-category-selection .tools-category-panel::before {
   background:
     radial-gradient(circle at 92% 8%, rgba(49, 96, 255, 0.12), transparent 28%),
-    radial-gradient(circle at 6% 100%, rgba(10, 10, 12, 0.04), transparent 26%);
+    radial-gradient(circle at 6% 100%, rgba(16, 18, 22, 0.04), transparent 26%);
 }
 
 .ai-tools-page .tools-category-analysis .tools-category-panel::before {
   background:
     radial-gradient(circle at 92% 8%, rgba(124, 58, 237, 0.12), transparent 28%),
-    radial-gradient(circle at 6% 100%, rgba(10, 10, 12, 0.04), transparent 26%);
+    radial-gradient(circle at 6% 100%, rgba(16, 18, 22, 0.04), transparent 26%);
 }
 
 .ai-tools-page .tools-category-costs .tools-category-panel::before {
   background:
     radial-gradient(circle at 92% 8%, rgba(239, 155, 15, 0.16), transparent 28%),
-    radial-gradient(circle at 6% 100%, rgba(10, 10, 12, 0.04), transparent 26%);
+    radial-gradient(circle at 6% 100%, rgba(16, 18, 22, 0.04), transparent 26%);
 }
 
 .ai-tools-page .tools-category-lifestyle .tools-category-panel::before {
   background:
     radial-gradient(circle at 92% 8%, rgba(22, 101, 52, 0.12), transparent 28%),
-    radial-gradient(circle at 6% 100%, rgba(10, 10, 12, 0.04), transparent 26%);
+    radial-gradient(circle at 6% 100%, rgba(16, 18, 22, 0.04), transparent 26%);
 }
 
 .ai-tools-page .tools-category-header {
@@ -6702,10 +6703,10 @@ textarea.form-control {
   border-radius: 20px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.9), rgba(239,239,242,0.96));
-  border: 1px solid rgba(10, 10, 12, 0.08);
-  color: #0a0a0c;
+  border: 1px solid rgba(16, 18, 22, 0.08);
+  color: #101216;
   box-shadow:
-    0 12px 24px rgba(10, 10, 12, 0.07),
+    0 12px 24px rgba(16, 18, 22, 0.07),
     inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
@@ -6722,8 +6723,8 @@ textarea.form-control {
   margin-bottom: 6px;
   padding: 5px 10px;
   border-radius: 999px;
-  background: rgba(10, 10, 12, 0.06);
-  color: rgba(10, 10, 12, 0.66);
+  background: rgba(16, 18, 22, 0.06);
+  color: rgba(16, 18, 22, 0.66);
   font-size: 0.74rem;
   font-weight: 800;
   line-height: 1;
@@ -7138,7 +7139,7 @@ textarea.form-control {
     radial-gradient(circle at 8% 100%, rgba(var(--cat-rgb), 0.055), transparent 28%),
     linear-gradient(180deg, rgba(255,255,255,0.94), rgba(247,247,249,0.98));
   box-shadow:
-    0 18px 42px rgba(10, 10, 12, 0.055),
+    0 18px 42px rgba(16, 18, 22, 0.055),
     0 0 0 1px rgba(var(--cat-rgb), 0.04) inset;
 }
 
@@ -7165,7 +7166,7 @@ textarea.form-control {
   border-color: rgba(var(--cat-rgb), 0.16);
   color: var(--cat-text);
   box-shadow:
-    0 12px 26px rgba(10, 10, 12, 0.07),
+    0 12px 26px rgba(16, 18, 22, 0.07),
     0 0 0 5px rgba(var(--cat-rgb), 0.045),
     inset 0 1px 0 rgba(255,255,255,0.94);
 }
@@ -7173,7 +7174,7 @@ textarea.form-control {
 /* Category count pill */
 .ai-tools-page .tools-category-kicker {
   background: rgba(var(--cat-rgb), 0.095);
-  color: color-mix(in srgb, var(--cat-text) 82%, #0a0a0c 18%);
+  color: color-mix(in srgb, var(--cat-text) 82%, #101216 18%);
   border: 1px solid rgba(var(--cat-rgb), 0.12);
 }
 
@@ -7183,9 +7184,9 @@ textarea.form-control {
   background:
     radial-gradient(circle at 82% 12%, rgba(var(--cat-rgb), 0.18), transparent 34%),
     radial-gradient(circle at 12% 100%, rgba(var(--cat-rgb), 0.06), transparent 32%),
-    linear-gradient(135deg, #050507 0%, #0a0a0c 54%, #18181e 100%);
+    linear-gradient(135deg, #05070d 0%, #101216 54%, #18181e 100%);
   box-shadow:
-    0 18px 38px rgba(10, 10, 12, 0.13),
+    0 18px 38px rgba(16, 18, 22, 0.13),
     0 0 0 1px rgba(var(--cat-rgb), 0.035) inset;
 }
 
@@ -7238,7 +7239,7 @@ textarea.form-control {
 .ai-tools-page .tools-category-panel .tool-card-visual:hover {
   border-color: rgba(var(--cat-rgb), 0.28);
   box-shadow:
-    0 24px 46px rgba(10, 10, 12, 0.18),
+    0 24px 46px rgba(16, 18, 22, 0.18),
     0 0 34px rgba(var(--cat-rgb), 0.12),
     0 0 0 1px rgba(var(--cat-rgb), 0.08) inset;
 }
@@ -7275,7 +7276,7 @@ textarea.form-control {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,247,255,0.98));
   box-shadow:
-    0 10px 22px rgba(10, 10, 12, 0.07),
+    0 10px 22px rgba(16, 18, 22, 0.07),
     0 0 0 4px rgba(78, 117, 255, 0.055);
 }
 
@@ -7283,7 +7284,7 @@ textarea.form-control {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(249,246,255,0.98));
   box-shadow:
-    0 10px 22px rgba(10, 10, 12, 0.07),
+    0 10px 22px rgba(16, 18, 22, 0.07),
     0 0 0 4px rgba(139, 92, 246, 0.055);
 }
 
@@ -7291,7 +7292,7 @@ textarea.form-control {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,250,242,0.98));
   box-shadow:
-    0 10px 22px rgba(10, 10, 12, 0.07),
+    0 10px 22px rgba(16, 18, 22, 0.07),
     0 0 0 4px rgba(239, 155, 15, 0.06);
 }
 
@@ -7299,7 +7300,7 @@ textarea.form-control {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,253,248,0.98));
   box-shadow:
-    0 10px 22px rgba(10, 10, 12, 0.07),
+    0 10px 22px rgba(16, 18, 22, 0.07),
     0 0 0 4px rgba(34, 197, 94, 0.055);
 }
 
@@ -7353,7 +7354,7 @@ textarea.form-control {
 
   .ai-tools-page .tools-category-panel .tool-card-visual {
     box-shadow:
-      0 16px 32px rgba(10, 10, 12, 0.14),
+      0 16px 32px rgba(16, 18, 22, 0.14),
       0 0 0 1px rgba(var(--cat-rgb), 0.04) inset;
   }
 }
@@ -7413,12 +7414,12 @@ textarea.form-control {
   background:
     radial-gradient(circle at 82% 12%, rgba(var(--home-cat-rgb), 0.18), transparent 34%),
     radial-gradient(circle at 12% 100%, rgba(var(--home-cat-rgb), 0.06), transparent 32%),
-    linear-gradient(135deg, #050507 0%, #0a0a0c 54%, #18181e 100%);
+    linear-gradient(135deg, #05070d 0%, #101216 54%, #18181e 100%);
 
   border: 1px solid rgba(var(--home-cat-rgb), 0.14);
 
   box-shadow:
-    0 18px 38px rgba(10, 10, 12, 0.13),
+    0 18px 38px rgba(16, 18, 22, 0.13),
     0 0 0 1px rgba(var(--home-cat-rgb), 0.035) inset;
 
   transition:
@@ -7589,7 +7590,7 @@ textarea.form-control {
   transform: translateY(-4px);
   border-color: rgba(var(--home-cat-rgb), 0.28);
   box-shadow:
-    0 24px 46px rgba(10, 10, 12, 0.18),
+    0 24px 46px rgba(16, 18, 22, 0.18),
     0 0 34px rgba(var(--home-cat-rgb), 0.12),
     0 0 0 1px rgba(var(--home-cat-rgb), 0.08) inset;
 }
@@ -7672,7 +7673,7 @@ body.homepage .hero-card.home-hero-card.home-hero-card-compact {
   isolation: isolate !important;
 
   background:
-    linear-gradient(135deg, #050507 0%, #0a0a0c 58%, #151519 100%) !important;
+    linear-gradient(135deg, #05070d 0%, #101216 58%, #1c2f57 100%) !important;
 }
 
 /* fotografija preko cijelog hero elementa */

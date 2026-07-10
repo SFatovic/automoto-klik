@@ -88,9 +88,9 @@ function initLucideIcons() {
         <div class="container">
           <div class="header-inner">
             <div class="header-logo">
-              <a href="${withBasePath("index.html")}" aria-label="AutoMoto KLIK početna">
-                <span class="header-logo-mark">AMK</span>
-                <span class="header-logo-text">AutoMoto KLIK!</span>
+              <a href="${withBasePath("index.html")}" aria-label="AutoZnalac početna">
+                <img src="${withBasePath("assets/logo/logo-mark-white.svg")}" alt="" class="header-logo-mark" width="40" height="40" />
+                <span class="header-logo-text">AutoZnalac</span>
               </a>
             </div>
 
@@ -118,7 +118,10 @@ function initLucideIcons() {
         <div class="container">
           <div class="footer-grid">
             <div>
-              <h3 class="footer-title">AutoMoto KLIK!</h3>
+              <h3 class="footer-title">
+                <img src="${withBasePath("assets/logo/logo-mark-white.svg")}" alt="" class="footer-logo-mark" width="28" height="28" />
+                AutoZnalac
+              </h3>
               <p class="footer-text">
                 AI alati, kvizovi i digitalni sadržaj za vozače i ljubitelje automobila.
                 Jednostavan ulaz u praktične alate i interaktivna auto iskustva.
@@ -134,7 +137,7 @@ function initLucideIcons() {
           </div>
 
           <div class="footer-bottom">
-            <span>© ${currentYear} AutoMoto KLIK!</span>
+            <span>© ${currentYear} AutoZnalac</span>
             <span>Sadržaj, alati i kvizovi u razvoju.</span>
           </div>
         </div>

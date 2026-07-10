@@ -247,7 +247,7 @@ function updateToolPageMeta(tool) {
   if (dom.pageHeroToolTitle) dom.pageHeroToolTitle.textContent = title;
   if (dom.pageHeroToolDescription) dom.pageHeroToolDescription.textContent = description;
 
-  document.title = `${title} | AutoMoto KLIK!`;
+  document.title = `${title} | AutoZnalac`;
 }
 
 function getFormData() {

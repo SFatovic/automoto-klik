@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070d"></stop><stop offset="55%" stop-color="#0d1a34"></stop><stop offset="100%" stop-color="#1c2f57"></stop>
+    </linearGradient>
+  </defs>
+  
+  <rect width="900" height="330" fill="url(#bgGrad)"></rect>
+  <g transform="translate(60,105)">
+    <svg width="120" height="120" viewBox="0 0 240 240" fill="none">
+    <path d="M36,148 C31,84 58,32 120,29 C182,32 209,84 204,148 C205,170 198,188 180,198 C161,208 141,211 120,211 C99,211 79,208 60,198 C42,188 35,170 36,148 Z" fill="#FAFBFC"></path>
+    <path d="M50,118 L190,118 Q195,118 194,125 L184,168 Q182,178 170,178 L70,178 Q58,178 56,168 L46,125 Q45,118 50,118 Z" fill="#16224A"></path>
+    <rect x="83" y="134" width="20" height="26" rx="10" fill="#FAFBFC"></rect>
+    <rect x="137" y="134" width="20" height="26" rx="10" fill="#FAFBFC"></rect>
+    <path d="M98,168 Q116,180 138,164" stroke="#FAFBFC" stroke-width="9" stroke-linecap="round" fill="none"></path></svg>
+  </g>
+  <rect x="210" y="90" width="1" height="150" fill="rgba(255,255,255,0.18)"></rect>
+  <text x="240" y="185" font-family="Genos, sans-serif" font-size="52" font-weight="600" fill="#FAFBFC" letter-spacing="0.5">AutoZnalac</text>
+</svg>

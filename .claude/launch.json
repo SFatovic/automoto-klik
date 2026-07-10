@@ -2,13 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "AutoMoto KLIK! (Python)",
+      "name": "AutoZnalac (Python)",
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "3000"],
       "port": 3000
     },
     {
-      "name": "AutoMoto KLIK! (Node)",
+      "name": "AutoZnalac (Node)",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "-l", "3000", "."],
       "port": 3000
