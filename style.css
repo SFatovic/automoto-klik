@@ -3632,9 +3632,17 @@ textarea.form-control {
   color: rgba(235, 244, 255, 0.96);
 }
 
+.myv-ai-title-tag {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(200, 225, 255, 0.55);
+  margin-left: 2px;
+}
+
 .myv-ai-subtitle {
   color: rgba(200, 225, 255, 0.62);
   font-size: 0.85rem;
+  margin-bottom: 14px;
 }
 
 .myv-ai-body {
