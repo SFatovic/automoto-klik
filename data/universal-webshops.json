@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "id": "autodijelovi",
+      "name": "Autodijelovi",
+      "items": [
+        { "name": "Inter Cars", "url": "https://hr.intercars.com/", "description": "Velika europska distribucijska mreža autodijelova s opsežnim katalogom za većinu marki." },
+        { "name": "Silux", "url": "https://www.silux.hr/", "description": "Hrvatski webshop autodijelova i opreme za redovito održavanje vozila." },
+        { "name": "Auto Kreso", "url": "https://www.autokreso.hr/", "description": "Domaća trgovina rezervnim dijelovima i priborom za osobna vozila." }
+      ]
+    },
+    {
+      "id": "dodatna-oprema",
+      "name": "Dodatna oprema",
+      "items": [
+        { "name": "WithCar", "url": "https://www.withcar.hr/", "description": "Ponuda dodatne opreme i praktičnih dodataka za unutrašnjost i vanjštinu vozila." },
+        { "name": "Biolab", "url": "https://biolab.hr/", "description": "Specijalizirana ponuda proizvoda za njegu i zaštitu vozila." }
+      ]
+    },
+    {
+      "id": "kotaci",
+      "name": "Kotači",
+      "items": [
+        { "name": "AluFelge", "url": "https://www.alufelge.hr/", "description": "Ponuda aluminijskih naplataka raznih dimenzija i dizajna za osobna vozila." },
+        { "name": "KupiGume", "url": "https://www.kupigume.hr/", "description": "Online usporedba i kupnja guma po marki, dimenziji i sezoni." },
+        { "name": "Premium Wheels", "url": "https://premium-wheels.hr/", "description": "Prodaja premium naplataka i pratećeg pribora za osobna vozila." },
+        { "name": "GumiShop", "url": "https://www.gumishop.hr/", "description": "Webshop za kupnju ljetnih, zimskih i cjelogodišnjih guma." },
+        { "name": "GumeLider", "url": "https://www.gumelider.com.hr/", "description": "Prodaja i naručivanje guma uz mogućnost ugradnje u partnerskim servisima." }
+      ]
+    },
+    {
+      "id": "tuning",
+      "name": "Tuning",
+      "items": [
+        { "name": "Exterior Cars", "url": "https://exteriorcars.com/", "description": "Ponuda vizualnih tuning dodataka za vanjštinu vozila (spojleri, difuzori, obloge)." },
+        { "name": "Race Shop", "url": "https://race-shop.hr/", "description": "Trgovina performance i racing opreme za pripremu i nadogradnju vozila." }
+      ]
+    },
+    {
+      "id": "specijalizirane-trgovine",
+      "name": "Specijalizirane trgovine",
+      "items": [
+        { "name": "Datacol", "url": "https://www.datacol.hr/datacol/", "description": "Profesionalni aditivi i kemijski proizvodi za čišćenje i zaštitu sustava napajanja gorivom." },
+        { "name": "DTS Shop", "url": "https://dtsshop.hr/", "description": "Specijalizirana trgovina auto opremom i priborom." },
+        { "name": "Ronis Car Audio", "url": "https://www.ronis.hr/hr/car-audio", "description": "Ponuda auto zvučnih sustava, pojačala i multimedijske opreme za vozila." },
+        { "name": "UzmiSve", "url": "https://www.uzmisve.com/", "description": "Online trgovina raznovrsnom auto opremom i praktičnim dodacima." }
+      ]
+    },
+    {
+      "id": "odjeca-i-dodatci",
+      "name": "Odjeća i dodatci",
+      "items": [
+        { "name": "Stadion Shop", "url": "https://www.stadionshop.com/hr/auto-moto/formula-1.html", "description": "Odjeća i suveniri za ljubitelje sportskih momčadi i vozača." },
+        { "name": "Adri Store", "url": "https://hr-eu.adri.store/", "description": "Odjeća i dodatci s motorsport i automotive tematikom." },
+        { "name": "Donut3logy Shop", "url": "https://shop.donut3logy.eu/", "description": "Merch i dodatci inspirirani automotive/car-culture zajednicom." }
+      ]
+    }
+  ]
+}

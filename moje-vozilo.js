@@ -5,6 +5,8 @@
   const STORE_NAME = "vehicleAssets";
   const PHOTO_RECORD_ID = "profilePhoto";
   const AI_TOOLS_URL = "data/vozilo_ai_upiti.json";
+  const WEBSHOPS_URL = "data/universal-webshops.json";
+  const WEBSHOPS_INITIAL_VISIBLE = 4;
 
   const AI_ICON_MAP = {
     "ti-file-search": "file-search",
@@ -20,7 +22,8 @@
     imageUrl: "",
     indexedDbAvailable: true,
     hasProfile: false,
-    aiTools: []
+    aiTools: [],
+    webshopCategories: []
   };
 
   const dom = {};
@@ -33,6 +36,7 @@
     await restoreProfile();
     updatePreview();
     await loadAiTools();
+    await loadWebshops();
   }
 
   function cacheDom() {
@@ -58,6 +62,7 @@
     dom.aiStatus = document.getElementById("vehicleAiStatusMessage");
     dom.aiToggleBtn = document.getElementById("myvAiToggleBtn");
     dom.aiCollapsible = document.getElementById("myvAiCollapsible");
+    dom.shopsGrid = document.getElementById("myvShopsGrid");
   }
 
   function bindEvents() {
@@ -66,6 +71,7 @@
     dom.toggleBtn.addEventListener("click", onToggleForm);
     dom.aiToggleBtn.addEventListener("click", onToggleAiUpiti);
     dom.aiToolsGrid.addEventListener("click", onAiToolClick);
+    dom.shopsGrid.addEventListener("click", onShopsGridClick);
 
     dom.photoZone.addEventListener("click", onPhotoZoneClick);
     dom.photoZone.addEventListener("keydown", (e) => {
@@ -237,6 +243,128 @@
     } catch (error) {
       console.error("Kopiranje upita nije uspjelo:", error);
       setAiStatus("Kopiranje u međuspremnik nije uspjelo. Pokušaj ponovno.");
+    }
+  }
+
+  async function loadWebshops() {
+    try {
+      const response = await fetch(WEBSHOPS_URL);
+      if (!response.ok) {
+        throw new Error(`Neuspješno dohvaćanje ${WEBSHOPS_URL}`);
+      }
+
+      const manifest = await response.json();
+      state.webshopCategories = Array.isArray(manifest.categories) ? manifest.categories : [];
+      renderWebshops();
+    } catch (error) {
+      console.error("Webshopovi nisu učitani:", error);
+      dom.shopsGrid.innerHTML = "";
+    }
+  }
+
+  function getHostname(url) {
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch (error) {
+      return url;
+    }
+  }
+
+  function renderWebshops() {
+    dom.shopsGrid.innerHTML = state.webshopCategories
+      .map((category, index) => {
+        const items = Array.isArray(category.items) ? category.items : [];
+        const extraCount = Math.max(items.length - WEBSHOPS_INITIAL_VISIBLE, 0);
+
+        const itemsHtml = items
+          .map((item, index) => {
+            const isExtra = index >= WEBSHOPS_INITIAL_VISIBLE;
+            const itemBody = `
+              <button type="button" class="myv-shop-item-toggle" aria-expanded="false">
+                <span>${escapeHtml(item.name)}</span>
+                <i data-lucide="chevron-down"></i>
+              </button>
+              <div class="myv-shop-item-details">
+                <div class="myv-shop-item-details-inner">
+                  <p class="myv-shop-item-desc">${escapeHtml(item.description || "")}</p>
+                  <a href="${escapeAttribute(item.url)}" target="_blank" rel="noopener noreferrer" class="myv-shop-item-link">
+                    <i data-lucide="link"></i>
+                    <span>${escapeHtml(getHostname(item.url))}</span>
+                  </a>
+                </div>
+              </div>
+            `;
+
+            return isExtra
+              ? `<div class="myv-shop-item myv-shop-item-extra"><div class="myv-shop-item-extra-inner">${itemBody}</div></div>`
+              : `<div class="myv-shop-item">${itemBody}</div>`;
+          })
+          .join("");
+
+        const moreBtnHtml = extraCount > 0
+          ? `
+            <button type="button" class="myv-shop-more-btn">
+              <span>Prikaži još (${extraCount})</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+          `
+          : "";
+
+        const isFirst = index === 0;
+
+        return `
+          <div class="myv-shop-card${isFirst ? " is-category-open" : ""}" data-category-id="${escapeAttribute(category.id)}">
+            <button type="button" class="myv-shop-card-header" aria-expanded="${isFirst}">
+              <span class="myv-shop-card-dot"></span>
+              <h3 class="myv-shop-card-title">${escapeHtml(category.name)}</h3>
+              <i data-lucide="chevron-down" class="myv-shop-card-header-icon"></i>
+            </button>
+            <div class="myv-shop-card-body">
+              ${itemsHtml}
+              ${moreBtnHtml}
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+
+    refreshLucideIcons();
+  }
+
+  function onShopsGridClick(event) {
+    const categoryHeader = event.target.closest(".myv-shop-card-header");
+    if (categoryHeader) {
+      const card = categoryHeader.closest(".myv-shop-card");
+      const isOpen = card.classList.toggle("is-category-open");
+      categoryHeader.setAttribute("aria-expanded", isOpen);
+      return;
+    }
+
+    const moreBtn = event.target.closest(".myv-shop-more-btn");
+    if (moreBtn) {
+      const card = moreBtn.closest(".myv-shop-card");
+      const isOpen = card.classList.toggle("is-shop-more-open");
+      moreBtn.querySelector("span").textContent = isOpen
+        ? "Prikaži manje"
+        : `Prikaži još (${card.querySelectorAll(".myv-shop-item-extra").length})`;
+      return;
+    }
+
+    const itemToggle = event.target.closest(".myv-shop-item-toggle");
+    if (itemToggle) {
+      const item = itemToggle.closest(".myv-shop-item");
+      const card = itemToggle.closest(".myv-shop-card");
+      const willOpen = !item.classList.contains("is-open");
+
+      card.querySelectorAll(".myv-shop-item.is-open").forEach((openItem) => {
+        openItem.classList.remove("is-open");
+        openItem.querySelector(".myv-shop-item-toggle").setAttribute("aria-expanded", "false");
+      });
+
+      if (willOpen) {
+        item.classList.add("is-open");
+        itemToggle.setAttribute("aria-expanded", "true");
+      }
     }
   }
 
