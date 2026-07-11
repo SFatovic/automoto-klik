@@ -446,6 +446,13 @@ function renderQuizResult() {
           <a href="#quiz-review-section" class="quiz-secondary-btn quiz-secondary-btn-result">Pregled odgovora</a>
           <a href="${withBasePath("kvizovi.html")}" class="quiz-secondary-btn quiz-secondary-btn-result">Još kvizova</a>
         </div>
+
+        <div class="quiz-result-share">
+          <button type="button" class="quiz-fb-share-btn" id="shareFacebookBtn">
+            <i data-lucide="share-2"></i>
+            <span>Izazovi prijatelje na Facebooku</span>
+          </button>
+        </div>
       </div>
 
       <div class="quiz-panel quiz-result-cta-panel">
@@ -517,6 +524,18 @@ function renderQuizResult() {
       renderCurrentScreen();
     });
   }
+
+  const shareFacebookBtn = document.getElementById("shareFacebookBtn");
+  if (shareFacebookBtn) {
+    shareFacebookBtn.addEventListener("click", () => {
+      const shareUrl = window.location.href;
+      const quote = `Riješio/la sam kviz "${quiz.title}" s rezultatom ${result.percentage}%. Probaj i ti pobijediti me!`;
+      const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(quote)}`;
+      window.open(fbShareUrl, "_blank", "noopener,noreferrer,width=600,height=520");
+    });
+  }
+
+  refreshLucideIcons();
 }
 
 function renderRelatedQuizzes() {

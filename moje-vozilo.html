@@ -138,37 +138,48 @@
               </div>
             </div>
 
-          </div>
+            <!-- Toggle gumb: AI upiti -->
+            <div class="myv-bottom">
+              <button class="myv-ai-toggle" id="myvAiToggleBtn" type="button" aria-expanded="false" aria-controls="myvAiCollapsible">
+                <span class="myv-ai-toggle-icon"><i data-lucide="sparkles"></i></span>
+                <span class="myv-ai-toggle-text">
+                  <span class="myv-ai-title">AI upiti</span>
+                  <span class="myv-ai-subtitle">Klikom kopiraj pripremljen upit i zalijepi ga u omiljeni AI chatbot</span>
+                </span>
+                <span class="myv-toggle-chevron"><i data-lucide="chevron-down"></i></span>
+              </button>
 
-          <div class="myv-card myv-ai-card">
-            <div class="myv-ai-header">
-              <h2 class="myv-ai-title">AI upiti</h2>
-              <p class="myv-ai-subtitle">Klikom kopiraj pripremljen upit i zalijepi ga u omiljeni AI chatbot</p>
-            </div>
+              <div class="myv-collapsible" id="myvAiCollapsible">
+                <div class="myv-collapsible-inner">
+                  <div class="myv-ai-body">
+                    <div class="myv-ai-grid" id="vehicleAiToolsGrid">
+                      <!-- JS ubacuje gumbe -->
+                    </div>
 
-            <div class="myv-ai-grid" id="vehicleAiToolsGrid">
-              <!-- JS ubacuje gumbe -->
-            </div>
+                    <div class="myv-ai-footer">
+                      <p class="myv-ai-footer-label">Odaberi AI chatbot za odgovor</p>
+                      <div class="ai-links myv-ai-links">
+                        <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
+                          <i data-lucide="message-square"></i>
+                          <span>ChatGPT</span>
+                        </a>
+                        <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="ai-btn gemini">
+                          <i data-lucide="sparkles"></i>
+                          <span>Gemini</span>
+                        </a>
+                        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="ai-btn claude">
+                          <i data-lucide="bot"></i>
+                          <span>Claude</span>
+                        </a>
+                      </div>
+                    </div>
 
-            <div class="myv-ai-footer">
-              <p class="myv-ai-footer-label">Odaberi AI chatbot za odgovor</p>
-              <div class="ai-links myv-ai-links">
-                <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
-                  <i data-lucide="message-square"></i>
-                  <span>ChatGPT</span>
-                </a>
-                <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="ai-btn gemini">
-                  <i data-lucide="sparkles"></i>
-                  <span>Gemini</span>
-                </a>
-                <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" class="ai-btn claude">
-                  <i data-lucide="bot"></i>
-                  <span>Claude</span>
-                </a>
+                    <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
           </div>
 
         </div>

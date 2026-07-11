@@ -56,12 +56,15 @@
     dom.collapsible = document.getElementById("myvFormCollapsible");
     dom.aiToolsGrid = document.getElementById("vehicleAiToolsGrid");
     dom.aiStatus = document.getElementById("vehicleAiStatusMessage");
+    dom.aiToggleBtn = document.getElementById("myvAiToggleBtn");
+    dom.aiCollapsible = document.getElementById("myvAiCollapsible");
   }
 
   function bindEvents() {
     dom.saveBtn.addEventListener("click", onSaveProfile);
     dom.deleteBtn.addEventListener("click", onDeleteProfile);
     dom.toggleBtn.addEventListener("click", onToggleForm);
+    dom.aiToggleBtn.addEventListener("click", onToggleAiUpiti);
     dom.aiToolsGrid.addEventListener("click", onAiToolClick);
 
     dom.photoZone.addEventListener("click", onPhotoZoneClick);
@@ -84,6 +87,11 @@
     const isOpen = dom.collapsible.classList.toggle("is-open");
     dom.toggleBtn.setAttribute("aria-expanded", isOpen);
     dom.toggleLabel.textContent = isOpen ? "Zatvori" : "Uredi podatke";
+  }
+
+  function onToggleAiUpiti() {
+    const isOpen = dom.aiCollapsible.classList.toggle("is-open");
+    dom.aiToggleBtn.setAttribute("aria-expanded", isOpen);
   }
 
   function onPhotoSelected() {
