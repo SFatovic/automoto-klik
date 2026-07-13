@@ -19,7 +19,7 @@
     },
     {
       "id": "kotaci",
-      "name": "Kotači",
+      "name": "Gume i Felge",
       "items": [
         { "name": "AluFelge", "url": "https://www.alufelge.hr/", "description": "Ponuda aluminijskih naplataka raznih dimenzija i dizajna za osobna vozila." },
         { "name": "KupiGume", "url": "https://www.kupigume.hr/", "description": "Online usporedba i kupnja guma po marki, dimenziji i sezoni." },
