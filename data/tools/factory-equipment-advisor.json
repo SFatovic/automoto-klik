@@ -8,21 +8,21 @@
       "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW"
+      "placeholder": "BMW"
     },
     {
       "id": "model",
       "label": "Model vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. X3"
+      "placeholder": "X3"
     },
     {
       "id": "version",
       "label": "Motorizacija / paket / linija opreme",
       "type": "text",
       "required": false,
-      "placeholder": "npr. xDrive20d M Sport"
+      "placeholder": "xDrive20d M Sport"
     },
     {
       "id": "equipmentFocus",
@@ -58,7 +58,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. želim da auto bude luksuzan, ali bez besmislenih doplata"
+      "placeholder": "želim da auto bude luksuzan, ali bez besmislenih doplata"
     }
   ],
   "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za konfiguraciju i odabir tvorničke opreme pri kupnji novog vozila.\n\nŽelim preporuku tvorničke dodatne opreme koja stvarno ima smisla za moje buduće vozilo, uz fokus na isplativost, praktičnost, udobnost, sigurnost i realnu vrijednost.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Motorizacija / paket / linija opreme: {{version}}\n- Fokus tvorničke opreme: {{equipmentFocus}}\n- Željeni stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Predloži koja tvornička oprema ima najviše smisla za ovo vozilo i moj način korištenja.\n2. Jasno odvoji opremu na:\n   - must-have opcije\n   - dobre, ali ne nužne opcije\n   - opcije koje se često ne isplate ili su više stvar prestiža nego stvarne koristi\n3. Obradi stavke koje sam označio u fokusu tvorničke opreme, poput vanjskog izgleda, interijera, sjedala, udobnosti, rasvjete, ambient lighta, asistencije u vožnji, sigurnosnih sustava, pomoći pri parkiranju, infotainmenta, Head-up displaya, audio sustava, ovjesa ili zimskog paketa.\n4. Objasni koje opcije najviše poboljšavaju svakodnevno korištenje, sigurnost, udobnost, dojam u vožnji i buduću vrijednost vozila.\n5. Ako postoji oprema koja dobro zvuči marketinški, ali često nije vrijedna doplate, jasno upozori na to.\n6. Ako je relevantno, navedi što se isplati uzeti tvornički odmah, a što nije presudno imati iz konfiguratora.\n7. Prilagodi dubinu i ton odgovora prema odabranom željenom stilu odgovora.\n8. Na kraju izdvoji:\n   - 5 tvorničkih opcija koje bih najprije trebao uzeti\n   - 3 doplate koje mogu preskočiti ako želim biti racionalan\n9. Daj završni sažetak jasno, praktično i bez nepotrebnog tehničkog žargona.\n\nBudi konkretan, koristan i fokusiran na stvarne potrebe korisnika."}

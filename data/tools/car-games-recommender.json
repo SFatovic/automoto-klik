@@ -81,7 +81,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. volim Forzu, ne volim preteške simulacije, igram na laptopu, zanimaju me igre s dobrim tuningom itd."
+      "placeholder": "volim Forzu, ne volim preteške simulacije, igram na laptopu, zanimaju me igre s dobrim tuningom itd."
     }
   ],
  "promptTemplate": "Ponašaj se kao stručnjak za videoigre i automotive gaming koji zna preporučiti igre prema platformi, stilu igranja i interesu za automobile.\n\nŽelim preporuku automobilskih videoigara prema svojim preferencijama.\n\nPodaci:\n- Platforma: {{platform}}\n- Tip igara: {{gameType}}\n- Gameplay fokus: {{gameplayFocus}}\n- Iskustvo igrača: {{experienceLevel}}\n- Interes za tip vozila: {{carInterest}}\n- Dodatne napomene: {{notes}}\n\nNa temelju podataka:\n1. Ukratko procijeni kakav tip auto igre mi najviše odgovara.\n2. Preporuči najbolje igre za moj stil igranja i platformu.\n3. Za svaku preporuku navedi naziv, tip igre, zašto odgovara mojim preferencijama i kome je najviše namijenjena.\n4. Jasno razlikuj casual, arkadne i realistične/sim racing opcije.\n5. Predloži 3 glavne preporuke\n6. Ako je relevantno, spomeni tuning, karijeru, multiplayer, težinu igre ili potrebu za volanom.\n\nBudi konkretan, koristan i bez generičkih opisa. Ako podatak o dostupnosti igre na platformi može biti zastario, preporuči dodatnu provjeru."

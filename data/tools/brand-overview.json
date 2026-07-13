@@ -8,7 +8,7 @@
       "label": "Koji brend te zanima",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW, Audi, Mercedes, Toyota"
+      "placeholder": "BMW, Audi, Mercedes, Toyota"
     },
     {
       "id": "depth",
@@ -54,7 +54,7 @@
       "type": "textarea",
       "rows": 3,
       "required": false,
-      "placeholder": "npr. zanimaju me samo SUV modeli ili električni modeli"
+      "placeholder": "zanimaju me samo SUV modeli ili električni modeli"
     }
   ],
   "promptTemplate": "Ponašaj se kao automobilski analitičar koji jasno objašnjava brendove, njihovu ponudu, identitet, tehnologiju i tržišnu poziciju.\n\nŽelim strukturirani pregled automobilskog brenda.\n\nPodaci:\n- Brend: {{brand}}\n- Razina detalja: {{depth}}\n- Teme koje me zanimaju: {{topics}}\n- Razlog interesa: {{interestType}}\n- Dodatne napomene: {{notes}}\n\nNa temelju podataka:\n1. Daj kratak uvod o brendu i njegovoj poziciji na tržištu.\n2. Obradi samo teme koje su odabrane u unosu.\n3. Navedi konkretne modele, tehnologije, strateške poteze ili primjere kada je relevantno.\n4. Ako korisnik razmišlja o kupnji, istakni za koga brend ima smisla, a za koga možda nije najbolji izbor.\n5. Ako postoje važne aktualnosti ili planovi brenda, spomeni ih uz napomenu da ih treba dodatno provjeriti iz novijih izvora.\n6. Na kraju daj jasan zaključak: što brend predstavlja, koje su mu najveće prednosti i na što korisnik treba paziti.\n\nBudi konkretan, objektivan i bez generičkih opisa."

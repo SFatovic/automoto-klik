@@ -8,28 +8,28 @@
       "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW"
+      "placeholder": "BMW"
     },
     {
       "id": "model",
       "label": "Model vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. 320d"
+      "placeholder": "320d"
     },
     {
       "id": "year",
       "label": "Godište",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2021"
+      "placeholder": "2021"
     },
     {
       "id": "engine",
       "label": "Motor",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2.0 diesel 190 KS"
+      "placeholder": "2.0 diesel 190 KS"
     },
     {
       "id": "drivetrain",
@@ -121,7 +121,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. želim bolje koristiti auto na autocesti, ne znam kada koristiti Sport ili Eco mod, zanima me kako voziti uglađenije"
+      "placeholder": "želim bolje koristiti auto na autocesti, ne znam kada koristiti Sport ili Eco mod, zanima me kako voziti uglađenije"
     }
   ],
   "promptTemplate": "Ponašaj se kao iskusan automobilski instruktor i stručnjak za vožnju koji razumije tehniku vožnje, ponašanje vozila i praktične navike vozača.\n\nŽelim personalizirane savjete za vožnju konkretnog vozila koje vozim. \n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište: {{year}}\n- Motor: {{engine}}\n- Pogon: {{drivetrain}}\n- Mjenjač: {{transmission}}\n- Ima li vozilo modove vožnje: {{drivingModes}}\n- Kako najčešće vozim: {{usage}}\n- Moj stil vožnje: {{drivingStyle}}\n- Što želim poboljšati u vožnji: {{goals}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija:\n1. Daj najbolje personalizirane savjete za vožnju baš za ovo vozilo i moj način korištenja.\n2. Uzmi u obzir marku, model, godište, motor, pogon, mjenjač, modove vožnje, najčešći način korištenja, stil vožnje i ciljeve koje želim poboljšati.\n\n4. Ako je relevantno, objasni kako najbolje koristiti pogon, motor, mjenjač i eventualne modove vožnje.\n\n\n7. Upozori na tipične greške koje vozači rade s ovakvim tipom vozila, pogona ili mjenjača.\n\n9. Daj kratke savjete za dugoročnu brigu o vozilu kroz stil vožnje.\n\n\nBudi konkretan, praktičan i jasan. Izbjegavaj generičke savjete i prilagodi odgovor baš navedenom vozilu, načinu vožnje i situaciji."

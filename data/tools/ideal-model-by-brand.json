@@ -8,7 +8,7 @@
       "label": "Koji brend te zanima",
       "type": "text",
       "required": true,
-      "placeholder": "npr. BMW, Audi, Mercedes"
+      "placeholder": "BMW, Audi, Mercedes"
     },
     {
       "id": "vehicleAge",
@@ -144,7 +144,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. želim SUV, bitan mi je automatski mjenjač, vozim puno autoceste"
+      "placeholder": "želim SUV, bitan mi je automatski mjenjač, vozim puno autoceste"
     }
   ],
   "promptTemplate": "Ponašaj se kao iskusan automobilski savjetnik specijaliziran za odabir idealnog modela unutar određenog automobilskog brenda.\n\nŽelim da mi preporučiš najbolji model, motorizaciju i konfiguraciju unutar odabranog brenda na temelju mojih potreba.\n\nPodaci:\n- Brend: {{brand}}\n- Starost vozila: {{vehicleAge}}\n- Budžet: {{budget}}\n- Primarna namjena: {{usage}}\n- Broj putnika: {{passengers}}\n- Preferirani oblik karoserije: {{bodyStylePreference}}\n- Prioriteti: {{priorities}}\n- Stil vožnje: {{drivingStyle}}\n- Preferencija pogona: {{fuelPreference}}\n- Tehničke i vozne preferencije: {{technicalPreferences}}\n- Dodatne napomene: {{notes}}\n\nNa temelju tih informacija odgovori u sljedećoj strukturi:\n\n1. Glavna preporuka\nPredloži IDEALAN model unutar tog brenda (točan model) i ukratko objasni zašto je to najbolji izbor za mene. Prikaži mi fotografije od naprijed, straga i iznutra.\n\n2. Preporučena motorizacija i konfiguracija\nPredloži konkretnu motorizaciju i ključnu konfiguraciju vozila koja najbolje odgovara mojim potrebama, uključujući tip motora, mjenjač i pogon ako je relevantno.\n\n3. Okvirna cijena\nDaj realan okvir cijene za takvu konfiguraciju, ovisno o tome radi li se o novom ili rabljenom vozilu.\n\n4. Zašto baš taj model\nU nekoliko konkretnih točaka objasni zašto taj model najbolje odgovara mojim prioritetima, stilu vožnje, željenom obliku karoserije i tehničkim preferencijama.\n\n5. Alternativne opcije unutar istog brenda\nPredloži 2 do 3 alternativna modela unutar istog brenda.\nZa svaki navedi:\n- model\n- preporučeni motor\n- kome bi više odgovarao\n- glavni razlog zašto bi ga netko izabrao umjesto glavne preporuke\n\n6. Kompromisi i nedostaci\nJasno navedi eventualne nedostatke, kompromise ili stvari na koje treba paziti kod glavne preporuke.\n\n8. Završni zaključak\nDaj jasan zaključak u 2 do 3 rečenice: što uzeti i zašto.\n\nBudi konkretan, praktičan, fokusiran na realne preporuke i kompaktan bez nepotrebnog ponavljanja."

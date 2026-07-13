@@ -110,19 +110,23 @@
                       <div class="myv-fields-grid">
                         <div class="myv-field">
                           <label for="vehicleBrand">Marka</label>
-                          <input id="vehicleBrand" name="brand" type="text" placeholder="npr. BMW" autocomplete="off" />
+                          <input id="vehicleBrand" name="brand" type="text" placeholder="BMW" autocomplete="off" />
                         </div>
                         <div class="myv-field">
                           <label for="vehicleModel">Model</label>
-                          <input id="vehicleModel" name="model" type="text" placeholder="npr. 320d" autocomplete="off" />
+                          <input id="vehicleModel" name="model" type="text" placeholder="serija 3" autocomplete="off" />
                         </div>
                         <div class="myv-field">
                           <label for="vehicleYear">Godina</label>
-                          <input id="vehicleYear" name="year" type="number" placeholder="npr. 2019" min="1900" max="2100" inputmode="numeric" />
+                          <input id="vehicleYear" name="year" type="number" placeholder="2019" min="1900" max="2100" inputmode="numeric" />
                         </div>
                         <div class="myv-field">
                           <label for="vehicleEngine">Motor</label>
-                          <input id="vehicleEngine" name="engine" type="text" placeholder="npr. 2.0 TDI 110kW" autocomplete="off" />
+                          <input id="vehicleEngine" name="engine" type="text" placeholder="2.0 140kw" autocomplete="off" />
+                        </div>
+                        <div class="myv-field myv-field-full">
+                          <label for="vehicleDescription">Opis</label>
+                          <input id="vehicleDescription" name="description" type="text" placeholder="320d M Sport xDrive" autocomplete="off" />
                         </div>
                       </div>
 
@@ -176,6 +180,69 @@
                     </div>
 
                     <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Toggle gumb: Upit za dijelove -->
+            <div class="myv-bottom">
+              <button class="myv-toggle" id="myvPartsToggleBtn" type="button" aria-expanded="false" aria-controls="myvPartsCollapsible">
+                <span class="myv-toggle-icon"><i data-lucide="wrench"></i></span>
+                <span class="myv-toggle-label">Upit za dijelove</span>
+                <span class="myv-toggle-chevron"><i data-lucide="chevron-down"></i></span>
+              </button>
+
+              <div class="myv-collapsible" id="myvPartsCollapsible">
+                <div class="myv-collapsible-inner">
+                  <div class="myv-parts-body">
+                    <p class="myv-parts-card-subtitle">Ispuni podatke o dijelu koji tražiš — javljamo se s ponudom na uneseni kontakt.</p>
+
+                    <form id="partsRequestForm" novalidate>
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <label for="partsVin" class="form-label">VIN broj vozila</label>
+                          <input type="text" class="form-control" id="partsVin" name="vin" placeholder="WBA3B1C50DF123456" maxlength="17" autocomplete="off" />
+                        </div>
+                        <div class="col-12">
+                          <label for="partsDescription" class="form-label">Opis dijela koji tražiš</label>
+                          <textarea class="form-control" id="partsDescription" name="description" rows="3" placeholder="prednji desni far, bočno ogledalo, kvačilo..."></textarea>
+                        </div>
+                        <div class="col-12">
+                          <fieldset class="checkbox-group myv-parts-type-group">
+                            <legend class="form-label">Vrsta dijela (po želji)</legend>
+                            <div class="myv-parts-type-options">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="partsTypeOriginal" name="partType" value="Originalni dio" />
+                                <label class="form-check-label" for="partsTypeOriginal">Originalni dio</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="partsTypeReplacement" name="partType" value="Zamjenski dio" />
+                                <label class="form-check-label" for="partsTypeReplacement">Zamjenski dio</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="partsTypeUsed" name="partType" value="Polovni dio" />
+                                <label class="form-check-label" for="partsTypeUsed">Polovni dio</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                          <label for="partsPhone" class="form-label">Broj mobitela</label>
+                          <input type="tel" class="form-control" id="partsPhone" name="phone" placeholder="091 234 5678" autocomplete="off" />
+                        </div>
+                        <div class="col-sm-6">
+                          <label for="partsEmail" class="form-label">Email adresa</label>
+                          <input type="email" class="form-control" id="partsEmail" name="email" placeholder="ime@email.com" autocomplete="off" />
+                        </div>
+                      </div>
+
+                      <div class="myv-parts-actions">
+                        <button type="submit" class="btn btn-primary" id="partsSubmitBtn">Pošalji upit</button>
+                      </div>
+                    </form>
+
+                    <p id="partsStatusMessage" class="myv-parts-status" role="status" aria-live="polite"></p>
                   </div>
                 </div>
               </div>

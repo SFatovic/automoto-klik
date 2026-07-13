@@ -7,6 +7,7 @@
   const AI_TOOLS_URL = "data/vozilo_ai_upiti.json";
   const WEBSHOPS_URL = "data/universal-webshops.json";
   const WEBSHOPS_INITIAL_VISIBLE = 4;
+  const PARTS_REQUEST_EMAIL = "zdfatovic@gmail.com";
 
   const AI_ICON_MAP = {
     "ti-file-search": "file-search",
@@ -45,6 +46,7 @@
     dom.model = document.getElementById("vehicleModel");
     dom.year = document.getElementById("vehicleYear");
     dom.engine = document.getElementById("vehicleEngine");
+    dom.description = document.getElementById("vehicleDescription");
     dom.photo = document.getElementById("vehiclePhoto");
     dom.saveBtn = document.getElementById("saveVehicleBtn");
     dom.deleteBtn = document.getElementById("deleteVehicleBtn");
@@ -63,6 +65,14 @@
     dom.aiToggleBtn = document.getElementById("myvAiToggleBtn");
     dom.aiCollapsible = document.getElementById("myvAiCollapsible");
     dom.shopsGrid = document.getElementById("myvShopsGrid");
+    dom.partsForm = document.getElementById("partsRequestForm");
+    dom.partsVin = document.getElementById("partsVin");
+    dom.partsPhone = document.getElementById("partsPhone");
+    dom.partsEmail = document.getElementById("partsEmail");
+    dom.partsDescription = document.getElementById("partsDescription");
+    dom.partsStatus = document.getElementById("partsStatusMessage");
+    dom.partsToggleBtn = document.getElementById("myvPartsToggleBtn");
+    dom.partsCollapsible = document.getElementById("myvPartsCollapsible");
   }
 
   function bindEvents() {
@@ -72,6 +82,9 @@
     dom.aiToggleBtn.addEventListener("click", onToggleAiUpiti);
     dom.aiToolsGrid.addEventListener("click", onAiToolClick);
     dom.shopsGrid.addEventListener("click", onShopsGridClick);
+    dom.partsToggleBtn.addEventListener("click", onTogglePartsRequest);
+    dom.partsForm.addEventListener("submit", onPartsRequestSubmit);
+    dom.partsVin.addEventListener("input", onPartsVinInput);
 
     dom.photoZone.addEventListener("click", onPhotoZoneClick);
     dom.photoZone.addEventListener("keydown", (e) => {
@@ -80,7 +93,7 @@
     dom.changePhotoBtn.addEventListener("click", (e) => { e.stopPropagation(); dom.photo.click(); });
     dom.photo.addEventListener("change", onPhotoSelected);
 
-    [dom.brand, dom.model, dom.year, dom.engine].forEach(input => {
+    [dom.brand, dom.model, dom.year, dom.engine, dom.description].forEach(input => {
       input.addEventListener("input", updatePreview);
     });
   }
@@ -100,6 +113,11 @@
     dom.aiToggleBtn.setAttribute("aria-expanded", isOpen);
   }
 
+  function onTogglePartsRequest() {
+    const isOpen = dom.partsCollapsible.classList.toggle("is-open");
+    dom.partsToggleBtn.setAttribute("aria-expanded", isOpen);
+  }
+
   function onPhotoSelected() {
     const file = dom.photo.files && dom.photo.files[0];
     if (!file) return;
@@ -114,6 +132,7 @@
       dom.model.value = saved.model || "";
       dom.year.value = saved.year || "";
       dom.engine.value = saved.engine || "";
+      dom.description.value = saved.description || "";
     }
 
     try {
@@ -229,7 +248,7 @@
     if (!tool) return;
 
     const data = readFormData();
-    if (!data.brand && !data.model && !data.year && !data.engine) {
+    if (!data.brand && !data.model && !data.year && !data.engine && !data.description) {
       setAiStatus("Prvo unesi i spremi podatke o vozilu.");
       return;
     }
@@ -272,7 +291,7 @@
 
   function renderWebshops() {
     dom.shopsGrid.innerHTML = state.webshopCategories
-      .map((category, index) => {
+      .map((category) => {
         const items = Array.isArray(category.items) ? category.items : [];
         const extraCount = Math.max(items.length - WEBSHOPS_INITIAL_VISIBLE, 0);
 
@@ -310,11 +329,9 @@
           `
           : "";
 
-        const isFirst = index === 0;
-
         return `
-          <div class="myv-shop-card${isFirst ? " is-category-open" : ""}" data-category-id="${escapeAttribute(category.id)}">
-            <button type="button" class="myv-shop-card-header" aria-expanded="${isFirst}">
+          <div class="myv-shop-card" data-category-id="${escapeAttribute(category.id)}">
+            <button type="button" class="myv-shop-card-header" aria-expanded="false">
               <span class="myv-shop-card-dot"></span>
               <h3 class="myv-shop-card-title">${escapeHtml(category.name)}</h3>
               <i data-lucide="chevron-down" class="myv-shop-card-header-icon"></i>
@@ -368,10 +385,64 @@
     }
   }
 
+  function onPartsVinInput(event) {
+    const input = event.target;
+    const { selectionStart, selectionEnd } = input;
+    const sanitized = input.value.replace(/o/gi, "0");
+    if (sanitized !== input.value) {
+      input.value = sanitized;
+      input.setSelectionRange(selectionStart, selectionEnd);
+    }
+  }
+
+  function onPartsRequestSubmit(event) {
+    event.preventDefault();
+
+    const vin = normalizeText(dom.partsVin.value);
+    const phone = normalizeText(dom.partsPhone.value);
+    const email = normalizeText(dom.partsEmail.value);
+    const description = normalizeText(dom.partsDescription.value);
+    const partTypes = Array.from(dom.partsForm.querySelectorAll('input[name="partType"]:checked')).map((input) => input.value);
+
+    if (!description || (!phone && !email)) {
+      setPartsStatus("Unesi opis dijela te barem jedan kontakt (telefon ili email).");
+      return;
+    }
+
+    const subject = vin ? `Upit za dijelove - VIN ${vin}` : "Upit za dijelove";
+    const bodyLines = [
+      `VIN: ${vin || "-"}`,
+      `Telefon: ${phone || "-"}`,
+      `Email: ${email || "-"}`,
+      `Vrsta dijela: ${partTypes.length ? partTypes.join(", ") : "-"}`,
+      "",
+      "Opis dijela:",
+      description
+    ];
+
+    const vehicle = readFormData();
+    if (vehicle.brand || vehicle.model || vehicle.year || vehicle.engine || vehicle.description) {
+      bodyLines.push("", "Podaci o vozilu:");
+      if (vehicle.brand) bodyLines.push(`Marka: ${vehicle.brand}`);
+      if (vehicle.model) bodyLines.push(`Model: ${vehicle.model}`);
+      if (vehicle.year) bodyLines.push(`Godina: ${vehicle.year}`);
+      if (vehicle.engine) bodyLines.push(`Motor: ${vehicle.engine}`);
+      if (vehicle.description) bodyLines.push(`Opis: ${vehicle.description}`);
+    }
+
+    const mailtoUrl = `mailto:${PARTS_REQUEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    window.location.href = mailtoUrl;
+    setPartsStatus("Otvara se aplikacija za email — provjeri i pošalji poruku.");
+  }
+
+  function setPartsStatus(message) {
+    dom.partsStatus.textContent = message;
+  }
+
   function buildAiPrompt(template, data) {
     return String(template || "")
       .replace(/\{marka\}/g, data.brand || "")
-      .replace(/\{model\}/g, data.model || "")
+      .replace(/\{model\}/g, [data.model, data.description].filter(Boolean).join(" "))
       .replace(/\{godina\}/g, data.year || "")
       .replace(/\{motor\}/g, data.engine || "")
       .replace(/[ \t]{2,}/g, " ")
@@ -401,7 +472,8 @@
       brand: normalizeText(dom.brand.value),
       model: normalizeText(dom.model.value),
       year: normalizeText(dom.year.value),
-      engine: normalizeText(dom.engine.value)
+      engine: normalizeText(dom.engine.value),
+      description: normalizeText(dom.description.value)
     };
   }
 
@@ -411,7 +483,7 @@
 
   function profileHasData(data, imageBlob) {
     return Boolean(
-      (data.brand || data.model || data.year || data.engine) ||
+      (data.brand || data.model || data.year || data.engine || data.description) ||
       imageBlob
     );
   }
@@ -432,7 +504,7 @@
 
   function updatePreview() {
     const data = readFormData();
-    const title = [data.brand, data.model].filter(Boolean).join(" ");
+    const title = [data.brand, data.model, data.description].filter(Boolean).join(" ");
     const yearEngine = [data.year, data.engine].filter(Boolean).join(" • ");
 
     dom.previewTitle.textContent = title || "—";

@@ -8,28 +8,28 @@
       "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. Volvo"
+      "placeholder": "Volvo"
     },
     {
       "id": "model",
       "label": "Model vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. XC60"
+      "placeholder": "XC60"
     },
     {
       "id": "year",
       "label": "Godište / generacija",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2022"
+      "placeholder": "2022"
     },
     {
       "id": "version",
       "label": "Motorizacija / verzija / oprema",
       "type": "text",
       "required": false,
-      "placeholder": "npr. B4 AWD Plus"
+      "placeholder": "B4 AWD Plus"
     },
     {
       "id": "aftermarketFocus",
@@ -82,7 +82,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. često putujem, vozim psa i bicikl, želim da auto bude uredniji i praktičniji"
+      "placeholder": "često putujem, vozim psa i bicikl, želim da auto bude uredniji i praktičniji"
     }
   ],
   "promptTemplate": "Ponašaj se kao praktičan automobilski savjetnik za dodatnu opremu, organizaciju vozila i svakodnevno korištenje auta.\n\nŽelim preporuku naknadne dodatne opreme za svoje vozilo.\n\nPodaci:\n- Marka: {{brand}}\n- Model: {{model}}\n- Godište / generacija: {{year}}\n- Motorizacija / verzija / oprema: {{version}}\n- Fokus dodatne opreme: {{aftermarketFocus}}\n- Budžet / razina opreme: {{budgetLevel}}\n- Stil odgovora: {{responseStyle}}\n- Dodatne napomene: {{notes}}\n\nNa temelju podataka:\n1. Ukratko procijeni koje vrste dodatne opreme imaju najviše smisla za ovo vozilo i način korištenja.\n2. Preporuči najkorisnije dodatke po prioritetu: obavezno, korisno i opcionalno.\n3. Za svaki važniji prijedlog objasni čemu služi, zašto ima smisla i na što paziti pri kupnji ili ugradnji.\n4. Ako je relevantno, razlikuj originalnu/OEM opremu od kvalitetne aftermarket alternative.\n5. Upozori na moguće probleme s kompatibilnošću, homologacijom, sigurnošću, jamstvom ili nekvalitetnom ugradnjom.\n6. Na kraju daj kratak zaključak: što bih prvo kupio, što može čekati i što bih izbjegao.\n\nBudi konkretan, praktičan i bez generičkih savjeta. Ako neki podatak nedostaje, navedi što treba dodatno provjeriti prije kupnje."

@@ -8,28 +8,28 @@
       "label": "Marka vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. Porsche"
+      "placeholder": "Porsche"
     },
     {
       "id": "model",
       "label": "Model vozila",
       "type": "text",
       "required": true,
-      "placeholder": "npr. 911 Carrera"
+      "placeholder": "911 Carrera"
     },
     {
       "id": "year",
       "label": "Godište",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2016"
+      "placeholder": "2016"
     },
     {
       "id": "engine",
       "label": "Motor / verzija",
       "type": "text",
       "required": false,
-      "placeholder": "npr. 2.0 diesel, 190 KS"
+      "placeholder": "2.0 diesel, 190 KS"
     },
     {
       "id": "usageType",
@@ -107,7 +107,7 @@
       "type": "textarea",
       "rows": 4,
       "required": false,
-      "placeholder": "npr. vozilo je financirano leasingom, često putujem u inozemstvo, vozilo mi je poslovno sredstvo"
+      "placeholder": "vozilo je financirano leasingom, često putujem u inozemstvo, vozilo mi je poslovno sredstvo"
     }
   ],
  "promptTemplate": "Ponašaj se kao iskusan stručnjak za auto osiguranje i financijsko planiranje vezano uz vozila.\n\nŽelim pomoć u odabiru najprikladnijeg tipa auto osiguranja: obavezno osiguranje, polukasko, puni kasko ili kombinacija dodatnih pokrića.\n\nPodaci:\n- Marka vozila: {{brand}}\n- Model vozila: {{model}}\n- Godište: {{year}}\n- Motor / verzija: {{engine}}\n- Način posjedovanja vozila: {{usageType}}\n- Gdje najčešće parkiram vozilo: {{parking}}\n- Najveći rizici i brige: {{riskFactors}}\n- Budžet za osiguranje: {{budget}}\n- Kako planiram kupiti osiguranje: {{buyOption}}\n- Koliko dugo planiram zadržati vozilo: {{ownershipPlan}}\n- Dodatne napomene: {{additionalNotes}}\n\nNa temelju tih informacija:\n1. Predloži najprikladniji tip osiguranja za ovo vozilo i moj način korištenja: samo obavezno osiguranje, polukasko, puni kasko ili kombinaciju dodatnih pokrića.\n2. Jasno objasni zašto je ta opcija najbolja s obzirom na marku, model, godište, motor/verziju, način posjedovanja, parkiranje, rizike, budžet i plan zadržavanja vozila.\n3. Ukratko objasni razliku između obaveznog osiguranja, polukaska i punog kaska.\n4. Navedi koje konkretne rizike preporučena opcija pokriva, a koje ne pokriva.\n5. Daj procjenu isplativosti: kada se za ovakvo vozilo isplati uzeti kasko ili polukasko, a kada bi bilo dovoljno samo obavezno osiguranje.\n6. Predloži dodatne opcije ili pakete koji bi mogli imati smisla, npr. zaštita bonusa, asistencija na cesti, stakla, tuča, krađa, zamjensko vozilo ili zaštita od štete na parkingu.\n7. Ako postoji više dobrih opcija, usporedi ih i jasno navedi prednosti, nedostatke i kome bi koja opcija bolje odgovarala.\n8. Uključi praktičan savjet kako pristupiti kupnji osiguranja, posebno ako korisnik planira kupiti preko poznanika, u poslovnici, preko interneta ili još nije siguran.\n9. Na kraju daj jasan zaključak i preporuku u jednoj ili dvije rečenice.\n\nOdgovor neka bude praktičan, razumljiv i bez nepotrebnog pravnog ili osigurateljnog žargona. Napomeni da se konačna ponuda i uvjeti pokrića moraju provjeriti kod osiguravajućeg društva jer se cijene, uvjeti i isključenja razlikuju po osiguratelju i polici."}
