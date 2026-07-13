@@ -384,9 +384,8 @@ code {
   position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(16, 18, 22, 0.96);
+    background: var(--gradient-footer);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(14px);
     box-shadow: 0 10px 30px rgba(16, 18, 22, 0.08);
 }
 
@@ -3892,6 +3891,7 @@ textarea.form-control {
 .myv-shops-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
   gap: 20px;
 }
 
@@ -3913,15 +3913,25 @@ textarea.form-control {
   border: none;
   font: inherit;
   text-align: left;
-  cursor: default;
+  cursor: pointer;
 }
 
 .myv-shop-card-header-icon {
-  display: none;
+  display: block;
+  width: 18px;
+  height: 18px;
   margin-left: auto;
   color: #ffffff;
   transition: transform 0.25s ease;
   flex-shrink: 0;
+}
+
+.myv-shop-card.is-category-open .myv-shop-card-header-icon {
+  transform: rotate(180deg);
+}
+
+.myv-shop-card:not(.is-category-open) .myv-shop-card-body {
+  display: none;
 }
 
 .myv-shop-card-dot {
@@ -4086,24 +4096,6 @@ textarea.form-control {
 @media (max-width: 575.98px) {
   .myv-shops-grid {
     grid-template-columns: 1fr;
-  }
-
-  .myv-shop-card-header {
-    cursor: pointer;
-  }
-
-  .myv-shop-card-header-icon {
-    display: block;
-    width: 18px;
-    height: 18px;
-  }
-
-  .myv-shop-card.is-category-open .myv-shop-card-header-icon {
-    transform: rotate(180deg);
-  }
-
-  .myv-shop-card:not(.is-category-open) .myv-shop-card-body {
-    display: none;
   }
 }
 
