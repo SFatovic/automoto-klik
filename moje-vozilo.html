@@ -147,7 +147,7 @@
               <button class="myv-ai-toggle" id="myvAiToggleBtn" type="button" aria-expanded="false" aria-controls="myvAiCollapsible">
                 <span class="myv-ai-toggle-icon"><i data-lucide="sparkles"></i></span>
                 <span class="myv-ai-toggle-text">
-                  <span class="myv-ai-title">AI upiti <span class="myv-ai-title-tag">Istraži svoje vozilo</span></span>
+                  <span class="myv-ai-title">Kreiraj personaliziranu e-knjigu svog vozila</span>
                 </span>
                 <span class="myv-toggle-chevron"><i data-lucide="chevron-down"></i></span>
               </button>
@@ -155,14 +155,19 @@
               <div class="myv-collapsible" id="myvAiCollapsible">
                 <div class="myv-collapsible-inner">
                   <div class="myv-ai-body">
-                    <p class="myv-ai-subtitle">Klikom kopiraj pripremljen upit i zalijepi ga u omiljeni AI chatbot</p>
-
                     <div class="myv-ai-grid" id="vehicleAiToolsGrid">
-                      <!-- JS ubacuje gumbe -->
+                      <!-- JS ubacuje poglavlja -->
+                    </div>
+
+                    <div class="myv-ai-generate">
+                      <button type="button" class="btn btn-primary myv-ai-generate-btn" id="myvGenerateEbookBtn">
+                        <i data-lucide="wand-2"></i>
+                        <span class="myv-ai-generate-label">Generiraj upit</span>
+                      </button>
+                      <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
                     </div>
 
                     <div class="myv-ai-footer">
-                      <p class="myv-ai-footer-label">Odaberi AI chatbot za odgovor</p>
                       <div class="ai-links myv-ai-links">
                         <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer" class="ai-btn gpt">
                           <i data-lucide="message-square"></i>
@@ -178,8 +183,6 @@
                         </a>
                       </div>
                     </div>
-
-                    <p id="vehicleAiStatusMessage" class="myv-status" role="status" aria-live="polite"></p>
                   </div>
                 </div>
               </div>

@@ -23,7 +23,10 @@
     imageUrl: "",
     indexedDbAvailable: true,
     hasProfile: false,
-    aiTools: [],
+    chapters: [],
+    introTemplate: "",
+    outroTemplate: "",
+    selectedChapterIds: new Set(),
     webshopCategories: []
   };
 
@@ -64,6 +67,7 @@
     dom.aiStatus = document.getElementById("vehicleAiStatusMessage");
     dom.aiToggleBtn = document.getElementById("myvAiToggleBtn");
     dom.aiCollapsible = document.getElementById("myvAiCollapsible");
+    dom.generateEbookBtn = document.getElementById("myvGenerateEbookBtn");
     dom.shopsGrid = document.getElementById("myvShopsGrid");
     dom.partsForm = document.getElementById("partsRequestForm");
     dom.partsVin = document.getElementById("partsVin");
@@ -80,7 +84,8 @@
     dom.deleteBtn.addEventListener("click", onDeleteProfile);
     dom.toggleBtn.addEventListener("click", onToggleForm);
     dom.aiToggleBtn.addEventListener("click", onToggleAiUpiti);
-    dom.aiToolsGrid.addEventListener("click", onAiToolClick);
+    dom.aiToolsGrid.addEventListener("click", onChapterToggle);
+    dom.generateEbookBtn.addEventListener("click", onGenerateEbook);
     dom.shopsGrid.addEventListener("click", onShopsGridClick);
     dom.partsToggleBtn.addEventListener("click", onTogglePartsRequest);
     dom.partsForm.addEventListener("submit", onPartsRequestSubmit);
@@ -216,22 +221,26 @@
       }
 
       const manifest = await response.json();
-      state.aiTools = Array.isArray(manifest.tools) ? manifest.tools : [];
-      renderAiTools();
+      state.chapters = Array.isArray(manifest.chapters) ? manifest.chapters : [];
+      state.introTemplate = manifest.intro_template || "";
+      state.outroTemplate = manifest.outro_template || "";
+      state.selectedChapterIds = new Set(state.chapters.map((chapter) => chapter.chapter_id));
+      renderChapters();
     } catch (error) {
-      console.error("AI upiti nisu učitani:", error);
+      console.error("Poglavlja vodiča nisu učitana:", error);
       dom.aiToolsGrid.innerHTML = "";
     }
   }
 
-  function renderAiTools() {
-    dom.aiToolsGrid.innerHTML = state.aiTools
-      .map((tool) => {
-        const icon = AI_ICON_MAP[tool.icon] || "sparkles";
+  function renderChapters() {
+    dom.aiToolsGrid.innerHTML = state.chapters
+      .map((chapter) => {
+        const icon = AI_ICON_MAP[chapter.icon] || "sparkles";
+        const isSelected = state.selectedChapterIds.has(chapter.chapter_id);
         return `
-          <button type="button" class="myv-ai-btn" data-ai-tool-id="${escapeHtml(tool.tool_id)}">
+          <button type="button" class="myv-ai-btn${isSelected ? " is-selected" : ""}" data-chapter-id="${escapeHtml(chapter.chapter_id)}" aria-pressed="${isSelected}">
             <span class="myv-ai-btn-icon"><i data-lucide="${escapeHtml(icon)}"></i></span>
-            <span class="myv-ai-btn-label">${escapeHtml(tool.label)}</span>
+            <span class="myv-ai-btn-label">${escapeHtml(chapter.label)}</span>
           </button>
         `;
       })
@@ -240,25 +249,41 @@
     refreshLucideIcons();
   }
 
-  async function onAiToolClick(event) {
-    const button = event.target.closest("[data-ai-tool-id]");
+  function onChapterToggle(event) {
+    const button = event.target.closest("[data-chapter-id]");
     if (!button) return;
 
-    const tool = state.aiTools.find((item) => item.tool_id === button.dataset.aiToolId);
-    if (!tool) return;
+    const chapterId = button.dataset.chapterId;
+    if (state.selectedChapterIds.has(chapterId)) {
+      state.selectedChapterIds.delete(chapterId);
+    } else {
+      state.selectedChapterIds.add(chapterId);
+    }
 
+    const isSelected = state.selectedChapterIds.has(chapterId);
+    button.classList.toggle("is-selected", isSelected);
+    button.setAttribute("aria-pressed", String(isSelected));
+  }
+
+  async function onGenerateEbook() {
     const data = readFormData();
     if (!data.brand && !data.model && !data.year && !data.engine && !data.description) {
       setAiStatus("Prvo unesi i spremi podatke o vozilu.");
       return;
     }
 
-    const prompt = buildAiPrompt(tool.prompt_template, data);
+    const selectedChapters = state.chapters.filter((chapter) => state.selectedChapterIds.has(chapter.chapter_id));
+    if (!selectedChapters.length) {
+      setAiStatus("Odaberi barem jedno poglavlje za vodič.");
+      return;
+    }
+
+    const prompt = buildEbookPrompt(selectedChapters, data);
 
     try {
       await navigator.clipboard.writeText(prompt);
-      setAiStatus(`Upit "${tool.label}" je kopiran — zalijepi ga u AI chat.`);
-      setButtonTemporaryLabel(button, "Kopirano!");
+      setAiStatus("Upit za vodič je kopiran — zalijepi ga u AI chat.");
+      setButtonTemporaryLabel(dom.generateEbookBtn, "Upit kopiran", ".myv-ai-generate-label");
     } catch (error) {
       console.error("Kopiranje upita nije uspjelo:", error);
       setAiStatus("Kopiranje u međuspremnik nije uspjelo. Pokušaj ponovno.");
@@ -449,8 +474,20 @@
       .trim();
   }
 
-  function setButtonTemporaryLabel(button, text, delay = 1500) {
-    const label = button.querySelector(".myv-ai-btn-label");
+  function buildEbookPrompt(chapters, data) {
+    const chapterLines = chapters
+      .map((chapter, index) => `${index + 1}. ${chapter.label}: ${chapter.prompt_template}`)
+      .join("\n\n");
+
+    const combined = [state.introTemplate, chapterLines, state.outroTemplate]
+      .filter(Boolean)
+      .join("\n\n");
+
+    return buildAiPrompt(combined, data);
+  }
+
+  function setButtonTemporaryLabel(button, text, labelSelector = ".myv-ai-btn-label", delay = 1500) {
+    const label = button.querySelector(labelSelector);
     if (!label) return;
 
     const originalText = button.dataset.originalLabel || label.textContent;

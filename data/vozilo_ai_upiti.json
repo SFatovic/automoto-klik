@@ -1,44 +1,48 @@
 {
-  "section_id": "ai_upiti",
-  "section_label": "AI upiti",
-  "section_subtitle": "Kopiraj gotov upit i zalijepi ga u svoj AI chatbot",
+  "section_id": "vozilo_ebook",
+  "section_label": "AI vodič o vozilu",
+  "section_subtitle": "Odaberi poglavlja koja želiš u vodiču, zatim generiraj i kopiraj gotov upit",
 
-  "tools": [
+  "intro_template": "Ti si stručni auto-savjetnik za entuzijaste. Sastavi personalizirani vodič (e-knjigu) o vozilu {marka} {model} {godina}, motor {motor}, podijeljen u jasno naslovljena poglavlja. Format i pravila: 1) Za naslov svakog poglavlja koristi Markdown naslov razine 2 (##). 2) Piši sažeto — najviše 3-4 kraća odlomka po poglavlju. 3) Generiraj SVA navedena poglavlja odjednom, u jednom odgovoru, bez međupitanja ili čekanja potvrde između poglavlja. 4) Ne izmišljaj podatke specifične za točan primjerak vozila (VIN, konkretna oprema, kilometraža, povijest servisiranja) — drži se općih, provjerenih informacija za taj model, godište i motor. 5) Piši tonom za nekog tko voli automobile i zanima ga više od pukog transporta, ne suhoparno enciklopedijski. Vodič treba sadržavati sljedeća poglavlja, ovim redoslijedom:",
+
+  "outro_template": "Nakon svih poglavlja dodaj kratak zaključak s cjelokupnim dojmom o vozilu i preporukom za nadogradnju ili personalizaciju ako je primjenjivo. Na samom kraju vodiča pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru.",
+
+  "chapters": [
     {
-      "tool_id": "analiza_vozila",
+      "chapter_id": "analiza_vozila",
       "label": "Analiza vozila",
       "icon": "ti-file-search",
-      "prompt_template": "Napravi kratku analizu vozila {marka} {model} {godina}, motor {motor}, namijenjenu auto entuzijastu. U analizi obavezno obradi: 1) karakter vozila i osjećaj vožnje (dinamika, zvuk motora, upravljivost) za taj model i motorizaciju, 2) tehničke zanimljivosti specifične za tu generaciju/motor (poznate karakteristike pogonskog sklopa, platforme, mogućnosti tuninga), 3) opću ocjenu pouzdanosti za tu vrstu motora i pogona, 4) potencijal za nadogradnje i personalizaciju (performance, estetske, chip tuning ako je primjenjivo za taj motor). Piši tonom za nekog tko voli automobile i zanima ga više od pukog transporta. Odgovori sažeto, u par kratkih odlomaka, bez izmišljanja podataka specifičnih za točan primjerak vozila (npr. VIN, konkretna oprema) — drži se općih informacija za taj model, godište i motor. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Napravi kratku analizu ovog vozila: karakter i osjećaj vožnje (dinamika, zvuk motora, upravljivost), tehničke zanimljivosti specifične za tu generaciju i motor (poznate karakteristike pogonskog sklopa, platforme, mogućnosti tuninga), opća ocjena pouzdanosti za tu vrstu motora i pogona, te potencijal za nadogradnje i personalizaciju."
     },
     {
-      "tool_id": "vrline",
+      "chapter_id": "vrline",
       "label": "Vrline",
       "icon": "ti-thumb-up",
-      "prompt_template": "Navedi poznate i provjerene vrline vozila {marka} {model} {godina} s motorom {motor}. Obradi: 1) opće priznate prednosti tog modela i motorizacije (ono po čemu ga vozači i struka cijene), 2) posebnosti ili karakteristike po kojima se taj model izdvaja, 3) po čemu je taj model stekao dobar glas ili reputaciju (npr. pouzdanost, dinamika, dizajn, praktičnost). Ne uspoređuj s drugim modelima ni markama — fokusiraj se isključivo na ono što je poznato i provjereno za ovo vozilo. Navedi po točkama, sažeto. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Navedi po točkama poznate i provjerene vrline ovog vozila: opće priznate prednosti tog modela i motorizacije, posebnosti po kojima se model izdvaja, te po čemu je stekao dobar glas ili reputaciju (pouzdanost, dinamika, dizajn, praktičnost). Ne uspoređuj s drugim modelima ni markama u ovom poglavlju."
     },
     {
-      "tool_id": "mane",
+      "chapter_id": "mane",
       "label": "Mane",
       "icon": "ti-alert-triangle",
-      "prompt_template": "Koji su tipični izazovi i slabije strane kod vozila {marka} {model} {godina} s motorom {motor}, generalno za tu vrstu pogona/motora nakon više pređenih kilometara? Ako imaš pristup internetu ili aktualnim izvorima, provjeri i uzmi u obzir iskustva stvarnih vlasnika (forumi, recenzije) te ocjene i nalaze auto stručnjaka iz pouzdanih izvora, ne oslanjaj se samo na opće pretpostavke. Navedi po točkama. Za konkretnu dijagnostiku uvijek preporuči provjeru kod ovlaštenog servisera, ne tvrdi da je nešto sigurno pokvareno na ovom konkretnom vozilu. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Navedi po točkama tipične izazove i slabije strane ovog vozila nakon više pređenih kilometara, generalno za tu vrstu pogona/motora. Ako imaš pristup aktualnim izvorima, uzmi u obzir iskustva stvarnih vlasnika i ocjene stručnjaka iz pouzdanih izvora. Za konkretnu dijagnostiku uvijek preporuči provjeru kod ovlaštenog servisera, ne tvrdi da je nešto sigurno pokvareno na ovom konkretnom primjerku."
     },
     {
-      "tool_id": "odrzavanje",
+      "chapter_id": "odrzavanje",
       "label": "Održavanje",
       "icon": "ti-tool",
-      "prompt_template": "Koji su generalni intervali i preporuke za redovno održavanje vozila s motorom {motor} kod modela poput {marka} {model} {godina}? Uključi okvirne intervale za ulje, filtere, kočnice i remen/lanac ako je primjenjivo za tu vrstu motora. Dodaj i praktične savjete i podsjetnike za vlasnika — što redovito provjeravati samostalno (tlak guma, razina tekućina, vizualni pregled), na koje znakove obratiti pažnju da se problem uoči na vrijeme, te ako postoje specifične upute ili preporuke vezane baš za taj model, godište ili motor, navedi i njih. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Opiši generalne intervale i preporuke za redovno održavanje ovog vozila: okvirni intervali za ulje, filtere, kočnice i remen/lanac ako je primjenjivo, praktični savjeti što vlasnik može sam provjeravati (tlak guma, razina tekućina, vizualni pregled), znakovi na koje treba obratiti pažnju, te specifične preporuke vezane baš za taj model, godište ili motor ako postoje."
     },
     {
-      "tool_id": "usporedba",
+      "chapter_id": "usporedba",
       "label": "Usporedba",
       "icon": "ti-arrows-left-right",
-      "prompt_template": "Usporedi {marka} {model} {godina} s motorom {motor} s 3-5 sličnih konkurentskih modela iz iste klase i godišta (uvijek navedi više kandidata ako postoje izravni konkurenti). Prvo napravi kratku tekstualnu analizu koja pokriva racionalne faktore (pouzdanost, troškovi održavanja, potrošnja goriva, zadržavanje vrijednosti) te entuzijastičke faktore (karakter vožnje i dinamika, zvuk i osjećaj motora, dizajn i prepoznatljivost, potencijal za tuning i personalizaciju, status ili kultni ugled modela među vozačima). Na kraju prikaži sažetu tablicu s ocjenama (npr. 1-5 ili opisno slabo/prosječno/dobro/odlično) za svaki model po ključnim kategorijama, kako bi vlasnik lako vizualno usporedio opcije. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Usporedi ovo vozilo s 3-5 sličnih konkurentskih modela iz iste klase i godišta. Pokrij racionalne faktore (pouzdanost, troškovi održavanja, potrošnja goriva, zadržavanje vrijednosti) i entuzijastičke faktore (karakter vožnje, zvuk i osjećaj motora, dizajn, potencijal za tuning, status među vozačima). Na kraju ovog poglavlja prikaži sažetu tablicu s ocjenama (1-5 ili slabo/prosječno/dobro/odlično) za svaki model po ključnim kategorijama."
     },
     {
-      "tool_id": "povijest_buducnost",
+      "chapter_id": "povijest_buducnost",
       "label": "Povijest i budućnost",
       "icon": "ti-history",
-      "prompt_template": "Opiši povijest modela {marka} {model} kroz generacije, namijenjeno auto entuzijastu. Uključi: 1) kratki pregled razvoja modela kroz generacije i ključne promjene, 2) proizvodne uspjehe, rekorde, sportske ili natjecateljske rezultate ako ih model ili njegove izvedenice imaju (npr. reli, utrke izdržljivosti, rekordi na stazi), posebna ili limitirana izdanja, kultne verzije koje su obilježile model, 3) trenutni status modela na tržištu (je li još u proizvodnji, planira li se nasljednik ili je ugašen) i njegov ugled među vozačima i entuzijastima danas. Piši zanimljivim, pričalačkim tonom kao za nekog tko uživa u povijesti automobila, ne suhoparno enciklopedijski. Na kraju odgovora pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru."
+      "prompt_template": "Opiši povijest ovog modela kroz generacije: kratki pregled razvoja i ključnih promjena, proizvodni uspjesi, sportski ili natjecateljski rezultati ili rekordi ako postoje, posebna ili limitirana izdanja, kultne verzije, te trenutni status modela na tržištu i njegov ugled među vozačima i entuzijastima danas. Piši zanimljivim, pričalačkim tonom."
     }
   ]
 }

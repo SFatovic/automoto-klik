@@ -3457,8 +3457,8 @@ textarea.form-control {
 }
 
 .myv-toggle-label {
-  font-size: 0.93rem;
-  font-weight: 600;
+  font-size: 1.02rem;
+  font-weight: 700;
   flex: 1;
 }
 
@@ -3635,19 +3635,6 @@ textarea.form-control {
   color: rgba(235, 244, 255, 0.96);
 }
 
-.myv-ai-title-tag {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: rgba(200, 225, 255, 0.55);
-  margin-left: 2px;
-}
-
-.myv-ai-subtitle {
-  color: rgba(200, 225, 255, 0.62);
-  font-size: 0.85rem;
-  margin-bottom: 14px;
-}
-
 .myv-ai-body {
   padding: 6px 22px 22px;
 }
@@ -3659,6 +3646,7 @@ textarea.form-control {
 }
 
 .myv-ai-btn {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -3690,6 +3678,31 @@ textarea.form-control {
   transform: scale(0.98);
 }
 
+.myv-ai-btn.is-selected {
+  background: rgba(130, 196, 255, 0.14);
+  border-color: rgba(130, 196, 255, 0.6);
+  color: rgba(235, 244, 255, 0.98);
+}
+
+.myv-ai-btn.is-selected::after {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(130, 196, 255, 0.9);
+  color: #0b1830;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .myv-ai-btn-icon {
   display: flex;
   align-items: center;
@@ -3705,16 +3718,27 @@ textarea.form-control {
   height: 18px;
 }
 
+.myv-ai-generate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.myv-ai-generate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+}
+
 .myv-ai-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   margin-top: 20px;
   padding-top: 18px;
-}
-
-.myv-ai-footer-label {
-  color: rgba(200, 225, 255, 0.62);
-  font-size: 0.85rem;
-  margin-bottom: 12px;
 }
 
 .myv-ai-links {
@@ -3853,11 +3877,13 @@ textarea.form-control {
 }
 
 .myv-parts-actions {
+  display: flex;
+  justify-content: center;
   margin-top: 18px;
 }
 
 .myv-parts-actions .btn {
-  width: 100%;
+  width: auto;
 }
 
 .myv-parts-status {
