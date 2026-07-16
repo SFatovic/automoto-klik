@@ -315,6 +315,8 @@ function renderQuestion() {
   }
 
   const selectedAnswer = quizState.selectedAnswers[quizState.currentIndex];
+  const isAnswered = typeof selectedAnswer === "number";
+  const isCorrect = isAnswered && selectedAnswer === question.correctIndex;
   const progressPercent = ((quizState.currentIndex + 1) / quiz.questions.length) * 100;
 
   updateProgressLabel(`Pitanje ${quizState.currentIndex + 1} od ${quiz.questions.length}`);
@@ -339,9 +341,17 @@ function renderQuestion() {
           ${question.answers
             .map((answer, index) => {
               const checked = selectedAnswer === index ? "checked" : "";
+              let stateClass = "";
+              if (isAnswered) {
+                if (index === question.correctIndex) {
+                  stateClass = "is-correct";
+                } else if (index === selectedAnswer) {
+                  stateClass = "is-incorrect";
+                }
+              }
               return `
-                <label class="quiz-answer-option ${checked ? "is-selected" : ""}">
-                  <input type="radio" name="quizAnswer" value="${index}" ${checked}>
+                <label class="quiz-answer-option ${checked ? "is-selected" : ""} ${stateClass}">
+                  <input type="radio" name="quizAnswer" value="${index}" ${checked} ${isAnswered ? "disabled" : ""}>
                   <span class="quiz-answer-text">${escapeHtml(answer)}</span>
                 </label>
               `;
@@ -349,10 +359,27 @@ function renderQuestion() {
             .join("")}
         </div>
 
+        ${
+          isAnswered
+            ? `
+              <div class="quiz-answer-feedback ${isCorrect ? "is-correct" : "is-incorrect"}">
+                <p class="quiz-answer-feedback-status">${isCorrect ? "Točno!" : "Netočno."}</p>
+                ${question.tip ? `<p class="quiz-answer-feedback-tip">${escapeHtml(question.tip)}</p>` : ""}
+              </div>
+            `
+            : ""
+        }
+
         <div class="quiz-question-actions quiz-question-actions-single">
-          <button type="button" class="quiz-primary-btn quiz-primary-btn-strong" id="nextQuestionBtn">
-            ${quizState.currentIndex === quiz.questions.length - 1 ? "Prikaži rezultat" : "Dalje"}
-          </button>
+          ${
+            isAnswered
+              ? `
+                <button type="button" class="quiz-primary-btn quiz-primary-btn-strong" id="nextQuestionBtn">
+                  ${quizState.currentIndex === quiz.questions.length - 1 ? "Prikaži rezultat" : "Dalje"}
+                </button>
+              `
+              : ""
+          }
         </div>
       </div>
     </section>
@@ -361,6 +388,7 @@ function renderQuestion() {
   const answerInputs = contentEl.querySelectorAll('input[name="quizAnswer"]');
   answerInputs.forEach((input) => {
     input.addEventListener("change", (event) => {
+      if (isAnswered) return;
       const selectedIndex = Number(event.target.value);
       quizState.selectedAnswers[quizState.currentIndex] = selectedIndex;
       renderQuestion();
@@ -442,8 +470,6 @@ function renderQuizResult() {
         </div>
 
         <div class="quiz-result-actions quiz-result-actions-premium">
-          <button type="button" class="quiz-primary-btn" id="restartQuizBtn">Riješi ponovno</button>
-          <a href="#quiz-review-section" class="quiz-secondary-btn quiz-secondary-btn-result">Pregled odgovora</a>
           <a href="${withBasePath("kvizovi.html")}" class="quiz-secondary-btn quiz-secondary-btn-result">Još kvizova</a>
         </div>
 
@@ -478,52 +504,8 @@ function renderQuizResult() {
         <h3 class="quiz-subsection-title">Povezani kvizovi</h3>
         ${renderRelatedQuizzes()}
       </div>
-
-      <div class="quiz-panel quiz-review-panel" id="quiz-review-section">
-        <h3 class="quiz-subsection-title">Pregled odgovora</h3>
-        <div class="quiz-review-list">
-          ${quiz.questions
-            .map((question, index) => {
-              const selectedIndex = quizState.selectedAnswers[index];
-              const isCorrect = selectedIndex === question.correctIndex;
-              const selectedAnswerText =
-                typeof selectedIndex === "number" ? question.answers[selectedIndex] : "Nije odgovoreno";
-              const correctAnswerText = question.answers[question.correctIndex];
-
-              return `
-                <article class="quiz-review-item ${isCorrect ? "is-correct" : "is-incorrect"}">
-                  <div class="quiz-review-head">
-                    <span class="quiz-review-number">Pitanje ${index + 1}</span>
-                    <span class="quiz-review-status">${isCorrect ? "Točno" : "Netočno"}</span>
-                  </div>
-                  <h4 class="quiz-review-question">${escapeHtml(question.question)}</h4>
-                  <p class="quiz-review-answer"><strong>Tvoj odgovor:</strong> ${escapeHtml(selectedAnswerText)}</p>
-                  ${
-                    !isCorrect
-                      ? `<p class="quiz-review-answer"><strong>Točan odgovor:</strong> ${escapeHtml(correctAnswerText)}</p>`
-                      : ""
-                  }
-                  ${
-                    question.tip
-                      ? `<p class="quiz-review-tip">${escapeHtml(question.tip)}</p>`
-                      : ""
-                  }
-                </article>
-              `;
-            })
-            .join("")}
-        </div>
-      </div>
     </section>
   `;
-
-  const restartBtn = document.getElementById("restartQuizBtn");
-  if (restartBtn) {
-    restartBtn.addEventListener("click", () => {
-      resetQuizState();
-      renderCurrentScreen();
-    });
-  }
 
   const shareFacebookBtn = document.getElementById("shareFacebookBtn");
   if (shareFacebookBtn) {

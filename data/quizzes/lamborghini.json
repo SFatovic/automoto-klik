@@ -133,27 +133,5 @@
       "correctIndex": 3,
       "tip": "Urus koristi 4.0-litreni twin-turbo V8 motor."
     }
-  ],
-  "intro": {
-    "eyebrow": "Brand kviz",
-    "estimatedTime": "2-3 min",
-    "difficulty": "Srednje",
-    "ctaLabel": "Započni Lamborghini kviz",
-    "text": "Provjeri koliko stvarno poznaješ Lamborghini modele, povijest i karakter brenda kroz brz, vizualan i ugodan kviz."
-  },
-  "interstitials": [
-    {
-      "afterQuestion": 3,
-      "title": "Lamborghini je više od performansi",
-      "text": "Dizajn, emocija i prepoznatljiv karakter brenda jednako su važni kao i brojke na papiru."
-    },
-    {
-      "afterQuestion": 7,
-      "title": "Ulaziš u završnicu",
-      "text": "Još malo i saznat ćeš jesi li samo fan ili ozbiljan Lamborghini znalac."
-    }
-  ],
-  "result": {
-    "shareText": "Riješio si Lamborghini kviz. Nastavi momentum i isprobaj još jedan auto kviz ili AI alat."
-  }
+  ]
 }
