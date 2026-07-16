@@ -3,45 +3,51 @@
   "section_label": "AI vodič o vozilu",
   "section_subtitle": "Odaberi poglavlja koja želiš u vodiču, zatim generiraj i kopiraj gotov upit",
 
-  "intro_template": "Ti si stručni auto-savjetnik za entuzijaste. Sastavi personalizirani vodič (e-knjigu) o vozilu {marka} {model} {godina}, motor {motor}, podijeljen u jasno naslovljena poglavlja. Format i pravila: 1) Za naslov svakog poglavlja koristi Markdown naslov razine 2 (##). 2) Piši sažeto — najviše 3-4 kraća odlomka po poglavlju. 3) Generiraj SVA navedena poglavlja odjednom, u jednom odgovoru, bez međupitanja ili čekanja potvrde između poglavlja. 4) Ne izmišljaj podatke specifične za točan primjerak vozila (VIN, konkretna oprema, kilometraža, povijest servisiranja) — drži se općih, provjerenih informacija za taj model, godište i motor. 5) Piši tonom za nekog tko voli automobile i zanima ga više od pukog transporta, ne suhoparno enciklopedijski. Vodič treba sadržavati sljedeća poglavlja, ovim redoslijedom:",
+  "intro_template": "Ti si stručni auto-savjetnik za entuzijaste i pišeš u ime AutoZnalac.hr. Sastavi personalizirani vodič (e-knjigu) o vozilu {marka} {model} {godina}, motor {motor}. Struktura i vizualni format dokumenta, prati točno ovim redoslijedom: 1) Naslovnica — Markdown naslov razine 1 (#) u formatu '🚗 {marka} {model} {godina}', a odmah ispod manji kurziv podnaslov 'Personalizirani vodič vozila — izradio AutoZnalac.hr'. 2) Sadržaj — kratak numerirani popis poglavlja koja slijede (samo nazivi, bez teksta). 3) Svako poglavlje počni Markdown naslovom razine 2 (##) u formatu 'emoji + naziv poglavlja' (emoji je naveden uz svako poglavlje niže), a zatim piši sažeto — najviše 3-4 kraća odlomka, s podebljanim (bold) ključnim pojmovima i nabrajanjem (bullet lista) gdje god je prirodno umjesto zbijenog teksta. 4) Nakon svakog poglavlja (osim posljednjeg) umetni vodoravnu crtu (---) za jasno vizualno razdvajanje. 5) Generiraj SVA navedena poglavlja odjednom, u jednom odgovoru, bez međupitanja ili čekanja potvrde. 6) Ne izmišljaj podatke specifične za točan primjerak vozila (VIN, konkretna oprema, kilometraža, povijest servisiranja) — drži se općih, provjerenih informacija za taj model, godište i motor. 7) Piši tonom za nekog tko voli automobile i zanima ga više od pukog transporta, ne suhoparno enciklopedijski. Vodič treba sadržavati sljedeća poglavlja, ovim redoslijedom:",
 
-  "outro_template": "Nakon svih poglavlja dodaj kratak zaključak s cjelokupnim dojmom o vozilu i preporukom za nadogradnju ili personalizaciju ako je primjenjivo. Na samom kraju vodiča pitaj me želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru.",
+  "outro_template": "Nakon zadnjeg poglavlja i vodoravne crte dodaj završno poglavlje pod naslovom '## 🏁 Zaključak' s kratkim cjelokupnim dojmom o vozilu i preporukom za nadogradnju ili personalizaciju ako je primjenjivo. Na samu posljednju liniju dokumenta stavi brendiranu poruku u kurzivu: '_Vodič izradio AutoZnalac.hr 🚗_' i tek nakon toga me pitaj želim li se vratiti na AutoZnalac ili nastaviti razgovor u nekom određenom smjeru.",
 
   "chapters": [
     {
       "chapter_id": "analiza_vozila",
       "label": "Analiza vozila",
       "icon": "ti-file-search",
+      "emoji": "🔍",
       "prompt_template": "Napravi kratku analizu ovog vozila: karakter i osjećaj vožnje (dinamika, zvuk motora, upravljivost), tehničke zanimljivosti specifične za tu generaciju i motor (poznate karakteristike pogonskog sklopa, platforme, mogućnosti tuninga), opća ocjena pouzdanosti za tu vrstu motora i pogona, te potencijal za nadogradnje i personalizaciju."
     },
     {
       "chapter_id": "vrline",
       "label": "Vrline",
       "icon": "ti-thumb-up",
+      "emoji": "👍",
       "prompt_template": "Navedi po točkama poznate i provjerene vrline ovog vozila: opće priznate prednosti tog modela i motorizacije, posebnosti po kojima se model izdvaja, te po čemu je stekao dobar glas ili reputaciju (pouzdanost, dinamika, dizajn, praktičnost). Ne uspoređuj s drugim modelima ni markama u ovom poglavlju."
     },
     {
       "chapter_id": "mane",
       "label": "Mane",
       "icon": "ti-alert-triangle",
+      "emoji": "⚠️",
       "prompt_template": "Navedi po točkama tipične izazove i slabije strane ovog vozila nakon više pređenih kilometara, generalno za tu vrstu pogona/motora. Ako imaš pristup aktualnim izvorima, uzmi u obzir iskustva stvarnih vlasnika i ocjene stručnjaka iz pouzdanih izvora. Za konkretnu dijagnostiku uvijek preporuči provjeru kod ovlaštenog servisera, ne tvrdi da je nešto sigurno pokvareno na ovom konkretnom primjerku."
     },
     {
       "chapter_id": "odrzavanje",
       "label": "Održavanje",
       "icon": "ti-tool",
+      "emoji": "🔧",
       "prompt_template": "Opiši generalne intervale i preporuke za redovno održavanje ovog vozila: okvirni intervali za ulje, filtere, kočnice i remen/lanac ako je primjenjivo, praktični savjeti što vlasnik može sam provjeravati (tlak guma, razina tekućina, vizualni pregled), znakovi na koje treba obratiti pažnju, te specifične preporuke vezane baš za taj model, godište ili motor ako postoje."
     },
     {
       "chapter_id": "usporedba",
       "label": "Usporedba",
       "icon": "ti-arrows-left-right",
+      "emoji": "⚖️",
       "prompt_template": "Usporedi ovo vozilo s 3-5 sličnih konkurentskih modela iz iste klase i godišta. Pokrij racionalne faktore (pouzdanost, troškovi održavanja, potrošnja goriva, zadržavanje vrijednosti) i entuzijastičke faktore (karakter vožnje, zvuk i osjećaj motora, dizajn, potencijal za tuning, status među vozačima). Na kraju ovog poglavlja prikaži sažetu tablicu s ocjenama (1-5 ili slabo/prosječno/dobro/odlično) za svaki model po ključnim kategorijama."
     },
     {
       "chapter_id": "povijest_buducnost",
       "label": "Povijest i budućnost",
       "icon": "ti-history",
+      "emoji": "📜",
       "prompt_template": "Opiši povijest ovog modela kroz generacije: kratki pregled razvoja i ključnih promjena, proizvodni uspjesi, sportski ili natjecateljski rezultati ili rekordi ako postoje, posebna ili limitirana izdanja, kultne verzije, te trenutni status modela na tržištu i njegov ugled među vozačima i entuzijastima danas. Piši zanimljivim, pričalačkim tonom."
     }
   ]

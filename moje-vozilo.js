@@ -476,7 +476,7 @@
 
   function buildEbookPrompt(chapters, data) {
     const chapterLines = chapters
-      .map((chapter, index) => `${index + 1}. ${chapter.label}: ${chapter.prompt_template}`)
+      .map((chapter, index) => `${index + 1}. ${chapter.emoji || ""} ${chapter.label}: ${chapter.prompt_template}`.trim())
       .join("\n\n");
 
     const combined = [state.introTemplate, chapterLines, state.outroTemplate]
